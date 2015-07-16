@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Globalization;
 
 namespace InteractiveTable
 {
@@ -23,6 +24,18 @@ namespace InteractiveTable
         public MainWindow()
         {
             InitializeComponent();
+
+            App.LanguageChanged += LanguageChanged;
+        }
+
+        private void LanguageChanged(Object sender, EventArgs e)
+        {
+            CultureInfo currLang = App.Language;
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            App.Language = CultureInfo.GetCultureInfo("ru-RU");
         }
     }
 }
