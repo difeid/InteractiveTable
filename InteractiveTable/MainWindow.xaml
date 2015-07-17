@@ -1,9 +1,5 @@
-﻿<Window x:Class="InteractiveTable.MainWindow"
+﻿<NavigationWindow x:Class="InteractiveTable.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Height="900" Width="1600" ResizeMode="NoResize" WindowStyle="None" WindowState="Maximized" Topmost="True">
-    <Grid>
-        <Label Content="{DynamicResource m_Title}"/>
-        <Button Content="{DynamicResource m_Button}" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="0,81,0,0" Click="Button_Click"/>
-    </Grid>
-</Window>
+        Height="900" Width="1600" ResizeMode="NoResize" WindowStyle="None" WindowState="Maximized" Topmost="True" ShowsNavigationUI="false" Source="Pages/Intro.xaml"/>
+        <!--TODO: Посмотреть, не появляется ли навигационная панель-->
