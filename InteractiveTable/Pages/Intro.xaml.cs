@@ -17,13 +17,26 @@ using System.Globalization;
 namespace InteractiveTable
 {
     /// <summary>
-    /// Логика взаимодействия для MainWindow.xaml
+    /// Логика взаимодействия для Intro.xaml
     /// </summary>
-    public partial class MainWindow : NavigationWindow
+    public partial class Intro : Page
     {
-        public MainWindow()
+        public Intro()
         {
             InitializeComponent();
+
+            App.LanguageChanged += LanguageChanged;
+        }
+
+        private void LanguageChanged(Object sender, EventArgs e)
+        {
+            CultureInfo currLang = App.Language;
+        }
+
+        // TODO: Переделать
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            App.Language = CultureInfo.GetCultureInfo("ru-RU");
         }
     }
 }
