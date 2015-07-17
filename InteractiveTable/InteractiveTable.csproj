@@ -96,6 +96,22 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Pages\Level31.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Level32.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Level33.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Level4.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Resources\lang.en-US.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -108,6 +124,18 @@
   <ItemGroup>
     <Compile Include="Pages\Level1.xaml.cs">
       <DependentUpon>Level1.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Level31.xaml.cs">
+      <DependentUpon>Level31.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Level32.xaml.cs">
+      <DependentUpon>Level32.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Level33.xaml.cs">
+      <DependentUpon>Level33.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Level4.xaml.cs">
+      <DependentUpon>Level4.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
