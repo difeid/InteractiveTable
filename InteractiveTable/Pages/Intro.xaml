@@ -6,8 +6,8 @@
       mc:Ignorable="d" 
       d:DesignHeight="300" d:DesignWidth="300" Width="1600" Height="900">
     <!--TODO: Временно, все убрать-->
-    <Grid>
-        <Button Content="{DynamicResource m_Button}" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
+    <Canvas>
+        <Button Content="{DynamicResource m_Button}" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Click="Button_Click" Canvas.Left="42" Canvas.Top="36"/>
 
-    </Grid>
+    </Canvas>
 </Page>
