@@ -1,5 +1,9 @@
-﻿<NavigationWindow x:Class="InteractiveTable.MainWindow"
+﻿<Window x:Class="InteractiveTable.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Height="900" Width="1600" ResizeMode="NoResize" WindowStyle="None" WindowState="Maximized" Topmost="True" ShowsNavigationUI="false" Source="Pages/Intro.xaml"/>
-        <!--TODO: Посмотреть, не появляется ли навигационная панель-->
+        xmlns:dw="clr-namespace:DrWPF.Windows.Controls"
+        Height="900" Width="1600" ResizeMode="NoResize" WindowStyle="None" WindowState="Maximized" Topmost="True">
+    
+    <dw:FaderFrame x:Name="MainFrame" FadeDuration="0:0:0.5"
+    Source="Pages/Intro.xaml" NavigationUIVisibility="Hidden" />
+</Window>
