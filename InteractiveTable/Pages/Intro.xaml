@@ -7,18 +7,6 @@
       d:DesignHeight="300" d:DesignWidth="300" Width="1600" Height="900">
     
     <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="2*"/>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition Height="2*"/>
-        </Grid.RowDefinitions>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="7*"/>
-            <ColumnDefinition/>
-            <ColumnDefinition Width="3*"/>
-        </Grid.ColumnDefinitions>
-        <Button Content="{DynamicResource m_Button}" Width="75" Click="Button_Click" Grid.Column="1" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <Button Content="{DynamicResource m_Button}" Width="75" Click="Button_Click" HorizontalAlignment="Center" VerticalAlignment="Center"/>
     </Grid>
 </Page>
