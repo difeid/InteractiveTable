@@ -60,7 +60,7 @@ namespace InteractiveTable
                         dict.Source = new Uri(String.Format("LanguageResources/lang.{0}.xaml", value.Name), UriKind.Relative);
                         break;
                     default:
-                        dict.Source = new Uri("LanguageResources/lang.eu-US.xaml", UriKind.Relative);
+                        dict.Source = new Uri("LanguageResources/lang.en-US.xaml", UriKind.Relative);
                         break;
                 }
 

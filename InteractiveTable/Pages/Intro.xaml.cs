@@ -42,11 +42,13 @@ namespace InteractiveTable
 
         private void Tat_Button_Click(object sender, RoutedEventArgs e)
         {
+            App.Language = CultureInfo.GetCultureInfo("tt-RU");
             MessageBox.Show("Tat OK");
         }
 
         private void Eng_Button_Click(object sender, RoutedEventArgs e)
         {
+            App.Language = CultureInfo.GetCultureInfo("en-US");
             MessageBox.Show("Eng OK");
         }
     }
