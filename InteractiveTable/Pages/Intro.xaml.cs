@@ -30,6 +30,7 @@ namespace InteractiveTable
 
         private void LanguageChanged(Object sender, EventArgs e)
         {
+            // Смена языка приложения
             CultureInfo currLang = App.Language;
         }
 
@@ -43,7 +44,6 @@ namespace InteractiveTable
         {
             App.Language = CultureInfo.GetCultureInfo("tt-RU");
             this.NavigationService.Navigate(new Uri("Pages/MainMenu.xaml", UriKind.Relative));
-
         }
 
         private void Eng_Button_Click(object sender, RoutedEventArgs e)

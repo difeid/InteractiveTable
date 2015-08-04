@@ -192,6 +192,11 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+    <BlendEmbeddedFont Include="Fonts\Basil-Bold-tatar.ttf">
+      <IsSystemFont>True</IsSystemFont>
+      <All>True</All>
+      <AutoFill>True</AutoFill>
+    </BlendEmbeddedFont>
     <Resource Include="Images\Intro\Kazan.jpg" />
   </ItemGroup>
   <ItemGroup>
@@ -213,9 +218,13 @@
     <Resource Include="Images\Intro\EngButton.png" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Images\MainMenu\" />
+    <Resource Include="Images\Arrow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\MainMenu\MainMenuBackground.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\Expression\Blend\.NETFramework\v4.5\Microsoft.Expression.Blend.WPF.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
