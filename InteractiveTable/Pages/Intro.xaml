@@ -7,6 +7,37 @@
       d:DesignHeight="300" d:DesignWidth="300" Width="1600" Height="900">
     
     <Grid>
-        <Button Content="{DynamicResource m_Button}" Width="75" Click="Button_Click" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <!--Анимация Казани на основе пути-->
+        <Canvas ClipToBounds="True">
+            <Canvas.Resources>
+                <PathGeometry x:Key="path">
+                    <PathFigure IsClosed="True" StartPoint="-300,0">
+                        <LineSegment Point="200,0"/>
+                    </PathFigure>
+                </PathGeometry>
+            </Canvas.Resources>
+           
+            <Image x:Name="kazan_img" Source="/InteractiveTable;component/Images/Kazan.jpg" Width="1267" Height="771" HorizontalAlignment="Left" VerticalAlignment="Top">
+                <Image.Triggers>
+                    <EventTrigger RoutedEvent="Page.Loaded">
+                        <EventTrigger.Actions>
+                            <BeginStoryboard>
+                                <Storyboard>
+                                    <DoubleAnimationUsingPath Storyboard.TargetProperty="(Canvas.Left)"
+                                                                  PathGeometry="{StaticResource path}"
+                                                                  Duration="0:0:40" RepeatBehavior="Forever"
+                                                                  Source="X"></DoubleAnimationUsingPath>
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </EventTrigger.Actions>
+                    </EventTrigger>
+                </Image.Triggers>
+            </Image>
+            
+            <Canvas.OpacityMask>
+                <ImageBrush ImageSource="/InteractiveTable;component/Images/PoligonKazan.png" Viewport="0,0,1600,900" ViewportUnits="Absolute"/>
+            </Canvas.OpacityMask>
+        </Canvas>
+        <!--Button Content="{DynamicResource m_Button}" Width="75" Click="Button_Click" HorizontalAlignment="Center" VerticalAlignment="Center"/-->
     </Grid>
 </Page>
