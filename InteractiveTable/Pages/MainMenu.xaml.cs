@@ -16,11 +16,11 @@ using System.Windows.Shapes;
 namespace InteractiveTable.Pages
 {
     /// <summary>
-    /// Логика взаимодействия для Level1.xaml
+    /// Логика взаимодействия для MainMenu.xaml
     /// </summary>
-    public partial class Level1 : Page
+    public partial class MainMenu : Page
     {
-        public Level1()
+        public MainMenu()
         {
             InitializeComponent();
         }

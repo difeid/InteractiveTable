@@ -36,20 +36,20 @@ namespace InteractiveTable
         private void Rus_Button_Click(object sender, RoutedEventArgs e)
         {
             App.Language = CultureInfo.GetCultureInfo("ru-RU");
-            MessageBox.Show("Rus OK");
-            //this.NavigationService.Navigate(new Uri("Pages/Level1.xaml", UriKind.Relative));
+            this.NavigationService.Navigate(new Uri("Pages/MainMenu.xaml", UriKind.Relative));
         }
 
         private void Tat_Button_Click(object sender, RoutedEventArgs e)
         {
             App.Language = CultureInfo.GetCultureInfo("tt-RU");
-            MessageBox.Show("Tat OK");
+            this.NavigationService.Navigate(new Uri("Pages/MainMenu.xaml", UriKind.Relative));
+
         }
 
         private void Eng_Button_Click(object sender, RoutedEventArgs e)
         {
             App.Language = CultureInfo.GetCultureInfo("en-US");
-            MessageBox.Show("Eng OK");
+            this.NavigationService.Navigate(new Uri("Pages/MainMenu.xaml", UriKind.Relative));
         }
     }
 }

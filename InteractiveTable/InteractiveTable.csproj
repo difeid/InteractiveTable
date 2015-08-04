@@ -99,7 +99,7 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="Pages\Level1.xaml">
+    <Page Include="Pages\MainMenu.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -133,8 +133,8 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Pages\Level1.xaml.cs">
-      <DependentUpon>Level1.xaml</DependentUpon>
+    <Compile Include="Pages\MainMenu.xaml.cs">
+      <DependentUpon>MainMenu.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\Level31.xaml.cs">
       <DependentUpon>Level31.xaml</DependentUpon>
@@ -211,6 +211,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\Intro\EngButton.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Images\MainMenu\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
