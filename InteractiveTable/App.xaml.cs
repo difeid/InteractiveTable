@@ -54,19 +54,19 @@ namespace InteractiveTable
                 switch (value.Name)
                 {
                     case "ru-RU":
-                        dict.Source = new Uri(String.Format("Resources/lang.{0}.xaml", value.Name), UriKind.Relative);
+                        dict.Source = new Uri(String.Format("LanguageResources/lang.{0}.xaml", value.Name), UriKind.Relative);
                         break;
                     case "tt-RU":
-                        dict.Source = new Uri(String.Format("Resources/lang.{0}.xaml", value.Name), UriKind.Relative);
+                        dict.Source = new Uri(String.Format("LanguageResources/lang.{0}.xaml", value.Name), UriKind.Relative);
                         break;
                     default:
-                        dict.Source = new Uri("Resources/lang.eu-US.xaml", UriKind.Relative);
+                        dict.Source = new Uri("LanguageResources/lang.eu-US.xaml", UriKind.Relative);
                         break;
                 }
 
                 //3. Находим старую ResourceDictionary и удаляем его и добавляем новую ResourceDictionary
                 ResourceDictionary oldDict = (from d in Application.Current.Resources.MergedDictionaries
-                                              where d.Source != null && d.Source.OriginalString.StartsWith("Resources/lang.")
+                                              where d.Source != null && d.Source.OriginalString.StartsWith("LanguageResources/lang.")
                                               select d).First();
                 if (oldDict != null)
                 {
