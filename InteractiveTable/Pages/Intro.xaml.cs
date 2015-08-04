@@ -33,11 +33,21 @@ namespace InteractiveTable
             CultureInfo currLang = App.Language;
         }
 
-        // TODO: Переделать
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void Rus_Button_Click(object sender, RoutedEventArgs e)
         {
             App.Language = CultureInfo.GetCultureInfo("ru-RU");
-            this.NavigationService.Navigate(new Uri("Pages/Level1.xaml", UriKind.Relative));
+            MessageBox.Show("Rus OK");
+            //this.NavigationService.Navigate(new Uri("Pages/Level1.xaml", UriKind.Relative));
+        }
+
+        private void Tat_Button_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("Tat OK");
+        }
+
+        private void Eng_Button_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("Eng OK");
         }
     }
 }
