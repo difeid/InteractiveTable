@@ -56,8 +56,8 @@
 
         <Image x:Name="tolstoy" Source="/InteractiveTable;component/Images/Intro/Tolstoy.png" Grid.ColumnSpan="4" Grid.RowSpan="2"/>
 
-        <Button x:Name="rus_button" Click="Rus_Button_Click" Grid.Column="1" Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Top" Template="{DynamicResource LanguageButtonTemplate}" Width="105" Height="105" Content="/InteractiveTable;component/Images/Intro/RusButton.png"/>
-        <Button x:Name="tat_button" Click="Tat_Button_Click" Grid.Column="2" Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Top" Template="{DynamicResource LanguageButtonTemplate}" Width="105" Height="105" Content="/InteractiveTable;component/Images/Intro/TatButton.png"/>
-        <Button x:Name="eng_button" Click="Eng_Button_Click" Grid.Column="3" Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Top" Template="{DynamicResource LanguageButtonTemplate}" Width="105" Height="105" Content="/InteractiveTable;component/Images/Intro/EngButton.png"/>
+        <Button x:Name="rus_button" Click="Rus_Button_Click" Grid.Column="1" Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Top" Template="{DynamicResource LanguageButtonTemplate}" Width="104" Height="104" Content="/InteractiveTable;component/Images/Intro/RusButton.png"/>
+        <Button x:Name="tat_button" Click="Tat_Button_Click" Grid.Column="2" Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Top" Template="{DynamicResource LanguageButtonTemplate}" Width="104" Height="104" Content="/InteractiveTable;component/Images/Intro/TatButton.png"/>
+        <Button x:Name="eng_button" Click="Eng_Button_Click" Grid.Column="3" Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Top" Template="{DynamicResource LanguageButtonTemplate}" Width="104" Height="104" Content="/InteractiveTable;component/Images/Intro/EngButton.png"/>
     </Grid>
 </Page>
