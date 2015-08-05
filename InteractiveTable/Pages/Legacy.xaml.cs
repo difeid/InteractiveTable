@@ -54,5 +54,30 @@ namespace InteractiveTable.Pages
         {
 
         }
+
+        private void Cossacks_Button_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void War_And_Peace_Button_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void After_Ball_Button_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Oasis_Button_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Yule_Night_Button_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

@@ -8,7 +8,7 @@
 
     <Canvas>
         <Canvas.Background>
-            <ImageBrush ImageSource="/InteractiveTable;component/Images/Legacy/LegacyMaket.png"/>
+            <ImageBrush ImageSource="/InteractiveTable;component/Images/Legacy/LegacyBackground.png"/>
         </Canvas.Background>
 
         <Button x:Name="back_button" Template="{DynamicResource BackButtonTemplate}" Foreground="White" Click="Back_Button_Click" Canvas.Left="60" Canvas.Top="795"/>
@@ -16,12 +16,23 @@
         <Button x:Name="rules_of_life_button" Template="{DynamicResource HexagonButtonTemplate}" Content="/InteractiveTable;component/Images/Legacy/RulesOfLife.png" Tag="{DynamicResource l_RulesOfLife}" MinWidth="180"
                 FontFamily="/InteractiveTable;component/Fonts/#Basil Bold"  FontSize="24" Foreground="White" Click="Rules_Of_Life_Button_Click"  Width="250" Height="250" Padding="15,0" Canvas.Left="10" Canvas.Top="45"/>
         <Button x:Name="trilogy_button" Template="{DynamicResource HexagonButtonTemplate}" Content="/InteractiveTable;component/Images/Legacy/Trilogy.png" Tag="{DynamicResource l_Trilogy}" MinWidth="180"
-                FontFamily="/InteractiveTable;component/Fonts/#Basil Bold"  FontSize="24" Foreground="White" Click="Trilogy_Button_Click"  Width="250" Height="250" Padding="15,0" Canvas.Left="243" Canvas.Top="45"/>
+                FontFamily="/InteractiveTable;component/Fonts/#Basil Bold"  FontSize="24" Foreground="White" Click="Trilogy_Button_Click"  Width="250" Height="250" Padding="15,0" Canvas.Left="245" Canvas.Top="45"/>
         <Button x:Name="diary_button" Template="{DynamicResource HexagonButtonTemplate}" Content="/InteractiveTable;component/Images/Legacy/Diary.png" Tag="{DynamicResource l_Diary}" MinWidth="180"
-                FontFamily="/InteractiveTable;component/Fonts/#Basil Bold"  FontSize="24" Foreground="White" Click="Diary_Button_Click"  Width="250" Height="250" Padding="15,0" Canvas.Left="126" Canvas.Top="245"/>
+                FontFamily="/InteractiveTable;component/Fonts/#Basil Bold"  FontSize="24" Foreground="White" Click="Diary_Button_Click"  Width="250" Height="250" Padding="15,0" Canvas.Left="125" Canvas.Top="245"/>
         <Button x:Name="memories_button" Template="{DynamicResource HexagonButtonTemplate}" Content="/InteractiveTable;component/Images/Legacy/Memories.png" Tag="{DynamicResource l_Memories}" MinWidth="200"
-                FontFamily="/InteractiveTable;component/Fonts/#Basil Bold"  FontSize="24" Foreground="White" Click="Memories_Button_Click"  Width="250" Height="250" Padding="15,0" Canvas.Left="362" Canvas.Top="245"/>
+                FontFamily="/InteractiveTable;component/Fonts/#Basil Bold"  FontSize="24" Foreground="White" Click="Memories_Button_Click"  Width="250" Height="250" Padding="15,0" Canvas.Left="360" Canvas.Top="245"/>
         <Button x:Name="morning_button" Template="{DynamicResource HexagonButtonTemplate}" Content="/InteractiveTable;component/Images/Legacy/MorningLandowner.png" Tag="{DynamicResource l_MorningLandowner}" MinWidth="180"
-                FontFamily="/InteractiveTable;component/Fonts/#Basil Bold"  FontSize="24" Foreground="White" Click="Morning_Button_Click"  Width="250" Height="250" Padding="15,0" Canvas.Left="243" Canvas.Top="450"/>
+                FontFamily="/InteractiveTable;component/Fonts/#Basil Bold"  FontSize="24" Foreground="White" Click="Morning_Button_Click"  Width="250" Height="250" Padding="15,0" Canvas.Left="245" Canvas.Top="450"/>
+
+        <Button x:Name="cossacks_button" Template="{DynamicResource HexagonButtonTemplate}" Content="/InteractiveTable;component/Images/Legacy/Cossacks.png" Tag="{DynamicResource l_Cossacks}" MinWidth="180"
+                FontFamily="/InteractiveTable;component/Fonts/#Basil Bold"  FontSize="24" Foreground="White" Click="Cossacks_Button_Click"  Width="250" Height="250" Padding="15,0" Canvas.Left="1110" Canvas.Top="45"/>
+        <Button x:Name="war_and_peace_button" Template="{DynamicResource HexagonButtonTemplate}" Content="/InteractiveTable;component/Images/Legacy/WarAndPeace.png" Tag="{DynamicResource l_WarAndPeace}" MinWidth="90"
+                FontFamily="/InteractiveTable;component/Fonts/#Basil Bold"  FontSize="24" Foreground="White" Click="War_And_Peace_Button_Click"  Width="250" Height="250" Padding="15,0" Canvas.Left="1350" Canvas.Top="45"/>
+        <Button x:Name="after_ball_button" Template="{DynamicResource HexagonButtonTemplate}" Content="/InteractiveTable;component/Images/Legacy/AfterBall.png" Tag="{DynamicResource l_AfterBall}" MinWidth="90"
+                FontFamily="/InteractiveTable;component/Fonts/#Basil Bold"  FontSize="24" Foreground="White" Click="After_Ball_Button_Click"  Width="250" Height="250" Padding="15,0" Canvas.Left="990" Canvas.Top="245"/>
+        <Button x:Name="yule_night_button" Template="{DynamicResource HexagonButtonTemplate}" Content="/InteractiveTable;component/Images/Legacy/YuleNight.png" Tag="{DynamicResource l_YuleNight}" MinWidth="180"
+                FontFamily="/InteractiveTable;component/Fonts/#Basil Bold"  FontSize="24" Foreground="White" Click="Yule_Night_Button_Click"  Width="250" Height="250" Padding="15,0" Canvas.Left="1225" Canvas.Top="245"/>
+        <Button x:Name="oasis_button" Template="{DynamicResource HexagonButtonTemplate}" Content="/InteractiveTable;component/Images/Legacy/Oasis.png" Tag="{DynamicResource l_Oasis}" MinWidth="180"
+                FontFamily="/InteractiveTable;component/Fonts/#Basil Bold"  FontSize="24" Foreground="White" Click="Oasis_Button_Click"  Width="250" Height="250" Padding="15,0" Canvas.Left="1110" Canvas.Top="450"/>
     </Canvas>
 </Page>

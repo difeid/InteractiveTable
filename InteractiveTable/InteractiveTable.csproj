@@ -246,9 +246,6 @@
     <Resource Include="Images\Legacy\AfterBall.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Images\Legacy\LegacyMaket.png" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="Images\Legacy\Cossacks.png" />
   </ItemGroup>
   <ItemGroup>
