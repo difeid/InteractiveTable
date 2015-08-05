@@ -267,9 +267,6 @@
     <Resource Include="Images\Legacy\Oasis.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Images\Legacy\RulesoOfLife.png" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="Images\Legacy\Trilogy.png" />
   </ItemGroup>
   <ItemGroup>
@@ -277,6 +274,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\Legacy\YuleNight.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Legacy\RulesOfLife.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\Expression\Blend\.NETFramework\v4.5\Microsoft.Expression.Blend.WPF.targets" />

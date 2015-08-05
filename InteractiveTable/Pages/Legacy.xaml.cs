@@ -24,5 +24,35 @@ namespace InteractiveTable.Pages
         {
             InitializeComponent();
         }
+
+        private void Back_Button_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Rules_Of_Life_Button_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Trilogy_Button_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Diary_Button_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Memories_Button_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Morning_Button_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
