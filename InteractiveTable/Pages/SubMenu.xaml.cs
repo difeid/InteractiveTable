@@ -32,7 +32,7 @@ namespace InteractiveTable.Pages
 
         private void Milestones_Button_Click(object sender, RoutedEventArgs e)
         {
-
+            this.NavigationService.GoBack();
         }
 
         private void Pedigree_Button_Click(object sender, RoutedEventArgs e)
