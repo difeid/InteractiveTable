@@ -47,7 +47,7 @@ namespace InteractiveTable.Pages
 
         private void Biography_Button_Click(object sender, RoutedEventArgs e)
         {
-            this.NavigationService.Navigate("/InteractiveTable;component/Pages/SubMenu.xaml");
+            this.NavigationService.Navigate(new Uri("Pages/SubMenu.xaml", UriKind.Relative));
         }
     }
 }
