@@ -225,9 +225,6 @@
     <Resource Include="Images\MainMenu\MainMenuBackground.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Images\MainMenu\MainMenu.png" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="Images\MainMenu\Biography.png" />
   </ItemGroup>
   <ItemGroup>
