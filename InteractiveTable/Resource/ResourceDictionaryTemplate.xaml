@@ -3,7 +3,7 @@
 	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:ed="http://schemas.microsoft.com/expression/2010/drawing" mc:Ignorable="d">
 	
     <!--Шаблон кнопок выбора языка-->
-    <ControlTemplate x:Key="LanguageButtonTemplate" TargetType="{x:Type Button}">
+    <ControlTemplate x:Key="HexagonButtonTemplate" TargetType="{x:Type Button}">
         <Grid x:Name="language_grid" Cursor="Hand" RenderTransformOrigin="0.5,0.5">
             <Grid.RenderTransform>
 				<TransformGroup>
@@ -38,9 +38,9 @@
 					<VisualState x:Name="Disabled"/>
 				</VisualStateGroup>
 			</VisualStateManager.VisualStateGroups>
-			<ed:RegularPolygon  HorizontalAlignment="Stretch" InnerRadius="1" PointCount="6" Stretch="Fill" VerticalAlignment="Stretch">
+			<ed:RegularPolygon  HorizontalAlignment="Stretch" InnerRadius="1" PointCount="6" Stretch="Fill" VerticalAlignment="Stretch" Margin="{TemplateBinding Padding}">
 				<ed:RegularPolygon.Fill>
-					<ImageBrush ImageSource="{Binding Content, RelativeSource={RelativeSource TemplatedParent}}"/>
+					<ImageBrush ImageSource="{Binding Content, RelativeSource={RelativeSource TemplatedParent}}" Stretch="UniformToFill"/>
 				</ed:RegularPolygon.Fill>
 			</ed:RegularPolygon>
 		</Grid>

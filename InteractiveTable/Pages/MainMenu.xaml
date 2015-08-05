@@ -6,11 +6,17 @@
       mc:Ignorable="d" 
       d:DesignHeight="300" d:DesignWidth="300" Width="1600" Height="900">
 
-    <Grid>
-        <Grid.Background>
-            <ImageBrush ImageSource="/InteractiveTable;component/Images/MainMenu/MainMenuBackground.png"/>
-        </Grid.Background>
-        <Button x:Name="back_button" HorizontalAlignment="Left" VerticalAlignment="Top" Template="{DynamicResource BackButtonTemplate}" Margin="105,337,0,0" Click="Back_Button_Click"/>
-
-    </Grid>
+    <Canvas ClipToBounds="True">
+        <Canvas.Background>
+            <ImageBrush ImageSource="/InteractiveTable;component/Images/MainMenu/MainMenu.png"/>
+        </Canvas.Background>
+        <Button x:Name="back_button" Template="{DynamicResource BackButtonTemplate}" Click="Back_Button_Click" Canvas.Left="62" Canvas.Top="797"/>
+        
+        <Button x:Name="memory_button" Template="{DynamicResource HexagonButtonTemplate}" Content="/InteractiveTable;component/Images/MainMenu/Memory.png" Click="Memory_Button_Click"  Width="230" Height="230" Canvas.Left="355" Canvas.Top="-18"/>
+        <Button x:Name="student_task_button" Template="{DynamicResource HexagonButtonTemplate}" Content="/InteractiveTable;component/Images/MainMenu/StudentTask.png" Click="Student_Task_Button_Click"  Width="220" Height="220" Padding="10,0" Canvas.Left="718" Canvas.Top="448"/>
+        <Button x:Name="motiv_button" Template="{DynamicResource HexagonButtonTemplate}" Content="/InteractiveTable;component/Images/MainMenu/MotivForCreativ.png" Click="Motiv_Button_Click"  Width="220" Height="220" Padding="10,0" Canvas.Left="999" Canvas.Top="161"/>
+        <Button x:Name="biography_button" Template="{DynamicResource HexagonButtonTemplate}" Content="/InteractiveTable;component/Images/MainMenu/Biography.png" Click="Biography_Button_Click"  Width="220" Height="220" Padding="10,0" Canvas.Left="999" Canvas.Top="386"/>
+        
+        
+    </Canvas>
 </Page>

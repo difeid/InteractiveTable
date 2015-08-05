@@ -29,5 +29,25 @@ namespace InteractiveTable.Pages
         {
             this.NavigationService.GoBack();
         }
+
+        private void Memory_Button_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Student_Task_Button_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Motiv_Button_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Biography_Button_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
