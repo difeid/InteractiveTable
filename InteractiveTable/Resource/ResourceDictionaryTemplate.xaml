@@ -2,7 +2,7 @@
 	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
 	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:ed="http://schemas.microsoft.com/expression/2010/drawing" mc:Ignorable="d">
 	
-    <!--Шаблон кнопок выбора языка-->
+    <!--Шаблон 6 угольных кнопок-->
     <ControlTemplate x:Key="HexagonButtonTemplate" TargetType="{x:Type Button}">
         <Grid x:Name="language_grid" Cursor="Hand" RenderTransformOrigin="0.5,0.5">
             <Grid.RenderTransform>
@@ -43,6 +43,9 @@
 					<ImageBrush ImageSource="{Binding Content, RelativeSource={RelativeSource TemplatedParent}}" Stretch="UniformToFill"/>
 				</ed:RegularPolygon.Fill>
 			</ed:RegularPolygon>
+            <!--Грязный хак с размером текстового поля-->
+            <TextBlock Text="{Binding Tag, RelativeSource={RelativeSource TemplatedParent}}" TextWrapping="Wrap" FontFamily="{TemplateBinding FontFamily}" FontSize="{TemplateBinding FontSize}"
+                       TextAlignment="Center" MaxWidth="380" VerticalAlignment="Center" HorizontalAlignment="Center"/>
 		</Grid>
 	</ControlTemplate>
 
@@ -87,7 +90,7 @@
 				</VisualStateGroup>
 			</VisualStateManager.VisualStateGroups>
 			<Image Source="/InteractiveTable;component/Images/Arrow.png" Stretch="Fill" Width="32" Height="32"/>
-			<TextBlock Text="{DynamicResource m_BackButton}" FontFamily="/InteractiveTable;component/Fonts/#Basil Bold" FontSize="36" Grid.Column="1" Foreground="White"/>
+			<TextBlock Text="{DynamicResource g_BackButton}" FontFamily="/InteractiveTable;component/Fonts/#Basil Bold" FontSize="36" Grid.Column="1"/>
 		</Grid>
 	</ControlTemplate>
     <!-- Здесь необходимо определить записи словаря ресурсов. -->

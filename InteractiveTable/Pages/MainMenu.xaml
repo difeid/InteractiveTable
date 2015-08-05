@@ -10,7 +10,7 @@
             <ImageBrush ImageSource="/InteractiveTable;component/Images/MainMenu/MainMenuBackground.png"/>
         </Canvas.Background>
 
-        <Button x:Name="back_button" Template="{DynamicResource BackButtonTemplate}" Click="Back_Button_Click" Canvas.Left="62" Canvas.Top="797"/>
+        <Button x:Name="back_button" Template="{DynamicResource BackButtonTemplate}" Click="Back_Button_Click" Canvas.Left="60" Canvas.Top="795" Foreground="White"/>
 
         <Button x:Name="memory_button" Template="{DynamicResource HexagonButtonTemplate}" Content="/InteractiveTable;component/Images/MainMenu/Memory.png" Click="Memory_Button_Click"  Width="230" Height="230" Canvas.Left="355" Canvas.Top="-18"/>
         <Button x:Name="student_task_button" Template="{DynamicResource HexagonButtonTemplate}" Content="/InteractiveTable;component/Images/MainMenu/StudentTask.png" Click="Student_Task_Button_Click"  Width="220" Height="220" Padding="10,0" Canvas.Left="718" Canvas.Top="448"/>
