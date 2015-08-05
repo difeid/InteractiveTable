@@ -16,11 +16,11 @@ using System.Windows.Shapes;
 namespace InteractiveTable.Pages
 {
     /// <summary>
-    /// Логика взаимодействия для SubMenu.xaml
+    /// Логика взаимодействия для Family.xaml
     /// </summary>
-    public partial class SubMenu : Page
+    public partial class Family : Page
     {
-        public SubMenu()
+        public Family()
         {
             InitializeComponent();
         }
@@ -30,21 +30,30 @@ namespace InteractiveTable.Pages
             this.NavigationService.GoBack();
         }
 
-        private void Milestones_Button_Click(object sender, RoutedEventArgs e)
+        private void Father_Button_Click(object sender, RoutedEventArgs e)
         {
             this.NavigationService.GoBack();
         }
 
-        private void Pedigree_Button_Click(object sender, RoutedEventArgs e)
+        private void Mather_Button_Click(object sender, RoutedEventArgs e)
         {
-
+            this.NavigationService.GoBack();
         }
 
-        private void Family_Button_Click(object sender, RoutedEventArgs e)
+        private void Aunti_Button_Click(object sender, RoutedEventArgs e)
         {
-            this.NavigationService.Navigate(new Uri("Pages/Family.xaml", UriKind.Relative));
+            this.NavigationService.GoBack();
         }
 
-        
+        private void Brother_Sister_Button_Click(object sender, RoutedEventArgs e)
+        {
+            this.NavigationService.GoBack();
+        }
+
+        private void Wife_Children_Button_Click(object sender, RoutedEventArgs e)
+        {
+            this.NavigationService.GoBack();
+        }
+
     }
 }

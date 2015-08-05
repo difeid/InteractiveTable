@@ -4,7 +4,7 @@
 	
     <!--Шаблон 6 угольных кнопок-->
     <ControlTemplate x:Key="HexagonButtonTemplate" TargetType="{x:Type Button}">
-        <Grid x:Name="language_grid" Cursor="Hand" RenderTransformOrigin="0.5,0.5">
+        <Grid x:Name="grid" Cursor="Hand" RenderTransformOrigin="0.5,0.5">
             <Grid.RenderTransform>
 				<TransformGroup>
 					<ScaleTransform/>
@@ -19,14 +19,14 @@
 					<VisualState x:Name="MouseOver"/>
 					<VisualState x:Name="Pressed">
 						<Storyboard>
-                            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)" Storyboard.TargetName="language_grid">
+                            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)" Storyboard.TargetName="grid">
 								<EasingDoubleKeyFrame KeyTime="0:0:0.1" Value="0.95">
 									<EasingDoubleKeyFrame.EasingFunction>
 										<ExponentialEase EasingMode="EaseOut"/>
 									</EasingDoubleKeyFrame.EasingFunction>
 								</EasingDoubleKeyFrame>
 							</DoubleAnimationUsingKeyFrames>
-                            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)" Storyboard.TargetName="language_grid">
+                            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)" Storyboard.TargetName="grid">
 								<EasingDoubleKeyFrame KeyTime="0:0:0.1" Value="0.95">
 									<EasingDoubleKeyFrame.EasingFunction>
 										<ExponentialEase EasingMode="EaseOut"/>
@@ -43,7 +43,7 @@
 					<ImageBrush ImageSource="{Binding Content, RelativeSource={RelativeSource TemplatedParent}}" Stretch="UniformToFill"/>
 				</ed:RegularPolygon.Fill>
 			</ed:RegularPolygon>
-            <!--Грязный хак с размером текстового поля-->
+            <!--Грязный хак с размером текстового поля Задается в MinWidth родительского контейнера-->
             <TextBlock Text="{Binding Tag, RelativeSource={RelativeSource TemplatedParent}}" TextWrapping="Wrap" FontFamily="{TemplateBinding FontFamily}" FontSize="{TemplateBinding FontSize}"
                        TextAlignment="Center" MaxWidth="{TemplateBinding MinWidth}" VerticalAlignment="Center" HorizontalAlignment="Center"/>
 		</Grid>
@@ -93,5 +93,111 @@
 			<TextBlock Text="{DynamicResource g_BackButton}" FontFamily="/InteractiveTable;component/Fonts/#Basil Bold" FontSize="36" Grid.Column="1"/>
 		</Grid>
 	</ControlTemplate>
+
+    <!--Шаблон кнопоки father-->
+    <ControlTemplate x:Key="FatherButtonTemplate" TargetType="{x:Type Button}">
+        <Grid x:Name="father_grid" Cursor="Hand" RenderTransformOrigin="0.5,0.5">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Grid.RenderTransform>
+            <VisualStateManager.VisualStateGroups>
+                <VisualStateGroup x:Name="CommonStates">
+                    <VisualState x:Name="Normal"/>
+                    <VisualState x:Name="MouseOver"/>
+                    <VisualState x:Name="Pressed">
+                        <Storyboard>
+                            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)" Storyboard.TargetName="father_grid">
+                                <EasingDoubleKeyFrame KeyTime="0:0:0.1" Value="0.95">
+                                    <EasingDoubleKeyFrame.EasingFunction>
+                                        <ExponentialEase EasingMode="EaseOut"/>
+                                    </EasingDoubleKeyFrame.EasingFunction>
+                                </EasingDoubleKeyFrame>
+                            </DoubleAnimationUsingKeyFrames>
+                            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)" Storyboard.TargetName="father_grid">
+                                <EasingDoubleKeyFrame KeyTime="0:0:0.1" Value="0.95">
+                                    <EasingDoubleKeyFrame.EasingFunction>
+                                        <ExponentialEase EasingMode="EaseOut"/>
+                                    </EasingDoubleKeyFrame.EasingFunction>
+                                </EasingDoubleKeyFrame>
+                            </DoubleAnimationUsingKeyFrames>
+                        </Storyboard>
+                    </VisualState>
+                    <VisualState x:Name="Disabled"/>
+                </VisualStateGroup>
+            </VisualStateManager.VisualStateGroups>
+            <ed:RegularPolygon  HorizontalAlignment="Stretch" InnerRadius="1" PointCount="6" Stretch="Fill" VerticalAlignment="Stretch" Margin="{TemplateBinding Padding}" Grid.RowSpan="3">
+                <ed:RegularPolygon.Fill>
+                    <ImageBrush ImageSource="{Binding Content, RelativeSource={RelativeSource TemplatedParent}}" Stretch="UniformToFill"/>
+                </ed:RegularPolygon.Fill>
+            </ed:RegularPolygon>
+            <TextBlock Text="{DynamicResource f_Father}" FontFamily="/InteractiveTable;component/Fonts/#Basil Bold" FontSize="24" Foreground="White"
+                       TextAlignment="Center" VerticalAlignment="Bottom" HorizontalAlignment="Center" Grid.Row="0"/>
+            <TextBlock Text="{DynamicResource f_FatherName}" TextWrapping="Wrap" FontFamily="/InteractiveTable;component/Fonts/#Basil Bold" FontSize="40" Foreground="White" MaxWidth="270"
+                       TextAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="1"/>
+        </Grid>
+    </ControlTemplate>
+
+    <!--Шаблон кнопоки mather-->
+    <ControlTemplate x:Key="MatherButtonTemplate" TargetType="{x:Type Button}">
+        <Grid x:Name="mather_grid" Cursor="Hand" RenderTransformOrigin="0.5,0.5">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Grid.RenderTransform>
+            <VisualStateManager.VisualStateGroups>
+                <VisualStateGroup x:Name="CommonStates">
+                    <VisualState x:Name="Normal"/>
+                    <VisualState x:Name="MouseOver"/>
+                    <VisualState x:Name="Pressed">
+                        <Storyboard>
+                            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)" Storyboard.TargetName="mather_grid">
+                                <EasingDoubleKeyFrame KeyTime="0:0:0.1" Value="0.95">
+                                    <EasingDoubleKeyFrame.EasingFunction>
+                                        <ExponentialEase EasingMode="EaseOut"/>
+                                    </EasingDoubleKeyFrame.EasingFunction>
+                                </EasingDoubleKeyFrame>
+                            </DoubleAnimationUsingKeyFrames>
+                            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)" Storyboard.TargetName="mather_grid">
+                                <EasingDoubleKeyFrame KeyTime="0:0:0.1" Value="0.95">
+                                    <EasingDoubleKeyFrame.EasingFunction>
+                                        <ExponentialEase EasingMode="EaseOut"/>
+                                    </EasingDoubleKeyFrame.EasingFunction>
+                                </EasingDoubleKeyFrame>
+                            </DoubleAnimationUsingKeyFrames>
+                        </Storyboard>
+                    </VisualState>
+                    <VisualState x:Name="Disabled"/>
+                </VisualStateGroup>
+            </VisualStateManager.VisualStateGroups>
+            <ed:RegularPolygon  HorizontalAlignment="Stretch" InnerRadius="1" PointCount="6" Stretch="Fill" VerticalAlignment="Stretch" Margin="{TemplateBinding Padding}" Grid.RowSpan="3">
+                <ed:RegularPolygon.Fill>
+                    <ImageBrush ImageSource="{Binding Content, RelativeSource={RelativeSource TemplatedParent}}" Stretch="UniformToFill"/>
+                </ed:RegularPolygon.Fill>
+            </ed:RegularPolygon>
+            <TextBlock Text="{DynamicResource f_Mather}" FontFamily="/InteractiveTable;component/Fonts/#Basil Bold" FontSize="24" Foreground="White"
+                       TextAlignment="Center" VerticalAlignment="Bottom" HorizontalAlignment="Center" Grid.Row="0"/>
+            <TextBlock Text="{DynamicResource f_MatherName}" TextWrapping="Wrap" FontFamily="/InteractiveTable;component/Fonts/#Basil Bold" FontSize="40" Foreground="White" MaxWidth="270"
+                       TextAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="1"/>
+        </Grid>
+    </ControlTemplate>
     <!-- Здесь необходимо определить записи словаря ресурсов. -->
 </ResourceDictionary>

@@ -23,4 +23,13 @@
     <v:String x:Key="l_AfterBall">После бала</v:String>
     <v:String x:Key="l_YuleNight">Святочная ночь</v:String>
     <v:String x:Key="l_Oasis">Оазис</v:String>
+    <!--Family-->
+    <v:String x:Key="f_Father">Отец</v:String>
+    <v:String x:Key="f_FatherName">Николай Ильич Толстой</v:String>
+    <v:String x:Key="f_Mather">Мать</v:String>
+    <v:String x:Key="f_MatherName">Мария Николаевна Толстая</v:String>
+    <v:String x:Key="f_Auntie">Тетушки со стороны отца</v:String>
+    <v:String x:Key="f_BrothersSisters">Братья и сестра</v:String>
+    <v:String x:Key="f_WifeChildren">Жена и дети</v:String>
+    
 </ResourceDictionary>
