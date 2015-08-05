@@ -37,7 +37,7 @@ namespace InteractiveTable.Pages
 
         private void Pedigree_Button_Click(object sender, RoutedEventArgs e)
         {
-
+            this.NavigationService.GoBack();
         }
 
         private void Family_Button_Click(object sender, RoutedEventArgs e)
