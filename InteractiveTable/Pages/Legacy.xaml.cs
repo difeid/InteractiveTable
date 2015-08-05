@@ -16,11 +16,11 @@ using System.Windows.Shapes;
 namespace InteractiveTable.Pages
 {
     /// <summary>
-    /// Логика взаимодействия для Level32.xaml
+    /// Логика взаимодействия для Legacy.xaml
     /// </summary>
-    public partial class Level32 : Page
+    public partial class Legacy : Page
     {
-        public Level32()
+        public Legacy()
         {
             InitializeComponent();
         }
