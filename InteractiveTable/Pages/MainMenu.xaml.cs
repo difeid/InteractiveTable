@@ -37,7 +37,7 @@ namespace InteractiveTable.Pages
 
         private void Student_Task_Button_Click(object sender, RoutedEventArgs e)
         {
-
+            this.NavigationService.GoBack();
         }
 
         private void Motiv_Button_Click(object sender, RoutedEventArgs e)
