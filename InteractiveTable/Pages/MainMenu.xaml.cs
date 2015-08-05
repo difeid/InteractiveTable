@@ -42,7 +42,7 @@ namespace InteractiveTable.Pages
 
         private void Motiv_Button_Click(object sender, RoutedEventArgs e)
         {
-
+            this.NavigationService.Navigate(new Uri("Pages/Legacy.xaml", UriKind.Relative));
         }
 
         private void Biography_Button_Click(object sender, RoutedEventArgs e)
