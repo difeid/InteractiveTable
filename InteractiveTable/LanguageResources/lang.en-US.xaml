@@ -4,12 +4,23 @@
     <!-- Main window -->
     <v:String x:Key="g_BackButton">Назад</v:String>
     <!--MainMenu-->
-    <v:String x:Key="m_MemoryTextBlock">Память</v:String>
-    <v:String x:Key="m_StudentTaskTextBlock">Задания школьникам</v:String>
-    <v:String x:Key="m_MotivTextBlock">Казанские мотивы творчества Л.Н.Толстого</v:String>
-    <v:String x:Key="m_BiographyTextBlock">Биография</v:String>
+    <v:String x:Key="m_Memory">Память</v:String>
+    <v:String x:Key="m_StudentTask">Задания школьникам</v:String>
+    <v:String x:Key="m_Motiv">Казанские мотивы творчества Л.Н.Толстого</v:String>
+    <v:String x:Key="m_Biography">Биография</v:String>
     <!--SubMenu-->
-    <v:String x:Key="s_MilestonesTextBlock">Основные вехи жизни</v:String>
-    <v:String x:Key="s_PedigreeTextBlock">Родословная</v:String>
-    <v:String x:Key="s_FamilyTextBlock">Семья</v:String>
+    <v:String x:Key="s_Milestones">Основные вехи жизни</v:String>
+    <v:String x:Key="s_Pedigree">Родословная</v:String>
+    <v:String x:Key="s_Family">Семья</v:String>
+    <!--Legacy-->
+    <v:String x:Key="l_RulesOfLife">Правила жизни</v:String>
+    <v:String x:Key="l_Trilogy">Трилогия: Детство, Отрочество и Юность</v:String>
+    <v:String x:Key="l_Diary">Дневники</v:String>
+    <v:String x:Key="l_Memories">Воспоминания</v:String>
+    <v:String x:Key="l_MorningLandowner">Утро помещика</v:String>
+    <v:String x:Key="l_Cossacks">Казаки</v:String>
+    <v:String x:Key="l_WarAndPeace">Война и мир</v:String>
+    <v:String x:Key="l_AfterBall">После бала</v:String>
+    <v:String x:Key="l_YuleNight">Святочная ночь</v:String>
+    <v:String x:Key="l_Oasis">Оазис</v:String>
 </ResourceDictionary>

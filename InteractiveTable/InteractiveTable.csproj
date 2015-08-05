@@ -242,9 +242,41 @@
   <ItemGroup>
     <Resource Include="Images\SubMenu\Pedigree.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="Images\Legacy\AfterBall.png" />
+  </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\Legacy\LegacyMaket.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Legacy\Cossacks.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Legacy\Diary.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Legacy\LegacyBackground.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Legacy\Memories.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Legacy\MorningLandowner.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Legacy\Oasis.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Legacy\RulesoOfLife.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Legacy\Trilogy.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Legacy\WarAndPeace.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Legacy\YuleNight.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\Expression\Blend\.NETFramework\v4.5\Microsoft.Expression.Blend.WPF.targets" />
