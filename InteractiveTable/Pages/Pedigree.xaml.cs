@@ -23,11 +23,28 @@ namespace InteractiveTable.Pages
         public Pedigree()
         {
             InitializeComponent();
+
+            VisualBrush maglifier_brush = (VisualBrush)magnifierEllipse.Fill;
+            maglifier_brush.Visual = mainUI;
         }
 
         private void Back_Button_Click(object sender, RoutedEventArgs e)
         {
             this.NavigationService.GoBack();
+        }
+
+        private void OnMoveOverMainUI(object sender, MouseEventArgs e)
+        {
+            VisualBrush magnlifier_brush = (VisualBrush)magnifierEllipse.Fill;
+            Point position = e.MouseDevice.GetPosition(mainUI);
+            Rect viewBox = magnlifier_brush.Viewbox;
+            double xoffset = viewBox.Width / 2.0;
+            double yoffset = viewBox.Height / 2.0;
+            viewBox.X = position.X - xoffset;
+            viewBox.Y = position.Y - yoffset;
+            magnlifier_brush.Viewbox = viewBox;
+            Canvas.SetLeft(magnifierCanvas, position.X - magnifierEllipse.Width / 2);
+            Canvas.SetTop(magnifierCanvas, position.Y - magnifierEllipse.Height / 2);
         }
     }
 }

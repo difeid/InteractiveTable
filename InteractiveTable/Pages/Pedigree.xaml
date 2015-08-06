@@ -4,13 +4,24 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       mc:Ignorable="d" 
-      d:DesignHeight="300" d:DesignWidth="300" Width="1600" Height="900">
+      d:DesignHeight="300" d:DesignWidth="300" Width="1600" Height="900" PreviewMouseMove="OnMoveOverMainUI">
     <Canvas>
-        <Canvas.Background>
-            <ImageBrush ImageSource="/InteractiveTable;component/Images/Pedigree/TreePedigree.png"/>
-        </Canvas.Background>
+        <Canvas x:Name="mainUI" Width="1600" Height="900" Cursor="Cross">
+            <Canvas.Background>
+                <ImageBrush ImageSource="/InteractiveTable;component/Images/Pedigree/TreePedigree.png"/>
+            </Canvas.Background>
+        </Canvas>
         
         <Button x:Name="back_button" Template="{DynamicResource BackButtonTemplate}" Click="Back_Button_Click" Canvas.Left="60" Canvas.Top="795"/>
-
+        
+        <Canvas x:Name="magnifierCanvas" IsHitTestVisible="False">
+            <Ellipse x:Name="magnifierEllipse" Width="230" Height="230" StrokeThickness="5">
+                <Ellipse.Fill>
+                    <VisualBrush ViewboxUnits="Absolute" Viewbox="0,0,80,80"
+                         ViewportUnits="RelativeToBoundingBox" Viewport="0,0,1,1"/>
+                </Ellipse.Fill>
+            </Ellipse>
+            <Image Source="/InteractiveTable;component/Images/Pedigree/Magnifier.png" Stretch="Fill" Width="330" Height="480"/>
+        </Canvas>
     </Canvas>
 </Page>

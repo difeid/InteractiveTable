@@ -37,7 +37,7 @@ namespace InteractiveTable.Pages
 
         private void Pedigree_Button_Click(object sender, RoutedEventArgs e)
         {
-            this.NavigationService.GoBack();
+            this.NavigationService.Navigate(new Uri("Pages/Pedigree.xaml", UriKind.Relative));
         }
 
         private void Family_Button_Click(object sender, RoutedEventArgs e)
