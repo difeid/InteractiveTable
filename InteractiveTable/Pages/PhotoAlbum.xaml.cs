@@ -30,5 +30,14 @@ namespace InteractiveTable.Pages
             this.NavigationService.GoBack();
         }
 
+        private void Next_Foto_Button_Click(object sender, RoutedEventArgs e)
+        {
+            this.NavigationService.GoBack();
+        }
+
+        private void Back_Foto_Button_Click(object sender, RoutedEventArgs e)
+        {
+            this.NavigationService.GoBack();
+        }
     }
 }

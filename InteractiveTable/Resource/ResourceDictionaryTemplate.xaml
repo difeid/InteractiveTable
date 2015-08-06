@@ -199,5 +199,45 @@
                        TextAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="1"/>
         </Grid>
     </ControlTemplate>
+
+    <!--Шаблон кнопок фото альбома-->
+    <ControlTemplate x:Key="FotoNavButtonTemplate" TargetType="{x:Type Button}">
+        <Grid x:Name="nav_grid" Cursor="Hand" RenderTransformOrigin="0.5,0.5">
+            <Grid.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Grid.RenderTransform>
+            <VisualStateManager.VisualStateGroups>
+                <VisualStateGroup x:Name="CommonStates">
+                    <VisualState x:Name="Normal"/>
+                    <VisualState x:Name="MouseOver"/>
+                    <VisualState x:Name="Pressed">
+                        <Storyboard>
+                            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)" Storyboard.TargetName="nav_grid">
+                                <EasingDoubleKeyFrame KeyTime="0:0:0.1" Value="0.95">
+                                    <EasingDoubleKeyFrame.EasingFunction>
+                                        <ExponentialEase EasingMode="EaseOut"/>
+                                    </EasingDoubleKeyFrame.EasingFunction>
+                                </EasingDoubleKeyFrame>
+                            </DoubleAnimationUsingKeyFrames>
+                            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)" Storyboard.TargetName="nav_grid">
+                                <EasingDoubleKeyFrame KeyTime="0:0:0.1" Value="0.95">
+                                    <EasingDoubleKeyFrame.EasingFunction>
+                                        <ExponentialEase EasingMode="EaseOut"/>
+                                    </EasingDoubleKeyFrame.EasingFunction>
+                                </EasingDoubleKeyFrame>
+                            </DoubleAnimationUsingKeyFrames>
+                        </Storyboard>
+                    </VisualState>
+                    <VisualState x:Name="Disabled"/>
+                </VisualStateGroup>
+            </VisualStateManager.VisualStateGroups>
+            <Image Source="{Binding Content, RelativeSource={RelativeSource TemplatedParent}}" Stretch="Fill"/>
+        </Grid>
+    </ControlTemplate>
     <!-- Здесь необходимо определить записи словаря ресурсов. -->
 </ResourceDictionary>
