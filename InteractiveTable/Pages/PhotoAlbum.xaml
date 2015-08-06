@@ -12,6 +12,6 @@
         <Button x:Name="next_foto_button" Template="{DynamicResource FotoNavButtonTemplate}" Content="/InteractiveTable;component/Images/PhotoAlbum/NextArrow.png" Click="Next_Foto_Button_Click" Canvas.Left="1480" Canvas.Top="150" Width="100" Height="600"/>
         <Button x:Name="back_foto_button" Template="{DynamicResource FotoNavButtonTemplate}" Content="/InteractiveTable;component/Images/PhotoAlbum/BackArrow.png" Click="Back_Foto_Button_Click" Canvas.Left="20" Canvas.Top="150" Width="100" Height="600"/>
         
-        <pageTransitions:PageTransition Width="1300" Height="700" Canvas.Left="150" Canvas.Top="90" TransitionType="Slide"/>
+        <pageTransitions:PageTransition Width="1300" Height="700" Canvas.Left="150" Canvas.Top="90" TransitionType="Slide" HorizontalAlignment="Center" VerticalAlignment="Center" ClipToBounds="True"/>
     </Canvas>
 </Page>

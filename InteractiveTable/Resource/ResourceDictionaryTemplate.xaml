@@ -45,7 +45,7 @@
 			</ed:RegularPolygon>
             <!--Грязный хак с размером текстового поля Задается в MinWidth родительского контейнера-->
             <TextBlock Text="{Binding Tag, RelativeSource={RelativeSource TemplatedParent}}" TextWrapping="Wrap" FontFamily="{TemplateBinding FontFamily}" FontSize="{TemplateBinding FontSize}"
-                       TextAlignment="Center" MaxWidth="{TemplateBinding MinWidth}" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                       TextAlignment="Center" MaxWidth="{Binding MinWidth}" VerticalAlignment="Center" HorizontalAlignment="Center"/>
 		</Grid>
 	</ControlTemplate>
 
