@@ -16,13 +16,18 @@ using System.Windows.Shapes;
 namespace InteractiveTable.Pages
 {
     /// <summary>
-    /// Логика взаимодействия для Level4.xaml
+    /// Логика взаимодействия для Pedigree.xaml
     /// </summary>
-    public partial class Level4 : Page
+    public partial class Pedigree : Page
     {
-        public Level4()
+        public Pedigree()
         {
             InitializeComponent();
+        }
+
+        private void Back_Button_Click(object sender, RoutedEventArgs e)
+        {
+            this.NavigationService.GoBack();
         }
     }
 }

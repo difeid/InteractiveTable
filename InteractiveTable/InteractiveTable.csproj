@@ -115,7 +115,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Pages\Level4.xaml">
+    <Page Include="Pages\Pedigree.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -145,8 +145,8 @@
     <Compile Include="Pages\Family.xaml.cs">
       <DependentUpon>Family.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\Level4.xaml.cs">
-      <DependentUpon>Level4.xaml</DependentUpon>
+    <Compile Include="Pages\Pedigree.xaml.cs">
+      <DependentUpon>Pedigree.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
@@ -275,7 +275,9 @@
   <ItemGroup>
     <Resource Include="Images\Legacy\RulesOfLife.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="Images\Pedigree\TreePedigree.png" />
+  </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\Family\Auntie.png" />
   </ItemGroup>
