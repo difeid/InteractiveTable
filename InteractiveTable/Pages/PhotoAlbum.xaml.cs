@@ -33,7 +33,6 @@ namespace InteractiveTable.Pages
             Photo newPage = new Photo(count);
             pageStack.Push(newPage);
             photoPage.ShowPage(newPage);
-            //photoPage.TransitionType = (PageTransitionType)Enum.Parse(typeof(PageTransitionType), "Slide", true);
         }
 
         private void Back_Button_Click(object sender, RoutedEventArgs e)
@@ -48,6 +47,7 @@ namespace InteractiveTable.Pages
                 count++;
                 Photo newPage = new Photo(count);
                 pageStack.Push(newPage);
+                photoPage.TransitionType = PageTransitionType.Slide;
                 photoPage.ShowPage(newPage);
                 if (count == maxCountPage)
                 {
@@ -65,6 +65,7 @@ namespace InteractiveTable.Pages
             if (count > 0)
             {
                 count--;
+                photoPage.TransitionType = PageTransitionType.SlideBack;
                 photoPage.ShowPage(pageStack.Pop());
                 if (count == 0)
                 {

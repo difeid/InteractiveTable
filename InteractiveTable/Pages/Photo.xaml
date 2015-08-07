@@ -19,7 +19,7 @@
             <Image Source="/InteractiveTable;component/Images/PhotoAlbum/RightTopClip.png" Width="110" Height="110" HorizontalAlignment="Right" VerticalAlignment="Top"/>
             <Image Source="/InteractiveTable;component/Images/PhotoAlbum/RightBottomClip.png" Width="110" Height="110" HorizontalAlignment="Right" VerticalAlignment="Bottom"/>
         </Grid>
-        <FlowDocumentScrollViewer VerticalAlignment="Center" Grid.Column="1">
+        <FlowDocumentScrollViewer VerticalAlignment="Center" Grid.Column="1" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Disabled">
             <FlowDocument FontFamily="/InteractiveTable;component/Fonts/#Roboto" FontSize="14" TextAlignment="Left">
                 <Paragraph FontWeight="Bold">
                     <Run x:Name="photoTextTitle"/>

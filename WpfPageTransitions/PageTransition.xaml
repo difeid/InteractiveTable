@@ -40,14 +40,23 @@
 
 		<!-- Slide -->
 		<Storyboard x:Key="SlideIn" >
-			<ThicknessAnimation Duration="0:0:.75" Storyboard.TargetProperty="Margin" From="500,0,-500,0" To="0" DecelerationRatio=".9" />
+			<ThicknessAnimation Duration="0:0:.75" Storyboard.TargetProperty="Margin" From="1500,0,-1500,0" To="0" DecelerationRatio=".9" />
 		</Storyboard>
 
 		<Storyboard x:Key="SlideOut">
-			<ThicknessAnimation Duration="0:0:.5" Storyboard.TargetProperty="Margin" To="-500,0,500,0" AccelerationRatio=".9"/>
+			<ThicknessAnimation Duration="0:0:.5" Storyboard.TargetProperty="Margin" To="-1500,0,1500,0" AccelerationRatio=".9"/>
 		</Storyboard>
 
-		<!-- Grow -->
+        <!-- SlideBack -->
+        <Storyboard x:Key="SlideBackIn" >
+            <ThicknessAnimation Duration="0:0:.75" Storyboard.TargetProperty="Margin" From="-1500,0,1500,0" To="0" DecelerationRatio=".9" />
+        </Storyboard>
+
+        <Storyboard x:Key="SlideBackOut">
+            <ThicknessAnimation Duration="0:0:.5" Storyboard.TargetProperty="Margin" To="1500,0,-1500,0" AccelerationRatio=".9"/>
+        </Storyboard>
+
+        <!-- Grow -->
 		<Storyboard x:Key="GrowIn" >
 			<DoubleAnimation Storyboard.TargetProperty="(RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)" From="0" To="1" Duration="0:0:.75" DecelerationRatio=".9" />
 			<DoubleAnimation Storyboard.TargetProperty="(RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)" From="0" To="1" Duration="0:0:.75" DecelerationRatio=".9" />

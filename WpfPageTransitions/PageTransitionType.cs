@@ -9,6 +9,7 @@ namespace WpfPageTransitions
 	{
 		Fade,
 		Slide,
+        SlideBack,
 		SlideAndFade,
 		Grow,
 		GrowAndFade,
