@@ -18,9 +18,9 @@ namespace InteractiveTable.Pages
     /// <summary>
     /// Логика взаимодействия для Photo.xaml
     /// </summary>
-    public partial class Photo : Page
+    public partial class Photo : UserControl
     {
-        public Photo()
+        public Photo(int index)
         {
             InitializeComponent();
             //ImageSource imageSource = q.Source;

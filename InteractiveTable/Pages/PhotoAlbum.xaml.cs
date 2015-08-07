@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using WpfPageTransitions;
 
 namespace InteractiveTable.Pages
 {
@@ -20,9 +21,19 @@ namespace InteractiveTable.Pages
     /// </summary>
     public partial class PhotoAlbum : Page
     {
+        private Stack<UserControl> pageStack = new Stack<UserControl>();
+        private int count = 0;
+        private int maxCountPage = 5;
+
         public PhotoAlbum()
         {
             InitializeComponent();
+            count = 0;
+            back_foto_button.Visibility = Visibility.Hidden;
+            Photo newPage = new Photo(count);
+            pageStack.Push(newPage);
+            photoPage.ShowPage(newPage);
+            //photoPage.TransitionType = (PageTransitionType)Enum.Parse(typeof(PageTransitionType), "Slide", true);
         }
 
         private void Back_Button_Click(object sender, RoutedEventArgs e)
@@ -32,12 +43,38 @@ namespace InteractiveTable.Pages
 
         private void Next_Foto_Button_Click(object sender, RoutedEventArgs e)
         {
-            this.NavigationService.GoBack();
+            if (count < maxCountPage)
+            {
+                count++;
+                Photo newPage = new Photo(count);
+                pageStack.Push(newPage);
+                photoPage.ShowPage(newPage);
+                if (count == maxCountPage)
+                {
+                    next_foto_button.Visibility = Visibility.Hidden;
+                }
+            }
+            if (count == 1)
+            {
+                back_foto_button.Visibility = Visibility.Visible;
+            }
         }
 
         private void Back_Foto_Button_Click(object sender, RoutedEventArgs e)
         {
-            this.NavigationService.GoBack();
+            if (count > 0)
+            {
+                count--;
+                photoPage.ShowPage(pageStack.Pop());
+                if (count == 0)
+                {
+                    back_foto_button.Visibility = Visibility.Hidden;
+                }
+            }
+            if (count == maxCountPage-2)
+            {
+                next_foto_button.Visibility = Visibility.Visible;
+            }
         }
     }
 }
