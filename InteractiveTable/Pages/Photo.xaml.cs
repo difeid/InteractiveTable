@@ -23,6 +23,9 @@ namespace InteractiveTable.Pages
         public Photo()
         {
             InitializeComponent();
+            //ImageSource imageSource = q.Source;
+            //BitmapImage bitmapImage = (BitmapImage)imageSource;
+            //int asd = bitmapImage.PixelHeight;
         }
     }
 }
