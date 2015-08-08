@@ -29,5 +29,11 @@ namespace InteractiveTable.Pages
         {
             this.NavigationService.GoBack();
         }
+
+        private void Year_Button_Click(object sender, RoutedEventArgs e)
+        {
+            string name = (sender as Button).Name.Substring(1, 4);
+            MessageBox.Show(name);
+        }
     }
 }
