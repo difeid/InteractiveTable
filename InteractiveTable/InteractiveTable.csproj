@@ -230,6 +230,7 @@
     </BlendEmbeddedFont>
     <Resource Include="Images\Intro\Kazan.jpg" />
     <Resource Include="Images\MainMenu\Memory.png" />
+    <Resource Include="Images\Timeline\TimelineMaket.png" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\Background.png" />
@@ -360,7 +361,6 @@
     <Resource Include="Images\Timeline\1854.png" />
     <Resource Include="Images\Timeline\1855.png" />
     <Resource Include="Images\Timeline\1856.png" />
-    <Resource Include="Images\Timeline\TimelineMaket.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\Expression\Blend\.NETFramework\v4.5\Microsoft.Expression.Blend.WPF.targets" />
