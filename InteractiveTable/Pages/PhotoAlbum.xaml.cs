@@ -22,17 +22,38 @@ namespace InteractiveTable.Pages
     public partial class PhotoAlbum : Page
     {
         private Stack<UserControl> pageStack = new Stack<UserControl>();
+        private Photo currentPage;
+        private Photo nextPage;
+        System.Windows.Threading.DispatcherTimer timer;
         private int count = 0;
-        private int maxCountPage = 5;
+        private int maxCountPage = 3; //ВНИМАНИЕ! Следить за наличием картинок. Нет проверки.
 
         public PhotoAlbum()
         {
             InitializeComponent();
-            count = 0;
+            // Таймер
+            timer = new System.Windows.Threading.DispatcherTimer(); 
+            timer.Tick += new EventHandler(timer_Stop);
+            timer.Interval = TimeSpan.FromSeconds(1);
             back_foto_button.Visibility = Visibility.Hidden;
-            Photo newPage = new Photo(count);
-            pageStack.Push(newPage);
-            photoPage.ShowPage(newPage);
+            currentPage = new Photo(count);
+            photoPage.ShowPage(currentPage);
+            timer_Start();
+            pageStack.Push(currentPage);
+            nextPage = new Photo(count + 1);
+        }
+
+        private void timer_Start()
+        {
+            next_foto_button.IsEnabled = false;
+            back_foto_button.IsEnabled = false;
+            timer.Start();
+        }
+
+        private void timer_Stop(object sender, EventArgs e)
+        {
+            next_foto_button.IsEnabled = true;
+            back_foto_button.IsEnabled = true;
         }
 
         private void Back_Button_Click(object sender, RoutedEventArgs e)
@@ -42,21 +63,26 @@ namespace InteractiveTable.Pages
 
         private void Next_Foto_Button_Click(object sender, RoutedEventArgs e)
         {
-            if (count < maxCountPage)
+            if (count < maxCountPage - 1)
             {
                 count++;
-                Photo newPage = new Photo(count);
-                pageStack.Push(newPage);
+                currentPage = nextPage;
                 photoPage.TransitionType = PageTransitionType.Slide;
-                photoPage.ShowPage(newPage);
-                if (count == maxCountPage)
+                photoPage.ShowPage(currentPage);
+                timer_Start();
+                pageStack.Push(currentPage);
+                if (count == maxCountPage - 1)
                 {
                     next_foto_button.Visibility = Visibility.Hidden;
                 }
             }
-            if (count == 1)
+            if (count > 0)
             {
                 back_foto_button.Visibility = Visibility.Visible;
+            }
+            if (count < maxCountPage - 1)
+            { 
+                nextPage = new Photo(count + 1); 
             }
         }
 
@@ -65,14 +91,17 @@ namespace InteractiveTable.Pages
             if (count > 0)
             {
                 count--;
+                nextPage = (Photo)pageStack.Pop();
+                currentPage = (Photo)pageStack.Peek();
                 photoPage.TransitionType = PageTransitionType.SlideBack;
-                photoPage.ShowPage(pageStack.Pop());
+                photoPage.ShowPage(currentPage);
+                timer_Start();
                 if (count == 0)
                 {
                     back_foto_button.Visibility = Visibility.Hidden;
                 }
             }
-            if (count == maxCountPage-2)
+            if (count < maxCountPage)
             {
                 next_foto_button.Visibility = Visibility.Visible;
             }

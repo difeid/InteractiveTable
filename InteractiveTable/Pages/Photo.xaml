@@ -5,13 +5,13 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       mc:Ignorable="d" 
       d:DesignHeight="700" d:DesignWidth="1330">
-    <Grid UseLayoutRounding="True" MaxWidth="1330" MaxHeight="700">
+    <Grid UseLayoutRounding="True" MaxWidth="1330" MaxHeight="700" HorizontalAlignment="Center">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="Auto"/>
-            <ColumnDefinition/>
+            <ColumnDefinition Width="Auto"/>
         </Grid.ColumnDefinitions>
         <Grid VerticalAlignment="Center" MaxWidth="1000" MaxHeight="650">
-            <Border x:Name="photoBorder" BorderBrush="White" BorderThickness="20" Margin="10">
+            <Border BorderBrush="White" BorderThickness="20" Margin="10">
                 <Image x:Name="photoImage"/>
             </Border>
             <Image Source="/InteractiveTable;component/Images/PhotoAlbum/LeftTopClip.png" Width="110" Height="110" HorizontalAlignment="Left" VerticalAlignment="Top"/>
@@ -19,7 +19,7 @@
             <Image Source="/InteractiveTable;component/Images/PhotoAlbum/RightTopClip.png" Width="110" Height="110" HorizontalAlignment="Right" VerticalAlignment="Top"/>
             <Image Source="/InteractiveTable;component/Images/PhotoAlbum/RightBottomClip.png" Width="110" Height="110" HorizontalAlignment="Right" VerticalAlignment="Bottom"/>
         </Grid>
-        <FlowDocumentScrollViewer VerticalAlignment="Center" Grid.Column="1" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Disabled">
+        <FlowDocumentScrollViewer VerticalAlignment="Center" Grid.Column="1" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Disabled" MaxWidth="500">
             <FlowDocument FontFamily="/InteractiveTable;component/Fonts/#Roboto" FontSize="14" TextAlignment="Left">
                 <Paragraph FontWeight="Bold">
                     <Run x:Name="photoTextTitle"/>

@@ -7,5 +7,5 @@
         <ImageBrush ImageSource="pack://application:,,,/Images/Background.png"/>
     </Window.Background>
 
-    <dw:FaderFrame x:Name="main_frame" FadeDuration="0:0:0.15" Source="pack://application:,,,/Pages/PhotoAlbum.xaml" NavigationUIVisibility="Hidden" />
+    <dw:FaderFrame x:Name="main_frame" FadeDuration="0:0:0.15" Source="pack://application:,,,/Pages/Intro.xaml" NavigationUIVisibility="Hidden" />
 </Window>
