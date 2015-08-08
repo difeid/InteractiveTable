@@ -351,6 +351,17 @@
     <Resource Include="Images\PhotoAlbum\RightTopClip.png" />
   </ItemGroup>
   <ItemGroup />
+  <ItemGroup>
+    <Resource Include="Images\Timeline\1828.png" />
+    <Resource Include="Images\Timeline\1844.png" />
+    <Resource Include="Images\Timeline\1847.png" />
+    <Resource Include="Images\Timeline\1851.png" />
+    <Resource Include="Images\Timeline\1852.png" />
+    <Resource Include="Images\Timeline\1854.png" />
+    <Resource Include="Images\Timeline\1855.png" />
+    <Resource Include="Images\Timeline\1856.png" />
+    <Resource Include="Images\Timeline\TimelineMaket.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\Expression\Blend\.NETFramework\v4.5\Microsoft.Expression.Blend.WPF.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
