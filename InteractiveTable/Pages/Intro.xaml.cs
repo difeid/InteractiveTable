@@ -14,7 +14,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Globalization;
 
-namespace InteractiveTable
+namespace InteractiveTable.Pages
 {
     /// <summary>
     /// Логика взаимодействия для Intro.xaml
