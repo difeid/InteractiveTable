@@ -3,6 +3,7 @@
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:InteractiveTable.Pages"
       mc:Ignorable="d" 
       d:DesignHeight="300" d:DesignWidth="300" Width="1600" Height="900">
     <Grid UseLayoutRounding="True">
@@ -11,7 +12,7 @@
             <RowDefinition/>
         </Grid.RowDefinitions>
 
-        <ScrollViewer HorizontalScrollBarVisibility="Visible" VerticalScrollBarVisibility="Disabled">
+        <ScrollViewer x:Name="scrollViewer" HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Disabled">
             <Canvas Height="600" Width="2422" VerticalAlignment="Bottom">
                 <!--Кнопки-->
                 <Button x:Name="y1828_button" Click="Year_Button_Click" Template="{DynamicResource HexagonButtonTemplate}" Width="270" Height="270"
@@ -92,5 +93,7 @@
         </ScrollViewer>
 
         <Button x:Name="back_button" Template="{DynamicResource BackButtonTemplate}" Click="Back_Button_Click" Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="60,75,0,0"/>
+
+        <local:BindableScrollBar BoundScrollViewer ="{Binding ElementName=scrollViewer}"  Orientation="Horizontal" Grid.Row="1" Width="600" VerticalAlignment="Top" />
     </Grid>
 </Page>
