@@ -32,6 +32,10 @@
     <v:String x:Key="f_BrothersSisters">Братья и сестра</v:String>
     <v:String x:Key="f_WifeChildren">Жена и дети</v:String>
     <!--Timeline-->
+    <!--PopupWindow-->
+    <v:String x:Key="p_Next">дальше</v:String>
+    <v:String x:Key="p_Back">назад</v:String>
+    <v:String x:Key="p_Close">закрыть</v:String>
     <!--Photo-->
     <x:Array Type="v:String" x:Key="p_Title">
         <v:String>В день рождения Льва Львовича Толстого в Ясной Поляне 20 мая 1901 г. Фотография С.А.Толстой.</v:String>
