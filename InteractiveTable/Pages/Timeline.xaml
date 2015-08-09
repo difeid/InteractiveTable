@@ -6,15 +6,12 @@
       mc:Ignorable="d" 
       d:DesignHeight="300" d:DesignWidth="300" Width="1600" Height="900">
     <Grid UseLayoutRounding="True">
-        <Grid.Background>
-            <ImageBrush ImageSource="/InteractiveTable;component/Images/Timeline/TimelineMaket.png"/>
-        </Grid.Background>
         <Grid.RowDefinitions>
             <RowDefinition Height="720"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
 
-        <ScrollViewer HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Disabled">
+        <ScrollViewer HorizontalScrollBarVisibility="Visible" VerticalScrollBarVisibility="Disabled">
             <Canvas Height="600" Width="2422" VerticalAlignment="Bottom">
                 <!--Кнопки-->
                 <Button x:Name="y1828_button" Click="Year_Button_Click" Template="{DynamicResource HexagonButtonTemplate}" Width="270" Height="270"
@@ -39,49 +36,56 @@
                 <Path Stroke="Red" StrokeThickness="5">
                     <Path.Data>
                         <PathGeometry>
-                            <PathGeometry.Figures>
-                                <PathFigureCollection>
-                                    <PathFigure StartPoint="83,77">
-                                        <PathFigure.Segments>
-                                            <PathSegmentCollection>
-                                                <LineSegment Point="197,11"/>
-                                                <LineSegment Point="309,77"/>
-                                                <LineSegment Point="309,205"/>
-                                                <LineSegment Point="422,271"/>
-                                                <LineSegment Point="422,401"/>
-                                                <LineSegment Point="535,336"/>
-                                                <LineSegment Point="535,206"/>
-                                                <LineSegment Point="647,141"/>
-                                                <LineSegment Point="759,206"/>
-                                                <LineSegment Point="759,77"/>
-                                                <LineSegment Point="872,11"/>
-                                                <LineSegment Point="984,77"/>
-                                                <LineSegment Point="984,206"/>
-                                                <LineSegment Point="1097,271"/>
-                                                <LineSegment Point="1097,401"/>
-                                                <LineSegment Point="1210,336"/>
-                                                <LineSegment Point="1210,206"/>
-                                                <LineSegment Point="1322,141"/>
-                                                <LineSegment Point="1435,206"/>
-                                                <LineSegment Point="1435,77"/>
-                                                <LineSegment Point="1548,11"/>
-                                                <LineSegment Point="1661,77"/>
-                                                <LineSegment Point="1661,206"/>
-                                                <LineSegment Point="1774,271"/>
-                                                <LineSegment Point="1774,401"/>
-                                                <LineSegment Point="1887,336"/>
-                                                <LineSegment Point="1887,206"/>
-                                                <LineSegment Point="2000,141"/>
-                                                <LineSegment Point="2113,206"/>
-                                                <LineSegment Point="2113,77"/>
-                                                <LineSegment Point="2226,11"/>
-                                                <LineSegment Point="2339,77"/>
-                                            </PathSegmentCollection>
-                                        </PathFigure.Segments>
-                                    </PathFigure>
-                                </PathFigureCollection>
-                            </PathGeometry.Figures>
+                            <PathFigure StartPoint="83,77">
+                                <LineSegment Point="197,11"/>
+                                <LineSegment Point="309,77"/>
+                                <LineSegment Point="309,205"/>
+                                <LineSegment Point="422,271"/>
+                                <LineSegment Point="422,401"/>
+                                <LineSegment Point="535,336"/>
+                                <LineSegment Point="535,206"/>
+                                <LineSegment Point="647,141"/>
+                                <LineSegment Point="759,206"/>
+                                <LineSegment Point="759,77"/>
+                                <LineSegment Point="872,11"/>
+                                <LineSegment Point="984,77"/>
+                                <LineSegment Point="984,206"/>
+                                <LineSegment Point="1097,271"/>
+                                <LineSegment Point="1097,401"/>
+                                <LineSegment Point="1210,336"/>
+                                <LineSegment Point="1210,206"/>
+                                <LineSegment Point="1322,141"/>
+                                <LineSegment Point="1435,206"/>
+                                <LineSegment Point="1435,77"/>
+                                <LineSegment Point="1548,11"/>
+                                <LineSegment Point="1661,77"/>
+                                <LineSegment Point="1661,206"/>
+                                <LineSegment Point="1774,271"/>
+                                <LineSegment Point="1774,401"/>
+                                <LineSegment Point="1887,336"/>
+                                <LineSegment Point="1887,206"/>
+                                <LineSegment Point="2000,141"/>
+                                <LineSegment Point="2113,206"/>
+                                <LineSegment Point="2113,77"/>
+                                <LineSegment Point="2226,11"/>
+                                <LineSegment Point="2339,77"/>
+                            </PathFigure>
                         </PathGeometry>
+                    </Path.Data>
+                </Path>
+                <Path Fill="Red">
+                    <Path.Data>
+                        <GeometryGroup>
+                            <EllipseGeometry RadiusX="8" RadiusY="8" Center="85,76"/>
+                            <EllipseGeometry RadiusX="8" RadiusY="8" Center="310,204"/>
+                            <EllipseGeometry RadiusX="8" RadiusY="8" Center="535,336"/>
+                            <EllipseGeometry RadiusX="8" RadiusY="8" Center="647,143"/>
+                            <EllipseGeometry RadiusX="8" RadiusY="8" Center="985,75"/>
+                            <EllipseGeometry RadiusX="8" RadiusY="8" Center="1097,270"/>
+                            <EllipseGeometry RadiusX="8" RadiusY="8" Center="1210,336"/>
+                            <EllipseGeometry RadiusX="8" RadiusY="8" Center="1322,141"/>
+                            <EllipseGeometry RadiusX="8" RadiusY="8" Center="1547,11"/>
+                        </GeometryGroup>
                     </Path.Data>
                 </Path>
             </Canvas>
