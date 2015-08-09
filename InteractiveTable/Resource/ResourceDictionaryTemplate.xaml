@@ -206,8 +206,8 @@
 		</Grid>
 	</ControlTemplate>
 
-    <!--Шаблон кнопок фото альбома-->
-	<ControlTemplate x:Key="FotoNavButtonTemplate" TargetType="{x:Type Button}">
+    <!--Шаблон кнопок вперед назад-->
+	<ControlTemplate x:Key="NavButtonTemplate" TargetType="{x:Type Button}">
 		<Grid x:Name="nav_grid" Cursor="Hand" RenderTransformOrigin="0.5,0.5">
 			<Grid.RenderTransform>
 				<TransformGroup>
@@ -242,8 +242,10 @@
 					<VisualState x:Name="Disabled"/>
 				</VisualStateGroup>
 			</VisualStateManager.VisualStateGroups>
-			<Image Source="{Binding Content, RelativeSource={RelativeSource TemplatedParent}}" Stretch="Fill"/>
-		</Grid>
+            <Image Source="{Binding Content, RelativeSource={RelativeSource TemplatedParent}}" Stretch="Fill"/>
+            <TextBlock Text="{Binding Tag, RelativeSource={RelativeSource TemplatedParent}}" FontFamily="{TemplateBinding FontFamily}" FontSize="{TemplateBinding FontSize}"
+				TextAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        </Grid>
 	</ControlTemplate>
 
     <!--Стиль полосы прокрутки-->
