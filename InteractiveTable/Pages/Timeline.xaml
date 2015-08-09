@@ -94,6 +94,6 @@
 
         <Button x:Name="back_button" Template="{DynamicResource BackButtonTemplate}" Click="Back_Button_Click" Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="60,75,0,0"/>
 
-        <local:BindableScrollBar BoundScrollViewer ="{Binding ElementName=scrollViewer}"  Orientation="Horizontal" Grid.Row="1" Width="600" VerticalAlignment="Top" Style="{DynamicResource TimelineScrollBarStyle}" />
+        <local:BindableScrollBar BoundScrollViewer ="{Binding ElementName=scrollViewer}"  Orientation="Horizontal" Grid.Row="1" Width="600" VerticalAlignment="Top" Style="{DynamicResource TimelineScrollBarStyle}"/>
     </Grid>
 </Page>
