@@ -10,9 +10,9 @@
         <Button x:Name="back_button" Template="{DynamicResource BackButtonTemplate}" Click="Back_Button_Click" Canvas.Left="60" Canvas.Top="795"/>
 
         
-        <Button x:Name="back_foto_button" Template="{DynamicResource FotoNavButtonTemplate}" Content="/InteractiveTable;component/Images/PhotoAlbum/BackArrow.png"
+        <Button x:Name="back_foto_button" Template="{DynamicResource NavButtonTemplate}" Content="/InteractiveTable;component/Images/PhotoAlbum/BackArrow.png"
                 Click="Back_Foto_Button_Click" Canvas.Left="20" Canvas.Top="150" Width="100" Height="600"/>
-        <Button x:Name="next_foto_button" Template="{DynamicResource FotoNavButtonTemplate}" Content="/InteractiveTable;component/Images/PhotoAlbum/NextArrow.png"
+        <Button x:Name="next_foto_button" Template="{DynamicResource NavButtonTemplate}" Content="/InteractiveTable;component/Images/PhotoAlbum/NextArrow.png"
                 Click="Next_Foto_Button_Click" Canvas.Left="1480" Canvas.Top="150" Width="100" Height="600"/>
         
         <pageTransitions:PageTransition x:Name="photoPage" Width="1320" Height="700" Canvas.Left="140" Canvas.Top="90" TransitionType="Fade"
