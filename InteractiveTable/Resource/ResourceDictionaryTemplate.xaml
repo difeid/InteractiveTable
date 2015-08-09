@@ -256,47 +256,12 @@
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type Pages:BindableScrollBar}">
                     <Grid x:Name="Bg" SnapsToDevicePixels="True">
-                        <Track x:Name="PART_Track" IsEnabled="{TemplateBinding IsMouseOver}">
-                            <!--<Track.DecreaseRepeatButton>
-                                <RepeatButton Command="ScrollBar.LineLeftCommand">
-                                    <RepeatButton.Style>
-                                        <Style TargetType="{x:Type RepeatButton}">
-                                            <Setter Property="OverridesDefaultStyle" Value="True"/>
-                                            <Setter Property="Background" Value="Transparent"/>
-                                            <Setter Property="Focusable" Value="False"/>
-                                            <Setter Property="IsTabStop" Value="False"/>
-                                            <Setter Property="Template">
-                                                <Setter.Value>
-                                                    <ControlTemplate TargetType="{x:Type RepeatButton}">
-                                                        <Rectangle Fill="{TemplateBinding Background}" Height="{TemplateBinding Height}" Width="{TemplateBinding Width}"/>
-                                                    </ControlTemplate>
-                                                </Setter.Value>
-                                            </Setter>
-                                        </Style>
-                                    </RepeatButton.Style>
-                                </RepeatButton>
-                            </Track.DecreaseRepeatButton>
-                            <Track.IncreaseRepeatButton>
-                                <RepeatButton Command="ScrollBar.LineRightCommand">
-                                    <RepeatButton.Style>
-                                        <Style TargetType="{x:Type RepeatButton}">
-                                            <Setter Property="OverridesDefaultStyle" Value="True"/>
-                                            <Setter Property="Background" Value="Transparent"/>
-                                            <Setter Property="Focusable" Value="False"/>
-                                            <Setter Property="IsTabStop" Value="False"/>
-                                            <Setter Property="Template">
-                                                <Setter.Value>
-                                                    <ControlTemplate TargetType="{x:Type RepeatButton}">
-                                                        <Rectangle Fill="{TemplateBinding Background}" Height="{TemplateBinding Height}" Width="{TemplateBinding Width}"/>
-                                                    </ControlTemplate>
-                                                </Setter.Value>
-                                            </Setter>
-                                        </Style>
-                                    </RepeatButton.Style>
-                                </RepeatButton>
-                            </Track.IncreaseRepeatButton>-->
+                        <Grid.Background>
+                            <ImageBrush ImageSource="/InteractiveTable;component/Images/Timeline/Track.png"/>
+                        </Grid.Background>
+                        <Track x:Name="PART_Track" IsEnabled="{TemplateBinding IsMouseOver}" ViewportSize="140">
                             <Track.Thumb>
-                                <Thumb Themes:ScrollChrome.ScrollGlyph="HorizontalGripper">
+                                <Thumb Width="70" Height="100">
                                     <Thumb.Style>
                                         <Style TargetType="{x:Type Thumb}">
                                             <Setter Property="OverridesDefaultStyle" Value="True"/>
@@ -304,7 +269,7 @@
                                             <Setter Property="Template">
                                                 <Setter.Value>
                                                     <ControlTemplate TargetType="{x:Type Thumb}">
-                                                        <Themes:ScrollChrome x:Name="Chrome" RenderMouseOver="{TemplateBinding IsMouseOver}" RenderPressed="{TemplateBinding IsDragging}" SnapsToDevicePixels="True" Themes:ScrollChrome.ScrollGlyph="{TemplateBinding Themes:ScrollChrome.ScrollGlyph}"/>
+                                                        <Image Source="/InteractiveTable;component/Images/Timeline/Thumb.png"/>
                                                     </ControlTemplate>
                                                 </Setter.Value>
                                             </Setter>
@@ -314,13 +279,9 @@
                             </Track.Thumb>
                         </Track>
                     </Grid>
-                    <!--ControlTemplate.Triggers>
-                        <Trigger Property="IsEnabled" Value="False">
-                            <Setter Property="Background" TargetName="Bg" Value="#FFF4F4F4"/>
-                        </Trigger>
-                    </ControlTemplate.Triggers-->
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
 	</Style>
+    
 </ResourceDictionary>

@@ -231,7 +231,6 @@
     </BlendEmbeddedFont>
     <Resource Include="Images\Intro\Kazan.jpg" />
     <Resource Include="Images\MainMenu\Memory.png" />
-    <Resource Include="Images\Timeline\TimelineMaket.png" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\Background.png" />
