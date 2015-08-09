@@ -35,6 +35,8 @@ namespace InteractiveTable.Pages
         {
             string name = (sender as Button).Name.Substring(1, 4);
             MessageBox.Show(name);
+            PopupWindow pw = new PopupWindow();
+            pw.Show();
         }
     }
 
