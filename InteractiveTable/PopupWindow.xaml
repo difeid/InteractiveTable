@@ -6,11 +6,11 @@
     <Window.Background>
         <SolidColorBrush Color="Black" Opacity="0.5"/>
     </Window.Background>
-    <Grid>
+    <Grid Width="1600" Height="900">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition/>
-            <ColumnDefinition Width="Auto"/>
-            <ColumnDefinition/>
+            <ColumnDefinition Width="160"/>
+            <ColumnDefinition Width="1280"/>
+            <ColumnDefinition Width="160"/>
         </Grid.ColumnDefinitions>
         
         <Button x:Name="back_button" Template="{DynamicResource NavButtonTemplate}" Content="/InteractiveTable;component/Images/PopupWindow/BackArrowWhite.png" Click="Back_Button_Click"
