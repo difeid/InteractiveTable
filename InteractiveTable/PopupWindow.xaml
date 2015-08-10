@@ -26,7 +26,7 @@
             <ScrollViewer.Effect>
                 <DropShadowEffect Opacity="0.75" BlurRadius="35"/>
             </ScrollViewer.Effect>
-            <FlowDocumentScrollViewer HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Disabled">
+            <FlowDocumentScrollViewer HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Disabled" Height="1290">
                 <FlowDocument FontFamily="/InteractiveTable;component/Fonts/#Roboto" FontSize="14" TextAlignment="Left">
                     <Paragraph>
                         <Run>asdasdsfce</Run>
