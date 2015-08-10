@@ -26,7 +26,9 @@
             <ScrollViewer.Effect>
                 <DropShadowEffect Opacity="0.75" BlurRadius="35"/>
             </ScrollViewer.Effect>
-            <FlowDocumentScrollViewer x:Name="documentPage" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Disabled"/>
+            <FlowDocumentScrollViewer x:Name="documentPage" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Disabled">
+                <FlowDocument/>
+            </FlowDocumentScrollViewer>
         </ScrollViewer>
     </Grid>
 </Window>

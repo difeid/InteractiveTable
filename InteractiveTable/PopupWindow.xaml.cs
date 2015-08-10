@@ -11,6 +11,8 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using System.IO;
+using System.Windows.Markup;
 
 namespace InteractiveTable
 {
@@ -19,9 +21,20 @@ namespace InteractiveTable
     /// </summary>
     public partial class PopupWindow : Window
     {
-        public PopupWindow()
+        public PopupWindow(string year, ScrollViewer sv)
         {
             InitializeComponent();
+
+            Uri path = new Uri(String.Format("/Articles/{0}.xaml", year), UriKind.Relative);
+            try
+            {
+                FlowDocument doc = Application.LoadComponent(path) as FlowDocument;
+                documentPage.Document = doc;
+            }
+            catch (IOException)
+            {
+                MessageBox.Show("File not found");
+            }
         }
 
         private void Back_Button_Click(object sender, RoutedEventArgs e)
