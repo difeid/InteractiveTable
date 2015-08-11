@@ -77,7 +77,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Resource Include="Articles\1828.xaml">
+    <Resource Include="Articles\Timeline\1828.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Resource>
@@ -400,7 +400,9 @@
     <Resource Include="Images\Memory\Theatre.png" />
     <Resource Include="Images\Memory\TolstoyHistory.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Monuments\" />
+  </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\MemoryViewer\BackViewButton.png" />
     <Resource Include="Images\MemoryViewer\NextViewButton.png" />

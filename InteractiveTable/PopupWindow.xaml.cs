@@ -25,7 +25,7 @@ namespace InteractiveTable
         {
             InitializeComponent();
 
-            Uri path = new Uri(String.Format("/Articles/{0}.xaml", year), UriKind.Relative);
+            Uri path = new Uri(String.Format("/Articles/Timeline/{0}.xaml", year), UriKind.Relative);
             try
             {
                 FlowDocument doc = Application.LoadComponent(path) as FlowDocument;
