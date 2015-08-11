@@ -364,9 +364,6 @@
     <Resource Include="Images\PhotoAlbum\RightTopClip.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Images\Timeline\Thumb.png" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="Images\Timeline\1828.png" />
     <Resource Include="Images\Timeline\1844.png" />
     <Resource Include="Images\Timeline\1847.png" />
@@ -377,10 +374,11 @@
     <Resource Include="Images\Timeline\1856.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Images\Timeline\Track.png" />
+    <Resource Include="Images\MainMenu\Memory.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Images\MainMenu\Memory.png" />
+    <Resource Include="Images\Timeline\Thumb.png" />
+    <Resource Include="Images\Timeline\Track.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\Expression\Blend\.NETFramework\v4.5\Microsoft.Expression.Blend.WPF.targets" />
