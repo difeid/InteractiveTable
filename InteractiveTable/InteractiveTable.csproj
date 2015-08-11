@@ -434,11 +434,11 @@
     <Resource Include="Images\MemoryViewer\NextViewButton.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="MemoryViewer\Monuments\sub.0.jpg" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="MemoryViewer\Monuments\main.1.jpg" />
     <Resource Include="MemoryViewer\Monuments\sub.1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="MemoryViewer\Monuments\sub.0.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\Expression\Blend\.NETFramework\v4.5\Microsoft.Expression.Blend.WPF.targets" />

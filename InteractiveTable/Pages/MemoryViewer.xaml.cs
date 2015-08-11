@@ -23,29 +23,16 @@ namespace InteractiveTable.Pages
     /// </summary>
     public partial class MemoryViewer : Page
     {
-        public MemoryViewer(string item, int number)
+        public MemoryViewer(string folder)
         {
             InitializeComponent();
+            WritePage(folder, 0);
+        }
 
-            Uri pathMain = new Uri(String.Format("/MemoryViewer/{0}/main.{1}.jpg", item, number), UriKind.Relative);
-            Uri pathSub = new Uri(String.Format("/MemoryViewer/{0}/sub.{1}.jpg", item, number), UriKind.Relative);
-            try
-            {
-                mainPhoto.Source = new BitmapImage(pathMain);
-                subPhoto.Fill = new ImageBrush(new BitmapImage(pathSub));
-            }
-            catch (IOException) { }
-
-            //Опредяляем текущий язык
-            string culture = App.Language.Name;
-
-            Uri pathDisc = new Uri(String.Format("/MemoryViewer/{0}/disc.{1}.{3}.xaml", item, number, culture), UriKind.Relative);
-            try
-            {
-                FlowDocument doc = Application.LoadComponent(pathDisc) as FlowDocument;
-                documentDiscription.Document = doc;
-            }
-            catch (IOException) { }
+        public MemoryViewer(string folder, int number)
+        {
+            InitializeComponent();
+            WritePage(folder, number);
         }
 
         private void Back_Button_Click(object sender, RoutedEventArgs e)
@@ -60,7 +47,31 @@ namespace InteractiveTable.Pages
 
         private void Back_View_Button_Click(object sender, RoutedEventArgs e)
         {
+            
+        }
 
+        private void WritePage(string folder, int number)
+        {
+            Uri pathMain = new Uri(String.Format("pack://application:,,,/MemoryViewer/{0}/main.{1}.jpg", folder, number), UriKind.Absolute);
+            Uri pathSub = new Uri(String.Format("pack://application:,,,/MemoryViewer/{0}/sub.{1}.jpg", folder, number), UriKind.Absolute);
+            try
+            {
+                mainPhoto.Source = new BitmapImage(pathMain);
+                subPhoto.Fill = new ImageBrush(new BitmapImage(pathSub));
+            }
+            catch (IOException) { }
+
+            //Опредяляем текущий язык
+            string culture = App.Language.Name;
+
+            Uri pathDisc = new Uri(String.Format("/MemoryViewer/{0}/disc.{1}.{2}.xaml", folder, number, culture), UriKind.Relative);
+            try
+            {
+                FlowDocument doc = Application.LoadComponent(pathDisc) as FlowDocument;
+                documentDiscription.Document = doc;
+                scrollDiscription.UpdateLayout();
+            }
+            catch (IOException) { }
         }
     }
 }

@@ -32,7 +32,8 @@ namespace InteractiveTable.Pages
 
         private void Monument_Button_Click(object sender, RoutedEventArgs e)
         {
-            this.NavigationService.GoBack();
+            MemoryViewer mv = new MemoryViewer("Monuments");
+            this.NavigationService.Navigate(mv);
         }
 
         private void Musuem_Button_Click(object sender, RoutedEventArgs e)
