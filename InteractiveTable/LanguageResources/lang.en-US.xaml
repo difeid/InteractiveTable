@@ -12,6 +12,11 @@
     <v:String x:Key="s_Milestones">Основные вехи жизни</v:String>
     <v:String x:Key="s_Pedigree">Родословная</v:String>
     <v:String x:Key="s_Family">Семья</v:String>
+    <!--Memory-->
+    <v:String x:Key="mem_Monument">Памятники</v:String>
+    <v:String x:Key="mem_Museum">Музеи Л.Н.Толстого</v:String>
+    <v:String x:Key="mem_Theatre">Произведения Л.Н.Толстого на сценах казанских театров</v:String>
+    <v:String x:Key="mem_TolstoyHistory">Казанское толстоведение</v:String>
     <!--Legacy-->
     <v:String x:Key="l_RulesOfLife">Правила жизни</v:String>
     <v:String x:Key="l_Trilogy">Трилогия: Детство, Отрочество и Юность</v:String>
@@ -36,7 +41,7 @@
     <v:String x:Key="p_Next">дальше</v:String>
     <v:String x:Key="p_Back">назад</v:String>
     <v:String x:Key="p_Close">закрыть</v:String>
-    <!--Photo-->
+    <!--Photo (НЕ НУЖНО)-->
     <x:Array Type="v:String" x:Key="p_Title">
         <v:String>В день рождения Льва Львовича Толстого в Ясной Поляне 20 мая 1901 г. Фотография С.А.Толстой.</v:String>
         <v:String>Сестры Софья (1844-1919) и Татьяна (1846-1925) Берс</v:String>
