@@ -337,9 +337,6 @@
     <Resource Include="Images\Family\Father.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Images\Family\Mather.png" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="Images\Family\WifeChildren.png" />
   </ItemGroup>
   <ItemGroup>
@@ -379,6 +376,9 @@
   <ItemGroup>
     <Resource Include="Images\Timeline\Thumb.png" />
     <Resource Include="Images\Timeline\Track.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Family\Mather.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\Expression\Blend\.NETFramework\v4.5\Microsoft.Expression.Blend.WPF.targets" />

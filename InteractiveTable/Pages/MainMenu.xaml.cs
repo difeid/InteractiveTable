@@ -32,7 +32,7 @@ namespace InteractiveTable.Pages
 
         private void Memory_Button_Click(object sender, RoutedEventArgs e)
         {
-            this.NavigationService.Navigate(new Uri("Pages/PhotoAlbum.xaml", UriKind.Relative));
+            //this.NavigationService.Navigate(new Uri("Pages/PhotoAlbum.xaml", UriKind.Relative));
         }
 
         private void Student_Task_Button_Click(object sender, RoutedEventArgs e)
