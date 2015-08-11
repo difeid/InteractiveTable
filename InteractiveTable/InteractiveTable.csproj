@@ -388,7 +388,6 @@
     <Resource Include="Images\Family\Mather.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Images\Memory\MemoryMaket.png" />
     <Resource Include="Images\Memory\Monument.png" />
     <Resource Include="Images\Memory\Museum.png" />
     <Resource Include="Images\Memory\Theatre.png" />
