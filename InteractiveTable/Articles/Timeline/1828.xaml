@@ -1,6 +1,6 @@
 ﻿<FlowDocument xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
               ColumnWidth="400" FontSize="14" FontFamily="Georgia">
     <Paragraph>
-        <Run Block.TextAlignment="Left">123213124341ewvfrwderwreve</Run>
+        <Run>123213124341ewvfrwderwreve</Run>
     </Paragraph>
 </FlowDocument>
