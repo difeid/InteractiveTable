@@ -27,7 +27,7 @@
                     <RowDefinition Height="Auto" />
                 </Grid.RowDefinitions>
 
-                <Rectangle x:Name="additionPhoto" Width="520" Height="410" Stroke="White" StrokeThickness="20">
+                <Rectangle x:Name="subPhoto" Width="520" Height="410" Stroke="White" StrokeThickness="20">
                     <Rectangle.Effect>
                         <DropShadowEffect Opacity="0.15"/>
                     </Rectangle.Effect>
