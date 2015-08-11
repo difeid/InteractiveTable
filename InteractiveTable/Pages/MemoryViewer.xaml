@@ -33,7 +33,7 @@
                     </Rectangle.Effect>
                 </Rectangle>
 
-                <FlowDocumentScrollViewer x:Name="documentDiscription" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Disabled" Grid.Row="1">
+                <FlowDocumentScrollViewer x:Name="documentDiscription" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Disabled" Grid.Row="1" Width="555">
                     <FlowDocument/>
                 </FlowDocumentScrollViewer>
             </Grid>
