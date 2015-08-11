@@ -242,16 +242,12 @@
       <AutoFill>True</AutoFill>
     </BlendEmbeddedFont>
     <Resource Include="Images\Intro\Kazan.jpg" />
-    <Resource Include="Images\MainMenu\Memory.png" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\Background.png" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\Intro\PoligonKazan.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Images\Intro\Tolstoy.png" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\Intro\RusButton.png" />
@@ -266,6 +262,7 @@
     <Resource Include="Images\Arrow.png" />
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="Images\Intro\Tolstoy.png" />
     <Resource Include="Images\MainMenu\MainMenuBackground.png" />
   </ItemGroup>
   <ItemGroup>
@@ -381,6 +378,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\Timeline\Track.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\MainMenu\Memory.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\Expression\Blend\.NETFramework\v4.5\Microsoft.Expression.Blend.WPF.targets" />
