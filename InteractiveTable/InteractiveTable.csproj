@@ -402,8 +402,8 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
-    <Resource Include="Images\MemoryViewer\BackViewerButton.png" />
-    <Resource Include="Images\MemoryViewer\NextViewerButton.png" />
+    <Resource Include="Images\MemoryViewer\BackViewButton.png" />
+    <Resource Include="Images\MemoryViewer\NextViewButton.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\Expression\Blend\.NETFramework\v4.5\Microsoft.Expression.Blend.WPF.targets" />
