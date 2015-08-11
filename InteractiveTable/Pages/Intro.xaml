@@ -16,7 +16,7 @@
                 </PathGeometry>
             </Canvas.Resources>
 
-            <Image x:Name="kazan_img" Source="/InteractiveTable;component/Images/Intro/Kazan.jpg" Width="1267" Height="771" HorizontalAlignment="Left" VerticalAlignment="Top" Opacity="0.5">
+            <Image x:Name="kazan_img" Source="/InteractiveTable;component/Images/Intro/Kazan.jpg" Width="1267" Height="771" HorizontalAlignment="Left" VerticalAlignment="Top">
                 <Image.Triggers>
                     <EventTrigger RoutedEvent="Page.Loaded">
                         <EventTrigger.Actions>
@@ -33,14 +33,12 @@
                 </Image.Triggers>
             </Image>
 
+            <Image Source="/InteractiveTable;component/Images/Intro/PoligonKazan.png" Width="1600" Height="900" Canvas.Left="0" Canvas.Top="0" Opacity="0.7"/>
+
             <!--Маска-->
             <Canvas.OpacityMask>
                 <ImageBrush ImageSource="/InteractiveTable;component/Images/Intro/PoligonKazan.png" Viewport="0,0,1600,900" ViewportUnits="Absolute"/>
             </Canvas.OpacityMask>
-
-            <Canvas.Background>
-                <ImageBrush ImageSource="/InteractiveTable;component/Images/Intro/PoligonKazan.png" Viewport="0,0,1600,900" ViewportUnits="Absolute"/>
-            </Canvas.Background>
         </Canvas>
 
         <Image x:Name="tolstoy" Source="/InteractiveTable;component/Images/Intro/Tolstoy.png" Width="1600" Height="900"/>
