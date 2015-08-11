@@ -32,7 +32,7 @@ namespace InteractiveTable.Pages
 
         private void Milestones_Button_Click(object sender, RoutedEventArgs e)
         {
-            this.NavigationService.GoBack();
+            this.NavigationService.Navigate(new Uri("Pages/Timeline.xaml", UriKind.Relative));
         }
 
         private void Pedigree_Button_Click(object sender, RoutedEventArgs e)
