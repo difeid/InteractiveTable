@@ -22,7 +22,7 @@
             </Border.Effect>
             
             <ScrollViewer Width="1275" Height="770" Template="{DynamicResource ScrollViewerTemplate}"
-                          Margin="25,40,0,0" VerticalAlignment="Top" HorizontalAlignment="Left">
+                          Margin="25,40,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" PanningMode="VerticalOnly">
                 <FlowDocumentScrollViewer x:Name="documentPage" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Disabled" IsHitTestVisible="False">
                     <FlowDocument/>
                 </FlowDocumentScrollViewer>
