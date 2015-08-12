@@ -6,10 +6,11 @@
       Height="800" Width="1300" Title="FlowDocumentCreater">
 
     <Grid Background="White">
-        <ScrollViewer Width="1275" Height="770">
-                <FlowDocumentScrollViewer HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Disabled" IsHitTestVisible="False">
-                    <FlowDocument/>
-                </FlowDocumentScrollViewer>
-            </ScrollViewer>
+        <FlowDocumentScrollViewer  Width="1275" Height="770" HorizontalScrollBarVisibility="Disabled">
+            <FlowDocument xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+              ColumnWidth="400" FontSize="34" FontFamily="Georgia">
+
+            </FlowDocument>
+        </FlowDocumentScrollViewer>
     </Grid>
 </Page>
