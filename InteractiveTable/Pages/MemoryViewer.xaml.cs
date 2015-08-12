@@ -23,16 +23,32 @@ namespace InteractiveTable.Pages
     /// </summary>
     public partial class MemoryViewer : Page
     {
-        public MemoryViewer(string folder)
+        private string folder;
+        private int number;
+        private int maxNumber;
+        /// <summary>
+        /// Фотоальбом с описанием
+        /// </summary>
+        /// <param name="folder">Папка с содержимым</param>
+        /// <param name="Count">Количество фото</param>
+        public MemoryViewer(string folder, int Count)
         {
             InitializeComponent();
-            WritePage(folder, 0);
+            maxNumber = Count;
+            WritePage(this.folder = folder, this.number = 0);
         }
 
-        public MemoryViewer(string folder, int number)
+        /// <summary>
+        /// Фотоальбом с описанием
+        /// </summary>
+        /// <param name="folder">Папка с содержимым</param>
+        /// <param name="Count">Количество фото</param>
+        /// <param name="number">С какого начинать</param>
+        public MemoryViewer(string folder, int Count, int number)
         {
             InitializeComponent();
-            WritePage(folder, number);
+            maxNumber = Count;
+            WritePage(this.folder = folder, this.number = number);
         }
 
         private void Back_Button_Click(object sender, RoutedEventArgs e)
@@ -42,12 +58,20 @@ namespace InteractiveTable.Pages
 
         private void Next_View_Button_Click(object sender, RoutedEventArgs e)
         {
-
+            if (++number >= maxNumber)
+            {
+                number = 0;
+            }
+            WritePage(folder, number);
         }
 
         private void Back_View_Button_Click(object sender, RoutedEventArgs e)
         {
-            
+            if (--number < 0)
+            {
+                number = maxNumber-1;
+            }
+            WritePage(folder, number);
         }
 
         private void WritePage(string folder, int number)

@@ -11,7 +11,7 @@
             <ColumnDefinition Width="650"/>
         </Grid.ColumnDefinitions>
 
-        <Image x:Name="mainPhoto" Width="950" Height="900" Stretch="UniformToFill" ></Image>
+        <Image x:Name="mainPhoto" Width="950" Height="900" Stretch="UniformToFill"/>
 
         <Button x:Name="back_button" Template="{DynamicResource BackButtonTemplate}" Click="Back_Button_Click" Foreground="White"
                 HorizontalAlignment="Left" VerticalAlignment="Top" Margin="60,795,0,0"/>
@@ -20,7 +20,8 @@
         <Button x:Name="back_view_button" Click="Back_View_Button_Click" Template="{DynamicResource HexagonButtonTemplate}" Content="/InteractiveTable;component/Images/MemoryViewer/BackViewButton.png"
                 Width="114" Height="114" Padding="5,0" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="-56,0,0,0"/>
 
-        <ScrollViewer x:Name="scrollDiscription" Grid.Column="1" Width="650" Height="900" Background="White" Template="{DynamicResource ScrollViewerTemplate}" VerticalScrollBarVisibility="Auto" UseLayoutRounding="True">
+        <ScrollViewer x:Name="scrollDiscription" Grid.Column="" Width="650" Height="900" Background="White" Template="{DynamicResource ScrollViewerTemplate}"
+                      VerticalScrollBarVisibility="Auto" UseLayoutRounding="True" PanningMode="VerticalOnly">
             <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="450"/>
@@ -33,7 +34,8 @@
                     </Rectangle.Effect>
                 </Rectangle>
 
-                <FlowDocumentScrollViewer x:Name="documentDiscription" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Disabled" Grid.Row="1" Width="555">
+                <FlowDocumentScrollViewer x:Name="documentDiscription" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Disabled"
+                                          Grid.Row="1" Width="555" IsHitTestVisible="False">
                     <FlowDocument/>
                 </FlowDocumentScrollViewer>
             </Grid>
