@@ -93,7 +93,6 @@ namespace InteractiveTable.Pages
             {
                 FlowDocument doc = Application.LoadComponent(pathDisc) as FlowDocument;
                 documentDiscription.Document = doc;
-                scrollDiscription.UpdateLayout();
             }
             catch (IOException) { }
         }
