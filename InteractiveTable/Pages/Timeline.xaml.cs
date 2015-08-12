@@ -34,8 +34,6 @@ namespace InteractiveTable.Pages
         private void Year_Button_Click(object sender, RoutedEventArgs e)
         {
             string year = (sender as Button).Name.Substring(1, 4);
-            PopupWindow pw = new PopupWindow(year, scrollViewer);
-            pw.Show();
         }
     }
 
