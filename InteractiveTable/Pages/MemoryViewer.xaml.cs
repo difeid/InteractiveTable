@@ -10,27 +10,28 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.IO;
 using System.Windows.Markup;
+using System.Globalization;
 
-namespace InteractiveTable
+namespace InteractiveTable.Pages
 {
     /// <summary>
-    /// Логика взаимодействия для PopupWindow.xaml
+    /// Логика взаимодействия для MemoryViewer.xaml
     /// </summary>
-    public partial class PopupWindow : Window
+    public partial class MemoryViewer : Page
     {
         private string folder;
         private int number;
         private int maxNumber;
-
         /// <summary>
-        /// Вывод статей
+        /// Фотоальбом с описанием
         /// </summary>
         /// <param name="folder">Папка с содержимым</param>
-        /// <param name="Count">Количество статей</param>
-        public PopupWindow(string folder, int Count)
+        /// <param name="Count">Количество фото</param>
+        public MemoryViewer(string folder, int Count)
         {
             InitializeComponent();
             maxNumber = Count;
@@ -38,12 +39,12 @@ namespace InteractiveTable
         }
 
         /// <summary>
-        /// Вывод статей
+        /// Фотоальбом с описанием
         /// </summary>
         /// <param name="folder">Папка с содержимым</param>
-        /// <param name="Count">Количество статей</param>
-        /// <param name="number">С какой по счету начинать, отсчет с нуля</param>
-        public PopupWindow(string folder, int Count, int number)
+        /// <param name="Count">Количество фото</param>
+        /// <param name="number">С какого начинать</param>
+        public MemoryViewer(string folder, int Count, int number)
         {
             InitializeComponent();
             maxNumber = Count;
@@ -58,14 +59,10 @@ namespace InteractiveTable
 
         private void Back_Button_Click(object sender, RoutedEventArgs e)
         {
-            if (--number < 0)
-            {
-                number = maxNumber - 1;
-            }
-            WritePage(folder, number);
+            this.NavigationService.GoBack();
         }
 
-        private void Next_Button_Click(object sender, RoutedEventArgs e)
+        private void Next_View_Button_Click(object sender, RoutedEventArgs e)
         {
             if (++number >= maxNumber)
             {
@@ -74,21 +71,34 @@ namespace InteractiveTable
             WritePage(folder, number);
         }
 
-        private void Close_Button_Click(object sender, RoutedEventArgs e)
+        private void Back_View_Button_Click(object sender, RoutedEventArgs e)
         {
-            this.Close();
+            if (--number < 0)
+            {
+                number = maxNumber-1;
+            }
+            WritePage(folder, number);
         }
 
         private void WritePage(string folder, int number)
         {
+            Uri pathMain = new Uri(String.Format("pack://application:,,,/MemoryViewer/{0}/main.{1}.jpg", folder, number), UriKind.Absolute);
+            Uri pathSub = new Uri(String.Format("pack://application:,,,/MemoryViewer/{0}/sub.{1}.jpg", folder, number), UriKind.Absolute);
+            try
+            {
+                mainPhoto.Source = new BitmapImage(pathMain);
+                subPhoto.Fill = new ImageBrush(new BitmapImage(pathSub));
+            }
+            catch (IOException) { }
+
             //Опредяляем текущий язык
             string culture = App.Language.Name;
 
-            Uri pathDisc = new Uri(String.Format("/PopupWindow/{0}/article.{1}.{2}.xaml", folder, number, culture), UriKind.Relative);
+            Uri pathDisc = new Uri(String.Format("/MemoryViewer/{0}/disc.{1}.{2}.xaml", folder, number, culture), UriKind.Relative);
             try
             {
                 FlowDocument doc = Application.LoadComponent(pathDisc) as FlowDocument;
-                documentPage.Document = doc;
+                documentDiscription.Document = doc;
             }
             catch (IOException) { }
         }

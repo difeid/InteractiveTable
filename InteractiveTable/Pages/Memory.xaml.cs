@@ -16,11 +16,11 @@ using System.Windows.Shapes;
 namespace InteractiveTable.Pages
 {
     /// <summary>
-    /// Логика взаимодействия для SubMenu.xaml
+    /// Логика взаимодействия для Memory.xaml
     /// </summary>
-    public partial class SubMenu : Page
+    public partial class Memory : Page
     {
-        public SubMenu()
+        public Memory()
         {
             InitializeComponent();
         }
@@ -30,21 +30,25 @@ namespace InteractiveTable.Pages
             this.NavigationService.GoBack();
         }
 
-        private void Milestones_Button_Click(object sender, RoutedEventArgs e)
+        private void Monument_Button_Click(object sender, RoutedEventArgs e)
         {
-            this.NavigationService.Navigate(new Uri("Pages/Timeline.xaml", UriKind.Relative));
+            MemoryViewer mv = new MemoryViewer("Monuments", 2);
+            this.NavigationService.Navigate(mv);
         }
 
-        private void Pedigree_Button_Click(object sender, RoutedEventArgs e)
+        private void Musuem_Button_Click(object sender, RoutedEventArgs e)
         {
-            this.NavigationService.Navigate(new Uri("Pages/Pedigree.xaml", UriKind.Relative));
+            this.NavigationService.GoBack();
         }
 
-        private void Family_Button_Click(object sender, RoutedEventArgs e)
+        private void Theatre_Button_Click(object sender, RoutedEventArgs e)
         {
-            this.NavigationService.Navigate(new Uri("Pages/Family.xaml", UriKind.Relative));
+            this.NavigationService.GoBack();
         }
 
-        
+        private void TolstoyHistory_Button_Click(object sender, RoutedEventArgs e)
+        {
+            this.NavigationService.GoBack();
+        }
     }
 }
