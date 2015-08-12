@@ -34,7 +34,7 @@ namespace InteractiveTable.Pages
         private void Year_Button_Click(object sender, RoutedEventArgs e)
         {
             int n = Convert.ToInt32((sender as Button).Name.Substring(1, 2));
-            new PopupWindow("Timeline", 1, n);
+            new PopupWindow("Timeline", 1, n).Show();
         }
     }
 
