@@ -48,7 +48,13 @@ namespace InteractiveTable.Pages
         {
             InitializeComponent();
             maxNumber = Count;
-            WritePage(this.folder = folder, this.number = number);
+
+            if (number < maxNumber)
+                this.number = number;
+            else
+                this.number = 0;
+
+            WritePage(this.folder = folder, this.number);
         }
 
         private void Back_Button_Click(object sender, RoutedEventArgs e)
