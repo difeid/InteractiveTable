@@ -8,27 +8,37 @@
     </Window.Background>
     <Grid Width="1600" Height="900">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="160"/>
-            <ColumnDefinition Width="1280"/>
-            <ColumnDefinition Width="160"/>
+            <ColumnDefinition Width="150"/>
+            <ColumnDefinition Width="1300"/>
+            <ColumnDefinition Width="150"/>
         </Grid.ColumnDefinitions>
         
-        <Button x:Name="back_button" Template="{DynamicResource NavButtonTemplate}" Content="/InteractiveTable;component/Images/PopupWindow/BackArrowWhite.png" Click="Back_Button_Click"
-                Width="150" Height="500" Padding="93,275,0,0" HorizontalAlignment="Left" FontFamily="/InteractiveTable;component/Fonts/#Roboto" FontSize="18" Tag="{DynamicResource p_Back}" Foreground="White"/>
-        
-        <Button x:Name="next_button" Template="{DynamicResource NavButtonTemplate}" Content="/InteractiveTable;component/Images/PopupWindow/NextArrowWhite.png" Click="Next_Button_Click"
-                Width="150" Height="500" Padding="5,275,0,0" HorizontalAlignment="Right" FontFamily="/InteractiveTable;component/Fonts/#Roboto" FontSize="18" Tag="{DynamicResource p_Next}" Foreground="White" Grid.Column="3"/>
-        
-        <Button x:Name="close_button" Template="{DynamicResource NavButtonTemplate}" Content="/InteractiveTable;component/Images/PopupWindow/CloseWhite.png" Click="Close_Button_Click"
-                Width="150" Height="150" Padding="5,95,0,0" HorizontalAlignment="Right" VerticalAlignment="Top" FontFamily="/InteractiveTable;component/Fonts/#Roboto" FontSize="18" Tag="{DynamicResource p_Close}" Foreground="White" Grid.Column="3"/>
-
-        <ScrollViewer Grid.Column="1" Width="1280" Height="780" Background="White" Template="{DynamicResource ScrollViewerTemplate}" CanContentScroll="True">
-            <ScrollViewer.Effect>
+        <Border Width="1330" Height="840" Grid.ColumnSpan="3">
+            <Border.Background>
+                <ImageBrush ImageSource="Images/PopupWindow/PopupBackground.png"/>
+            </Border.Background>
+            <Border.Effect>
                 <DropShadowEffect Opacity="0.75" BlurRadius="35"/>
-            </ScrollViewer.Effect>
-            <FlowDocumentScrollViewer x:Name="documentPage" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Disabled">
-                <FlowDocument/>
-            </FlowDocumentScrollViewer>
-        </ScrollViewer>
+            </Border.Effect>
+            
+            <ScrollViewer Width="1275" Height="770" Template="{DynamicResource ScrollViewerTemplate}"
+                          Margin="25,40,0,0" VerticalAlignment="Top" HorizontalAlignment="Left">
+                <FlowDocumentScrollViewer x:Name="documentPage" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Disabled" IsHitTestVisible="False">
+                    <FlowDocument/>
+                </FlowDocumentScrollViewer>
+            </ScrollViewer>
+        </Border>
+        
+        <Button x:Name="back_button" Template="{DynamicResource NavButtonTemplate}" Content="/InteractiveTable;component/Images/PopupWindow/BackArrowWhite.png"
+                Click="Back_Button_Click" Width="150" Height="500" Padding="93,275,0,0" HorizontalAlignment="Left" FontFamily="/InteractiveTable;component/Fonts/#Roboto"
+                FontSize="18" Tag="{DynamicResource p_Back}" Foreground="White"/>
+        
+        <Button x:Name="next_button" Template="{DynamicResource NavButtonTemplate}" Content="/InteractiveTable;component/Images/PopupWindow/NextArrowWhite.png"
+                Click="Next_Button_Click" Width="150" Height="500" Padding="5,275,0,0" HorizontalAlignment="Right" FontFamily="/InteractiveTable;component/Fonts/#Roboto"
+                FontSize="18" Tag="{DynamicResource p_Next}" Foreground="White" Grid.Column="3"/>
+        
+        <Button x:Name="close_button" Template="{DynamicResource NavButtonTemplate}" Content="/InteractiveTable;component/Images/PopupWindow/CloseWhite.png"
+                Click="Close_Button_Click" Width="150" Height="150" Padding="5,95,0,0" HorizontalAlignment="Right" VerticalAlignment="Top"
+                FontFamily="/InteractiveTable;component/Fonts/#Roboto" FontSize="18" Tag="{DynamicResource p_Close}" Foreground="White" Grid.Column="3"/>
     </Grid>
 </Window>
