@@ -20,7 +20,7 @@
         <Button x:Name="back_view_button" Click="Back_View_Button_Click" Template="{DynamicResource HexagonButtonTemplate}" Content="/InteractiveTable;component/Images/MemoryViewer/BackViewButton.png"
                 Width="114" Height="114" Padding="5,0" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="-56,0,0,0"/>
 
-        <ScrollViewer x:Name="scrollDiscription" Grid.Column="" Width="650" Height="900" Background="White" Template="{DynamicResource ScrollViewerTemplate}"
+        <ScrollViewer x:Name="scrollDiscription" Grid.Column="1" Width="650" Height="900" Background="White" Template="{DynamicResource ScrollViewerTemplate}"
                       VerticalScrollBarVisibility="Auto" UseLayoutRounding="True" PanningMode="VerticalOnly">
             <Grid>
                 <Grid.RowDefinitions>
