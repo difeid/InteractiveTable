@@ -92,5 +92,10 @@ namespace InteractiveTable
             }
             catch (IOException) { }
         }
+
+        private void Zoom_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
