@@ -89,7 +89,11 @@ namespace InteractiveTable.Pages
                 mainPhoto.Source = new BitmapImage(pathMain);
                 subPhoto.Fill = new ImageBrush(new BitmapImage(pathSub));
             }
-            catch (IOException) { }
+            catch (IOException)
+            {
+                mainPhoto.Source = null;
+                subPhoto.Fill = null;
+            }
 
             //Опредяляем текущий язык
             string culture = App.Language.Name;
@@ -100,7 +104,10 @@ namespace InteractiveTable.Pages
                 FlowDocument doc = Application.LoadComponent(pathDisc) as FlowDocument;
                 documentDiscription.Document = doc;
             }
-            catch (IOException) { }
+            catch (IOException)
+            {
+                documentDiscription.Document = null;
+            }
         }
     }
 }
