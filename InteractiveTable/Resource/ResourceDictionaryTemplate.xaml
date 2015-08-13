@@ -362,7 +362,7 @@
 
     <!--Шаблон кнопки увеличение-->
     <ControlTemplate x:Key="ZoomButtonTemplate" TargetType="{x:Type Button}">
-        <Grid x:Name="grid" Cursor="Hand" RenderTransformOrigin="0.5,0.5">
+        <Grid x:Name="grid" Cursor="Hand" RenderTransformOrigin="0.9,0.9">
             <Grid.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -396,7 +396,9 @@
                     <VisualState x:Name="Disabled"/>
                 </VisualStateGroup>
             </VisualStateManager.VisualStateGroups>
-            <Image Source="/InteractiveTable;component/Images/PopupWindow/Zoom.png" Width="25" Height="25" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="10"/>
+            <Border Background="Transparent" >
+                <Image Source="/InteractiveTable;component/Images/PopupWindow/Zoom.png" Width="25" Height="25" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="10"/>
+            </Border>
         </Grid>
     </ControlTemplate>
 </ResourceDictionary>
