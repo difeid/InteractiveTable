@@ -1,8 +1,9 @@
-﻿<FlowDocument xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+﻿<FlowDocument xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" Tag="5">
     <Paragraph FontFamily="/InteractiveTable;component/Fonts/#Basil Bold" TextAlignment="Left" FontSize="32">
         <Figure Width="590" Height="400">
             <BlockUIContainer>
                 <UIElement/>
+                <!--Количество изображений записать в Tag. От 0 до 9.-->
             </BlockUIContainer>
         </Figure>
         <Run>Крым. 1885 г., 1901—1902 гг.</Run>
