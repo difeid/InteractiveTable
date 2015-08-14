@@ -105,8 +105,15 @@ namespace InteractiveTable
                 TimeSpan timeSinceDown = DateTime.Now - this.downTime;
                 if (timeSinceDown.TotalMilliseconds < 500)
                 {
-                    numberImage 
-                    zoomPopup.IsOpen = false;
+                    if (++numberImage < maxNumberImage)
+                    {
+                        ShowPopup(folder, number, numberImage);
+                    }
+                    else
+                    {
+                        numberImage = 0;
+                        zoomPopup.IsOpen = false;
+                    }
                 }
             }
         }
@@ -174,6 +181,7 @@ namespace InteractiveTable
 
         public void ShowPopup(string folder, int number, int numberBigImage)
         {
+            zoomPopup.IsOpen = false;
             Uri pathBigImage = new Uri(String.Format("pack://application:,,,/PopupWindow/{0}/{1}/big.{2}.jpg", folder, number, numberBigImage), UriKind.Absolute);
             try
             {
