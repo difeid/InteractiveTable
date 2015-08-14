@@ -130,7 +130,7 @@
                 FontFamily="/InteractiveTable;component/Fonts/#Roboto" FontSize="18" Tag="{DynamicResource p_Close}" Foreground="White" Grid.Column="3"/>
 
         <Popup x:Name="zoomPopup" PopupAnimation="Fade" AllowsTransparency="True" Placement="Center"
-               StaysOpen="False" MouseDown="Popup_Down" MouseUp="Popup_Up" MaxWidth="1600" MaxHeight="900">
+               StaysOpen="False" MouseDown="Popup_Down" MouseUp="Popup_Up">
             <Grid>
                 <Border BorderBrush="White" BorderThickness="20"  Margin="40">
                     <Border.Effect>
