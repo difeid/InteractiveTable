@@ -77,7 +77,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Resource Include="PopupWindow\Timeline\article.0.ru-RU.xaml">
+    <Resource Include="PopupWindow\Timeline\0\article.ru-RU.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Resource>
@@ -394,16 +394,16 @@
     <Resource Include="Images\PopupWindow\Zoom.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="PopupWindow\Timeline\big.0.0.jpg" />
-    <Resource Include="PopupWindow\Timeline\big.0.1.jpg" />
-    <Resource Include="PopupWindow\Timeline\big.0.2.jpg" />
-    <Resource Include="PopupWindow\Timeline\big.0.3.jpg" />
-    <Resource Include="PopupWindow\Timeline\big.0.4.jpg" />
-    <Resource Include="PopupWindow\Timeline\small.0.0.jpg" />
-    <Resource Include="PopupWindow\Timeline\small.0.1.jpg" />
-    <Resource Include="PopupWindow\Timeline\small.0.2.jpg" />
-    <Resource Include="PopupWindow\Timeline\small.0.3.jpg" />
-    <Resource Include="PopupWindow\Timeline\small.0.4.jpg" />
+    <Resource Include="PopupWindow\Timeline\0\big.0.jpg" />
+    <Resource Include="PopupWindow\Timeline\0\big.1.jpg" />
+    <Resource Include="PopupWindow\Timeline\0\big.2.jpg" />
+    <Resource Include="PopupWindow\Timeline\0\big.3.jpg" />
+    <Resource Include="PopupWindow\Timeline\0\big.4.jpg" />
+    <Resource Include="PopupWindow\Timeline\0\small.0.jpg" />
+    <Resource Include="PopupWindow\Timeline\0\small.1.jpg" />
+    <Resource Include="PopupWindow\Timeline\0\small.2.jpg" />
+    <Resource Include="PopupWindow\Timeline\0\small.3.jpg" />
+    <Resource Include="PopupWindow\Timeline\0\small.4.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\Expression\Blend\.NETFramework\v4.5\Microsoft.Expression.Blend.WPF.targets" />

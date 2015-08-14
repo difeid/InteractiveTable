@@ -88,21 +88,7 @@ namespace InteractiveTable
             this.Close();
         }
 
-        /* Заменено на Zoom_MouseDown
-        private void Zoom_Click(object sender, RoutedEventArgs e)
-        {
-            int imageNumber = Convert.ToInt32((sender as Button).Name.Substring(4));
-            //Zoom(imageNumber);
-            MessageBox.Show(imageNumber.ToString());
-        }
-        */
-
-        private void Popup_Border_MouseDown(object sender, MouseButtonEventArgs e)
-        {
-            zoomPopup.IsOpen = false;
-        }
-
-        private void Zoom_Down(object sender, MouseButtonEventArgs e)
+        private void Popup_Down(object sender, MouseButtonEventArgs e)
         {
             if (e.LeftButton == MouseButtonState.Pressed)
             {
@@ -111,7 +97,7 @@ namespace InteractiveTable
             }
         }
 
-        private void Zoom_Up(object sender, MouseButtonEventArgs e)
+        private void Popup_Up(object sender, MouseButtonEventArgs e)
         {
             if (e.LeftButton == MouseButtonState.Released &&
                 sender == this.downSender)
@@ -119,13 +105,21 @@ namespace InteractiveTable
                 TimeSpan timeSinceDown = DateTime.Now - this.downTime;
                 if (timeSinceDown.TotalMilliseconds < 500)
                 {
-                    ShowPopup(folder, number, Convert.ToInt32((sender as Image).Name.Substring(5)));
+                    numberImage 
+                    zoomPopup.IsOpen = false;
                 }
             }
         }
 
+        private void Zoom_Click(object sender, RoutedEventArgs e)
+        {
+            numberImage = Convert.ToInt32((sender as Button).Name.Substring(4));
+            ShowPopup(folder, number, numberImage);
+        }
+
         private void Init()
         {
+            numberImage = 0;
             culture = App.Language.Name;
             arrayImage = new[] { image0, image1, image2, image3, image4, image5, image6, image7, image8 };
         }
@@ -136,7 +130,7 @@ namespace InteractiveTable
             int intTag = 0;
 
             //Печатаем статью
-            Uri pathDisc = new Uri(String.Format("/PopupWindow/{0}/article.{1}.{2}.xaml", folder, number, culture), UriKind.Relative);
+            Uri pathDisc = new Uri(String.Format("/PopupWindow/{0}/{1}/article.{2}.xaml", folder, number, culture), UriKind.Relative);
             try
             {
                 FlowDocument doc = Application.LoadComponent(pathDisc) as FlowDocument;
@@ -154,7 +148,7 @@ namespace InteractiveTable
 
             while (numImg < intTag)
             {
-                Uri pathSmallImage = new Uri(String.Format("pack://application:,,,/PopupWindow/{0}/small.{1}.{2}.jpg", folder, number, numImg), UriKind.Absolute);
+                Uri pathSmallImage = new Uri(String.Format("pack://application:,,,/PopupWindow/{0}/{1}/small.{2}.jpg", folder, number, numImg), UriKind.Absolute);
                 try
                 {
                     arrayImage[numImg].Source = new BitmapImage(pathSmallImage);
@@ -180,10 +174,14 @@ namespace InteractiveTable
 
         public void ShowPopup(string folder, int number, int numberBigImage)
         {
-            Uri pathBigImage = new Uri(String.Format("pack://application:,,,/PopupWindow/{0}/img.{1}.{2}.jpg", folder, number, numberBigImage), UriKind.Absolute);
+            Uri pathBigImage = new Uri(String.Format("pack://application:,,,/PopupWindow/{0}/{1}/big.{2}.jpg", folder, number, numberBigImage), UriKind.Absolute);
             try
             {
-                zoomImage.Source = new BitmapImage(pathBigImage);
+                BitmapImage bi = new BitmapImage(pathBigImage);
+                if (zoomImage.Source != bi)
+                {
+                    zoomImage.Source = bi;
+                }
                 zoomPopup.IsOpen = true;
             }
             catch (IOException) { }

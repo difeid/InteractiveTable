@@ -362,43 +362,8 @@
 
     <!--Шаблон кнопки увеличение-->
     <ControlTemplate x:Key="ZoomButtonTemplate" TargetType="{x:Type Button}">
-        <Grid x:Name="grid" Cursor="Hand" RenderTransformOrigin="0.9,0.9">
-            <Grid.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform/>
-                    <SkewTransform/>
-                    <RotateTransform/>
-                    <TranslateTransform/>
-                </TransformGroup>
-            </Grid.RenderTransform>
-            <VisualStateManager.VisualStateGroups>
-                <VisualStateGroup x:Name="CommonStates">
-                    <VisualState x:Name="Normal"/>
-                    <VisualState x:Name="MouseOver"/>
-                    <VisualState x:Name="Pressed">
-                        <Storyboard>
-                            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)" Storyboard.TargetName="grid">
-                                <EasingDoubleKeyFrame KeyTime="0:0:0.1" Value="0.95">
-                                    <EasingDoubleKeyFrame.EasingFunction>
-                                        <ExponentialEase EasingMode="EaseOut"/>
-                                    </EasingDoubleKeyFrame.EasingFunction>
-                                </EasingDoubleKeyFrame>
-                            </DoubleAnimationUsingKeyFrames>
-                            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)" Storyboard.TargetName="grid">
-                                <EasingDoubleKeyFrame KeyTime="0:0:0.1" Value="0.95">
-                                    <EasingDoubleKeyFrame.EasingFunction>
-                                        <ExponentialEase EasingMode="EaseOut"/>
-                                    </EasingDoubleKeyFrame.EasingFunction>
-                                </EasingDoubleKeyFrame>
-                            </DoubleAnimationUsingKeyFrames>
-                        </Storyboard>
-                    </VisualState>
-                    <VisualState x:Name="Disabled"/>
-                </VisualStateGroup>
-            </VisualStateManager.VisualStateGroups>
-            <Border Background="Transparent" >
-                <Image Source="/InteractiveTable;component/Images/PopupWindow/Zoom.png" Width="25" Height="25" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="10"/>
-            </Border>
+        <Grid Cursor="Hand">
+            <Rectangle Fill="Transparent"/>
         </Grid>
     </ControlTemplate>
 </ResourceDictionary>
