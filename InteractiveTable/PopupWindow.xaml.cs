@@ -24,7 +24,14 @@ namespace InteractiveTable
         private string folder;
         private int number;
         private int maxNumber;
+        private int numberImage;
+        private int maxNumberImage;
         private Image[] arrayImage;
+        private string culture;
+
+        private DateTime downTime;
+        private object downSender;
+        
         /// <summary>
         /// Вывод статей
         /// </summary>
@@ -35,7 +42,7 @@ namespace InteractiveTable
             InitializeComponent();
             Init();
             maxNumber = Count;
-            WritePage(this.folder = folder, this.number = 0);
+            maxNumberImage = WritePage(this.folder = folder, this.number = 0, this.culture);
         }
 
         /// <summary>
@@ -55,7 +62,7 @@ namespace InteractiveTable
             else
                 this.number = 0;
 
-            WritePage(this.folder = folder, this.number);
+            maxNumberImage = WritePage(this.folder = folder, this.number, this.culture);
         }
 
         private void Back_Button_Click(object sender, RoutedEventArgs e)
@@ -64,7 +71,7 @@ namespace InteractiveTable
             {
                 number = maxNumber - 1;
             }
-            WritePage(folder, number);
+            maxNumberImage = WritePage(folder, number, culture);
         }
 
         private void Next_Button_Click(object sender, RoutedEventArgs e)
@@ -73,7 +80,7 @@ namespace InteractiveTable
             {
                 number = 0;
             }
-            WritePage(folder, number);
+            maxNumberImage = WritePage(folder, number, culture);
         }
 
         private void Close_Button_Click(object sender, RoutedEventArgs e)
@@ -81,24 +88,52 @@ namespace InteractiveTable
             this.Close();
         }
 
+        /* Заменено на Zoom_MouseDown
         private void Zoom_Click(object sender, RoutedEventArgs e)
         {
             int imageNumber = Convert.ToInt32((sender as Button).Name.Substring(4));
             //Zoom(imageNumber);
             MessageBox.Show(imageNumber.ToString());
         }
+        */
+
+        private void Popup_Border_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            zoomPopup.IsOpen = false;
+        }
+
+        private void Zoom_Down(object sender, MouseButtonEventArgs e)
+        {
+            if (e.LeftButton == MouseButtonState.Pressed)
+            {
+                this.downSender = sender;
+                this.downTime = DateTime.Now;
+            }
+        }
+
+        private void Zoom_Up(object sender, MouseButtonEventArgs e)
+        {
+            if (e.LeftButton == MouseButtonState.Released &&
+                sender == this.downSender)
+            {
+                TimeSpan timeSinceDown = DateTime.Now - this.downTime;
+                if (timeSinceDown.TotalMilliseconds < 500)
+                {
+                    ShowPopup(folder, number, Convert.ToInt32((sender as Image).Name.Substring(5)));
+                }
+            }
+        }
 
         private void Init()
         {
+            culture = App.Language.Name;
             arrayImage = new[] { image0, image1, image2, image3, image4, image5, image6, image7, image8 };
         }
 
-        private void WritePage(string folder, int number)
+        public int WritePage(string folder, int number, string culture)
         {
-            //Опредяляем текущий язык
-            string culture = App.Language.Name;
-            int countImg = 0;
-            int maxImg = 0;
+            int numImg = 0;
+            int intTag = 0;
 
             //Печатаем статью
             Uri pathDisc = new Uri(String.Format("/PopupWindow/{0}/article.{1}.{2}.xaml", folder, number, culture), UriKind.Relative);
@@ -106,38 +141,52 @@ namespace InteractiveTable
             {
                 FlowDocument doc = Application.LoadComponent(pathDisc) as FlowDocument;
                 documentPage.Document = doc;
-                maxImg = Convert.ToInt32(doc.Tag);
+                intTag = Convert.ToInt32(doc.Tag);
             }
             catch (IOException)
             {
                 documentPage.Document = null;
+                intTag = 0;
             }
 
             //Вставляем изображения
-            if (maxImg > 9) maxImg = 0;
+            if (intTag > 9) intTag = 0;
 
-            while (countImg < maxImg)
+            while (numImg < intTag)
             {
-                Uri pathImage = new Uri(String.Format("pack://application:,,,/PopupWindow/{0}/img.{1}.{2}.jpg", folder, number, countImg), UriKind.Absolute);
+                Uri pathSmallImage = new Uri(String.Format("pack://application:,,,/PopupWindow/{0}/small.{1}.{2}.jpg", folder, number, numImg), UriKind.Absolute);
                 try
                 {
-                    arrayImage[countImg].Source = new BitmapImage(pathImage);
-                    arrayImage[countImg].Visibility = Visibility.Visible;
+                    arrayImage[numImg].Source = new BitmapImage(pathSmallImage);
+                    arrayImage[numImg].Visibility = Visibility.Visible;
                 }
                 catch (IOException)
                 {
-                    arrayImage[countImg].Source = null;
-                    arrayImage[countImg].Visibility = Visibility.Hidden;
+                    arrayImage[numImg].Source = null;
+                    arrayImage[numImg].Visibility = Visibility.Hidden;
                     break;
                 }
-                countImg++;
+                numImg++;
             }
-            while (countImg < 9)
+            while (numImg < 9)
             {
-                arrayImage[countImg].Source = null;
-                arrayImage[countImg].Visibility = Visibility.Hidden;
-                countImg++;
+                arrayImage[numImg].Source = null;
+                arrayImage[numImg].Visibility = Visibility.Hidden;
+                numImg++;
             }
+
+            return intTag;
+        }
+
+        public void ShowPopup(string folder, int number, int numberBigImage)
+        {
+            Uri pathBigImage = new Uri(String.Format("pack://application:,,,/PopupWindow/{0}/img.{1}.{2}.jpg", folder, number, numberBigImage), UriKind.Absolute);
+            try
+            {
+                zoomImage.Source = new BitmapImage(pathBigImage);
+                zoomPopup.IsOpen = true;
+            }
+            catch (IOException) { }
         }
     }
 }

@@ -3,9 +3,15 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="PopupWindow" Height="900" Width="1600" WindowStyle="None"
         AllowsTransparency="True" WindowState="Maximized" ResizeMode="NoResize" ShowInTaskbar="False">
+    
     <Window.Background>
         <SolidColorBrush Color="Black" Opacity="0.5"/>
     </Window.Background>
+    
+    <Window.Resources>
+        <BitmapImage x:Key="ImageZoom" CacheOption="OnLoad" UriSource="Images/PopupWindow/Zoom.png"/>
+    </Window.Resources>
+    
     <Grid Width="1600" Height="900">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="150"/>
@@ -28,56 +34,10 @@
                         <ColumnDefinition Width="1*"/>
                         <ColumnDefinition Width="1*"/>
                     </Grid.ColumnDefinitions>
-                    
+
                     <FlowDocumentScrollViewer x:Name="documentPage" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Disabled"
                                           IsHitTestVisible="False" TextOptions.TextFormattingMode="Display" Grid.ColumnSpan="2">
-                        <FlowDocument xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
-                            <Paragraph FontFamily="/InteractiveTable;component/Fonts/#Basil Bold" TextAlignment="Left" FontSize="32">
-                                <Figure Width="590" Height="400">
-                                    <BlockUIContainer>
-                                        <UIElement/>
-                                    </BlockUIContainer>
-                                </Figure>
-                                <Run>Крым. 1885 г., 1901—1902 гг.</Run>
-                            </Paragraph>
-                            <Section FontFamily="/InteractiveTable;component/Fonts/#Roboto"  TextAlignment="Left" FontSize="18">
-                                <Paragraph TextIndent="45">
-                                    <Run>В 1885 году Лев Николаевич Толстой приехал в Крым, сопровождая на юг больного друга князя Урусова.</Run>
-                                    <Run>В это время Толстой был уже знаменитым писателем, создавшим "Войну и мир", "Анну Каренину".</Run>
-                                    <Run>Он посетил Севастополь, побывал на месте былых сражений.</Run>
-                                    <Run>Отстроенный в послевоенные годы Севастополь мало напоминал писателю те руины, которые были в конце обороны города.</Run>
-                                </Paragraph>
-                                <Paragraph TextIndent="45">
-                                    <Run>В третий раз Л. Н. Толстой приехал в Крым для того, чтобы самому подлечиться после болезни.</Run>
-                                    <Run>Не имея на юге своей собственности, граф Толстой воспользовался приглашением графини С. В. Паниной.</Run>
-                                    <Run>8 сентября 1901 года Лев Николаевич с семьей приехал в Гаспру.</Run>
-                                    <Run>У дворца дорогих гостей местные жители встречали по русскому обычаю с хлебом и солью.</Run>
-                                </Paragraph>
-                                <Paragraph TextIndent="45">
-                                    <Run>Вставал Толстой обычно рано, после утреннего кофе шел на прогулку.</Run>
-                                    <Run>Видимо, на одной из таких прогулок Лев Николаевич простудился и заболел.</Run>
-                                    <Run>В разгар болезни положение было настолько тяжелым, что лечащие врачи потеряли надежду на выздоровление.</Run>
-                                    <Run>В семье обсуждали вопрос о погребении.</Run>
-                                    <Run>В те дни Толстой был отлучен «святейшим синодом» от церкви и был под особым наблюдением.</Run>
-                                    <Run>Имение графини Паниной было окружено тайными агентами.</Run>
-                                    <Run>Часть рукописей Толстого была вывезена и спрятана в Ялте.</Run>
-                                    <Run>Но Толстой выздоровел и прожил после этого еще 8 лет.</Run>
-                                    <Run>Толстой прожил в Гаспре 10 месяцев.</Run>
-                                    <Run>За это время им были написаны статьи: «К рабочему классу», «Обращение к молодежи», «Что такое религия и в чем сущность ее».</Run>
-                                    <Run>В Гаспре писатель работал над повестью «Хаджи Мурат».</Run>
-                                </Paragraph>
-                                <Paragraph TextIndent="45">
-                                    <Run>Во время пребывания в Гаспре Льва Николаевича часто навещали писатели.</Run>
-                                    <Run>Гостями Толстого были Короленко, Куприн, Шаляпин, которые в то время отдыхали на Южном берегу Крыма.</Run>
-                                    <Run>С ноября 1901 года по апрель 1902 года Чехов и Горький неоднократно бывали в Гаспре у великого писателя.</Run>
-                                    <Run>Крым Л. Н. Толстой любил, об этом писал и Антон Павлович Чехов Горькому: «Ему Крым нравится ужасно, возбуждает в нем радость, чисто детскую".</Run>
-                                    <Run>Благодарный за гостеприимство Лев Николаевич Толстой писал графине Паниной: "Я вынес из моего пребывания в Гаспре самые хорошие впечатления.</Run>
-                                    <Run>Во внутренней жизни я приобрел очень много для себя драгоценного.</Run>
-                                    <Run>Во внешней же жизни, особенно во время выздоровления, я получил большое наслаждение от прелестной природы».</Run>
-                                    <Run>25 июня 1902г. Толстые покинули Крым.</Run>
-                                </Paragraph>
-                            </Section>
-                        </FlowDocument>
+                        <FlowDocument/>
                     </FlowDocumentScrollViewer>
 
                     <Grid Grid.Column="1" Width="575" Height="550" VerticalAlignment="Top"  HorizontalAlignment="Center" Margin="0,40">
@@ -90,7 +50,7 @@
                             <ColumnDefinition/>
                             <ColumnDefinition Width="130"/>
                         </Grid.ColumnDefinitions>
-                        
+
                         <Grid.RowDefinitions>
                             <RowDefinition Height="250"/>
                             <RowDefinition/>
@@ -99,38 +59,62 @@
                             <RowDefinition Height="130"/>
                         </Grid.RowDefinitions>
 
-                        <Image x:Name="image0" Grid.ColumnSpan="7" Stretch="UniformToFill" Visibility="Hidden"/>
+                        <Image x:Name="image0" Grid.ColumnSpan="7" Stretch="UniformToFill" Visibility="Hidden" MouseDown="Zoom_Down" MouseUp="Zoom_Up"/>
 
-                        <Image x:Name="image1" Grid.Row="2" Grid.Column="0" Stretch="UniformToFill" Visibility="Hidden"/>
-                        <Image x:Name="image2" Grid.Row="2" Grid.Column="2" Stretch="UniformToFill" Visibility="Hidden"/>
-                        <Image x:Name="image3" Grid.Row="2" Grid.Column="4" Stretch="UniformToFill" Visibility="Hidden"/>
-                        <Image x:Name="image4" Grid.Row="2" Grid.Column="6" Stretch="UniformToFill" Visibility="Hidden"/>
+                        <Image x:Name="image1" Grid.Row="2" Grid.Column="0" Stretch="UniformToFill" Visibility="Hidden" MouseDown="Zoom_Down" MouseUp="Zoom_Up"/>
+                        <Image x:Name="image2" Grid.Row="2" Grid.Column="2" Stretch="UniformToFill" Visibility="Hidden" MouseDown="Zoom_Down" MouseUp="Zoom_Up"/>
+                        <Image x:Name="image3" Grid.Row="2" Grid.Column="4" Stretch="UniformToFill" Visibility="Hidden" MouseDown="Zoom_Down" MouseUp="Zoom_Up"/>
+                        <Image x:Name="image4" Grid.Row="2" Grid.Column="6" Stretch="UniformToFill" Visibility="Hidden" MouseDown="Zoom_Down" MouseUp="Zoom_Up"/>
 
-                        <Image x:Name="image5" Grid.Row="4" Grid.Column="0" Stretch="UniformToFill" Visibility="Hidden"/>
-                        <Image x:Name="image6" Grid.Row="4" Grid.Column="2" Stretch="UniformToFill" Visibility="Hidden"/>
-                        <Image x:Name="image7" Grid.Row="4" Grid.Column="4" Stretch="UniformToFill" Visibility="Hidden"/>
-                        <Image x:Name="image8" Grid.Row="4" Grid.Column="6" Stretch="UniformToFill" Visibility="Hidden"/>
+                        <Image x:Name="image5" Grid.Row="4" Grid.Column="0" Stretch="UniformToFill" Visibility="Hidden" MouseDown="Zoom_Down" MouseUp="Zoom_Up"/>
+                        <Image x:Name="image6" Grid.Row="4" Grid.Column="2" Stretch="UniformToFill" Visibility="Hidden" MouseDown="Zoom_Down" MouseUp="Zoom_Up"/>
+                        <Image x:Name="image7" Grid.Row="4" Grid.Column="4" Stretch="UniformToFill" Visibility="Hidden" MouseDown="Zoom_Down" MouseUp="Zoom_Up"/>
+                        <Image x:Name="image8" Grid.Row="4" Grid.Column="6" Stretch="UniformToFill" Visibility="Hidden" MouseDown="Zoom_Down" MouseUp="Zoom_Up"/>
 
+                        <Image Grid.ColumnSpan="7" Source="{DynamicResource ImageZoom}" HorizontalAlignment="Right" VerticalAlignment="Bottom"
+                               Width="25" Height="25" Margin="10"  Visibility="{Binding Visibility, ElementName=image0}"/>
+
+                        <Image Grid.Row="2" Grid.Column="0" Source="{DynamicResource ImageZoom}" HorizontalAlignment="Right" VerticalAlignment="Bottom"
+                               Width="25" Height="25" Margin="10"  Visibility="{Binding Visibility, ElementName=image1}"/>
+                        <Image Grid.Row="2" Grid.Column="2" Source="{DynamicResource ImageZoom}" HorizontalAlignment="Right" VerticalAlignment="Bottom"
+                               Width="25" Height="25" Margin="10"  Visibility="{Binding Visibility, ElementName=image2}"/>
+                        <Image Grid.Row="2" Grid.Column="4" Source="{DynamicResource ImageZoom}" HorizontalAlignment="Right" VerticalAlignment="Bottom"
+                               Width="25" Height="25" Margin="10"  Visibility="{Binding Visibility, ElementName=image3}"/>
+                        <Image Grid.Row="2" Grid.Column="6" Source="{DynamicResource ImageZoom}" HorizontalAlignment="Right" VerticalAlignment="Bottom"
+                               Width="25" Height="25" Margin="10"  Visibility="{Binding Visibility, ElementName=image4}"/>
+                        
+                        <Image Grid.Row="4" Grid.Column="0" Source="{DynamicResource ImageZoom}" HorizontalAlignment="Right" VerticalAlignment="Bottom"
+                               Width="25" Height="25" Margin="10"  Visibility="{Binding Visibility, ElementName=image5}"/>
+                        <Image Grid.Row="4" Grid.Column="2" Source="{DynamicResource ImageZoom}" HorizontalAlignment="Right" VerticalAlignment="Bottom"
+                               Width="25" Height="25" Margin="10"  Visibility="{Binding Visibility, ElementName=image6}"/>
+                        <Image Grid.Row="4" Grid.Column="4" Source="{DynamicResource ImageZoom}" HorizontalAlignment="Right" VerticalAlignment="Bottom"
+                               Width="25" Height="25" Margin="10"  Visibility="{Binding Visibility, ElementName=image7}"/>
+                        <Image Grid.Row="4" Grid.Column="6" Source="{DynamicResource ImageZoom}" HorizontalAlignment="Right" VerticalAlignment="Bottom"
+                               Width="25" Height="25" Margin="10"  Visibility="{Binding Visibility, ElementName=image8}"/>
+
+
+                        <!--Сильно тормозит (заменено на MouseDown у изображений)
                         <Button x:Name="zoom0" Grid.ColumnSpan="7" Template="{DynamicResource ZoomButtonTemplate}"
-                                Visibility="{Binding Visibility, ElementName=image0}" Click="Zoom_Click"/>
+                                Visibility="{Binding Visibility, ElementName=image0}" Click="Zoom_Click" Focusable="False"/>
 
                         <Button x:Name="zoom1" Grid.Row="2" Grid.Column="0" Template="{DynamicResource ZoomButtonTemplate}"
-                                Visibility="{Binding Visibility, ElementName=image1}" Click="Zoom_Click"/>
+                                Visibility="{Binding Visibility, ElementName=image1}" Click="Zoom_Click" Focusable="False"/>
                         <Button x:Name="zoom2" Grid.Row="2" Grid.Column="2" Template="{DynamicResource ZoomButtonTemplate}"
-                                Visibility="{Binding Visibility, ElementName=image2}" Click="Zoom_Click"/>
+                                Visibility="{Binding Visibility, ElementName=image2}" Click="Zoom_Click" Focusable="False"/>
                         <Button x:Name="zoom3" Grid.Row="2" Grid.Column="4" Template="{DynamicResource ZoomButtonTemplate}"
-                                Visibility="{Binding Visibility, ElementName=image3}" Click="Zoom_Click"/>
+                                Visibility="{Binding Visibility, ElementName=image3}" Click="Zoom_Click" Focusable="False"/>
                         <Button x:Name="zoom4" Grid.Row="2" Grid.Column="6" Template="{DynamicResource ZoomButtonTemplate}"
-                                Visibility="{Binding Visibility, ElementName=image4}" Click="Zoom_Click"/>
+                                Visibility="{Binding Visibility, ElementName=image4}" Click="Zoom_Click" Focusable="False"/>
 
                         <Button x:Name="zoom5" Grid.Row="4" Grid.Column="0" Template="{DynamicResource ZoomButtonTemplate}"
-                                Visibility="{Binding Visibility, ElementName=image5}" Click="Zoom_Click"/>
+                                Visibility="{Binding Visibility, ElementName=image5}" Click="Zoom_Click" Focusable="False"/>
                         <Button x:Name="zoom6" Grid.Row="4" Grid.Column="2" Template="{DynamicResource ZoomButtonTemplate}"
-                                Visibility="{Binding Visibility, ElementName=image6}" Click="Zoom_Click"/>
+                                Visibility="{Binding Visibility, ElementName=image6}" Click="Zoom_Click" Focusable="False"/>
                         <Button x:Name="zoom7" Grid.Row="4" Grid.Column="4" Template="{DynamicResource ZoomButtonTemplate}"
-                                Visibility="{Binding Visibility, ElementName=image7}" Click="Zoom_Click"/>
+                                Visibility="{Binding Visibility, ElementName=image7}" Click="Zoom_Click" Focusable="False"/>
                         <Button x:Name="zoom8" Grid.Row="4" Grid.Column="6" Template="{DynamicResource ZoomButtonTemplate}"
-                                Visibility="{Binding Visibility, ElementName=image8}" Click="Zoom_Click"/>
+                                Visibility="{Binding Visibility, ElementName=image8}" Click="Zoom_Click" Focusable="False"/>
+                        -->
                     </Grid>
                 </Grid>
             </ScrollViewer>
@@ -147,5 +131,16 @@
         <Button x:Name="close_button" Template="{DynamicResource NavButtonTemplate}" Content="/InteractiveTable;component/Images/PopupWindow/CloseWhite.png"
                 Click="Close_Button_Click" Width="150" Height="150" Padding="5,95,0,0" HorizontalAlignment="Right" VerticalAlignment="Top"
                 FontFamily="/InteractiveTable;component/Fonts/#Roboto" FontSize="18" Tag="{DynamicResource p_Close}" Foreground="White" Grid.Column="3"/>
+
+        <Popup x:Name="zoomPopup" PopupAnimation="Fade" AllowsTransparency="True" Placement="Center" StaysOpen="False">
+            <Grid>
+                <Border BorderBrush="White" BorderThickness="20"  Margin="50" MouseDown="Popup_Border_MouseDown">
+                    <Border.Effect>
+                        <DropShadowEffect BlurRadius="50" Opacity="0.7"/>
+                    </Border.Effect>
+                    <Image x:Name="zoomImage"/>
+                </Border>
+            </Grid>
+        </Popup>
     </Grid>
 </Window>
