@@ -15,22 +15,22 @@
         <ScrollViewer x:Name="scrollViewer" HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Disabled">
             <Canvas Height="600" Width="2422" VerticalAlignment="Bottom">
                 <!--Кнопки-->
-                <Button x:Name="y00_button" Click="Year_Button_Click" Template="{DynamicResource HexagonButtonTemplate}" Width="270" Height="270"
+                <Button x:Name="y00_button" Click="Year_Button_Click" Template="{DynamicResource HexagonButtonTemplate}" Focusable="False" Width="270" Height="270"
                     Padding="20,0" Content="/InteractiveTable;component/Images/Timeline/1828.png" Canvas.Left="62" Canvas.Top="8"/>
-                <Button x:Name="y01_button" Click="Year_Button_Click" Template="{DynamicResource HexagonButtonTemplate}" Width="270" Height="270"
+                <Button x:Name="y01_button" Click="Year_Button_Click" Template="{DynamicResource HexagonButtonTemplate}" Focusable="False" Width="270" Height="270"
                     Padding="20,0" Content="/InteractiveTable;component/Images/Timeline/1844.png" Canvas.Left="175" Canvas.Top="202"/>
-                <Button x:Name="y02_button" Click="Year_Button_Click" Template="{DynamicResource HexagonButtonTemplate}" Width="270" Height="270"
+                <Button x:Name="y02_button" Click="Year_Button_Click" Template="{DynamicResource HexagonButtonTemplate}" Focusable="False" Width="270" Height="270"
                     Padding="20,0" Content="/InteractiveTable;component/Images/Timeline/1847.png" Canvas.Left="398" Canvas.Top="328"/>
-                <Button x:Name="y03_button" Click="Year_Button_Click" Template="{DynamicResource HexagonButtonTemplate}" Width="270" Height="270"
+                <Button x:Name="y03_button" Click="Year_Button_Click" Template="{DynamicResource HexagonButtonTemplate}" Focusable="False" Width="270" Height="270"
                     Padding="20,0" Content="/InteractiveTable;component/Images/Timeline/1851.png" Canvas.Left="512" Canvas.Top="135"/>
 
-                <Button x:Name="y04_button" Click="Year_Button_Click" Template="{DynamicResource HexagonButtonTemplate}" Width="270" Height="270"
+                <Button x:Name="y04_button" Click="Year_Button_Click" Template="{DynamicResource HexagonButtonTemplate}" Focusable="False" Width="270" Height="270"
                     Padding="20,0" Content="/InteractiveTable;component/Images/Timeline/1852.png" Canvas.Left="736" Canvas.Top="6"/>
-                <Button x:Name="y05_button" Click="Year_Button_Click" Template="{DynamicResource HexagonButtonTemplate}" Width="270" Height="270"
+                <Button x:Name="y05_button" Click="Year_Button_Click" Template="{DynamicResource HexagonButtonTemplate}" Focusable="False" Width="270" Height="270"
                     Padding="20,0" Content="/InteractiveTable;component/Images/Timeline/1854.png" Canvas.Left="849" Canvas.Top="200"/>
-                <Button x:Name="y06_button" Click="Year_Button_Click" Template="{DynamicResource HexagonButtonTemplate}" Width="270" Height="270"
+                <Button x:Name="y06_button" Click="Year_Button_Click" Template="{DynamicResource HexagonButtonTemplate}" Focusable="False" Width="270" Height="270"
                     Padding="20,0" Content="/InteractiveTable;component/Images/Timeline/1855.png" Canvas.Left="1075" Canvas.Top="330"/>
-                <Button x:Name="y07_button" Click="Year_Button_Click" Template="{DynamicResource HexagonButtonTemplate}" Width="270" Height="270"
+                <Button x:Name="y07_button" Click="Year_Button_Click" Template="{DynamicResource HexagonButtonTemplate}" Focusable="False" Width="270" Height="270"
                     Padding="20,0" Content="/InteractiveTable;component/Images/Timeline/1856.png" Canvas.Left="1187" Canvas.Top="138"/>
 
                 <!--Кружочки и пути-->
@@ -92,7 +92,7 @@
             </Canvas>
         </ScrollViewer>
 
-        <Button x:Name="back_button" Template="{DynamicResource BackButtonTemplate}" Click="Back_Button_Click" Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="60,75,0,0"/>
+        <Button x:Name="back_button" Template="{DynamicResource BackButtonTemplate}" Click="Back_Button_Click" Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="60,75,0,0" Focusable="False"/>
 
         <local:BindableScrollBar BoundScrollViewer ="{Binding ElementName=scrollViewer}" Orientation="Horizontal" Grid.Row="1" Style="{DynamicResource TimelineScrollBarStyle}" Margin="0,65,0,0" VerticalAlignment="Top"/>
     </Grid>
