@@ -291,7 +291,7 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\Background.png" />
-	<Resource Include="Images\Arrow.png" />
+    <Resource Include="Images\Arrow.png" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\Intro\Kazan.jpg" />
@@ -299,10 +299,10 @@
     <Resource Include="Images\Intro\RusButton.png" />
     <Resource Include="Images\Intro\TatButton.png" />
     <Resource Include="Images\Intro\EngButton.png" />
-	<Resource Include="Images\Intro\Tolstoy.png" />
+    <Resource Include="Images\Intro\Tolstoy.png" />
   </ItemGroup>
   <ItemGroup>
-	<Resource Include="Images\MainMenu\MainMenuBackground.png" />
+    <Resource Include="Images\MainMenu\MainMenuBackground.png" />
     <Resource Include="Images\MainMenu\Biography.png" />
     <Resource Include="Images\MainMenu\MotivForCreativ.png" />
     <Resource Include="Images\MainMenu\StudentTask.png" />
@@ -322,7 +322,7 @@
     <Resource Include="Images\Photos\2.jpg" />
   </ItemGroup>
   <ItemGroup>
-	<Resource Include="Images\SubMenu\Family.png" />
+    <Resource Include="Images\SubMenu\Family.png" />
     <Resource Include="Images\SubMenu\Milestones.png" />
     <Resource Include="Images\SubMenu\Pedigree.png" />
   </ItemGroup>
@@ -341,12 +341,12 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\Pedigree\TreePedigree.png" />
-	<Resource Include="Images\Pedigree\Magnifier.png" />
+    <Resource Include="Images\Pedigree\Magnifier.png" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\Family\Auntie.png" />
     <Resource Include="Images\Family\BrothersSisters.png" />
-	<Resource Include="Images\Family\Mather.png" />
+    <Resource Include="Images\Family\Mather.png" />
     <Resource Include="Images\Family\Father.png" />
     <Resource Include="Images\Family\WifeChildren.png" />
   </ItemGroup>
@@ -381,7 +381,7 @@
     <Resource Include="Images\MemoryViewer\NextViewButton.png" />
   </ItemGroup>
   <ItemGroup>
-	<Resource Include="MemoryViewer\Monuments\main.0.jpg" />
+    <Resource Include="MemoryViewer\Monuments\main.0.jpg" />
     <Resource Include="MemoryViewer\Monuments\main.1.jpg" />
     <Resource Include="MemoryViewer\Monuments\sub.1.jpg" />
     <Resource Include="MemoryViewer\Monuments\sub.0.jpg" />
@@ -394,11 +394,16 @@
     <Resource Include="Images\PopupWindow\Zoom.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="PopupWindow\Timeline\img.0.0.jpg" />
-    <Resource Include="PopupWindow\Timeline\img.0.1.jpg" />
-    <Resource Include="PopupWindow\Timeline\img.0.2.jpg" />
-    <Resource Include="PopupWindow\Timeline\img.0.3.jpg" />
-    <Resource Include="PopupWindow\Timeline\img.0.4.jpg" />
+    <Resource Include="PopupWindow\Timeline\big.0.0.jpg" />
+    <Resource Include="PopupWindow\Timeline\big.0.1.jpg" />
+    <Resource Include="PopupWindow\Timeline\big.0.2.jpg" />
+    <Resource Include="PopupWindow\Timeline\big.0.3.jpg" />
+    <Resource Include="PopupWindow\Timeline\big.0.4.jpg" />
+    <Resource Include="PopupWindow\Timeline\small.0.0.jpg" />
+    <Resource Include="PopupWindow\Timeline\small.0.1.jpg" />
+    <Resource Include="PopupWindow\Timeline\small.0.2.jpg" />
+    <Resource Include="PopupWindow\Timeline\small.0.3.jpg" />
+    <Resource Include="PopupWindow\Timeline\small.0.4.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\Expression\Blend\.NETFramework\v4.5\Microsoft.Expression.Blend.WPF.targets" />
