@@ -26,6 +26,8 @@ namespace InteractiveTable.Pages
         private string folder;
         private int number;
         private int maxNumber;
+        private string culture;
+
         /// <summary>
         /// Фотоальбом с описанием
         /// </summary>
@@ -34,8 +36,10 @@ namespace InteractiveTable.Pages
         public MemoryViewer(string folder, int Count)
         {
             InitializeComponent();
+            //Опредяляем текущий язык
+            culture = App.Language.Name;
             maxNumber = Count;
-            WritePage(this.folder = folder, this.number = 0);
+            WritePage(this.folder = folder, this.number = 0, this.culture);
         }
 
         /// <summary>
@@ -47,6 +51,8 @@ namespace InteractiveTable.Pages
         public MemoryViewer(string folder, int Count, int number)
         {
             InitializeComponent();
+            //Опредяляем текущий язык
+            culture = App.Language.Name;
             maxNumber = Count;
 
             if (number < maxNumber)
@@ -54,7 +60,7 @@ namespace InteractiveTable.Pages
             else
                 this.number = 0;
 
-            WritePage(this.folder = folder, this.number);
+            WritePage(this.folder = folder, this.number, culture);
         }
 
         private void Back_Button_Click(object sender, RoutedEventArgs e)
@@ -68,7 +74,7 @@ namespace InteractiveTable.Pages
             {
                 number = 0;
             }
-            WritePage(folder, number);
+            WritePage(folder, number, culture);
         }
 
         private void Back_View_Button_Click(object sender, RoutedEventArgs e)
@@ -77,10 +83,10 @@ namespace InteractiveTable.Pages
             {
                 number = maxNumber-1;
             }
-            WritePage(folder, number);
+            WritePage(folder, number, culture);
         }
 
-        private void WritePage(string folder, int number)
+        private void WritePage(string folder, int number, string culture)
         {
             Uri pathMain = new Uri(String.Format("pack://application:,,,/MemoryViewer/{0}/main.{1}.jpg", folder, number), UriKind.Absolute);
             Uri pathSub = new Uri(String.Format("pack://application:,,,/MemoryViewer/{0}/sub.{1}.jpg", folder, number), UriKind.Absolute);
@@ -94,9 +100,6 @@ namespace InteractiveTable.Pages
                 mainPhoto.Source = null;
                 subPhoto.Fill = null;
             }
-
-            //Опредяляем текущий язык
-            string culture = App.Language.Name;
 
             Uri pathDisc = new Uri(String.Format("/MemoryViewer/{0}/disc.{1}.{2}.xaml", folder, number, culture), UriKind.Relative);
             try
