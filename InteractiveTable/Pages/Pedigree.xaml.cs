@@ -21,9 +21,12 @@ namespace InteractiveTable.Pages
     /// </summary>
     public partial class Pedigree : Page
     {
+        public string culture;
+
         public Pedigree()
         {
             InitializeComponent();
+            culture = App.Language.Name;
 
             VisualBrush maglifier_brush = (VisualBrush)magnifierEllipse.Fill;
             maglifier_brush.Visual = mainUI;
@@ -36,7 +39,7 @@ namespace InteractiveTable.Pages
 
         private void Read_More_Button_Click(object sender, RoutedEventArgs e)
         {
-            
+            //new PopupWindow("", 1, 0).Show();
         }
 
         private void OnMoveOverMainUI(object sender, MouseEventArgs e)
