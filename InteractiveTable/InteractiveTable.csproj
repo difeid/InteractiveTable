@@ -419,12 +419,17 @@
   <ItemGroup>
     <Resource Include="Images\Pedigree\PedigreePopupBackground.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="Images\BookViewer\Separator.png" />
+  </ItemGroup>
   <ItemGroup>
     <Resource Include="Pedigree\img.0.png" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\Pedigree\ReadMoreArrow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\BookViewer\BookBackground.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\Expression\Blend\.NETFramework\v4.5\Microsoft.Expression.Blend.WPF.targets" />
