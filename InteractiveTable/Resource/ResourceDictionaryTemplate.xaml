@@ -366,4 +366,52 @@
             <Rectangle Fill="Transparent"/>
         </Grid>
     </ControlTemplate>
+
+    <!--Шаблон кнопоки подробнее-->
+    <ControlTemplate x:Key="ReadMoreButtonTemplate" TargetType="{x:Type Button}">
+        <Grid x:Name="back_grid" Cursor="Hand" Width="130" Height="30" RenderTransformOrigin="0.5,0.5">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="30"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Grid.RenderTransform>
+            <VisualStateManager.VisualStateGroups>
+                <VisualStateGroup x:Name="CommonStates">
+                    <VisualState x:Name="Normal"/>
+                    <VisualState x:Name="MouseOver"/>
+                    <VisualState x:Name="Pressed">
+                        <Storyboard>
+                            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)" Storyboard.TargetName="back_grid">
+                                <EasingDoubleKeyFrame KeyTime="0:0:0.1" Value="0.95">
+                                    <EasingDoubleKeyFrame.EasingFunction>
+                                        <ExponentialEase EasingMode="EaseOut"/>
+                                    </EasingDoubleKeyFrame.EasingFunction>
+                                </EasingDoubleKeyFrame>
+                            </DoubleAnimationUsingKeyFrames>
+                            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)" Storyboard.TargetName="back_grid">
+                                <EasingDoubleKeyFrame KeyTime="0:0:0.1" Value="0.95">
+                                    <EasingDoubleKeyFrame.EasingFunction>
+                                        <ExponentialEase EasingMode="EaseOut"/>
+                                    </EasingDoubleKeyFrame.EasingFunction>
+                                </EasingDoubleKeyFrame>
+                            </DoubleAnimationUsingKeyFrames>
+                        </Storyboard>
+                    </VisualState>
+                    <VisualState x:Name="Disabled"/>
+                </VisualStateGroup>
+            </VisualStateManager.VisualStateGroups>
+            <Border CornerRadius="5" Grid.ColumnSpan="2" Background="#FFCF142B"/>
+            <Image Source="/InteractiveTable;component/Images/Pedigree/ReadMoreArrow.png" Stretch="Fill"
+                   Width="20" Height="20" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,7,0,0"/>
+            <TextBlock Text="{DynamicResource g_ReadMoreButton}" FontFamily="/InteractiveTable;component/Fonts/#Basil Bold" FontSize="14"
+                       HorizontalAlignment="Right" VerticalAlignment="Center" Foreground="White"/>
+        </Grid>
+    </ControlTemplate>
 </ResourceDictionary>
