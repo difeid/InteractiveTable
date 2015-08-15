@@ -36,12 +36,12 @@ namespace InteractiveTable
         /// Вывод статей
         /// </summary>
         /// <param name="folder">Папка с содержимым</param>
-        /// <param name="Count">Количество статей</param>
-        public PopupWindow(string folder, int Count)
+        /// <param name="count">Количество статей</param>
+        public PopupWindow(string folder, int count)
         {
             InitializeComponent();
-            Init();
-            maxNumber = Count;
+            Init(count);
+            maxNumber = count;
             maxNumberImage = WritePage(this.folder = folder, this.number = 0, this.culture);
         }
 
@@ -49,13 +49,13 @@ namespace InteractiveTable
         /// Вывод статей
         /// </summary>
         /// <param name="folder">Папка с содержимым</param>
-        /// <param name="Count">Количество статей</param>
+        /// <param name="count">Количество статей</param>
         /// <param name="number">С какой по счету начинать, отсчет с нуля</param>
-        public PopupWindow(string folder, int Count, int number)
+        public PopupWindow(string folder, int count, int number)
         {
             InitializeComponent();
-            Init();
-            maxNumber = Count;
+            Init(count);
+            maxNumber = count;
 
             if (number < maxNumber)
                 this.number = number;
@@ -125,11 +125,22 @@ namespace InteractiveTable
             ShowPopup(folder, number, numberImage);
         }
 
-        private void Init()
+        private void Init(int count)
         {
             numberImage = 0;
             culture = App.Language.Name;
             arrayImage = new[] { image0, image1, image2, image3, image4, image5, image6, image7, image8 };
+
+            if (count > 1)
+            {
+                next_button.Visibility = Visibility.Visible;
+                back_button.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                next_button.Visibility = Visibility.Hidden;
+                back_button.Visibility = Visibility.Hidden;
+            }
         }
 
         public int WritePage(string folder, int number, string culture)
