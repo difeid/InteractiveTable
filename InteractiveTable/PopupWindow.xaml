@@ -24,7 +24,7 @@
                 <ImageBrush ImageSource="Images/PopupWindow/PopupBackground.png"/>
             </Border.Background>
             <Border.Effect>
-                <DropShadowEffect Opacity="0.75" BlurRadius="35"/>
+                <DropShadowEffect Opacity="0.75" BlurRadius="35" Color="#FFCDBF97"/>
             </Border.Effect>
 
             <ScrollViewer Width="1275" Height="765" Template="{DynamicResource ScrollViewerTemplate}"
