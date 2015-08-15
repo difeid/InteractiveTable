@@ -26,6 +26,11 @@ namespace InteractiveTable.Pages
             InitializeComponent();
         }
 
+        private void Back_Button_Click(object sender, RoutedEventArgs e)
+        {
+            this.NavigationService.GoBack();
+        }
+
         private void Content_Button_Click(object sender, RoutedEventArgs e)
         {
 
