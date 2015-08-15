@@ -15,6 +15,7 @@
 
         <Button x:Name="back_button" Template="{DynamicResource BackButtonTemplate}" Click="Back_Button_Click" Foreground="White"
                 HorizontalAlignment="Left" VerticalAlignment="Top" Margin="60,795,0,0"/>
+        
         <Button x:Name="next_view_button" Click="Next_View_Button_Click" Template="{DynamicResource HexagonButtonTemplate}" Content="/InteractiveTable;component/Images/MemoryViewer/NextViewButton.png"
                 Width="114" Height="114" Padding="5,0" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="893,0,0,0" Grid.ColumnSpan="2"/>
         <Button x:Name="back_view_button" Click="Back_View_Button_Click" Template="{DynamicResource HexagonButtonTemplate}" Content="/InteractiveTable;component/Images/MemoryViewer/BackViewButton.png"

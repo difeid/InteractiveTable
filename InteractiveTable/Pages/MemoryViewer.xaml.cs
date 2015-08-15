@@ -36,8 +36,8 @@ namespace InteractiveTable.Pages
         public MemoryViewer(string folder, int count)
         {
             InitializeComponent();
-            //Опредяляем текущий язык
-            culture = App.Language.Name;
+            Init(count);
+
             maxNumber = count;
             WritePage(this.folder = folder, this.number = 0, this.culture);
         }
@@ -51,8 +51,8 @@ namespace InteractiveTable.Pages
         public MemoryViewer(string folder, int count, int number)
         {
             InitializeComponent();
-            //Опредяляем текущий язык
-            culture = App.Language.Name;
+            Init(count);
+
             maxNumber = count;
 
             if (number < maxNumber)
@@ -60,7 +60,7 @@ namespace InteractiveTable.Pages
             else
                 this.number = 0;
 
-            WritePage(this.folder = folder, this.number, culture);
+            WritePage(this.folder = folder, this.number, this.culture);
         }
 
         private void Back_Button_Click(object sender, RoutedEventArgs e)
@@ -84,6 +84,22 @@ namespace InteractiveTable.Pages
                 number = maxNumber-1;
             }
             WritePage(folder, number, culture);
+        }
+
+        private void Init(int count)
+        {
+            culture = App.Language.Name;
+
+            if (count > 1)
+            {
+                next_view_button.Visibility = Visibility.Visible;
+                back_view_button.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                next_view_button.Visibility = Visibility.Hidden;
+                back_view_button.Visibility = Visibility.Hidden;
+            }
         }
 
         private void WritePage(string folder, int number, string culture)
