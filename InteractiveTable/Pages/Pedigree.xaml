@@ -11,9 +11,30 @@
                 <ImageBrush ImageSource="/InteractiveTable;component/Images/Pedigree/TreePedigree.png"/>
             </Canvas.Background>
         </Canvas>
-        
+
         <Button x:Name="back_button" Template="{DynamicResource BackButtonTemplate}" Click="Back_Button_Click" Canvas.Left="60" Canvas.Top="795"/>
-        
+
+        <Popup x:Name="readMorePopup" PopupAnimation="Fade" AllowsTransparency="True" Placement="Absolute"
+               StaysOpen="False" IsOpen="True" HorizontalOffset="1080" VerticalOffset="40">
+            <Grid Width="480" Height="240">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="7*"/>
+                    <ColumnDefinition Width="13*"/>
+                </Grid.ColumnDefinitions>
+
+                <Border Grid.ColumnSpan="2" Margin="10">
+                    <Border.Background>
+                        <ImageBrush ImageSource="/InteractiveTable;component/Images/Pedigree/PedigreePopupBackground.png"/>
+                    </Border.Background>
+                    <Border.Effect>
+                        <DropShadowEffect BlurRadius="35" Opacity="0.75" Color="#FFCDBF97"/>
+                    </Border.Effect>
+                </Border>
+                <Image x:Name="photoImage" Height="120" Width="120" HorizontalAlignment="Right" Stretch="UniformToFill"/>
+                <TextBlock/>
+            </Grid>
+        </Popup>
+
         <Canvas x:Name="magnifierCanvas" IsHitTestVisible="False">
             <Ellipse x:Name="magnifierEllipse" Width="230" Height="230" StrokeThickness="5">
                 <Ellipse.Fill>
