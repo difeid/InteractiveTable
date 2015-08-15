@@ -34,12 +34,12 @@
                         <DropShadowEffect BlurRadius="35" Opacity="0.75" Color="#FFCDBF97"/>
                     </Border.Effect>
                 </Border>
-                <Image x:Name="photoImage" Height="120" Width="120" HorizontalAlignment="Right" Stretch="UniformToFill" Margin="0,60" Grid.RowSpan="2" />
-                <FlowDocumentScrollViewer x:Name="discDocument" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Disabled" IsHitTestVisible="False"
-                                          Height="90" Width="300" HorizontalAlignment="Left" VerticalAlignment="Bottom" Grid.Column="1">
+                <Image x:Name="photoImage" Height="120" Width="120" HorizontalAlignment="Right" Stretch="UniformToFill" Margin="0,60" Grid.RowSpan="2" Source="/InteractiveTable;component/Pedigree/0.png" />
+                <FlowDocumentScrollViewer x:Name="plateDocument" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Disabled" IsHitTestVisible="False"
+                                          Height="95" Width="280" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="15,0" Grid.Column="1" Block.LineHeight="1">
                     <FlowDocument/>
                 </FlowDocumentScrollViewer>
-                <Button x:Name="readMoreButton" Click="Read_More_Button" Grid.Row="1" Grid.ColumnSpan="2" Template="{DynamicResource ReadMoreButtonTemplate}" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+                <Button x:Name="readMoreButton" Click="Read_More_Button_Click" Grid.Row="1" Grid.ColumnSpan="2" Template="{DynamicResource ReadMoreButtonTemplate}" HorizontalAlignment="Center" VerticalAlignment="Top"/>
             </Grid>
         </Popup>
 

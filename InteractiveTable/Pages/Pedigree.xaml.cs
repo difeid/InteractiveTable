@@ -33,6 +33,11 @@ namespace InteractiveTable.Pages
             this.NavigationService.GoBack();
         }
 
+        private void Read_More_Button_Click(object sender, RoutedEventArgs e)
+        {
+            
+        }
+
         private void OnMoveOverMainUI(object sender, MouseEventArgs e)
         {
             VisualBrush magnlifier_brush = (VisualBrush)magnifierEllipse.Fill;
