@@ -10,7 +10,7 @@
 	
 	<!--Шаблон 6 угольных кнопок-->
 	<ControlTemplate x:Key="HexagonButtonTemplate" TargetType="{x:Type Button}">
-		<Grid x:Name="grid" Cursor="Hand" RenderTransformOrigin="0.5,0.5">
+        <Grid x:Name="hexagon_grid" Cursor="Hand" RenderTransformOrigin="0.5,0.5">
 			<Grid.RenderTransform>
 				<TransformGroup>
 					<ScaleTransform/>
@@ -25,14 +25,14 @@
 					<VisualState x:Name="MouseOver"/>
 					<VisualState x:Name="Pressed">
 						<Storyboard>
-							<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)" Storyboard.TargetName="grid">
+                            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)" Storyboard.TargetName="hexagon_grid">
 								<EasingDoubleKeyFrame KeyTime="0:0:0.1" Value="0.95">
 									<EasingDoubleKeyFrame.EasingFunction>
 										<ExponentialEase EasingMode="EaseOut"/>
 									</EasingDoubleKeyFrame.EasingFunction>
 								</EasingDoubleKeyFrame>
 							</DoubleAnimationUsingKeyFrames>
-							<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)" Storyboard.TargetName="grid">
+                            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)" Storyboard.TargetName="hexagon_grid">
 								<EasingDoubleKeyFrame KeyTime="0:0:0.1" Value="0.95">
 									<EasingDoubleKeyFrame.EasingFunction>
 										<ExponentialEase EasingMode="EaseOut"/>
@@ -369,7 +369,7 @@
 
     <!--Шаблон кнопоки подробнее-->
     <ControlTemplate x:Key="ReadMoreButtonTemplate" TargetType="{x:Type Button}">
-        <Grid x:Name="back_grid" Cursor="Hand" Width="130" Height="30" RenderTransformOrigin="0.5,0.5">
+        <Grid x:Name="read_more_grid" Cursor="Hand" Width="130" Height="30" RenderTransformOrigin="0.5,0.5">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition/>
                 <ColumnDefinition Width="30"/>
@@ -388,14 +388,14 @@
                     <VisualState x:Name="MouseOver"/>
                     <VisualState x:Name="Pressed">
                         <Storyboard>
-                            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)" Storyboard.TargetName="back_grid">
+                            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)" Storyboard.TargetName="read_more_grid">
                                 <EasingDoubleKeyFrame KeyTime="0:0:0.1" Value="0.95">
                                     <EasingDoubleKeyFrame.EasingFunction>
                                         <ExponentialEase EasingMode="EaseOut"/>
                                     </EasingDoubleKeyFrame.EasingFunction>
                                 </EasingDoubleKeyFrame>
                             </DoubleAnimationUsingKeyFrames>
-                            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)" Storyboard.TargetName="back_grid">
+                            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)" Storyboard.TargetName="read_more_grid">
                                 <EasingDoubleKeyFrame KeyTime="0:0:0.1" Value="0.95">
                                     <EasingDoubleKeyFrame.EasingFunction>
                                         <ExponentialEase EasingMode="EaseOut"/>
@@ -414,4 +414,51 @@
                        HorizontalAlignment="Right" VerticalAlignment="Center" Foreground="White"/>
         </Grid>
     </ControlTemplate>
+    
+    <!--Шаблон вертикальной кнопки-->
+    <ControlTemplate x:Key="VerticalButtonTemplate" TargetType="{x:Type Button}">
+        <Grid x:Name="vertical_grid" Cursor="Hand" RenderTransformOrigin="0.5,0.5">
+            <Grid.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Grid.RenderTransform>
+            <VisualStateManager.VisualStateGroups>
+                <VisualStateGroup x:Name="CommonStates">
+                    <VisualState x:Name="Normal"/>
+                    <VisualState x:Name="MouseOver"/>
+                    <VisualState x:Name="Pressed">
+                        <Storyboard>
+                            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)" Storyboard.TargetName="vertical_grid">
+                                <EasingDoubleKeyFrame KeyTime="0:0:0.1" Value="0.95">
+                                    <EasingDoubleKeyFrame.EasingFunction>
+                                        <ExponentialEase EasingMode="EaseIn"/>
+                                    </EasingDoubleKeyFrame.EasingFunction>
+                                </EasingDoubleKeyFrame>
+                            </DoubleAnimationUsingKeyFrames>
+                        </Storyboard>
+                    </VisualState>
+                    <VisualState x:Name="Disabled"/>
+                </VisualStateGroup>
+            </VisualStateManager.VisualStateGroups>
+            <Border CornerRadius="5" Background="{TemplateBinding Background}"
+                    Width="{TemplateBinding Width}" Height="{TemplateBinding Height}">
+                <TextBlock Text="{TemplateBinding Content}" FontFamily="{TemplateBinding FontFamily}" FontSize="{TemplateBinding FontSize}"
+                           Foreground="{TemplateBinding Foreground}" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                           VerticalAlignment="{TemplateBinding VerticalContentAlignment}" Margin="{TemplateBinding Padding}">
+                    <TextBlock.LayoutTransform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform/>
+                            <RotateTransform Angle="90"/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </TextBlock.LayoutTransform>
+                </TextBlock>
+            </Border>
+        </Grid>
+    </ControlTemplate> 
 </ResourceDictionary>

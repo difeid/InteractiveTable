@@ -3,7 +3,6 @@
                     xmlns:v="clr-namespace:System;assembly=mscorlib">
     <!-- Main-->
     <v:String x:Key="g_BackButton">Назад</v:String>
-    <v:String x:Key="g_ReadMoreButton">Подробнее</v:String>
     <!--MainMenu-->
     <v:String x:Key="m_Memory">Память</v:String>
     <v:String x:Key="m_StudentTask">Задания школьникам</v:String>
@@ -41,6 +40,11 @@
     <v:String x:Key="p_Next">дальше</v:String>
     <v:String x:Key="p_Back">назад</v:String>
     <v:String x:Key="p_Close">закрыть</v:String>
+    <!--Pedigree-->
+    <v:String x:Key="g_ReadMoreButton">Подробнее</v:String>
+    <!--BookViewer-->
+    <v:String x:Key="b_Content">СОДЕРЖАНИЕ</v:String>
+    
     <!--Photo (НЕ НУЖНО)-->
     <x:Array Type="v:String" x:Key="p_Title">
         <v:String>В день рождения Льва Львовича Толстого в Ясной Поляне 20 мая 1901 г. Фотография С.А.Толстой.</v:String>

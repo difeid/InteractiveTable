@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using MoonPdfLib;
 
 namespace InteractiveTable.Pages
 {
@@ -23,6 +24,11 @@ namespace InteractiveTable.Pages
         public BookViewer()
         {
             InitializeComponent();
+        }
+
+        private void Content_Button_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
