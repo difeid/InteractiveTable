@@ -145,11 +145,6 @@
   <ItemGroup>
     <None Include="Library\MouseKeyboardActivityMonitor.dll" />
   </ItemGroup>
-  <ItemGroup>
-    <None Include="Library\libmupdf.dll">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PostBuildEvent>
