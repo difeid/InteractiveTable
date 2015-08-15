@@ -1,0 +1,14 @@
+﻿<FlowDocument xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" TextAlignment="Left">
+    <Paragraph FontFamily="/InteractiveTable;component/Fonts/#Open Sans" FontSize="12">
+        <Run>Княжна</Run>
+    </Paragraph>
+    <Paragraph FontFamily="/InteractiveTable;component/Fonts/#Basil Bold" FontSize="14">
+        <Run>Пелагея Николаевна Толстая</Run>
+    </Paragraph>
+    <Paragraph FontFamily="/InteractiveTable;component/Fonts/#Open Sans" FontSize="12">
+        <Run>(урожденная Горчакова)</Run>
+    </Paragraph>
+    <Paragraph FontFamily="/InteractiveTable;component/Fonts/#Open Sans" FontSize="12" Padding="0,10,0,0">
+        <Run>1762—1838</Run>
+    </Paragraph>
+</FlowDocument>
