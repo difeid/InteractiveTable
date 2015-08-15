@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.IO;
 
 namespace InteractiveTable.Pages
 {
@@ -50,6 +51,31 @@ namespace InteractiveTable.Pages
             magnlifier_brush.Viewbox = viewBox;
             Canvas.SetLeft(magnifierCanvas, position.X - magnifierEllipse.Width / 2);
             Canvas.SetTop(magnifierCanvas, position.Y - magnifierEllipse.Height / 2);
+        }
+
+        public void ShowPopup(int number, string culture)
+        {
+            Uri pathImage = new Uri(String.Format("pack://application:,,,/Pedigree/img.{0}.png", number), UriKind.Absolute);
+            try
+            {
+                photoImage.Source = new BitmapImage(pathImage);
+            }
+            catch (IOException)
+            {
+                photoImage.Source = null;
+            }
+
+            Uri pathPlate = new Uri(String.Format("/Pedigree/plate.{0}.{1}.xaml", number, culture), UriKind.Relative);
+            try
+            {
+                FlowDocument doc = Application.LoadComponent(pathPlate) as FlowDocument;
+                plateDocument.Document = doc;
+            }
+            catch (IOException)
+            {
+                plateDocument.Document = null;
+            }
+            readMorePopup.IsOpen = true;
         }
     }
 }
