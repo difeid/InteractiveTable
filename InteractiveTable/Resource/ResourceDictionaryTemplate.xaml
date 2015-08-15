@@ -360,8 +360,8 @@
     	</Setter>
     </Style>
 
-    <!--Шаблон кнопки увеличение-->
-    <ControlTemplate x:Key="ZoomButtonTemplate" TargetType="{x:Type Button}">
+    <!--Шаблон скрытых кнопок-->
+    <ControlTemplate x:Key="HiddenButtonTemplate" TargetType="{x:Type Button}">
         <Grid Cursor="Hand">
             <Rectangle Fill="Transparent"/>
         </Grid>

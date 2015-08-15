@@ -92,25 +92,25 @@
                         <Image Grid.Row="4" Grid.Column="6" Source="{DynamicResource ImageZoom}" HorizontalAlignment="Right" VerticalAlignment="Bottom"
                                Width="25" Height="25" Margin="10"  Visibility="{Binding Visibility, ElementName=image8}"/>
 
-                        <Button x:Name="zoom0" Grid.ColumnSpan="7" Template="{DynamicResource ZoomButtonTemplate}"
+                        <Button x:Name="zoom0" Grid.ColumnSpan="7" Template="{DynamicResource HiddenButtonTemplate}"
                                 Visibility="{Binding Visibility, ElementName=image0}" Click="Zoom_Click" Focusable="False"/>
 
-                        <Button x:Name="zoom1" Grid.Row="2" Grid.Column="0" Template="{DynamicResource ZoomButtonTemplate}"
+                        <Button x:Name="zoom1" Grid.Row="2" Grid.Column="0" Template="{DynamicResource HiddenButtonTemplate}"
                                 Visibility="{Binding Visibility, ElementName=image1}" Click="Zoom_Click" Focusable="False"/>
-                        <Button x:Name="zoom2" Grid.Row="2" Grid.Column="2" Template="{DynamicResource ZoomButtonTemplate}"
+                        <Button x:Name="zoom2" Grid.Row="2" Grid.Column="2" Template="{DynamicResource HiddenButtonTemplate}"
                                 Visibility="{Binding Visibility, ElementName=image2}" Click="Zoom_Click" Focusable="False"/>
-                        <Button x:Name="zoom3" Grid.Row="2" Grid.Column="4" Template="{DynamicResource ZoomButtonTemplate}"
+                        <Button x:Name="zoom3" Grid.Row="2" Grid.Column="4" Template="{DynamicResource HiddenButtonTemplate}"
                                 Visibility="{Binding Visibility, ElementName=image3}" Click="Zoom_Click" Focusable="False"/>
-                        <Button x:Name="zoom4" Grid.Row="2" Grid.Column="6" Template="{DynamicResource ZoomButtonTemplate}"
+                        <Button x:Name="zoom4" Grid.Row="2" Grid.Column="6" Template="{DynamicResource HiddenButtonTemplate}"
                                 Visibility="{Binding Visibility, ElementName=image4}" Click="Zoom_Click" Focusable="False"/>
 
-                        <Button x:Name="zoom5" Grid.Row="4" Grid.Column="0" Template="{DynamicResource ZoomButtonTemplate}"
+                        <Button x:Name="zoom5" Grid.Row="4" Grid.Column="0" Template="{DynamicResource HiddenButtonTemplate}"
                                 Visibility="{Binding Visibility, ElementName=image5}" Click="Zoom_Click" Focusable="False"/>
-                        <Button x:Name="zoom6" Grid.Row="4" Grid.Column="2" Template="{DynamicResource ZoomButtonTemplate}"
+                        <Button x:Name="zoom6" Grid.Row="4" Grid.Column="2" Template="{DynamicResource HiddenButtonTemplate}"
                                 Visibility="{Binding Visibility, ElementName=image6}" Click="Zoom_Click" Focusable="False"/>
-                        <Button x:Name="zoom7" Grid.Row="4" Grid.Column="4" Template="{DynamicResource ZoomButtonTemplate}"
+                        <Button x:Name="zoom7" Grid.Row="4" Grid.Column="4" Template="{DynamicResource HiddenButtonTemplate}"
                                 Visibility="{Binding Visibility, ElementName=image7}" Click="Zoom_Click" Focusable="False"/>
-                        <Button x:Name="zoom8" Grid.Row="4" Grid.Column="6" Template="{DynamicResource ZoomButtonTemplate}"
+                        <Button x:Name="zoom8" Grid.Row="4" Grid.Column="6" Template="{DynamicResource HiddenButtonTemplate}"
                                 Visibility="{Binding Visibility, ElementName=image8}" Click="Zoom_Click" Focusable="False"/>
                     </Grid>
                 </Grid>
