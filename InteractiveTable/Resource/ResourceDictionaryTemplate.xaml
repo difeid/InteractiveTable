@@ -286,7 +286,7 @@
         </Setter>
 	</Style>
 
-    <!--Шаблон PopupScrollViewer-->
+    <!--Шаблон ScrollViewer-->
     <ControlTemplate x:Key="ScrollViewerTemplate" TargetType="{x:Type ScrollViewer}">
     	<Grid x:Name="Grid" Background="{TemplateBinding Background}">
     		<Grid.ColumnDefinitions>
