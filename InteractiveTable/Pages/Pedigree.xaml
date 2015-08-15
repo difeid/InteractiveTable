@@ -14,6 +14,8 @@
 
         <Button x:Name="back_button" Template="{DynamicResource BackButtonTemplate}" Click="Back_Button_Click" Canvas.Left="60" Canvas.Top="795"/>
 
+        <Button x:Name="p00_button" Width="160" Height="140" Canvas.Left="577" Canvas.Top="453" Template="{DynamicResource HiddenButtonTemplate}" Click="PopupShow_Button_Click"/>
+
         <Popup x:Name="readMorePopup" PopupAnimation="Fade" AllowsTransparency="True" Placement="Absolute"
                StaysOpen="False" HorizontalOffset="1080" VerticalOffset="40">
             <Grid Width="480" Height="240">

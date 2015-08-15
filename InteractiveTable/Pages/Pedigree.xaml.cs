@@ -21,7 +21,8 @@ namespace InteractiveTable.Pages
     /// </summary>
     public partial class Pedigree : Page
     {
-        public string culture;
+        private string culture;
+        private int personNumber;
 
         public Pedigree()
         {
@@ -37,9 +38,15 @@ namespace InteractiveTable.Pages
             this.NavigationService.GoBack();
         }
 
+        private void PopupShow_Button_Click(object sender, RoutedEventArgs e)
+        {
+            personNumber = Convert.ToInt32((sender as Button).Name.Substring(1, 2));
+            ShowPopup(personNumber, culture);
+        }
+
         private void Read_More_Button_Click(object sender, RoutedEventArgs e)
         {
-            //new PopupWindow("", 1, 0).Show();
+            //new PopupWindow("", 0, personNumber).Show();
         }
 
         private void OnMoveOverMainUI(object sender, MouseEventArgs e)
