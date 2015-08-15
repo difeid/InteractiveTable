@@ -13,6 +13,8 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using MoonPdfLib;
+using MoonPdfLib.MuPdf;
+using System.IO;
 
 namespace InteractiveTable.Pages
 {
@@ -21,9 +23,13 @@ namespace InteractiveTable.Pages
     /// </summary>
     public partial class BookViewer : Page
     {
-        public BookViewer()
+        public BookViewer(int bookNumber)
         {
             InitializeComponent();
+
+            string culture = App.Language.Name;
+            string pathBook = String.Format("Book/book.{0}.{1}.pdf", bookNumber, culture);
+            moonPdfPanel.OpenFile(pathBook);
         }
 
         private void Back_Button_Click(object sender, RoutedEventArgs e)
