@@ -32,13 +32,13 @@ namespace InteractiveTable.Pages
         /// Фотоальбом с описанием
         /// </summary>
         /// <param name="folder">Папка с содержимым</param>
-        /// <param name="Count">Количество фото</param>
-        public MemoryViewer(string folder, int Count)
+        /// <param name="count">Количество фото</param>
+        public MemoryViewer(string folder, int count)
         {
             InitializeComponent();
             //Опредяляем текущий язык
             culture = App.Language.Name;
-            maxNumber = Count;
+            maxNumber = count;
             WritePage(this.folder = folder, this.number = 0, this.culture);
         }
 
@@ -46,14 +46,14 @@ namespace InteractiveTable.Pages
         /// Фотоальбом с описанием
         /// </summary>
         /// <param name="folder">Папка с содержимым</param>
-        /// <param name="Count">Количество фото</param>
+        /// <param name="count">Количество фото</param>
         /// <param name="number">С какого начинать</param>
-        public MemoryViewer(string folder, int Count, int number)
+        public MemoryViewer(string folder, int count, int number)
         {
             InitializeComponent();
             //Опредяляем текущий язык
             culture = App.Language.Name;
-            maxNumber = Count;
+            maxNumber = count;
 
             if (number < maxNumber)
                 this.number = number;
