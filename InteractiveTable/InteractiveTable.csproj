@@ -405,6 +405,9 @@
     <Resource Include="PopupWindow\Timeline\0\small.3.jpg" />
     <Resource Include="PopupWindow\Timeline\0\small.4.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Pedigree\PedigreePopupBackground.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\Expression\Blend\.NETFramework\v4.5\Microsoft.Expression.Blend.WPF.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
