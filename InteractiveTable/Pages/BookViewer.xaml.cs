@@ -12,8 +12,6 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using MoonPdfLib;
-using MoonPdfLib.MuPdf;
 using System.IO;
 
 namespace InteractiveTable.Pages
@@ -28,8 +26,8 @@ namespace InteractiveTable.Pages
             InitializeComponent();
 
             string culture = App.Language.Name;
-            string pathBook = String.Format("Book/book.{0}.{1}.pdf", bookNumber, culture);
-            moonPdfPanel.OpenFile(pathBook);
+
+            
         }
 
         private void Back_Button_Click(object sender, RoutedEventArgs e)
@@ -39,7 +37,16 @@ namespace InteractiveTable.Pages
 
         private void Content_Button_Click(object sender, RoutedEventArgs e)
         {
-
+            Uri pathDisc = new Uri(String.Format("/MemoryViewer/{0}/disc.{1}.{2}.xaml", folder, number, culture), UriKind.Relative);
+            try
+            {
+                FlowDocument doc = Application.LoadComponent(pathDisc) as FlowDocument;
+                documentDiscription.Document = doc;
+            }
+            catch (IOException)
+            {
+                documentDiscription.Document = null;
+            }
         }
     }
 }

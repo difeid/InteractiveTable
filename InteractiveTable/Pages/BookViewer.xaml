@@ -3,15 +3,17 @@
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-      xmlns:mpp="clr-namespace:MoonPdfLib;assembly=MoonPdfLib"
       mc:Ignorable="d" 
       d:DesignHeight="300" d:DesignWidth="300" Width="1600" Height="900">
     <Canvas ClipToBounds="True">
         <Canvas.Background>
             <ImageBrush ImageSource="/InteractiveTable;component/Images/BookViewer/BookBackground.png"/>
         </Canvas.Background>
-        
-        <mpp:MoonPdfPanel x:Name="moonPdfPanel" Width="1600" Height="900" ViewType="Facing" PageMargin="0,2,0,2"/>
+
+        <FlowDocumentReader x:Name="bookReader" Height="900" Width="1600" Canvas.Left="0" Canvas.Top="0" 
+                            Template="{DynamicResource FlowDocumentReaderTemplate}" ViewingMode="TwoPage">
+            <FlowDocument/>
+        </FlowDocumentReader>
 
         <Image Source="/InteractiveTable;component/Images/BookViewer/Separator.png" Width="300" Height="900" Canvas.Top="0" Canvas.Left="650"/>
 
