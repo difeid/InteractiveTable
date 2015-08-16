@@ -433,9 +433,9 @@
                     <VisualState x:Name="Pressed">
                         <Storyboard>
                             <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)" Storyboard.TargetName="vertical_grid">
-                                <EasingDoubleKeyFrame KeyTime="0:0:0.1" Value="0.95">
+                                <EasingDoubleKeyFrame KeyTime="0:0:0.1" Value="1.1">
                                     <EasingDoubleKeyFrame.EasingFunction>
-                                        <ExponentialEase EasingMode="EaseIn"/>
+                                        <ExponentialEase EasingMode="EaseOut"/>
                                     </EasingDoubleKeyFrame.EasingFunction>
                                 </EasingDoubleKeyFrame>
                             </DoubleAnimationUsingKeyFrames>
