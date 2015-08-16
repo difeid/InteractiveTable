@@ -32,7 +32,8 @@ namespace InteractiveTable.Pages
 
         private void Rules_Of_Life_Button_Click(object sender, RoutedEventArgs e)
         {
-            this.NavigationService.GoBack();
+            BookViewer bv = new BookViewer(0);
+            this.NavigationService.Navigate(bv);
         }
 
         private void Trilogy_Button_Click(object sender, RoutedEventArgs e)
