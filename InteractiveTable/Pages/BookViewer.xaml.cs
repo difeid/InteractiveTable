@@ -26,7 +26,7 @@ namespace InteractiveTable.Pages
             InitializeComponent();
 
             string culture = App.Language.Name;
-            string pathBook = String.Format("Book/book.{0}.{1}.pdf", bookNumber, culture);
+            string pathBook = String.Format("Book/book.{0}.{1}.rtf", bookNumber, culture);
 
             TextRange tr = new TextRange(bookReader.Document.ContentStart, bookReader.Document.ContentEnd);
 
