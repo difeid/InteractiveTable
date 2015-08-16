@@ -21,6 +21,7 @@ namespace InteractiveTable.Pages
     /// </summary>
     public partial class BookViewer : Page
     {
+
         public BookViewer(int bookNumber)
         {
             InitializeComponent();
@@ -34,7 +35,8 @@ namespace InteractiveTable.Pages
             {
                 tr.Load(fs, DataFormats.Rtf);
             }
-            
+            bookReader.Document.ColumnWidth = 800;
+            bookReader.Document.PagePadding = new Thickness(50);
         }
 
         private void Back_Button_Click(object sender, RoutedEventArgs e)
