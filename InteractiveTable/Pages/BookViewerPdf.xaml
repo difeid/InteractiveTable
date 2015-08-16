@@ -13,8 +13,6 @@
         
         <mpp:MoonPdfPanel x:Name="moonPdfPanel" Width="1600" Height="900" ViewType="Facing" PageMargin="0,2,0,2"/>
 
-        <Image Source="/InteractiveTable;component/Images/BookViewer/Separator.png" Width="300" Height="900" Canvas.Top="0" Canvas.Left="650"/>
-
         <Button x:Name="backButton" Template="{DynamicResource BackButtonTemplate}" Click="Back_Button_Click" Canvas.Left="60" Canvas.Top="795" FocusVisualStyle="{x:Null}"/>
         
         <Button x:Name="contentButton" Template="{DynamicResource VerticalButtonTemplate}" Click="Content_Button_Click" Content="{DynamicResource b_Content}"

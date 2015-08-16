@@ -15,10 +15,8 @@
             <FlowDocument/>
         </FlowDocumentReader>
 
-        <Image Source="/InteractiveTable;component/Images/BookViewer/Separator.png" Width="300" Height="900" Canvas.Top="0" Canvas.Left="650"/>
-
         <Button x:Name="backButton" Template="{DynamicResource BackButtonTemplate}" Click="Back_Button_Click" Canvas.Left="60" Canvas.Top="795" FocusVisualStyle="{x:Null}"/>
-        
+
         <Button x:Name="contentButton" Template="{DynamicResource VerticalButtonTemplate}" Click="Content_Button_Click" Content="{DynamicResource b_Content}"
                 Background="#FF923F1F" Foreground="White" FontFamily="/InteractiveTable;component/Fonts/#Open Sans" FontSize="14" Width="40" Height="140"
                 HorizontalContentAlignment="Right" Padding="6,0" Canvas.Top="80" Canvas.Left="-6" FocusVisualStyle="{x:Null}"/>
