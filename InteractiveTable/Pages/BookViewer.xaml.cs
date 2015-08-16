@@ -26,7 +26,14 @@ namespace InteractiveTable.Pages
             InitializeComponent();
 
             string culture = App.Language.Name;
+            string pathBook = String.Format("Book/book.{0}.{1}.pdf", bookNumber, culture);
 
+            TextRange tr = new TextRange(bookReader.Document.ContentStart, bookReader.Document.ContentEnd);
+
+            using (FileStream fs = File.Open(pathBook, FileMode.Open))
+            {
+                tr.Load(fs, DataFormats.Rtf);
+            }
             
         }
 
@@ -37,16 +44,7 @@ namespace InteractiveTable.Pages
 
         private void Content_Button_Click(object sender, RoutedEventArgs e)
         {
-            Uri pathDisc = new Uri(String.Format("/MemoryViewer/{0}/disc.{1}.{2}.xaml", folder, number, culture), UriKind.Relative);
-            try
-            {
-                FlowDocument doc = Application.LoadComponent(pathDisc) as FlowDocument;
-                documentDiscription.Document = doc;
-            }
-            catch (IOException)
-            {
-                documentDiscription.Document = null;
-            }
+            
         }
     }
 }
