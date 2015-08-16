@@ -1,0 +1,24 @@
+﻿<Page x:Class="InteractiveTable.Pages.BookViewerPdf"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:mpp="clr-namespace:MoonPdfLib;assembly=MoonPdfLib"
+      mc:Ignorable="d" 
+      d:DesignHeight="300" d:DesignWidth="300" Width="1600" Height="900">
+    <Canvas ClipToBounds="True">
+        <Canvas.Background>
+            <ImageBrush ImageSource="/InteractiveTable;component/Images/BookViewer/BookBackground.png"/>
+        </Canvas.Background>
+        
+        <mpp:MoonPdfPanel x:Name="moonPdfPanel" Width="1600" Height="900" ViewType="Facing" PageMargin="0,2,0,2"/>
+
+        <Image Source="/InteractiveTable;component/Images/BookViewer/Separator.png" Width="300" Height="900" Canvas.Top="0" Canvas.Left="650"/>
+
+        <Button x:Name="backButton" Template="{DynamicResource BackButtonTemplate}" Click="Back_Button_Click" Canvas.Left="60" Canvas.Top="795" FocusVisualStyle="{x:Null}"/>
+        
+        <Button x:Name="contentButton" Template="{DynamicResource VerticalButtonTemplate}" Click="Content_Button_Click" Content="{DynamicResource b_Content}"
+                Background="#FF923F1F" Foreground="White" FontFamily="/InteractiveTable;component/Fonts/#Open Sans" FontSize="14" Width="40" Height="140"
+                HorizontalContentAlignment="Right" Padding="6,0" Canvas.Top="80" Canvas.Left="-6" FocusVisualStyle="{x:Null}"/>
+    </Canvas>
+</Page>

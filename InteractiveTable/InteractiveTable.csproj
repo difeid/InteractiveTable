@@ -100,6 +100,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Pages\BookViewerPdf.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Pages\BookViewer.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -119,6 +123,9 @@
     <Compile Include="FaderFrame.cs" />
     <Compile Include="FlowDocumentCreater.xaml.cs">
       <DependentUpon>FlowDocumentCreater.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\BookViewerPdf.xaml.cs">
+      <DependentUpon>BookViewerPdf.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\BookViewer.xaml.cs">
       <DependentUpon>BookViewer.xaml</DependentUpon>
