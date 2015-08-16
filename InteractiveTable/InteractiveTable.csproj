@@ -141,7 +141,6 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <None Include="BookViewer\book.0.ru-RU.rtf" />
     <None Include="Pages\Photo.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
