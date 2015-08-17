@@ -56,9 +56,6 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.Expression.Drawing" />
-    <Reference Include="MoonPdfLib">
-      <HintPath>..\MoonPdfLib\bin\Debug\MoonPdfLib.dll</HintPath>
-    </Reference>
     <Reference Include="PresentationFramework.Aero" />
     <Reference Include="PresentationUI" />
     <Reference Include="System" />
@@ -100,10 +97,6 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <None Include="Pages\BookViewerPdf.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </None>
     <Page Include="Pages\BookViewer.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -124,9 +117,6 @@
     <Compile Include="FlowDocumentCreater.xaml.cs">
       <DependentUpon>FlowDocumentCreater.xaml</DependentUpon>
     </Compile>
-    <None Include="Pages\BookViewerPdf.xaml.cs">
-      <DependentUpon>BookViewerPdf.xaml</DependentUpon>
-    </None>
     <Compile Include="Pages\BookViewer.xaml.cs">
       <DependentUpon>BookViewer.xaml</DependentUpon>
     </Compile>
@@ -401,11 +391,6 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\Pedigree\ReadMoreArrow.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="libmupdf.dll">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\BookViewer\BookBackground.png" />
