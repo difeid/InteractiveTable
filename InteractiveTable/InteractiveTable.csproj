@@ -316,19 +316,6 @@
     <Resource Include="Images\MainMenu\Memory.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Images\PhotoAlbum\BackArrow.png" />
-    <Resource Include="Images\PhotoAlbum\NextArrow.png" />
-    <Resource Include="Images\PhotoAlbum\LeftBottomClip.png" />
-    <Resource Include="Images\PhotoAlbum\LeftTopClip.png" />
-    <Resource Include="Images\PhotoAlbum\RightBottomClip.png" />
-    <Resource Include="Images\PhotoAlbum\RightTopClip.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Images\Photos\0.jpg" />
-    <Resource Include="Images\Photos\1.jpg" />
-    <Resource Include="Images\Photos\2.jpg" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="Images\SubMenu\Family.png" />
     <Resource Include="Images\SubMenu\Milestones.png" />
     <Resource Include="Images\SubMenu\Pedigree.png" />
