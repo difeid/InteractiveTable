@@ -1,5 +1,5 @@
 ﻿<FlowDocument xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" Tag="5">
-    <Paragraph FontFamily="/InteractiveTable;component/Fonts/#Basil Bold" TextAlignment="Left" FontSize="32">
+    <Paragraph FontFamily="/InteractiveTable;component/Fonts/#Basil Bold" TextAlignment="Left" FontSize="35">
         <Figure Width="590" Height="400">
             <BlockUIContainer>
                 <UIElement/>
@@ -8,20 +8,20 @@
         </Figure>
         <Run>Крым. 1885 г., 1901—1902 гг.</Run>
     </Paragraph>
-    <Section FontFamily="/InteractiveTable;component/Fonts/#Roboto"  TextAlignment="Left" FontSize="18">
-        <Paragraph TextIndent="45">
+    <Section FontFamily="/InteractiveTable;component/Fonts/#Roboto"  TextAlignment="Left" FontSize="22">
+        <Paragraph TextIndent="55">
             <Run>В 1885 году Лев Николаевич Толстой приехал в Крым, сопровождая на юг больного друга князя Урусова.</Run>
             <Run>В это время Толстой был уже знаменитым писателем, создавшим "Войну и мир", "Анну Каренину".</Run>
             <Run>Он посетил Севастополь, побывал на месте былых сражений.</Run>
             <Run>Отстроенный в послевоенные годы Севастополь мало напоминал писателю те руины, которые были в конце обороны города.</Run>
         </Paragraph>
-        <Paragraph TextIndent="45">
+        <Paragraph TextIndent="55">
             <Run>В третий раз Л. Н. Толстой приехал в Крым для того, чтобы самому подлечиться после болезни.</Run>
             <Run>Не имея на юге своей собственности, граф Толстой воспользовался приглашением графини С. В. Паниной.</Run>
             <Run>8 сентября 1901 года Лев Николаевич с семьей приехал в Гаспру.</Run>
             <Run>У дворца дорогих гостей местные жители встречали по русскому обычаю с хлебом и солью.</Run>
         </Paragraph>
-        <Paragraph TextIndent="45">
+        <Paragraph TextIndent="55">
             <Run>Вставал Толстой обычно рано, после утреннего кофе шел на прогулку.</Run>
             <Run>Видимо, на одной из таких прогулок Лев Николаевич простудился и заболел.</Run>
             <Run>В разгар болезни положение было настолько тяжелым, что лечащие врачи потеряли надежду на выздоровление.</Run>
@@ -34,7 +34,7 @@
             <Run>За это время им были написаны статьи: «К рабочему классу», «Обращение к молодежи», «Что такое религия и в чем сущность ее».</Run>
             <Run>В Гаспре писатель работал над повестью «Хаджи Мурат».</Run>
         </Paragraph>
-        <Paragraph TextIndent="45">
+        <Paragraph TextIndent="55">
             <Run>Во время пребывания в Гаспре Льва Николаевича часто навещали писатели.</Run>
             <Run>Гостями Толстого были Короленко, Куприн, Шаляпин, которые в то время отдыхали на Южном берегу Крыма.</Run>
             <Run>С ноября 1901 года по апрель 1902 года Чехов и Горький неоднократно бывали в Гаспре у великого писателя.</Run>
