@@ -260,8 +260,8 @@
     <Style x:Key="TimelineScrollBarStyle" TargetType="{x:Type Pages:BindableScrollBar}">
         <Setter Property="Stylus.IsPressAndHoldEnabled" Value="False"/>
         <Setter Property="Stylus.IsFlicksEnabled" Value="False"/>
-        <Setter Property="Width" Value="500"/>
-        <Setter Property="Height" Value="100"/>
+        <Setter Property="Width" Value="600"/>
+        <Setter Property="Height" Value="120"/>
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type Pages:BindableScrollBar}">
@@ -269,9 +269,9 @@
                         <Grid.Background>
                             <ImageBrush ImageSource="/InteractiveTable;component/Images/Timeline/Track.png"/>
                         </Grid.Background>
-                        <Track x:Name="PART_Track" IsEnabled="{TemplateBinding IsMouseOver}" ViewportSize="140">
+                        <Track x:Name="PART_Track" IsEnabled="{TemplateBinding IsMouseOver}" ViewportSize="120">
                             <Track.Thumb>
-                                <Thumb Width="70" Height="100">
+                                <Thumb Width="90" Height="120">
                                     <Thumb.Style>
                                         <Style TargetType="{x:Type Thumb}">
                                             <Setter Property="OverridesDefaultStyle" Value="True"/>
