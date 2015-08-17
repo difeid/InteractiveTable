@@ -19,7 +19,7 @@
             <ColumnDefinition Width="180"/>
         </Grid.ColumnDefinitions>
 
-        <Border Width="1600" Height="1010" Grid.ColumnSpan="3">
+        <Border Width="1600" Height="1000" Grid.ColumnSpan="3" HorizontalAlignment="Center" VerticalAlignment="Center">
             <Border.Background>
                 <ImageBrush ImageSource="Images/PopupWindow/PopupBackground.png"/>
             </Border.Background>
@@ -27,8 +27,8 @@
                 <DropShadowEffect Opacity="0.75" BlurRadius="35" Color="#FFCDBF97"/>
             </Border.Effect>
 
-            <ScrollViewer Width="1524" Height="924" Template="{DynamicResource ScrollViewerTemplate}" FocusVisualStyle="{x:Null}"
-                          Margin="34,50,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" PanningMode="VerticalOnly">
+            <ScrollViewer Width="1526" Height="910" Template="{DynamicResource ScrollViewerTemplate}" FocusVisualStyle="{x:Null}"
+                          Margin="36,54,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" PanningMode="VerticalOnly">
                 <Grid>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="1*"/>
@@ -72,25 +72,25 @@
                         <Image x:Name="image8" Grid.Row="4" Grid.Column="6" Stretch="UniformToFill" Visibility="Hidden"/>
 
                         <Image Grid.ColumnSpan="7" Source="{DynamicResource ImageZoom}" HorizontalAlignment="Right" VerticalAlignment="Bottom"
-                               Width="30" Height="30" Margin="12"  Visibility="{Binding Visibility, ElementName=image0}"/>
+                               Width="30" Height="30" Margin="14"  Visibility="{Binding Visibility, ElementName=image0}"/>
 
                         <Image Grid.Row="2" Grid.Column="0" Source="{DynamicResource ImageZoom}" HorizontalAlignment="Right" VerticalAlignment="Bottom"
-                               Width="30" Height="30" Margin="12"  Visibility="{Binding Visibility, ElementName=image1}"/>
+                               Width="30" Height="30" Margin="14"  Visibility="{Binding Visibility, ElementName=image1}"/>
                         <Image Grid.Row="2" Grid.Column="2" Source="{DynamicResource ImageZoom}" HorizontalAlignment="Right" VerticalAlignment="Bottom"
-                               Width="30" Height="30" Margin="12"  Visibility="{Binding Visibility, ElementName=image2}"/>
+                               Width="30" Height="30" Margin="14"  Visibility="{Binding Visibility, ElementName=image2}"/>
                         <Image Grid.Row="2" Grid.Column="4" Source="{DynamicResource ImageZoom}" HorizontalAlignment="Right" VerticalAlignment="Bottom"
-                               Width="30" Height="30" Margin="12"  Visibility="{Binding Visibility, ElementName=image3}"/>
+                               Width="30" Height="30" Margin="14"  Visibility="{Binding Visibility, ElementName=image3}"/>
                         <Image Grid.Row="2" Grid.Column="6" Source="{DynamicResource ImageZoom}" HorizontalAlignment="Right" VerticalAlignment="Bottom"
-                               Width="30" Height="30" Margin="12"  Visibility="{Binding Visibility, ElementName=image4}"/>
+                               Width="30" Height="30" Margin="14"  Visibility="{Binding Visibility, ElementName=image4}"/>
                         
                         <Image Grid.Row="4" Grid.Column="0" Source="{DynamicResource ImageZoom}" HorizontalAlignment="Right" VerticalAlignment="Bottom"
-                               Width="30" Height="30" Margin="12"  Visibility="{Binding Visibility, ElementName=image5}"/>
+                               Width="30" Height="30" Margin="14"  Visibility="{Binding Visibility, ElementName=image5}"/>
                         <Image Grid.Row="4" Grid.Column="2" Source="{DynamicResource ImageZoom}" HorizontalAlignment="Right" VerticalAlignment="Bottom"
-                               Width="30" Height="30" Margin="12"  Visibility="{Binding Visibility, ElementName=image6}"/>
+                               Width="30" Height="30" Margin="14"  Visibility="{Binding Visibility, ElementName=image6}"/>
                         <Image Grid.Row="4" Grid.Column="4" Source="{DynamicResource ImageZoom}" HorizontalAlignment="Right" VerticalAlignment="Bottom"
-                               Width="30" Height="30" Margin="12"  Visibility="{Binding Visibility, ElementName=image7}"/>
+                               Width="30" Height="30" Margin="14"  Visibility="{Binding Visibility, ElementName=image7}"/>
                         <Image Grid.Row="4" Grid.Column="6" Source="{DynamicResource ImageZoom}" HorizontalAlignment="Right" VerticalAlignment="Bottom"
-                               Width="30" Height="30" Margin="12"  Visibility="{Binding Visibility, ElementName=image8}"/>
+                               Width="30" Height="30" Margin="14"  Visibility="{Binding Visibility, ElementName=image8}"/>
 
                         <Button x:Name="zoom0" Grid.ColumnSpan="7" Template="{DynamicResource HiddenButtonTemplate}"
                                 Visibility="{Binding Visibility, ElementName=image0}" Click="Zoom_Click" FocusVisualStyle="{x:Null}"/>
