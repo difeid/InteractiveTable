@@ -4,14 +4,14 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       mc:Ignorable="d" 
-      d:DesignHeight="300" d:DesignWidth="300" Width="1600" Height="900">
+      d:DesignHeight="300" d:DesignWidth="300" Width="1920" Height="1080">
     <Canvas>
         <!--Анимация Казани на основе пути-->
-        <Canvas ClipToBounds="True" Width="1600" Height="900">
+        <Canvas ClipToBounds="True" Width="1920" Height="1080">
             <Canvas.Resources>
                 <PathGeometry x:Key="path">
-                    <PathFigure IsClosed="True" StartPoint="-300,0">
-                        <LineSegment Point="200,0"/>
+                    <PathFigure IsClosed="True" StartPoint="-150,0">
+                        <LineSegment Point="300,0"/>
                     </PathFigure>
                 </PathGeometry>
             </Canvas.Resources>
@@ -33,18 +33,21 @@
                 </Image.Triggers>
             </Image>
 
-            <Image Source="/InteractiveTable;component/Images/Intro/PoligonKazan.png" Width="1600" Height="900" Canvas.Left="0" Canvas.Top="0" Opacity="0.7"/>
+            <Image Source="/InteractiveTable;component/Images/Intro/PoligonKazan.png" Width="1920" Height="1080" Canvas.Left="0" Canvas.Top="0" Opacity="0.7"/>
 
             <!--Маска-->
             <Canvas.OpacityMask>
-                <ImageBrush ImageSource="/InteractiveTable;component/Images/Intro/PoligonKazan.png" Viewport="0,0,1600,900" ViewportUnits="Absolute"/>
+                <ImageBrush ImageSource="/InteractiveTable;component/Images/Intro/PoligonKazan.png" Viewport="0,0,1920,1080" ViewportUnits="Absolute"/>
             </Canvas.OpacityMask>
         </Canvas>
 
-        <Image x:Name="tolstoy" Source="/InteractiveTable;component/Images/Intro/Tolstoy.png" Width="1600" Height="900"/>
+        <Image x:Name="tolstoy" Source="/InteractiveTable;component/Images/Intro/Tolstoy.png" Width="1920" Height="1080"/>
 
-        <Button x:Name="rus_button" Click="Rus_Button_Click" Template="{DynamicResource HexagonButtonTemplate}" Width="104" Height="104" Padding="3,0" Content="/InteractiveTable;component/Images/Intro/RusButton.png" Canvas.Left="1050" Canvas.Top="670"/>
-        <Button x:Name="tat_button" Click="Tat_Button_Click" Template="{DynamicResource HexagonButtonTemplate}" Width="104" Height="104" Padding="3,0" Content="/InteractiveTable;component/Images/Intro/TatButton.png" Canvas.Left="1175" Canvas.Top="670"/>
-        <Button x:Name="eng_button" Click="Eng_Button_Click" Template="{DynamicResource HexagonButtonTemplate}" Width="104" Height="104" Padding="3,0" Content="/InteractiveTable;component/Images/Intro/EngButton.png" Canvas.Left="1300" Canvas.Top="670"/>
+        <Button x:Name="rus_button" Click="Rus_Button_Click" Template="{DynamicResource HexagonButtonTemplate}" Width="126" Height="126" Padding="5,0" Content="/InteractiveTable;component/Images/Intro/RusButton.png" 
+                Canvas.Left="1265" Canvas.Top="820"/>
+        <Button x:Name="tat_button" Click="Tat_Button_Click" Template="{DynamicResource HexagonButtonTemplate}" Width="126" Height="126" Padding="5,0" Content="/InteractiveTable;component/Images/Intro/TatButton.png" 
+                Canvas.Left="1420" Canvas.Top="820"/>
+        <Button x:Name="eng_button" Click="Eng_Button_Click" Template="{DynamicResource HexagonButtonTemplate}" Width="126" Height="126" Padding="5,0" Content="/InteractiveTable;component/Images/Intro/EngButton.png" 
+                Canvas.Left="1575" Canvas.Top="820"/>
     </Canvas>
 </Page>
