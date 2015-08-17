@@ -326,6 +326,8 @@
   <ItemGroup>
     <Resource Include="Images\Pedigree\TreePedigree.png" />
     <Resource Include="Images\Pedigree\Magnifier.png" />
+	<Resource Include="Images\Pedigree\PedigreePopupBackground.png" />
+	<Resource Include="Images\Pedigree\ReadMoreArrow.png" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\Family\Auntie.png" />
@@ -384,13 +386,7 @@
     <Resource Include="PopupWindow\Timeline\0\small.4.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Images\Pedigree\PedigreePopupBackground.png" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="Pedigree\img.0.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Images\Pedigree\ReadMoreArrow.png" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\BookViewer\BookBackground.png" />
