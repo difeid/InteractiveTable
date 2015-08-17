@@ -18,6 +18,19 @@
             <ColumnDefinition/>
             <ColumnDefinition Width="180"/>
         </Grid.ColumnDefinitions>
+        
+        <Button x:Name="back_button" Template="{DynamicResource NavButtonTemplate}" Content="/InteractiveTable;component/Images/PopupWindow/BackArrowWhite.png"
+                Click="Back_Button_Click" Width="180" Height="600" FontFamily="/InteractiveTable;component/Fonts/#Roboto" FontSize="25" Tag="{DynamicResource p_Back}"
+                Foreground="White" FocusVisualStyle="{x:Null}" Padding="55,0,0,0" VerticalContentAlignment="Top" HorizontalContentAlignment="Center"/>
+
+        <Button x:Name="next_button" Template="{DynamicResource NavButtonTemplate}" Content="/InteractiveTable;component/Images/PopupWindow/NextArrowWhite.png"
+                Click="Next_Button_Click" Width="180" Height="600" FontFamily="/InteractiveTable;component/Fonts/#Roboto" FontSize="25" Tag="{DynamicResource p_Next}" 
+                Foreground="White" FocusVisualStyle="{x:Null}" Padding="25,0,0,0" VerticalContentAlignment="Top" HorizontalContentAlignment="Left" Grid.Column="3"/>
+
+        <Button x:Name="close_button" Template="{DynamicResource NavButtonTemplate}" Content="/InteractiveTable;component/Images/PopupWindow/CloseWhite.png"
+                Click="Close_Button_Click" Width="180" Height="180" FontFamily="/InteractiveTable;component/Fonts/#Roboto" FontSize="25" Tag="{DynamicResource p_Close}"
+                Foreground="White" FocusVisualStyle="{x:Null}" Padding="25,0,0,0" VerticalContentAlignment="Top" HorizontalContentAlignment="Left" Grid.Column="3"
+                 VerticalAlignment="Top" Margin="0,20"/>
 
         <Border Width="1600" Height="1000" Grid.ColumnSpan="3" HorizontalAlignment="Center" VerticalAlignment="Center">
             <Border.Background>
@@ -27,8 +40,8 @@
                 <DropShadowEffect Opacity="0.75" BlurRadius="35" Color="#FFCDBF97"/>
             </Border.Effect>
 
-            <ScrollViewer Width="1526" Height="910" Template="{DynamicResource ScrollViewerTemplate}" FocusVisualStyle="{x:Null}"
-                          Margin="36,54,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" PanningMode="VerticalOnly">
+            <ScrollViewer Width="1520" Height="920" Template="{DynamicResource ScrollViewerTemplate}" FocusVisualStyle="{x:Null}"
+                          Margin="40,50,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" PanningMode="VerticalOnly">
                 <Grid>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="1*"/>
@@ -116,18 +129,6 @@
                 </Grid>
             </ScrollViewer>
         </Border>
-
-        <Button x:Name="back_button" Template="{DynamicResource NavButtonTemplate}" Content="/InteractiveTable;component/Images/PopupWindow/BackArrowWhite.png"
-                Click="Back_Button_Click" Width="150" Height="500" Padding="85,275,0,0" HorizontalAlignment="Left" FontFamily="/InteractiveTable;component/Fonts/#Roboto"
-                FontSize="22" Tag="{DynamicResource p_Back}" Foreground="White" FocusVisualStyle="{x:Null}"/>
-
-        <Button x:Name="next_button" Template="{DynamicResource NavButtonTemplate}" Content="/InteractiveTable;component/Images/PopupWindow/NextArrowWhite.png"
-                Click="Next_Button_Click" Width="150" Height="500" Padding="5,275,0,0" HorizontalAlignment="Right" FontFamily="/InteractiveTable;component/Fonts/#Roboto"
-                FontSize="22" Tag="{DynamicResource p_Next}" Foreground="White" Grid.Column="3" FocusVisualStyle="{x:Null}"/>
-
-        <Button x:Name="close_button" Template="{DynamicResource NavButtonTemplate}" Content="/InteractiveTable;component/Images/PopupWindow/CloseWhite.png"
-                Click="Close_Button_Click" Width="150" Height="150" Padding="5,95,0,0" HorizontalAlignment="Right" VerticalAlignment="Top" FocusVisualStyle="{x:Null}"
-                FontFamily="/InteractiveTable;component/Fonts/#Roboto" FontSize="22" Tag="{DynamicResource p_Close}" Foreground="White" Grid.Column="3"/>
 
         <Popup x:Name="zoomPopup" PopupAnimation="Fade" AllowsTransparency="True" Placement="Center"
                StaysOpen="False" MouseDown="Popup_Down" MouseUp="Popup_Up">

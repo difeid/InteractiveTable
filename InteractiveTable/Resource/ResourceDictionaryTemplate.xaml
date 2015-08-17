@@ -209,7 +209,12 @@
     <!--Шаблон кнопок вперед назад-->
 	<ControlTemplate x:Key="NavButtonTemplate" TargetType="{x:Type Button}">
 		<Grid x:Name="nav_grid" Cursor="Hand" RenderTransformOrigin="0.5,0.5">
-			<Grid.RenderTransform>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition Height="70"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid.RenderTransform>
 				<TransformGroup>
 					<ScaleTransform/>
 					<SkewTransform/>
@@ -242,9 +247,12 @@
 					<VisualState x:Name="Disabled"/>
 				</VisualStateGroup>
 			</VisualStateManager.VisualStateGroups>
-            <Image Source="{Binding Content, RelativeSource={RelativeSource TemplatedParent}}" Stretch="Fill"/>
+            <Rectangle Fill="Transparent" Grid.RowSpan="3"/>
+            <Image Source="{Binding Content, RelativeSource={RelativeSource TemplatedParent}}" Width="70" Height="70" Margin="{TemplateBinding Padding}" Grid.Row="1"
+                   HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"/>
             <TextBlock Text="{Binding Tag, RelativeSource={RelativeSource TemplatedParent}}" FontFamily="{TemplateBinding FontFamily}"
-                       FontSize="{TemplateBinding FontSize}" Margin="{TemplateBinding Padding}"/>
+                       FontSize="{TemplateBinding FontSize}" Margin="{TemplateBinding Padding}" Grid.Row="2"
+                       VerticalAlignment="{TemplateBinding VerticalContentAlignment}" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"/>
         </Grid>
 	</ControlTemplate>
 
