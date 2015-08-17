@@ -4,39 +4,40 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       mc:Ignorable="d" 
-      d:DesignHeight="300" d:DesignWidth="300" Width="1600" Height="900">
+      d:DesignHeight="300" d:DesignWidth="300" Width="1920" Height="1080">
     <Grid ClipToBounds="True">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="950"/>
-            <ColumnDefinition Width="650"/>
+            <ColumnDefinition Width="1140"/>
+            <ColumnDefinition/>
         </Grid.ColumnDefinitions>
 
-        <Image x:Name="mainPhoto" Width="950" Height="900" Stretch="UniformToFill"/>
+        <Image x:Name="mainPhoto" Width="1140" Height="1080" Stretch="UniformToFill"/>
 
         <Button x:Name="back_button" Template="{DynamicResource BackButtonTemplate}" Click="Back_Button_Click" Foreground="White"
-                HorizontalAlignment="Left" VerticalAlignment="Top" Margin="60,795,0,0"/>
+                HorizontalAlignment="Left" VerticalAlignment="Top" Margin="75,955,0,0" FocusVisualStyle="{x:Null}"/>
         
         <Button x:Name="next_view_button" Click="Next_View_Button_Click" Template="{DynamicResource HexagonButtonTemplate}" Content="/InteractiveTable;component/Images/MemoryViewer/NextViewButton.png"
-                Width="114" Height="114" Padding="5,0" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="893,0,0,0" Grid.ColumnSpan="2"/>
+                Width="134" Height="134" Padding="5,0" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="1073,0,0,0" Grid.ColumnSpan="2" FocusVisualStyle="{x:Null}"/>
+        
         <Button x:Name="back_view_button" Click="Back_View_Button_Click" Template="{DynamicResource HexagonButtonTemplate}" Content="/InteractiveTable;component/Images/MemoryViewer/BackViewButton.png"
-                Width="114" Height="114" Padding="5,0" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="-56,0,0,0"/>
+                Width="134" Height="134" Padding="5,0" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="-67,0,0,0" FocusVisualStyle="{x:Null}"/>
 
-        <ScrollViewer Grid.Column="1" Width="650" Height="900" Background="White" Template="{DynamicResource ScrollViewerTemplate}"
+        <ScrollViewer Grid.Column="1" Background="White" Template="{DynamicResource ScrollViewerTemplate}"
                       VerticalScrollBarVisibility="Auto" UseLayoutRounding="True" PanningMode="VerticalOnly">
             <Grid>
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="450"/>
+                    <RowDefinition Height="571"/>
                     <RowDefinition Height="Auto" />
                 </Grid.RowDefinitions>
 
-                <Rectangle x:Name="subPhoto" Width="520" Height="410" Stroke="White" StrokeThickness="20">
+                <Rectangle x:Name="subPhoto" Width="630" Height="500" Stroke="White" StrokeThickness="20">
                     <Rectangle.Effect>
                         <DropShadowEffect Opacity="0.15"/>
                     </Rectangle.Effect>
                 </Rectangle>
 
                 <FlowDocumentScrollViewer x:Name="documentDiscription" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Disabled"
-                                          Grid.Row="1" Width="555" IsHitTestVisible="False">
+                                          Grid.Row="1" Width="660" IsHitTestVisible="False">
                     <FlowDocument/>
                 </FlowDocumentScrollViewer>
             </Grid>
