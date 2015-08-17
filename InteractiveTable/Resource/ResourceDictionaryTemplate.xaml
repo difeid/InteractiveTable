@@ -146,9 +146,9 @@
 					<ImageBrush ImageSource="{Binding Content, RelativeSource={RelativeSource TemplatedParent}}" Stretch="UniformToFill"/>
 				</ed:RegularPolygon.Fill>
 			</ed:RegularPolygon>
-			<TextBlock Text="{DynamicResource f_Father}" FontFamily="/InteractiveTable;component/Fonts/#Basil Bold" FontSize="24" Foreground="White"
+			<TextBlock Text="{DynamicResource f_Father}" FontFamily="/InteractiveTable;component/Fonts/#Basil Bold" FontSize="30" Foreground="White"
 				TextAlignment="Center" VerticalAlignment="Bottom" HorizontalAlignment="Center" Grid.Row="0"/>
-			<TextBlock Text="{DynamicResource f_FatherName}" TextWrapping="Wrap" FontFamily="/InteractiveTable;component/Fonts/#Basil Bold" FontSize="40" Foreground="White" MaxWidth="270"
+			<TextBlock Text="{DynamicResource f_FatherName}" TextWrapping="Wrap" FontFamily="/InteractiveTable;component/Fonts/#Basil Bold" FontSize="48" Foreground="White" MaxWidth="350"
 				TextAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="1"/>
 		</Grid>
 	</ControlTemplate>
@@ -199,9 +199,9 @@
 					<ImageBrush ImageSource="{Binding Content, RelativeSource={RelativeSource TemplatedParent}}" Stretch="UniformToFill"/>
 				</ed:RegularPolygon.Fill>
 			</ed:RegularPolygon>
-			<TextBlock Text="{DynamicResource f_Mather}" FontFamily="/InteractiveTable;component/Fonts/#Basil Bold" FontSize="24" Foreground="White"
+			<TextBlock Text="{DynamicResource f_Mather}" FontFamily="/InteractiveTable;component/Fonts/#Basil Bold" FontSize="30" Foreground="White"
 				TextAlignment="Center" VerticalAlignment="Bottom" HorizontalAlignment="Center" Grid.Row="0"/>
-			<TextBlock Text="{DynamicResource f_MatherName}" TextWrapping="Wrap" FontFamily="/InteractiveTable;component/Fonts/#Basil Bold" FontSize="40" Foreground="White" MaxWidth="270"
+			<TextBlock Text="{DynamicResource f_MatherName}" TextWrapping="Wrap" FontFamily="/InteractiveTable;component/Fonts/#Basil Bold" FontSize="48" Foreground="White" MaxWidth="350"
 				TextAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="1"/>
 		</Grid>
 	</ControlTemplate>
