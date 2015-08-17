@@ -57,9 +57,9 @@
 
     <!--Шаблон кнопоки назад-->
 	<ControlTemplate x:Key="BackButtonTemplate" TargetType="{x:Type Button}">
-		<Grid x:Name="back_grid" Cursor="Hand" Width="160" Height="40" RenderTransformOrigin="0.5,0.5">
+		<Grid x:Name="back_grid" Cursor="Hand" Width="196" Height="50" RenderTransformOrigin="0.5,0.5">
 			<Grid.ColumnDefinitions>
-				<ColumnDefinition Width="40"/>
+				<ColumnDefinition Width="50"/>
 				<ColumnDefinition/>
 			</Grid.ColumnDefinitions>
 			<Grid.RenderTransform>
@@ -95,8 +95,8 @@
 					<VisualState x:Name="Disabled"/>
 				</VisualStateGroup>
 			</VisualStateManager.VisualStateGroups>
-			<Image Source="/InteractiveTable;component/Images/Arrow.png" Stretch="Fill" Width="32" Height="32"/>
-			<TextBlock Text="{DynamicResource g_BackButton}" FontFamily="/InteractiveTable;component/Fonts/#Basil Bold" FontSize="36" Grid.Column="1"/>
+			<Image Source="/InteractiveTable;component/Images/Arrow.png" Stretch="Fill" Width="40" Height="40"/>
+			<TextBlock Text="{DynamicResource g_BackButton}" FontFamily="/InteractiveTable;component/Fonts/#Basil Bold" FontSize="44" Grid.Column="1"/>
 		</Grid>
 	</ControlTemplate>
 
