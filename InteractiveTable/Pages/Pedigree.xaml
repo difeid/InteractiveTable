@@ -47,13 +47,13 @@
         </Popup>
 
         <Canvas x:Name="magnifierCanvas" IsHitTestVisible="False">
-            <Ellipse x:Name="magnifierEllipse" Width="230" Height="230" StrokeThickness="5">
+            <Ellipse x:Name="magnifierEllipse" Width="270" Height="270" StrokeThickness="10" Margin="5">
                 <Ellipse.Fill>
                     <VisualBrush ViewboxUnits="Absolute" Viewbox="0,0,80,80"
                          ViewportUnits="RelativeToBoundingBox" Viewport="0,0,1,1"/>
                 </Ellipse.Fill>
             </Ellipse>
-            <Image Source="/InteractiveTable;component/Images/Pedigree/Magnifier.png" Stretch="Fill" Width="330" Height="480"/>
+            <Image Source="/InteractiveTable;component/Images/Pedigree/Magnifier.png" Stretch="Fill" Width="420" Height="620"/>
         </Canvas>
     </Canvas>
 </Page>
