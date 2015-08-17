@@ -369,10 +369,10 @@
 
     <!--Шаблон кнопоки подробнее-->
     <ControlTemplate x:Key="ReadMoreButtonTemplate" TargetType="{x:Type Button}">
-        <Grid x:Name="read_more_grid" Cursor="Hand" Width="130" Height="30" RenderTransformOrigin="0.5,0.5">
+        <Grid x:Name="read_more_grid" Cursor="Hand" Width="160" Height="40" RenderTransformOrigin="0.5,0.5">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition/>
-                <ColumnDefinition Width="30"/>
+                <ColumnDefinition Width="40"/>
             </Grid.ColumnDefinitions>
             <Grid.RenderTransform>
                 <TransformGroup>
@@ -409,8 +409,8 @@
             </VisualStateManager.VisualStateGroups>
             <Border CornerRadius="5" Grid.ColumnSpan="2" Background="#FFCF142B"/>
             <Image Source="/InteractiveTable;component/Images/Pedigree/ReadMoreArrow.png" Stretch="Fill"
-                   Width="20" Height="20" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,7,0,0"/>
-            <TextBlock Text="{DynamicResource g_ReadMoreButton}" FontFamily="/InteractiveTable;component/Fonts/#Basil Bold" FontSize="14"
+                   Width="32" Height="32" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Bottom"/>
+            <TextBlock Text="{DynamicResource g_ReadMoreButton}" FontFamily="/InteractiveTable;component/Fonts/#Basil Bold" FontSize="18"
                        HorizontalAlignment="Right" VerticalAlignment="Center" Foreground="White"/>
         </Grid>
     </ControlTemplate>
