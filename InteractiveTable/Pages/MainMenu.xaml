@@ -4,35 +4,45 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       mc:Ignorable="d" 
-      d:DesignHeight="300" d:DesignWidth="300" Width="1600" Height="900">
+      d:DesignHeight="1920" d:DesignWidth="1080" Width="1920" Height="1080">
     <Canvas ClipToBounds="True">
         <Canvas.Background>
             <ImageBrush ImageSource="/InteractiveTable;component/Images/MainMenu/MainMenuBackground.png"/>
         </Canvas.Background>
 
-        <Button x:Name="back_button" Template="{DynamicResource BackButtonTemplate}" Click="Back_Button_Click" Canvas.Left="60" Canvas.Top="795" Foreground="White"/>
+        <Button x:Name="back_button" Template="{DynamicResource BackButtonTemplate}" Click="Back_Button_Click" Canvas.Left="75" Canvas.Top="955" Foreground="White"/>
 
-        <Button x:Name="memory_button" Template="{DynamicResource HexagonButtonTemplate}" Content="/InteractiveTable;component/Images/MainMenu/Memory.png" Click="Memory_Button_Click"  Width="235" Height="235" Canvas.Left="90" Canvas.Top="160"/>
-        <Button x:Name="student_task_button" Template="{DynamicResource HexagonButtonTemplate}" Content="/InteractiveTable;component/Images/MainMenu/StudentTask.png" Click="Student_Task_Button_Click"  Width="220" Height="220" Padding="10,0" Canvas.Left="718" Canvas.Top="448"/>
-        <Button x:Name="motiv_button" Template="{DynamicResource HexagonButtonTemplate}" Content="/InteractiveTable;component/Images/MainMenu/MotivForCreativ.png" Click="Motiv_Button_Click"  Width="220" Height="220" Padding="10,0" Canvas.Left="999" Canvas.Top="160"/>
-        <Button x:Name="biography_button" Template="{DynamicResource HexagonButtonTemplate}" Content="/InteractiveTable;component/Images/MainMenu/Biography.png" Click="Biography_Button_Click"  Width="220" Height="220" Padding="10,0" Canvas.Left="999" Canvas.Top="386"/>
+        <Button x:Name="memory_button" Template="{DynamicResource HexagonButtonTemplate}" Content="/InteractiveTable;component/Images/MainMenu/Memory.png" Click="Memory_Button_Click"
+                Width="284" Height="284" Padding="15,0" Canvas.Left="108" Canvas.Top="190"/>
 
-        <TextBlock x:Name="memory_textblock" MaxWidth="280" Text="{DynamicResource m_Memory}" Foreground="White" FontFamily="/InteractiveTable;component/Fonts/#Basil Bold" FontSize="28" TextWrapping="Wrap" TextAlignment="Right" Canvas.Left="325" Canvas.Top="260">
+        <Button x:Name="student_task_button" Template="{DynamicResource HexagonButtonTemplate}" Content="/InteractiveTable;component/Images/MainMenu/StudentTask.png" Click="Student_Task_Button_Click" 
+                Width="284" Height="284" Padding="20,10" Canvas.Left="853" Canvas.Top="527"/>
+
+        <Button x:Name="motiv_button" Template="{DynamicResource HexagonButtonTemplate}" Content="/InteractiveTable;component/Images/MainMenu/MotivForCreativ.png" Click="Motiv_Button_Click" 
+                Width="284" Height="284" Padding="20,10" Canvas.Left="1189" Canvas.Top="184"/>
+        <Button x:Name="biography_button" Template="{DynamicResource HexagonButtonTemplate}" Content="/InteractiveTable;component/Images/MainMenu/Biography.png" Click="Biography_Button_Click" 
+                Width="284" Height="284" Padding="20,10" Canvas.Left="1189" Canvas.Top="453"/>
+
+        <TextBlock x:Name="memory_textblock" Text="{DynamicResource m_Memory}" Foreground="White" FontFamily="/InteractiveTable;component/Fonts/#Basil Bold"
+                   FontSize="32" TextAlignment="Right" Canvas.Left="395" Canvas.Top="310">
             <TextBlock.Effect>
                 <DropShadowEffect Opacity="0.2"/>
             </TextBlock.Effect>
         </TextBlock>
-        <TextBlock x:Name="student_task_textblock" MaxWidth="280" Text="{DynamicResource m_StudentTask}" Foreground="White" FontFamily="/InteractiveTable;component/Fonts/#Basil Bold" FontSize="28" TextWrapping="Wrap" TextAlignment="Right" Canvas.Left="522" Canvas.Top="527">
+        <TextBlock x:Name="student_task_textblock" MaxWidth="300" Text="{DynamicResource m_StudentTask}" Foreground="White" FontFamily="/InteractiveTable;component/Fonts/#Basil Bold" 
+                   FontSize="32" TextWrapping="Wrap" TextAlignment="Right" Canvas.Left="629" Canvas.Top="635">
             <TextBlock.Effect>
                 <DropShadowEffect Opacity="0.2"/>
             </TextBlock.Effect>
         </TextBlock>
-        <TextBlock x:Name="motiv_textblock" MaxWidth="330" Text="{DynamicResource m_Motiv}" Foreground="White" FontFamily="/InteractiveTable;component/Fonts/#Basil Bold" FontSize="28" TextWrapping="Wrap" TextAlignment="Left" Canvas.Left="1219" Canvas.Top="223">
+        <TextBlock x:Name="motiv_textblock" MaxWidth="370" Text="{DynamicResource m_Motiv}" Foreground="White" FontFamily="/InteractiveTable;component/Fonts/#Basil Bold" 
+                   FontSize="32" TextWrapping="Wrap" TextAlignment="Left" Canvas.Left="1473" Canvas.Top="273">
             <TextBlock.Effect>
                 <DropShadowEffect Opacity="0.2"/>
             </TextBlock.Effect>
         </TextBlock>
-        <TextBlock x:Name="biography_textblock" MaxWidth="280" Text="{DynamicResource m_Biography}" Foreground="White" FontFamily="/InteractiveTable;component/Fonts/#Basil Bold" FontSize="28" TextWrapping="Wrap" TextAlignment="Left" Canvas.Left="1219" Canvas.Top="477">
+        <TextBlock x:Name="biography_textblock" MaxWidth="300" Text="{DynamicResource m_Biography}" Foreground="White" FontFamily="/InteractiveTable;component/Fonts/#Basil Bold" 
+                   FontSize="32" TextWrapping="Wrap" TextAlignment="Left" Canvas.Left="1473" Canvas.Top="571">
             <TextBlock.Effect>
                 <DropShadowEffect Opacity="0.2"/>
             </TextBlock.Effect>
