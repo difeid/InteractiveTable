@@ -4,21 +4,21 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       mc:Ignorable="d" 
-      d:DesignHeight="300" d:DesignWidth="300" Width="1600" Height="900">
+      d:DesignHeight="1920" d:DesignWidth="1080" Width="1920" Height="1080">
     <Canvas ClipToBounds="True">
         <Canvas.Background>
             <ImageBrush ImageSource="/InteractiveTable;component/Images/BookViewer/BookBackground.png"/>
         </Canvas.Background>
 
-        <FlowDocumentReader x:Name="bookReader" Height="900" Width="1600" Canvas.Left="0" Canvas.Top="0" 
+        <FlowDocumentReader x:Name="bookReader" Height="1080" Width="1920" Canvas.Left="0" Canvas.Top="0" 
                             Template="{DynamicResource FlowDocumentReaderTemplate}" ViewingMode="TwoPage">
             <FlowDocument/>
         </FlowDocumentReader>
 
-        <Button x:Name="backButton" Template="{DynamicResource BackButtonTemplate}" Click="Back_Button_Click" Canvas.Left="60" Canvas.Top="795" FocusVisualStyle="{x:Null}"/>
+        <Button x:Name="backButton" Template="{DynamicResource BackButtonTemplate}" Click="Back_Button_Click" Canvas.Left="75" Canvas.Top="955" FocusVisualStyle="{x:Null}"/>
 
         <Button x:Name="contentButton" Template="{DynamicResource VerticalButtonTemplate}" Click="Content_Button_Click" Content="{DynamicResource b_Content}"
-                Background="#FF923F1F" Foreground="White" FontFamily="/InteractiveTable;component/Fonts/#Open Sans" FontSize="14" Width="40" Height="140"
-                HorizontalContentAlignment="Right" Padding="6,0" Canvas.Top="80" Canvas.Left="-6" FocusVisualStyle="{x:Null}"/>
+                Background="#FF923F1F" Foreground="White" FontFamily="/InteractiveTable;component/Fonts/#Open Sans" FontSize="16" Width="50" Height="170"
+                HorizontalContentAlignment="Right" Padding="9,0" Canvas.Top="120" Canvas.Left="-10" FocusVisualStyle="{x:Null}"/>
     </Canvas>
 </Page>

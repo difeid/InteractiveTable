@@ -35,7 +35,7 @@ namespace InteractiveTable.Pages
             {
                 tr.Load(fs, DataFormats.Rtf);
             }
-            bookReader.Document.ColumnWidth = 800;
+            bookReader.Document.ColumnWidth = 900;
             bookReader.Document.PagePadding = new Thickness(50);
         }
 
