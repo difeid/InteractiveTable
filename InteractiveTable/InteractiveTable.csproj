@@ -141,14 +141,6 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <None Include="Pages\Photo.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </None>
-    <None Include="Pages\PhotoAlbum.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </None>
     <Page Include="Pages\Memory.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -202,12 +194,6 @@
     <Compile Include="Pages\MainMenu.xaml.cs">
       <DependentUpon>MainMenu.xaml</DependentUpon>
     </Compile>
-    <None Include="Pages\Photo.xaml.cs">
-      <DependentUpon>Photo.xaml</DependentUpon>
-    </None>
-    <None Include="Pages\PhotoAlbum.xaml.cs">
-      <DependentUpon>PhotoAlbum.xaml</DependentUpon>
-    </None>
     <Compile Include="Pages\Memory.xaml.cs">
       <DependentUpon>Memory.xaml</DependentUpon>
     </Compile>
@@ -370,12 +356,6 @@
     <Resource Include="Images\Family\Mather.png" />
     <Resource Include="Images\Family\Father.png" />
     <Resource Include="Images\Family\WifeChildren.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\WpfPageTransitions\WpfPageTransitions.csproj">
-      <Project>{22a46d61-1d40-43a9-802c-b9d43dadd9ec}</Project>
-      <Name>WpfPageTransitions</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\Timeline\1828.png" />
