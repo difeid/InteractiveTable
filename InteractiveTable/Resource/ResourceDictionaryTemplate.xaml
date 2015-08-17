@@ -377,10 +377,10 @@
 
     <!--Шаблон кнопоки подробнее-->
     <ControlTemplate x:Key="ReadMoreButtonTemplate" TargetType="{x:Type Button}">
-        <Grid x:Name="read_more_grid" Cursor="Hand" Width="160" Height="40" RenderTransformOrigin="0.5,0.5">
+        <Grid x:Name="read_more_grid" Cursor="Hand" Width="155" Height="36" RenderTransformOrigin="0.5,0.5">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition/>
-                <ColumnDefinition Width="40"/>
+                <ColumnDefinition Width="36"/>
             </Grid.ColumnDefinitions>
             <Grid.RenderTransform>
                 <TransformGroup>
@@ -417,7 +417,7 @@
             </VisualStateManager.VisualStateGroups>
             <Border CornerRadius="5" Grid.ColumnSpan="2" Background="#FFCF142B"/>
             <Image Source="/InteractiveTable;component/Images/Pedigree/ReadMoreArrow.png" Stretch="Fill"
-                   Width="32" Height="32" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Bottom"/>
+                   Width="20" Height="20" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="5,10,0,0"/>
             <TextBlock Text="{DynamicResource g_ReadMoreButton}" FontFamily="/InteractiveTable;component/Fonts/#Basil Bold" FontSize="18"
                        HorizontalAlignment="Right" VerticalAlignment="Center" Foreground="White"/>
         </Grid>
