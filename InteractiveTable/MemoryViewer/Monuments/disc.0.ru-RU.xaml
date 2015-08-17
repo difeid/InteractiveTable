@@ -1,13 +1,13 @@
 ﻿<FlowDocument xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
-    <Paragraph FontFamily="/InteractiveTable;component/Fonts/#Basil Bold" TextAlignment="Left" FontSize="24">
+    <Paragraph FontFamily="/InteractiveTable;component/Fonts/#Basil Bold" TextAlignment="Left" FontSize="26">
         <Run>Памятник Льву Толстому и его литературному герою Хаджи-Мурату в Махачкале</Run>
     </Paragraph>
-    <Paragraph FontFamily="/InteractiveTable;component/Fonts/#Open Sans" TextAlignment="Left" FontSize="18">
+    <Paragraph FontFamily="/InteractiveTable;component/Fonts/#Open Sans" TextAlignment="Left" FontSize="20">
         <Run>Памятник открыт в столице Дагестана в 2012г. на пересечении улиц Льва Толстого и Магомеда Гаджиева.</Run>
         <Run>Памятник выполнен в форме развернутой книги: на одной его стороне высечен бронзовый барельеф самого автора – Льва Толстого,
             на другой – одного из главных литературных персонажей кавказского периода, наиб имама Шамиля – Хаджи-Мурата.</Run>
     </Paragraph>
-    <Paragraph FontFamily="/InteractiveTable;component/Fonts/#Open Sans" TextAlignment="Left" FontWeight="Bold" FontSize="18">
+    <Paragraph FontFamily="/InteractiveTable;component/Fonts/#Open Sans" TextAlignment="Left" FontWeight="Bold" FontSize="20">
         <Run>Скульптор – Ш.Карагаджиев.</Run>
     </Paragraph>
 </FlowDocument>
