@@ -5,15 +5,15 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:InteractiveTable.Pages"
       mc:Ignorable="d" 
-      d:DesignHeight="300" d:DesignWidth="300" Width="1600" Height="900">
+      d:DesignHeight="1080" d:DesignWidth="1920" Width="1920" Height="1080">
     <Grid UseLayoutRounding="True">
         <Grid.RowDefinitions>
-            <RowDefinition Height="720"/>
-            <RowDefinition Height="180"/>
+            <RowDefinition Height="865"/>
+            <RowDefinition/>
         </Grid.RowDefinitions>
 
         <ScrollViewer x:Name="scrollViewer" HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Disabled">
-            <Canvas Height="600" Width="2422" VerticalAlignment="Bottom" FocusVisualStyle="{x:Null}">
+            <Canvas Height="720" Width="2620" VerticalAlignment="Bottom" FocusVisualStyle="{x:Null}">
                 <!--Кнопки-->
                 <Button x:Name="y00_button" Click="Year_Button_Click" Template="{DynamicResource HexagonButtonTemplate}" FocusVisualStyle="{x:Null}" Width="270" Height="270"
                     Padding="20,0" Content="/InteractiveTable;component/Images/Timeline/1828.png" Canvas.Left="62" Canvas.Top="8"/>
@@ -92,8 +92,8 @@
             </Canvas>
         </ScrollViewer>
 
-        <Button x:Name="back_button" Template="{DynamicResource BackButtonTemplate}" Click="Back_Button_Click" Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="60,75,0,0" FocusVisualStyle="{x:Null}"/>
+        <Button x:Name="back_button" Template="{DynamicResource BackButtonTemplate}" Click="Back_Button_Click" Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="75,90,0,0" FocusVisualStyle="{x:Null}"/>
 
-        <local:BindableScrollBar BoundScrollViewer ="{Binding ElementName=scrollViewer}" Orientation="Horizontal" Grid.Row="1" Style="{DynamicResource TimelineScrollBarStyle}" Margin="0,65,0,0" VerticalAlignment="Top"/>
+        <local:BindableScrollBar BoundScrollViewer ="{Binding ElementName=scrollViewer}" Orientation="Horizontal" Grid.Row="1" Style="{DynamicResource TimelineScrollBarStyle}" Margin="0,90,0,0" VerticalAlignment="Top"/>
     </Grid>
 </Page>
