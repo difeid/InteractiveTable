@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.IO;
+using System.Windows.Threading;
 
 namespace InteractiveTable.Pages
 {
@@ -29,23 +30,36 @@ namespace InteractiveTable.Pages
 
             string culture = App.Language.Name;
             pathBook = String.Format("Book/book.{0}.{1}.rtf", bookName, culture);
-
         }
 
         private void Page_Loaded(object sender, RoutedEventArgs e)
         {
-            if (File.Exists(pathBook))
+            DispatcherTimer timer = new DispatcherTimer();
+            timer.Interval = new TimeSpan(0, 0, 0, 1, 0);
+            timer.Tick += (s, ar) =>
             {
-                FlowDocument book = new FlowDocument();
-                TextRange tr = new TextRange(book.ContentStart, book.ContentEnd);
+                timer.Stop();
 
-                using (FileStream fs = File.Open(pathBook, FileMode.Open))
+                if (File.Exists(pathBook))
                 {
-                    tr.Load(fs, DataFormats.Rtf);
+                    FlowDocument book = new FlowDocument();
+                    TextRange tr = new TextRange(book.ContentStart, book.ContentEnd);
+
+                    using (FileStream fs = File.Open(pathBook, FileMode.Open))
+                    {
+                        tr.Load(fs, DataFormats.Rtf);
+                    }
+                    book.ColumnWidth = 900;
+                    book.PagePadding = new Thickness(50);
+
+                    bookReader.Document = book;
+
+                    pleaseWaitPopup.IsOpen = false;
+                    backButton.IsEnabled = true;
+                    contentButton.IsEnabled = true;
                 }
-                book.ColumnWidth = 900;
-                book.PagePadding = new Thickness(50);
-            }
+            };
+            timer.Start();
         }
 
         private void Back_Button_Click(object sender, RoutedEventArgs e)
