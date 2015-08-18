@@ -10,7 +10,7 @@
 
 	<!--Шаблон 6 угольных кнопок-->
 	<ControlTemplate x:Key="HexagonButtonTemplate" TargetType="{x:Type Button}">
-        <Grid x:Name="hexagon_grid" Cursor="Hand" RenderTransformOrigin="0.5,0.5">
+        <Grid x:Name="hexagon_grid" RenderTransformOrigin="0.5,0.5">
 			<ed:RegularPolygon  HorizontalAlignment="Stretch" InnerRadius="1" PointCount="6" Stretch="Fill" VerticalAlignment="Stretch" Margin="{TemplateBinding Padding}">
 				<ed:RegularPolygon.Fill>
 					<ImageBrush ImageSource="{Binding Content, RelativeSource={RelativeSource TemplatedParent}}" Stretch="UniformToFill"/>
@@ -33,7 +33,7 @@
 
     <!--Шаблон кнопоки назад-->
 	<ControlTemplate x:Key="BackButtonTemplate" TargetType="{x:Type Button}">
-		<Grid x:Name="back_grid" Cursor="Hand" Width="196" Height="50" RenderTransformOrigin="0.5,0.5">
+		<Grid x:Name="back_grid" Width="196" Height="50" RenderTransformOrigin="0.5,0.5">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="50"/>
                 <ColumnDefinition/>
@@ -54,7 +54,7 @@
 
     <!--Шаблон кнопоки father-->
 	<ControlTemplate x:Key="FatherButtonTemplate" TargetType="{x:Type Button}">
-		<Grid x:Name="father_grid" Cursor="Hand" RenderTransformOrigin="0.5,0.5">
+		<Grid x:Name="father_grid" RenderTransformOrigin="0.5,0.5">
             <Grid.RowDefinitions>
                 <RowDefinition/>
                 <RowDefinition/>
@@ -83,7 +83,7 @@
 
     <!--Шаблон кнопоки mather-->
 	<ControlTemplate x:Key="MatherButtonTemplate" TargetType="{x:Type Button}">
-		<Grid x:Name="mather_grid" Cursor="Hand" RenderTransformOrigin="0.5,0.5">
+		<Grid x:Name="mather_grid" RenderTransformOrigin="0.5,0.5">
             <Grid.RowDefinitions>
                 <RowDefinition/>
                 <RowDefinition/>
@@ -112,7 +112,7 @@
 
     <!--Шаблон кнопок вперед назад-->
 	<ControlTemplate x:Key="NavButtonTemplate" TargetType="{x:Type Button}">
-		<Grid x:Name="nav_grid" Cursor="Hand" RenderTransformOrigin="0.5,0.5">
+		<Grid x:Name="nav_grid" RenderTransformOrigin="0.5,0.5">
             <Grid.RowDefinitions>
                 <RowDefinition/>
                 <RowDefinition Height="70"/>
@@ -257,7 +257,7 @@
 
     <!--Шаблон кнопоки подробнее-->
     <ControlTemplate x:Key="ReadMoreButtonTemplate" TargetType="{x:Type Button}">
-        <Grid x:Name="read_more_grid" Cursor="Hand" Width="155" Height="36" RenderTransformOrigin="0.5,0.5">
+        <Grid x:Name="read_more_grid" Width="155" Height="36" RenderTransformOrigin="0.5,0.5">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition/>
                 <ColumnDefinition Width="36"/>
@@ -281,7 +281,7 @@
     
     <!--Шаблон вертикальной кнопки-->
     <ControlTemplate x:Key="VerticalButtonTemplate" TargetType="{x:Type Button}">
-        <Grid x:Name="vertical_grid" Cursor="Hand" RenderTransformOrigin="0.5,0.5">
+        <Grid x:Name="vertical_grid" RenderTransformOrigin="0.5,0.5">
             <Border CornerRadius="5" Background="{TemplateBinding Background}"
                     Width="{TemplateBinding Width}" Height="{TemplateBinding Height}">
                 <TextBlock Text="{TemplateBinding Content}" FontFamily="{TemplateBinding FontFamily}" FontSize="{TemplateBinding FontSize}"
