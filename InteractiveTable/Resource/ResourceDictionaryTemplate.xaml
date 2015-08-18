@@ -418,7 +418,7 @@
             <Border CornerRadius="5" Grid.ColumnSpan="2" Background="#FFCF142B"/>
             <Image Source="/InteractiveTable;component/Images/Pedigree/ReadMoreArrow.png" Stretch="Fill"
                    Width="20" Height="20" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="5,10,0,0"/>
-            <TextBlock Text="{DynamicResource g_ReadMoreButton}" FontFamily="/InteractiveTable;component/Fonts/#Basil Bold" FontSize="18"
+            <TextBlock Text="{DynamicResource p_ReadMoreButton}" FontFamily="/InteractiveTable;component/Fonts/#Basil Bold" FontSize="18"
                        HorizontalAlignment="Right" VerticalAlignment="Center" Foreground="White"/>
         </Grid>
     </ControlTemplate>

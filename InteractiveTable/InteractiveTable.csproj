@@ -81,10 +81,6 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Resource>
-    <Page Include="FlowDocumentCreater.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="LanguageResources\lang.tt-RU.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -114,9 +110,6 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="FaderFrame.cs" />
-    <Compile Include="FlowDocumentCreater.xaml.cs">
-      <DependentUpon>FlowDocumentCreater.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Pages\BookViewer.xaml.cs">
       <DependentUpon>BookViewer.xaml</DependentUpon>
     </Compile>
