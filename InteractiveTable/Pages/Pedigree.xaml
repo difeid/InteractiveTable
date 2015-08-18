@@ -12,9 +12,8 @@
             </Canvas.Background>
         </Canvas>
 
-        <Button x:Name="back_button" Template="{DynamicResource BackButtonTemplate}" Click="Back_Button_Click" Canvas.Left="75" Canvas.Top="955" FocusVisualStyle="{x:Null}"/>
-
-        <Button x:Name="p00_button" Width="200" Height="170" Canvas.Left="687" Canvas.Top="545" Template="{DynamicResource HiddenButtonTemplate}" Click="PopupShow_Button_Click" FocusVisualStyle="{x:Null}"/>
+        <Button x:Name="p00_button" Width="200" Height="170" Canvas.Left="687" Canvas.Top="545" Template="{DynamicResource HiddenButtonTemplate}" 
+                FocusVisualStyle="{x:Null}" MouseEnter="PopupShow_Button_MouseEnter"/>
 
         <Popup x:Name="readMorePopup" PopupAnimation="Fade" AllowsTransparency="True" Placement="Absolute"
                StaysOpen="False" HorizontalOffset="1270" VerticalOffset="20">
@@ -55,5 +54,7 @@
             </Ellipse>
             <Image Source="/InteractiveTable;component/Images/Pedigree/Magnifier.png" Stretch="Fill" Width="420" Height="620"/>
         </Canvas>
+
+        <Button x:Name="back_button" Template="{DynamicResource BackButtonTemplate}" Click="Back_Button_Click" Canvas.Left="75" Canvas.Top="955" FocusVisualStyle="{x:Null}"/>
     </Canvas>
 </Page>

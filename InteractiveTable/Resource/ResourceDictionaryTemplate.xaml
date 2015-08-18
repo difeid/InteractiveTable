@@ -9,17 +9,17 @@
 	mc:Ignorable="d">
 
 	<!--Шаблон 6 угольных кнопок-->
-	<ControlTemplate x:Key="HexagonButtonTemplate" TargetType="{x:Type Button}">
+    <ControlTemplate x:Key="HexagonButtonTemplate" TargetType="{x:Type Button}">
         <Grid x:Name="hexagon_grid" RenderTransformOrigin="0.5,0.5">
-			<ed:RegularPolygon  HorizontalAlignment="Stretch" InnerRadius="1" PointCount="6" Stretch="Fill" VerticalAlignment="Stretch" Margin="{TemplateBinding Padding}">
-				<ed:RegularPolygon.Fill>
-					<ImageBrush ImageSource="{Binding Content, RelativeSource={RelativeSource TemplatedParent}}" Stretch="UniformToFill"/>
-				</ed:RegularPolygon.Fill>
-			</ed:RegularPolygon>
-			<!--Грязный хак с размером текстового поля Задается в MinWidth родительского контейнера-->
-			<TextBlock Text="{Binding Tag, RelativeSource={RelativeSource TemplatedParent}}" TextWrapping="Wrap" FontFamily="{TemplateBinding FontFamily}" FontSize="{TemplateBinding FontSize}"
+            <ed:RegularPolygon  HorizontalAlignment="Stretch" InnerRadius="1" PointCount="6" Stretch="Fill" VerticalAlignment="Stretch" Margin="{TemplateBinding Padding}">
+                <ed:RegularPolygon.Fill>
+                    <ImageBrush ImageSource="{Binding Content, RelativeSource={RelativeSource TemplatedParent}}" Stretch="UniformToFill"/>
+                </ed:RegularPolygon.Fill>
+            </ed:RegularPolygon>
+            <!--Грязный хак с размером текстового поля Задается в MinWidth родительского контейнера-->
+            <TextBlock Text="{Binding Tag, RelativeSource={RelativeSource TemplatedParent}}" TextWrapping="Wrap" FontFamily="{TemplateBinding FontFamily}" FontSize="{TemplateBinding FontSize}"
 				TextAlignment="Center" MaxWidth="{TemplateBinding MinWidth}" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-		</Grid>
+        </Grid>
         <ControlTemplate.Triggers>
             <Trigger Property="IsPressed" Value="True">
                 <Setter Property="RenderTransform" TargetName="hexagon_grid">

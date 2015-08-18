@@ -38,10 +38,15 @@ namespace InteractiveTable.Pages
             this.NavigationService.GoBack();
         }
 
-        private void PopupShow_Button_Click(object sender, RoutedEventArgs e)
+        private void PopupShow_Button_MouseEnter(object sender, MouseEventArgs e)
         {
-            personNumber = Convert.ToInt32((sender as Button).Name.Substring(1, 2));
-            ShowPopup(personNumber, culture);
+            int n = Convert.ToInt32((sender as Button).Name.Substring(1, 2));
+            if (personNumber != n || !readMorePopup.IsOpen)
+            {
+                personNumber = n;
+                ShowPopup(personNumber, culture);
+            }
+            e.Handled = true;
         }
 
         private void Read_More_Button_Click(object sender, RoutedEventArgs e)
