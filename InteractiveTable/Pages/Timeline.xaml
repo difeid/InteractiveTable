@@ -15,77 +15,75 @@
         <ScrollViewer x:Name="scrollViewer" HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Disabled">
             <Canvas Height="720" Width="2620" VerticalAlignment="Bottom" FocusVisualStyle="{x:Null}">
                 <!--Кнопки-->
-                <Button x:Name="y00_button" Click="Year_Button_Click" Template="{DynamicResource HexagonButtonTemplate}" FocusVisualStyle="{x:Null}" Width="270" Height="270"
-                    Padding="20,0" Content="/InteractiveTable;component/Images/Timeline/1828.png" Canvas.Left="62" Canvas.Top="8"/>
-                <Button x:Name="y01_button" Click="Year_Button_Click" Template="{DynamicResource HexagonButtonTemplate}" FocusVisualStyle="{x:Null}" Width="270" Height="270"
-                    Padding="20,0" Content="/InteractiveTable;component/Images/Timeline/1844.png" Canvas.Left="175" Canvas.Top="202"/>
-                <Button x:Name="y02_button" Click="Year_Button_Click" Template="{DynamicResource HexagonButtonTemplate}" FocusVisualStyle="{x:Null}" Width="270" Height="270"
-                    Padding="20,0" Content="/InteractiveTable;component/Images/Timeline/1847.png" Canvas.Left="398" Canvas.Top="328"/>
-                <Button x:Name="y03_button" Click="Year_Button_Click" Template="{DynamicResource HexagonButtonTemplate}" FocusVisualStyle="{x:Null}" Width="270" Height="270"
-                    Padding="20,0" Content="/InteractiveTable;component/Images/Timeline/1851.png" Canvas.Left="512" Canvas.Top="135"/>
+                <Button x:Name="y00_button" Click="Year_Button_Click" Template="{DynamicResource HexagonButtonTemplate}" FocusVisualStyle="{x:Null}" Width="320" Height="320"
+                    Padding="22,0" Content="/InteractiveTable;component/Images/Timeline/1828.png" Canvas.Left="79" Canvas.Top="10"/>
+                <Button x:Name="y01_button" Click="Year_Button_Click" Template="{DynamicResource HexagonButtonTemplate}" FocusVisualStyle="{x:Null}" Width="320" Height="320"
+                    Padding="22,0" Content="/InteractiveTable;component/Images/Timeline/1844.png" Canvas.Left="213" Canvas.Top="239"/>
+                <Button x:Name="y02_button" Click="Year_Button_Click" Template="{DynamicResource HexagonButtonTemplate}" FocusVisualStyle="{x:Null}" Width="320" Height="320"
+                    Padding="22,0" Content="/InteractiveTable;component/Images/Timeline/1847.png" Canvas.Left="479" Canvas.Top="395"/>
+                <Button x:Name="y03_button" Click="Year_Button_Click" Template="{DynamicResource HexagonButtonTemplate}" FocusVisualStyle="{x:Null}" Width="320" Height="320"
+                    Padding="22,0" Content="/InteractiveTable;component/Images/Timeline/1851.png" Canvas.Left="617" Canvas.Top="165"/>
 
-                <Button x:Name="y04_button" Click="Year_Button_Click" Template="{DynamicResource HexagonButtonTemplate}" FocusVisualStyle="{x:Null}" Width="270" Height="270"
-                    Padding="20,0" Content="/InteractiveTable;component/Images/Timeline/1852.png" Canvas.Left="736" Canvas.Top="6"/>
-                <Button x:Name="y05_button" Click="Year_Button_Click" Template="{DynamicResource HexagonButtonTemplate}" FocusVisualStyle="{x:Null}" Width="270" Height="270"
-                    Padding="20,0" Content="/InteractiveTable;component/Images/Timeline/1854.png" Canvas.Left="849" Canvas.Top="200"/>
-                <Button x:Name="y06_button" Click="Year_Button_Click" Template="{DynamicResource HexagonButtonTemplate}" FocusVisualStyle="{x:Null}" Width="270" Height="270"
-                    Padding="20,0" Content="/InteractiveTable;component/Images/Timeline/1855.png" Canvas.Left="1075" Canvas.Top="330"/>
-                <Button x:Name="y07_button" Click="Year_Button_Click" Template="{DynamicResource HexagonButtonTemplate}" FocusVisualStyle="{x:Null}" Width="270" Height="270"
-                    Padding="20,0" Content="/InteractiveTable;component/Images/Timeline/1856.png" Canvas.Left="1187" Canvas.Top="138"/>
+                <Button x:Name="y04_button" Click="Year_Button_Click" Template="{DynamicResource HexagonButtonTemplate}" FocusVisualStyle="{x:Null}" Width="320" Height="320"
+                    Padding="22,0" Content="/InteractiveTable;component/Images/Timeline/1852.png" Canvas.Left="885" Canvas.Top="8"/>
+                <Button x:Name="y05_button" Click="Year_Button_Click" Template="{DynamicResource HexagonButtonTemplate}" FocusVisualStyle="{x:Null}" Width="320" Height="320"
+                    Padding="22,0" Content="/InteractiveTable;component/Images/Timeline/1854.png" Canvas.Left="1022" Canvas.Top="239"/>
+                <Button x:Name="y06_button" Click="Year_Button_Click" Template="{DynamicResource HexagonButtonTemplate}" FocusVisualStyle="{x:Null}" Width="320" Height="320"
+                    Padding="22,0" Content="/InteractiveTable;component/Images/Timeline/1855.png" Canvas.Left="1291" Canvas.Top="395"/>
+                <Button x:Name="y07_button" Click="Year_Button_Click" Template="{DynamicResource HexagonButtonTemplate}" FocusVisualStyle="{x:Null}" Width="320" Height="320"
+                    Padding="22,0" Content="/InteractiveTable;component/Images/Timeline/1856.png" Canvas.Left="1426" Canvas.Top="165"/>
 
                 <!--Кружочки и пути-->
-                <Path Stroke="#FFCF142B" StrokeThickness="6">
+                <Path Stroke="#FFCF142B" StrokeThickness="7">
                     <Path.Data>
                         <PathGeometry>
-                            <PathFigure StartPoint="83,77">
-                                <LineSegment Point="197,11"/>
-                                <LineSegment Point="309,77"/>
-                                <LineSegment Point="309,205"/>
-                                <LineSegment Point="422,271"/>
-                                <LineSegment Point="422,401"/>
-                                <LineSegment Point="535,336"/>
-                                <LineSegment Point="535,206"/>
-                                <LineSegment Point="647,141"/>
-                                <LineSegment Point="759,206"/>
-                                <LineSegment Point="759,77"/>
-                                <LineSegment Point="872,11"/>
-                                <LineSegment Point="984,77"/>
-                                <LineSegment Point="984,206"/>
-                                <LineSegment Point="1097,271"/>
-                                <LineSegment Point="1097,401"/>
-                                <LineSegment Point="1210,336"/>
-                                <LineSegment Point="1210,206"/>
-                                <LineSegment Point="1322,141"/>
-                                <LineSegment Point="1435,206"/>
-                                <LineSegment Point="1435,77"/>
-                                <LineSegment Point="1548,11"/>
-                                <LineSegment Point="1661,77"/>
-                                <LineSegment Point="1661,206"/>
-                                <LineSegment Point="1774,271"/>
-                                <LineSegment Point="1774,401"/>
-                                <LineSegment Point="1887,336"/>
-                                <LineSegment Point="1887,206"/>
-                                <LineSegment Point="2000,141"/>
-                                <LineSegment Point="2113,206"/>
-                                <LineSegment Point="2113,77"/>
-                                <LineSegment Point="2226,11"/>
-                                <LineSegment Point="2339,77"/>
+                            <PathFigure StartPoint="101,91">
+                                <LineSegment Point="236,13"/>
+                                <LineSegment Point="371,91"/>
+                                <LineSegment Point="371,245"/>
+                                <LineSegment Point="507,324"/>
+
+                                <LineSegment Point="507,480"/>
+                                <LineSegment Point="642,402"/>
+                                <LineSegment Point="642,246"/>
+                                <LineSegment Point="777,168"/>
+                                <LineSegment Point="911,246"/>
+
+                                <LineSegment Point="911,91"/>
+                                <LineSegment Point="1046,13"/>
+                                <LineSegment Point="1181,91"/>
+                                <LineSegment Point="1181,245"/>
+                                <LineSegment Point="1317,324"/>
+
+                                <LineSegment Point="1317,480"/>
+                                <LineSegment Point="1452,402"/>
+                                <LineSegment Point="1452,246"/>
+                                <LineSegment Point="1587,168"/>
+                                <LineSegment Point="1721,246"/>
+
+                                <LineSegment Point="1721,91"/>
+                                <LineSegment Point="1856,13"/>
+                                <LineSegment Point="1991,91"/>
+                                <LineSegment Point="1991,245"/>
+                                <LineSegment Point="2126,324"/>
                             </PathFigure>
                         </PathGeometry>
                     </Path.Data>
                 </Path>
+
                 <Path Fill="#FFCF142B">
                     <Path.Data>
                         <GeometryGroup>
-                            <EllipseGeometry RadiusX="8" RadiusY="8" Center="85,76"/>
-                            <EllipseGeometry RadiusX="8" RadiusY="8" Center="310,204"/>
-                            <EllipseGeometry RadiusX="8" RadiusY="8" Center="535,336"/>
-                            <EllipseGeometry RadiusX="8" RadiusY="8" Center="647,143"/>
-                            <EllipseGeometry RadiusX="8" RadiusY="8" Center="985,75"/>
-                            <EllipseGeometry RadiusX="8" RadiusY="8" Center="1097,270"/>
-                            <EllipseGeometry RadiusX="8" RadiusY="8" Center="1210,336"/>
-                            <EllipseGeometry RadiusX="8" RadiusY="8" Center="1322,141"/>
-                            <EllipseGeometry RadiusX="8" RadiusY="8" Center="1547,11"/>
+                            <EllipseGeometry RadiusX="8" RadiusY="8" Center="101,91"/>
+                            <EllipseGeometry RadiusX="8" RadiusY="8" Center="371,245"/>
+                            <EllipseGeometry RadiusX="8" RadiusY="8" Center="642,402"/>
+                            <EllipseGeometry RadiusX="8" RadiusY="8" Center="777,168"/>
+                            <EllipseGeometry RadiusX="8" RadiusY="8" Center="1181,91"/>
+
+                            <EllipseGeometry RadiusX="8" RadiusY="8" Center="1317,324"/>
+                            <EllipseGeometry RadiusX="8" RadiusY="8" Center="1452,402"/>
+                            <EllipseGeometry RadiusX="8" RadiusY="8" Center="1587,168"/>
+                            <EllipseGeometry RadiusX="8" RadiusY="8" Center="1856,13"/>
                         </GeometryGroup>
                     </Path.Data>
                 </Path>

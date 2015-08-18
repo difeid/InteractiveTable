@@ -326,8 +326,8 @@
   <ItemGroup>
     <Resource Include="Images\Pedigree\TreePedigree.png" />
     <Resource Include="Images\Pedigree\Magnifier.png" />
-	<Resource Include="Images\Pedigree\PedigreePopupBackground.png" />
-	<Resource Include="Images\Pedigree\ReadMoreArrow.png" />
+    <Resource Include="Images\Pedigree\PedigreePopupBackground.png" />
+    <Resource Include="Images\Pedigree\ReadMoreArrow.png" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\Family\Auntie.png" />
