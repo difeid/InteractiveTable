@@ -2,8 +2,8 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:v="clr-namespace:System;assembly=mscorlib">
     <!-- Main-->
-    <v:String x:Key="g_BackButton">Назад</v:String>
-    <v:String x:Key="g_PleaseWait">Пожалуйста, подождите</v:String>
+    <v:String x:Key="g_BackButton">Back</v:String>
+    <v:String x:Key="g_PleaseWait">Please, wait</v:String>
     <!--MainMenu-->
     <v:String x:Key="m_Memory">Память</v:String>
     <v:String x:Key="m_StudentTask">Задания школьникам</v:String>
@@ -38,11 +38,11 @@
     <v:String x:Key="f_BrothersSisters">Братья и сестра</v:String>
     <v:String x:Key="f_WifeChildren">Жена и дети</v:String>
     <!--PopupWindow-->
-    <v:String x:Key="p_Next">дальше</v:String>
-    <v:String x:Key="p_Back">назад</v:String>
-    <v:String x:Key="p_Close">закрыть</v:String>
+    <v:String x:Key="p_Next">next</v:String>
+    <v:String x:Key="p_Back">back</v:String>
+    <v:String x:Key="p_Close">close</v:String>
     <!--Pedigree-->
-    <v:String x:Key="p_ReadMoreButton">Подробнее</v:String>
+    <v:String x:Key="p_ReadMoreButton">Read more</v:String>
     <!--BookViewer-->
     <v:String x:Key="b_Content">СОДЕРЖАНИЕ</v:String>
 </ResourceDictionary>
