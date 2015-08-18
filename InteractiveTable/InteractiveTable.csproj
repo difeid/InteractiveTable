@@ -319,7 +319,7 @@
   <ItemGroup>
     <Resource Include="Images\Pedigree\TreePedigree.png" />
     <Resource Include="Images\Pedigree\Magnifier.png" />
-    <Resource Include="Images\Pedigree\PedigreePopupBackground.png" />
+    <Resource Include="Images\PopupBackground.png" />
     <Resource Include="Images\Pedigree\ReadMoreArrow.png" />
   </ItemGroup>
   <ItemGroup>
@@ -363,7 +363,7 @@
     <Resource Include="Images\PopupWindow\BackArrowWhite.png" />
     <Resource Include="Images\PopupWindow\CloseWhite.png" />
     <Resource Include="Images\PopupWindow\NextArrowWhite.png" />
-    <Resource Include="Images\PopupWindow\PopupBackground.png" />
+    <Resource Include="Images\PopupWindow\PopupWindowBackground.png" />
     <Resource Include="Images\PopupWindow\Zoom.png" />
   </ItemGroup>
   <ItemGroup>
