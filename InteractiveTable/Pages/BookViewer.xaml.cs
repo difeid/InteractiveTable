@@ -53,11 +53,10 @@ namespace InteractiveTable.Pages
                     book.PagePadding = new Thickness(50);
 
                     bookReader.Document = book;
-
-                    pleaseWaitPopup.IsOpen = false;
-                    backButton.IsEnabled = true;
-                    contentButton.IsEnabled = true;
                 }
+                pleaseWaitPopup.IsOpen = false;
+                backButton.IsEnabled = true;
+                contentButton.IsEnabled = true;
             };
             timer.Start();
         }
