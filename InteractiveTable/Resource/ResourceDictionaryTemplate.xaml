@@ -7,43 +7,10 @@
 	xmlns:Pages="clr-namespace:InteractiveTable.Pages"
 	xmlns:Themes="clr-namespace:Microsoft.Windows.Themes;assembly=PresentationFramework.Aero"
 	mc:Ignorable="d">
-	
+
 	<!--Шаблон 6 угольных кнопок-->
 	<ControlTemplate x:Key="HexagonButtonTemplate" TargetType="{x:Type Button}">
         <Grid x:Name="hexagon_grid" Cursor="Hand" RenderTransformOrigin="0.5,0.5">
-			<Grid.RenderTransform>
-				<TransformGroup>
-					<ScaleTransform/>
-					<SkewTransform/>
-					<RotateTransform/>
-					<TranslateTransform/>
-				</TransformGroup>
-			</Grid.RenderTransform>
-			<VisualStateManager.VisualStateGroups>
-				<VisualStateGroup x:Name="CommonStates">
-					<VisualState x:Name="Normal"/>
-					<VisualState x:Name="MouseOver"/>
-					<VisualState x:Name="Pressed">
-						<Storyboard>
-                            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)" Storyboard.TargetName="hexagon_grid">
-								<EasingDoubleKeyFrame KeyTime="0:0:0.1" Value="0.95">
-									<EasingDoubleKeyFrame.EasingFunction>
-										<ExponentialEase EasingMode="EaseOut"/>
-									</EasingDoubleKeyFrame.EasingFunction>
-								</EasingDoubleKeyFrame>
-							</DoubleAnimationUsingKeyFrames>
-                            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)" Storyboard.TargetName="hexagon_grid">
-								<EasingDoubleKeyFrame KeyTime="0:0:0.1" Value="0.95">
-									<EasingDoubleKeyFrame.EasingFunction>
-										<ExponentialEase EasingMode="EaseOut"/>
-									</EasingDoubleKeyFrame.EasingFunction>
-								</EasingDoubleKeyFrame>
-							</DoubleAnimationUsingKeyFrames>
-						</Storyboard>
-					</VisualState>
-					<VisualState x:Name="Disabled"/>
-				</VisualStateGroup>
-			</VisualStateManager.VisualStateGroups>
 			<ed:RegularPolygon  HorizontalAlignment="Stretch" InnerRadius="1" PointCount="6" Stretch="Fill" VerticalAlignment="Stretch" Margin="{TemplateBinding Padding}">
 				<ed:RegularPolygon.Fill>
 					<ImageBrush ImageSource="{Binding Content, RelativeSource={RelativeSource TemplatedParent}}" Stretch="UniformToFill"/>
@@ -53,95 +20,47 @@
 			<TextBlock Text="{Binding Tag, RelativeSource={RelativeSource TemplatedParent}}" TextWrapping="Wrap" FontFamily="{TemplateBinding FontFamily}" FontSize="{TemplateBinding FontSize}"
 				TextAlignment="Center" MaxWidth="{TemplateBinding MinWidth}" VerticalAlignment="Center" HorizontalAlignment="Center"/>
 		</Grid>
-	</ControlTemplate>
+        <ControlTemplate.Triggers>
+            <Trigger Property="IsPressed" Value="True">
+                <Setter Property="RenderTransform" TargetName="hexagon_grid">
+                    <Setter.Value>
+                        <ScaleTransform ScaleY="0.96" ScaleX="0.96"/>
+                    </Setter.Value>
+                </Setter>
+            </Trigger>
+        </ControlTemplate.Triggers>
+    </ControlTemplate>
 
     <!--Шаблон кнопоки назад-->
 	<ControlTemplate x:Key="BackButtonTemplate" TargetType="{x:Type Button}">
 		<Grid x:Name="back_grid" Cursor="Hand" Width="196" Height="50" RenderTransformOrigin="0.5,0.5">
-			<Grid.ColumnDefinitions>
-				<ColumnDefinition Width="50"/>
-				<ColumnDefinition/>
-			</Grid.ColumnDefinitions>
-			<Grid.RenderTransform>
-				<TransformGroup>
-					<ScaleTransform/>
-					<SkewTransform/>
-					<RotateTransform/>
-					<TranslateTransform/>
-				</TransformGroup>
-			</Grid.RenderTransform>
-			<VisualStateManager.VisualStateGroups>
-				<VisualStateGroup x:Name="CommonStates">
-					<VisualState x:Name="Normal"/>
-					<VisualState x:Name="MouseOver"/>
-					<VisualState x:Name="Pressed">
-						<Storyboard>
-							<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)" Storyboard.TargetName="back_grid">
-								<EasingDoubleKeyFrame KeyTime="0:0:0.1" Value="0.95">
-									<EasingDoubleKeyFrame.EasingFunction>
-										<ExponentialEase EasingMode="EaseOut"/>
-									</EasingDoubleKeyFrame.EasingFunction>
-								</EasingDoubleKeyFrame>
-							</DoubleAnimationUsingKeyFrames>
-							<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)" Storyboard.TargetName="back_grid">
-								<EasingDoubleKeyFrame KeyTime="0:0:0.1" Value="0.95">
-									<EasingDoubleKeyFrame.EasingFunction>
-										<ExponentialEase EasingMode="EaseOut"/>
-									</EasingDoubleKeyFrame.EasingFunction>
-								</EasingDoubleKeyFrame>
-							</DoubleAnimationUsingKeyFrames>
-						</Storyboard>
-					</VisualState>
-					<VisualState x:Name="Disabled"/>
-				</VisualStateGroup>
-			</VisualStateManager.VisualStateGroups>
-			<Image Source="/InteractiveTable;component/Images/Arrow.png" Stretch="Fill" Width="40" Height="40"/>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="50"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Image Source="/InteractiveTable;component/Images/Arrow.png" Stretch="Fill" Width="40" Height="40"/>
 			<TextBlock Text="{DynamicResource g_BackButton}" FontFamily="/InteractiveTable;component/Fonts/#Basil Bold" FontSize="44" Grid.Column="1"/>
 		</Grid>
+        <ControlTemplate.Triggers>
+            <Trigger Property="IsPressed" Value="True">
+                <Setter Property="RenderTransform" TargetName="back_grid">
+                    <Setter.Value>
+                        <ScaleTransform ScaleY="0.96" ScaleX="0.96"/>
+                    </Setter.Value>
+                </Setter>
+            </Trigger>
+        </ControlTemplate.Triggers>
 	</ControlTemplate>
 
     <!--Шаблон кнопоки father-->
 	<ControlTemplate x:Key="FatherButtonTemplate" TargetType="{x:Type Button}">
 		<Grid x:Name="father_grid" Cursor="Hand" RenderTransformOrigin="0.5,0.5">
-			<Grid.RowDefinitions>
-				<RowDefinition/>
-				<RowDefinition/>
-				<RowDefinition/>
-			</Grid.RowDefinitions>
-			<Grid.RenderTransform>
-				<TransformGroup>
-					<ScaleTransform/>
-					<SkewTransform/>
-					<RotateTransform/>
-					<TranslateTransform/>
-				</TransformGroup>
-			</Grid.RenderTransform>
-			<VisualStateManager.VisualStateGroups>
-				<VisualStateGroup x:Name="CommonStates">
-					<VisualState x:Name="Normal"/>
-					<VisualState x:Name="MouseOver"/>
-					<VisualState x:Name="Pressed">
-						<Storyboard>
-							<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)" Storyboard.TargetName="father_grid">
-								<EasingDoubleKeyFrame KeyTime="0:0:0.1" Value="0.95">
-									<EasingDoubleKeyFrame.EasingFunction>
-										<ExponentialEase EasingMode="EaseOut"/>
-									</EasingDoubleKeyFrame.EasingFunction>
-								</EasingDoubleKeyFrame>
-							</DoubleAnimationUsingKeyFrames>
-							<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)" Storyboard.TargetName="father_grid">
-								<EasingDoubleKeyFrame KeyTime="0:0:0.1" Value="0.95">
-									<EasingDoubleKeyFrame.EasingFunction>
-										<ExponentialEase EasingMode="EaseOut"/>
-									</EasingDoubleKeyFrame.EasingFunction>
-								</EasingDoubleKeyFrame>
-							</DoubleAnimationUsingKeyFrames>
-						</Storyboard>
-					</VisualState>
-					<VisualState x:Name="Disabled"/>
-				</VisualStateGroup>
-			</VisualStateManager.VisualStateGroups>
-			<ed:RegularPolygon  HorizontalAlignment="Stretch" InnerRadius="1" PointCount="6" Stretch="Fill" VerticalAlignment="Stretch" Margin="{TemplateBinding Padding}" Grid.RowSpan="3">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <ed:RegularPolygon  HorizontalAlignment="Stretch" InnerRadius="1" PointCount="6" Stretch="Fill" VerticalAlignment="Stretch" Margin="{TemplateBinding Padding}" Grid.RowSpan="3">
 				<ed:RegularPolygon.Fill>
 					<ImageBrush ImageSource="{Binding Content, RelativeSource={RelativeSource TemplatedParent}}" Stretch="UniformToFill"/>
 				</ed:RegularPolygon.Fill>
@@ -151,50 +70,26 @@
 			<TextBlock Text="{DynamicResource f_FatherName}" TextWrapping="Wrap" FontFamily="/InteractiveTable;component/Fonts/#Basil Bold" FontSize="48" Foreground="White" MaxWidth="350"
 				TextAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="1"/>
 		</Grid>
+        <ControlTemplate.Triggers>
+            <Trigger Property="IsPressed" Value="True">
+                <Setter Property="RenderTransform" TargetName="father_grid">
+                    <Setter.Value>
+                        <ScaleTransform ScaleY="0.96" ScaleX="0.96"/>
+                    </Setter.Value>
+                </Setter>
+            </Trigger>
+        </ControlTemplate.Triggers>
 	</ControlTemplate>
 
     <!--Шаблон кнопоки mather-->
 	<ControlTemplate x:Key="MatherButtonTemplate" TargetType="{x:Type Button}">
 		<Grid x:Name="mather_grid" Cursor="Hand" RenderTransformOrigin="0.5,0.5">
-			<Grid.RowDefinitions>
-				<RowDefinition/>
-				<RowDefinition/>
-				<RowDefinition/>
-			</Grid.RowDefinitions>
-			<Grid.RenderTransform>
-				<TransformGroup>
-					<ScaleTransform/>
-					<SkewTransform/>
-					<RotateTransform/>
-					<TranslateTransform/>
-				</TransformGroup>
-			</Grid.RenderTransform>
-			<VisualStateManager.VisualStateGroups>
-				<VisualStateGroup x:Name="CommonStates">
-					<VisualState x:Name="Normal"/>
-					<VisualState x:Name="MouseOver"/>
-					<VisualState x:Name="Pressed">
-						<Storyboard>
-							<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)" Storyboard.TargetName="mather_grid">
-								<EasingDoubleKeyFrame KeyTime="0:0:0.1" Value="0.95">
-									<EasingDoubleKeyFrame.EasingFunction>
-										<ExponentialEase EasingMode="EaseOut"/>
-									</EasingDoubleKeyFrame.EasingFunction>
-								</EasingDoubleKeyFrame>
-							</DoubleAnimationUsingKeyFrames>
-							<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)" Storyboard.TargetName="mather_grid">
-								<EasingDoubleKeyFrame KeyTime="0:0:0.1" Value="0.95">
-									<EasingDoubleKeyFrame.EasingFunction>
-										<ExponentialEase EasingMode="EaseOut"/>
-									</EasingDoubleKeyFrame.EasingFunction>
-								</EasingDoubleKeyFrame>
-							</DoubleAnimationUsingKeyFrames>
-						</Storyboard>
-					</VisualState>
-					<VisualState x:Name="Disabled"/>
-				</VisualStateGroup>
-			</VisualStateManager.VisualStateGroups>
-			<ed:RegularPolygon  HorizontalAlignment="Stretch" InnerRadius="1" PointCount="6" Stretch="Fill" VerticalAlignment="Stretch" Margin="{TemplateBinding Padding}" Grid.RowSpan="3">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <ed:RegularPolygon  HorizontalAlignment="Stretch" InnerRadius="1" PointCount="6" Stretch="Fill" VerticalAlignment="Stretch" Margin="{TemplateBinding Padding}" Grid.RowSpan="3">
 				<ed:RegularPolygon.Fill>
 					<ImageBrush ImageSource="{Binding Content, RelativeSource={RelativeSource TemplatedParent}}" Stretch="UniformToFill"/>
 				</ed:RegularPolygon.Fill>
@@ -204,6 +99,15 @@
 			<TextBlock Text="{DynamicResource f_MatherName}" TextWrapping="Wrap" FontFamily="/InteractiveTable;component/Fonts/#Basil Bold" FontSize="48" Foreground="White" MaxWidth="350"
 				TextAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="1"/>
 		</Grid>
+        <ControlTemplate.Triggers>
+            <Trigger Property="IsPressed" Value="True">
+                <Setter Property="RenderTransform" TargetName="mather_grid">
+                    <Setter.Value>
+                        <ScaleTransform ScaleY="0.96" ScaleX="0.96"/>
+                    </Setter.Value>
+                </Setter>
+            </Trigger>
+        </ControlTemplate.Triggers>
 	</ControlTemplate>
 
     <!--Шаблон кнопок вперед назад-->
@@ -214,39 +118,6 @@
                 <RowDefinition Height="70"/>
                 <RowDefinition/>
             </Grid.RowDefinitions>
-            <Grid.RenderTransform>
-				<TransformGroup>
-					<ScaleTransform/>
-					<SkewTransform/>
-					<RotateTransform/>
-					<TranslateTransform/>
-				</TransformGroup>
-			</Grid.RenderTransform>
-			<VisualStateManager.VisualStateGroups>
-				<VisualStateGroup x:Name="CommonStates">
-					<VisualState x:Name="Normal"/>
-					<VisualState x:Name="MouseOver"/>
-					<VisualState x:Name="Pressed">
-						<Storyboard>
-							<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)" Storyboard.TargetName="nav_grid">
-								<EasingDoubleKeyFrame KeyTime="0:0:0.1" Value="0.95">
-									<EasingDoubleKeyFrame.EasingFunction>
-										<ExponentialEase EasingMode="EaseOut"/>
-									</EasingDoubleKeyFrame.EasingFunction>
-								</EasingDoubleKeyFrame>
-							</DoubleAnimationUsingKeyFrames>
-							<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)" Storyboard.TargetName="nav_grid">
-								<EasingDoubleKeyFrame KeyTime="0:0:0.1" Value="0.95">
-									<EasingDoubleKeyFrame.EasingFunction>
-										<ExponentialEase EasingMode="EaseOut"/>
-									</EasingDoubleKeyFrame.EasingFunction>
-								</EasingDoubleKeyFrame>
-							</DoubleAnimationUsingKeyFrames>
-						</Storyboard>
-					</VisualState>
-					<VisualState x:Name="Disabled"/>
-				</VisualStateGroup>
-			</VisualStateManager.VisualStateGroups>
             <Rectangle Fill="Transparent" Grid.RowSpan="3"/>
             <Image Source="{Binding Content, RelativeSource={RelativeSource TemplatedParent}}" Width="70" Height="70" Margin="{TemplateBinding Padding}" Grid.Row="1"
                    HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"/>
@@ -254,6 +125,15 @@
                        FontSize="{TemplateBinding FontSize}" Margin="{TemplateBinding Padding}" Grid.Row="2"
                        VerticalAlignment="{TemplateBinding VerticalContentAlignment}" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"/>
         </Grid>
+        <ControlTemplate.Triggers>
+            <Trigger Property="IsPressed" Value="True">
+                <Setter Property="RenderTransform" TargetName="nav_grid">
+                    <Setter.Value>
+                        <ScaleTransform ScaleY="0.96" ScaleX="0.96"/>
+                    </Setter.Value>
+                </Setter>
+            </Trigger>
+        </ControlTemplate.Triggers>
 	</ControlTemplate>
 
     <!--Стиль полосы прокрутки-->
@@ -381,77 +261,27 @@
             <Grid.ColumnDefinitions>
                 <ColumnDefinition/>
                 <ColumnDefinition Width="36"/>
-            </Grid.ColumnDefinitions>
-            <Grid.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform/>
-                    <SkewTransform/>
-                    <RotateTransform/>
-                    <TranslateTransform/>
-                </TransformGroup>
-            </Grid.RenderTransform>
-            <VisualStateManager.VisualStateGroups>
-                <VisualStateGroup x:Name="CommonStates">
-                    <VisualState x:Name="Normal"/>
-                    <VisualState x:Name="MouseOver"/>
-                    <VisualState x:Name="Pressed">
-                        <Storyboard>
-                            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)" Storyboard.TargetName="read_more_grid">
-                                <EasingDoubleKeyFrame KeyTime="0:0:0.1" Value="0.95">
-                                    <EasingDoubleKeyFrame.EasingFunction>
-                                        <ExponentialEase EasingMode="EaseOut"/>
-                                    </EasingDoubleKeyFrame.EasingFunction>
-                                </EasingDoubleKeyFrame>
-                            </DoubleAnimationUsingKeyFrames>
-                            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)" Storyboard.TargetName="read_more_grid">
-                                <EasingDoubleKeyFrame KeyTime="0:0:0.1" Value="0.95">
-                                    <EasingDoubleKeyFrame.EasingFunction>
-                                        <ExponentialEase EasingMode="EaseOut"/>
-                                    </EasingDoubleKeyFrame.EasingFunction>
-                                </EasingDoubleKeyFrame>
-                            </DoubleAnimationUsingKeyFrames>
-                        </Storyboard>
-                    </VisualState>
-                    <VisualState x:Name="Disabled"/>
-                </VisualStateGroup>
-            </VisualStateManager.VisualStateGroups>
+            </Grid.ColumnDefinitions> 
             <Border CornerRadius="5" Grid.ColumnSpan="2" Background="#FFCF142B"/>
             <Image Source="/InteractiveTable;component/Images/Pedigree/ReadMoreArrow.png" Stretch="Fill"
                    Width="20" Height="20" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="5,10,0,0"/>
             <TextBlock Text="{DynamicResource p_ReadMoreButton}" FontFamily="/InteractiveTable;component/Fonts/#Basil Bold" FontSize="18"
                        HorizontalAlignment="Right" VerticalAlignment="Center" Foreground="White"/>
         </Grid>
+        <ControlTemplate.Triggers>
+            <Trigger Property="IsPressed" Value="True">
+                <Setter Property="RenderTransform" TargetName="read_more_grid">
+                    <Setter.Value>
+                        <ScaleTransform ScaleY="0.96" ScaleX="0.96"/>
+                    </Setter.Value>
+                </Setter>
+            </Trigger>
+        </ControlTemplate.Triggers>
     </ControlTemplate>
     
     <!--Шаблон вертикальной кнопки-->
     <ControlTemplate x:Key="VerticalButtonTemplate" TargetType="{x:Type Button}">
         <Grid x:Name="vertical_grid" Cursor="Hand" RenderTransformOrigin="0.5,0.5">
-            <Grid.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform/>
-                    <SkewTransform/>
-                    <RotateTransform/>
-                    <TranslateTransform/>
-                </TransformGroup>
-            </Grid.RenderTransform>
-            <VisualStateManager.VisualStateGroups>
-                <VisualStateGroup x:Name="CommonStates">
-                    <VisualState x:Name="Normal"/>
-                    <VisualState x:Name="MouseOver"/>
-                    <VisualState x:Name="Pressed">
-                        <Storyboard>
-                            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)" Storyboard.TargetName="vertical_grid">
-                                <EasingDoubleKeyFrame KeyTime="0:0:0.1" Value="1.1">
-                                    <EasingDoubleKeyFrame.EasingFunction>
-                                        <ExponentialEase EasingMode="EaseOut"/>
-                                    </EasingDoubleKeyFrame.EasingFunction>
-                                </EasingDoubleKeyFrame>
-                            </DoubleAnimationUsingKeyFrames>
-                        </Storyboard>
-                    </VisualState>
-                    <VisualState x:Name="Disabled"/>
-                </VisualStateGroup>
-            </VisualStateManager.VisualStateGroups>
             <Border CornerRadius="5" Background="{TemplateBinding Background}"
                     Width="{TemplateBinding Width}" Height="{TemplateBinding Height}">
                 <TextBlock Text="{TemplateBinding Content}" FontFamily="{TemplateBinding FontFamily}" FontSize="{TemplateBinding FontSize}"
@@ -468,6 +298,15 @@
                 </TextBlock>
             </Border>
         </Grid>
+        <ControlTemplate.Triggers>
+            <Trigger Property="IsPressed" Value="True">
+                <Setter Property="RenderTransform" TargetName="vertical_grid">
+                    <Setter.Value>
+                        <ScaleTransform ScaleY="1" ScaleX="1.1"/>
+                    </Setter.Value>
+                </Setter>
+            </Trigger>
+        </ControlTemplate.Triggers>
     </ControlTemplate>
     
     <!--Шаблон книги-->
@@ -479,81 +318,6 @@
                     <ColumnDefinition Width="Auto"/>
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
-                <StackPanel Grid.Column="0" Orientation="Horizontal" Uid="StackPanel_5">
-                    <ToggleButton x:Name="FindButton" Command="ApplicationCommands.Find" Focusable="False" Margin="3,0" Uid="ToggleButton_1">
-                        <ToggleButton.Style>
-                            <Style TargetType="{x:Type ToggleButton}">
-                                <Style.BasedOn>
-                                    <Style TargetType="{x:Type ButtonBase}">
-                                        <Setter Property="Focusable" Value="False"/>
-                                        <Setter Property="Opacity" Value="0.5"/>
-                                        <Setter Property="Cursor" Value="Hand"/>
-                                        <Setter Property="Background" Value="Transparent"/>
-                                        <Setter Property="Padding" Value="3,1"/>
-                                        <Setter Property="BorderBrush" Value="{x:Null}"/>
-                                        <Setter Property="BorderThickness" Value="0"/>
-                                        <Setter Property="MinWidth" Value="0"/>
-                                        <Setter Property="MinHeight" Value="0"/>
-                                        <Setter Property="Template">
-                                            <Setter.Value>
-                                                <ControlTemplate TargetType="{x:Type ButtonBase}">
-                                                    <Border Background="{TemplateBinding Background}" Uid="Border_39">
-                                                        <ContentPresenter x:Name="Content" ContentTemplate="{TemplateBinding ContentTemplate}" Content="{TemplateBinding Content}" ContentStringFormat="{TemplateBinding ContentStringFormat}" RenderTransformOrigin="0.5,0.5" Uid="ContentPresenter_2"/>
-                                                    </Border>
-                                                    <ControlTemplate.Triggers>
-                                                        <Trigger Property="IsMouseOver" Value="True">
-                                                            <Setter Property="RenderTransform" TargetName="Content">
-                                                                <Setter.Value>
-                                                                    <ScaleTransform ScaleY="1.1" ScaleX="1.1"/>
-                                                                </Setter.Value>
-                                                            </Setter>
-                                                        </Trigger>
-                                                        <Trigger Property="IsPressed" Value="True">
-                                                            <Setter Property="RenderTransform" TargetName="Content">
-                                                                <Setter.Value>
-                                                                    <ScaleTransform ScaleY="0.9" ScaleX="0.9"/>
-                                                                </Setter.Value>
-                                                            </Setter>
-                                                        </Trigger>
-                                                    </ControlTemplate.Triggers>
-                                                </ControlTemplate>
-                                            </Setter.Value>
-                                        </Setter>
-                                        <Style.Triggers>
-                                            <Trigger Property="IsEnabled" Value="False">
-                                                <Setter Property="Opacity" Value="0.3"/>
-                                            </Trigger>
-                                            <Trigger Property="IsMouseOver" Value="True">
-                                                <Setter Property="Opacity" Value="1"/>
-                                            </Trigger>
-                                        </Style.Triggers>
-                                    </Style>
-                                </Style.BasedOn>
-                                <Style.Triggers>
-                                    <Trigger Property="IsEnabled" Value="False">
-                                        <Setter Property="Visibility" Value="Collapsed"/>
-                                    </Trigger>
-                                    <Trigger Property="IsChecked" Value="True">
-                                        <Setter Property="Opacity" Value="1"/>
-                                    </Trigger>
-                                </Style.Triggers>
-                            </Style>
-                        </ToggleButton.Style>
-                        <Path Stroke="{TemplateBinding Foreground}" Uid="Path_23" VerticalAlignment="Center">
-                            <Path.Data>
-                                <GeometryGroup>
-                                    <RectangleGeometry RadiusY="1" RadiusX="1" Rect="0.5,0.5,19,19"/>
-                                    <EllipseGeometry Center="12,8" RadiusY="5" RadiusX="5"/>
-                                    <EllipseGeometry Center="12,8" RadiusY="4" RadiusX="4"/>
-                                    <LineGeometry EndPoint="9,10" StartPoint="2.5,16.5"/>
-                                    <LineGeometry EndPoint="9.5,10.5" StartPoint="3,17"/>
-                                    <LineGeometry EndPoint="10,11" StartPoint="3.5,17.5"/>
-                                </GeometryGroup>
-                            </Path.Data>
-                        </Path>
-                    </ToggleButton>
-                    <Border x:Name="PART_FindToolBarHost" HorizontalAlignment="Left" Uid="Border_64" Visibility="Collapsed" VerticalAlignment="Center"/>
-                </StackPanel>
                 <StackPanel x:Name="PageCountAndButtons" Grid.Column="1" HorizontalAlignment="Center" Orientation="Horizontal" Uid="StackPanel_3" VerticalAlignment="Center">
                     <RepeatButton Command="NavigationCommands.PreviousPage" IsEnabled="{TemplateBinding CanGoToPreviousPage}" Uid="RepeatButton_9">
                         <RepeatButton.Style>
@@ -615,7 +379,7 @@
                     </RepeatButton>
                     <TextBlock HorizontalAlignment="Center" Uid="TextBlock_8" VerticalAlignment="Center"><Run Text=" "/><Run Text=" "/><InlineUIContainer>
     						<TextBlock Text="{Binding PageNumber, RelativeSource={RelativeSource TemplatedParent}}" Uid="TextBlock_9"/>
-    					</InlineUIContainer><Run Text=" "/><Run Text=" из "/><Run Text=" "/><InlineUIContainer>
+    					</InlineUIContainer><Run Text=" "/><Run Text=" of "/><Run Text=" "/><InlineUIContainer>
     						<TextBlock Text="{Binding PageCount, RelativeSource={RelativeSource TemplatedParent}}" Uid="TextBlock_10"/>
     					</InlineUIContainer><Run Text=" "/><Run Text=" "/></TextBlock>
                     <RepeatButton Command="NavigationCommands.NextPage" IsEnabled="{TemplateBinding CanGoToNextPage}" Uid="RepeatButton_10">
@@ -1417,12 +1181,6 @@
             <Trigger Property="ViewingMode" Value="Scroll">
                 <Setter Property="IsChecked" TargetName="ScrollViewButton" Value="True"/>
                 <Setter Property="Visibility" TargetName="PageCountAndButtons" Value="Collapsed"/>
-            </Trigger>
-            <Trigger Property="Document" Value="{x:Null}">
-                <Setter Property="IsEnabled" TargetName="FindButton" Value="False"/>
-            </Trigger>
-            <Trigger Property="IsFindEnabled" Value="False">
-                <Setter Property="IsEnabled" TargetName="FindButton" Value="False"/>
             </Trigger>
         </ControlTemplate.Triggers>
     </ControlTemplate>
