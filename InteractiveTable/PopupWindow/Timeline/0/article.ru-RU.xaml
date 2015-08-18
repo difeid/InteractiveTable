@@ -1,6 +1,6 @@
 ﻿<FlowDocument xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" Tag="5">
     <Paragraph FontFamily="/InteractiveTable;component/Fonts/#Basil Bold" TextAlignment="Left" FontSize="35">
-        <Figure Width="590" Height="400">
+        <Figure Width="700" Height="450">
             <BlockUIContainer>
                 <UIElement/>
                 <!--Количество изображений записать в Tag. От 0 до 9.-->
@@ -8,7 +8,7 @@
         </Figure>
         <Run>Крым. 1885 г., 1901—1902 гг.</Run>
     </Paragraph>
-    <Section FontFamily="/InteractiveTable;component/Fonts/#Roboto"  TextAlignment="Left" FontSize="22">
+    <Section FontFamily="/InteractiveTable;component/Fonts/#Roboto"  TextAlignment="Left" FontSize="20">
         <Paragraph TextIndent="55">
             <Run>В 1885 году Лев Николаевич Толстой приехал в Крым, сопровождая на юг больного друга князя Урусова.</Run>
             <Run>В это время Толстой был уже знаменитым писателем, создавшим "Войну и мир", "Анну Каренину".</Run>

@@ -4,7 +4,7 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       mc:Ignorable="d" 
-      d:DesignHeight="300" d:DesignWidth="300" Width="1920" Height="1080">
+      d:DesignHeight="1080" d:DesignWidth="1920" Width="1920" Height="1080">
     <Canvas>
         <Button x:Name="back_button" Template="{DynamicResource BackButtonTemplate}" Click="Back_Button_Click" Canvas.Left="75" Canvas.Top="955" FocusVisualStyle="{x:Null}"/>
 

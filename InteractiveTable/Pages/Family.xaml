@@ -4,7 +4,7 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       mc:Ignorable="d" 
-      d:DesignHeight="1920" d:DesignWidth="1080" Width="1920" Height="1080">
+      d:DesignHeight="1080" d:DesignWidth="1920" Width="1920" Height="1080">
     <Canvas>
         <Button x:Name="back_button" Template="{DynamicResource BackButtonTemplate}" Click="Back_Button_Click" Canvas.Left="75" Canvas.Top="955" FocusVisualStyle="{x:Null}"/>
 
@@ -21,6 +21,6 @@
                 FontFamily="/InteractiveTable;component/Fonts/#Basil Bold"  FontSize="30" Foreground="White" Click="Brother_Sister_Button_Click"  Width="326" Height="326" Padding="20,0" Canvas.Left="1440" Canvas.Top="285"/>
 
         <Button x:Name="wife_children_button" Template="{DynamicResource HexagonButtonTemplate}" Content="/InteractiveTable;component/Images/Family/WifeChildren.png" Tag="{DynamicResource f_WifeChildren}" FocusVisualStyle="{x:Null}" MinWidth="135"
-                FontFamily="/InteractiveTable;component/Fonts/#Basil Bold"  FontSize="36" Foreground="White" Click="Wife_Children_Button_Click"  Width="396" Height="396" Padding="20,0" Canvas.Left="780" Canvas.Top="565"/>
+                FontFamily="/InteractiveTable;component/Fonts/#Basil Bold"  FontSize="35" Foreground="White" Click="Wife_Children_Button_Click"  Width="396" Height="396" Padding="20,0" Canvas.Left="780" Canvas.Top="565"/>
     </Canvas>
 </Page>

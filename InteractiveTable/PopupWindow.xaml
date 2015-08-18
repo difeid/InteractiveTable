@@ -2,7 +2,8 @@
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="PopupWindow" Height="1080" Width="1920" WindowStyle="None"
-        AllowsTransparency="True" WindowState="Maximized" ResizeMode="NoResize" ShowInTaskbar="False">
+        AllowsTransparency="True" WindowState="Maximized" ResizeMode="NoResize" ShowInTaskbar="False"
+        Topmost="True">
     
     <Window.Background>
         <SolidColorBrush Color="Black" Opacity="0.5"/>
@@ -34,7 +35,7 @@
 
         <Border Width="1600" Height="1000" Grid.ColumnSpan="3" HorizontalAlignment="Center" VerticalAlignment="Center">
             <Border.Background>
-                <ImageBrush ImageSource="Images/PopupWindow/PopupBackground.png"/>
+                <ImageBrush ImageSource="Images/PopupWindow/PopupWindowBackground.png"/>
             </Border.Background>
             <Border.Effect>
                 <DropShadowEffect Opacity="0.75" BlurRadius="35" Color="#FFCDBF97"/>

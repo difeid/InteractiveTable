@@ -14,6 +14,7 @@
 
         <ScrollViewer x:Name="scrollViewer" HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Disabled">
             <Canvas Height="720" Width="2620" VerticalAlignment="Bottom" FocusVisualStyle="{x:Null}">
+                
                 <!--Кнопки-->
                 <Button x:Name="y00_button" Click="Year_Button_Click" Template="{DynamicResource HexagonButtonTemplate}" FocusVisualStyle="{x:Null}" Width="320" Height="320"
                     Padding="22,0" Content="/InteractiveTable;component/Images/Timeline/1828.png" Canvas.Left="79" Canvas.Top="10"/>
