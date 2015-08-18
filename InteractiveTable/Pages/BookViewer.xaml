@@ -11,8 +11,8 @@
         </Canvas.Background>
 
         <Popup x:Name="pleaseWaitPopup" PopupAnimation="Fade" AllowsTransparency="True" Placement="Center" IsOpen="True">
-            <Grid Width="570" Height="280">
-                <Border Margin="10">
+            <Grid Width="570" Height="340">
+                <Border Margin="40">
                     <Border.Background>
                         <ImageBrush ImageSource="/InteractiveTable;component/Images/PopupBackground.png"/>
                     </Border.Background>

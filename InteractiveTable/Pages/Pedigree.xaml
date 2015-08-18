@@ -17,18 +17,18 @@
         <Button x:Name="p00_button" Width="200" Height="170" Canvas.Left="687" Canvas.Top="545" Template="{DynamicResource HiddenButtonTemplate}" Click="PopupShow_Button_Click" FocusVisualStyle="{x:Null}"/>
 
         <Popup x:Name="readMorePopup" PopupAnimation="Fade" AllowsTransparency="True" Placement="Absolute"
-               StaysOpen="False" HorizontalOffset="1290" VerticalOffset="50">
-            <Grid Width="570" Height="280">
+               StaysOpen="False" HorizontalOffset="1270" VerticalOffset="20">
+            <Grid Width="630" Height="340">
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="175"/>
+                    <RowDefinition Height="210"/>
                     <RowDefinition/>
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="190"/>
+                    <ColumnDefinition Width="220"/>
                     <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
 
-                <Border Grid.ColumnSpan="2" Margin="10" Grid.RowSpan="2">
+                <Border Grid.ColumnSpan="2" Margin="40" Grid.RowSpan="2">
                     <Border.Background>
                         <ImageBrush ImageSource="/InteractiveTable;component/Images/PopupBackground.png"/>
                     </Border.Background>
