@@ -6,15 +6,15 @@
       mc:Ignorable="d" 
       d:DesignHeight="1080" d:DesignWidth="1920" Width="1920" Height="1080">
     <Canvas>
-        <Button x:Name="back_button" Template="{DynamicResource BackButtonTemplate}" Click="Back_Button_Click" Canvas.Left="75" Canvas.Top="955" FocusVisualStyle="{x:Null}"/>
+        <Button x:Name="back_button" Template="{StaticResource BackButtonTemplate}" Click="Back_Button_Click" Canvas.Left="75" Canvas.Top="955" FocusVisualStyle="{x:Null}"/>
 
-        <Button x:Name="milestones_button" Template="{DynamicResource HexagonButtonTemplate}" Content="/InteractiveTable;component/Images/SubMenu/Milestones.png" Tag="{DynamicResource s_Milestones}" MinWidth="400" FocusVisualStyle="{x:Null}"
+        <Button x:Name="milestones_button" Template="{StaticResource HexagonButtonTemplate}" Content="/InteractiveTable;component/Images/SubMenu/Milestones.png" Tag="{DynamicResource s_Milestones}" MinWidth="400" FocusVisualStyle="{x:Null}"
                 FontFamily="/InteractiveTable;component/Fonts/#Basil Bold"  FontSize="55" Foreground="White" Click="Milestones_Button_Click"  Width="672" Height="672" Padding="45,0" Canvas.Left="435" Canvas.Top="75"/>
 
-        <Button x:Name="pedigree_button" Template="{DynamicResource HexagonButtonTemplate}" Content="/InteractiveTable;component/Images/SubMenu/Pedigree.png" Tag="{DynamicResource s_Pedigree}" MinWidth="350" FocusVisualStyle="{x:Null}"
+        <Button x:Name="pedigree_button" Template="{StaticResource HexagonButtonTemplate}" Content="/InteractiveTable;component/Images/SubMenu/Pedigree.png" Tag="{DynamicResource s_Pedigree}" MinWidth="350" FocusVisualStyle="{x:Null}"
                 FontFamily="/InteractiveTable;component/Fonts/#Basil Bold"  FontSize="35" Foreground="White" Click="Pedigree_Button_Click"  Width="406" Height="406" Padding="25,0" Canvas.Left="1060" Canvas.Top="285"/>
 
-        <Button x:Name="family_button" Template="{DynamicResource HexagonButtonTemplate}" Content="/InteractiveTable;component/Images/SubMenu/Family.png" Tag="{DynamicResource s_Family}" MinWidth="350" FocusVisualStyle="{x:Null}"
+        <Button x:Name="family_button" Template="{StaticResource HexagonButtonTemplate}" Content="/InteractiveTable;component/Images/SubMenu/Family.png" Tag="{DynamicResource s_Family}" MinWidth="350" FocusVisualStyle="{x:Null}"
                 FontFamily="/InteractiveTable;component/Fonts/#Basil Bold"  FontSize="35" Foreground="White" Click="Family_Button_Click"  Width="406" Height="406" Padding="25,0" Canvas.Left="860" Canvas.Top="600"/>
     </Canvas>
 </Page>

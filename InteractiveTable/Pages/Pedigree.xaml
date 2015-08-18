@@ -12,7 +12,7 @@
             </Canvas.Background>
         </Canvas>
 
-        <Button x:Name="p00_button" Width="200" Height="170" Canvas.Left="687" Canvas.Top="545" Template="{DynamicResource HiddenButtonTemplate}" 
+        <Button x:Name="p00_button" Width="190" Height="165" Canvas.Left="690" Canvas.Top="545" Template="{DynamicResource HiddenButtonTemplate}" 
                 FocusVisualStyle="{x:Null}" MouseEnter="PopupShow_Button_MouseEnter"/>
 
         <Popup x:Name="readMorePopup" PopupAnimation="Fade" AllowsTransparency="True" Placement="Absolute"

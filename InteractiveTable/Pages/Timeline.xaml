@@ -16,22 +16,22 @@
             <Canvas Height="720" Width="2620" VerticalAlignment="Bottom" FocusVisualStyle="{x:Null}">
                 
                 <!--Кнопки-->
-                <Button x:Name="y00_button" Click="Year_Button_Click" Template="{DynamicResource HexagonButtonTemplate}" FocusVisualStyle="{x:Null}" Width="320" Height="320"
+                <Button x:Name="y00_button" Click="Year_Button_Click" Template="{StaticResource HexagonButtonTemplate}" FocusVisualStyle="{x:Null}" Width="320" Height="320"
                     Padding="22,0" Content="/InteractiveTable;component/Images/Timeline/1828.png" Canvas.Left="79" Canvas.Top="10"/>
-                <Button x:Name="y01_button" Click="Year_Button_Click" Template="{DynamicResource HexagonButtonTemplate}" FocusVisualStyle="{x:Null}" Width="320" Height="320"
+                <Button x:Name="y01_button" Click="Year_Button_Click" Template="{StaticResource HexagonButtonTemplate}" FocusVisualStyle="{x:Null}" Width="320" Height="320"
                     Padding="22,0" Content="/InteractiveTable;component/Images/Timeline/1844.png" Canvas.Left="213" Canvas.Top="239"/>
-                <Button x:Name="y02_button" Click="Year_Button_Click" Template="{DynamicResource HexagonButtonTemplate}" FocusVisualStyle="{x:Null}" Width="320" Height="320"
+                <Button x:Name="y02_button" Click="Year_Button_Click" Template="{StaticResource HexagonButtonTemplate}" FocusVisualStyle="{x:Null}" Width="320" Height="320"
                     Padding="22,0" Content="/InteractiveTable;component/Images/Timeline/1847.png" Canvas.Left="479" Canvas.Top="395"/>
-                <Button x:Name="y03_button" Click="Year_Button_Click" Template="{DynamicResource HexagonButtonTemplate}" FocusVisualStyle="{x:Null}" Width="320" Height="320"
+                <Button x:Name="y03_button" Click="Year_Button_Click" Template="{StaticResource HexagonButtonTemplate}" FocusVisualStyle="{x:Null}" Width="320" Height="320"
                     Padding="22,0" Content="/InteractiveTable;component/Images/Timeline/1851.png" Canvas.Left="617" Canvas.Top="165"/>
 
-                <Button x:Name="y04_button" Click="Year_Button_Click" Template="{DynamicResource HexagonButtonTemplate}" FocusVisualStyle="{x:Null}" Width="320" Height="320"
+                <Button x:Name="y04_button" Click="Year_Button_Click" Template="{StaticResource HexagonButtonTemplate}" FocusVisualStyle="{x:Null}" Width="320" Height="320"
                     Padding="22,0" Content="/InteractiveTable;component/Images/Timeline/1852.png" Canvas.Left="885" Canvas.Top="8"/>
-                <Button x:Name="y05_button" Click="Year_Button_Click" Template="{DynamicResource HexagonButtonTemplate}" FocusVisualStyle="{x:Null}" Width="320" Height="320"
+                <Button x:Name="y05_button" Click="Year_Button_Click" Template="{StaticResource HexagonButtonTemplate}" FocusVisualStyle="{x:Null}" Width="320" Height="320"
                     Padding="22,0" Content="/InteractiveTable;component/Images/Timeline/1854.png" Canvas.Left="1022" Canvas.Top="239"/>
-                <Button x:Name="y06_button" Click="Year_Button_Click" Template="{DynamicResource HexagonButtonTemplate}" FocusVisualStyle="{x:Null}" Width="320" Height="320"
+                <Button x:Name="y06_button" Click="Year_Button_Click" Template="{StaticResource HexagonButtonTemplate}" FocusVisualStyle="{x:Null}" Width="320" Height="320"
                     Padding="22,0" Content="/InteractiveTable;component/Images/Timeline/1855.png" Canvas.Left="1291" Canvas.Top="395"/>
-                <Button x:Name="y07_button" Click="Year_Button_Click" Template="{DynamicResource HexagonButtonTemplate}" FocusVisualStyle="{x:Null}" Width="320" Height="320"
+                <Button x:Name="y07_button" Click="Year_Button_Click" Template="{StaticResource HexagonButtonTemplate}" FocusVisualStyle="{x:Null}" Width="320" Height="320"
                     Padding="22,0" Content="/InteractiveTable;component/Images/Timeline/1856.png" Canvas.Left="1426" Canvas.Top="165"/>
 
                 <!--Кружочки и пути-->
@@ -91,8 +91,8 @@
             </Canvas>
         </ScrollViewer>
 
-        <Button x:Name="back_button" Template="{DynamicResource BackButtonTemplate}" Click="Back_Button_Click" Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="75,90,0,0" FocusVisualStyle="{x:Null}"/>
+        <Button x:Name="back_button" Template="{StaticResource BackButtonTemplate}" Click="Back_Button_Click" Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="75,90,0,0" FocusVisualStyle="{x:Null}"/>
 
-        <local:BindableScrollBar BoundScrollViewer ="{Binding ElementName=scrollViewer}" Orientation="Horizontal" Grid.Row="1" Style="{DynamicResource TimelineScrollBarStyle}" Margin="0,70,0,0" VerticalAlignment="Top" FocusVisualStyle="{x:Null}"/>
+        <local:BindableScrollBar BoundScrollViewer ="{Binding ElementName=scrollViewer}" Orientation="Horizontal" Grid.Row="1" Style="{StaticResource TimelineScrollBarStyle}" Margin="0,70,0,0" VerticalAlignment="Top" FocusVisualStyle="{x:Null}"/>
     </Grid>
 </Page>

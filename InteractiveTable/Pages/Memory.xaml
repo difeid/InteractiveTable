@@ -6,21 +6,21 @@
       mc:Ignorable="d" 
       d:DesignHeight="1080" d:DesignWidth="1920" Width="1920" Height="1080">
     <Canvas>
-        <Button x:Name="back_button" Template="{DynamicResource BackButtonTemplate}" Click="Back_Button_Click" Canvas.Left="75" Canvas.Top="955" FocusVisualStyle="{x:Null}"/>
+        <Button x:Name="back_button" Template="{StaticResource BackButtonTemplate}" Click="Back_Button_Click" Canvas.Left="75" Canvas.Top="955" FocusVisualStyle="{x:Null}"/>
 
-        <Button x:Name="monument_button" Template="{DynamicResource HexagonButtonTemplate}" Content="/InteractiveTable;component/Images/Memory/Monument.png"
+        <Button x:Name="monument_button" Template="{StaticResource HexagonButtonTemplate}" Content="/InteractiveTable;component/Images/Memory/Monument.png"
                 Tag="{DynamicResource mem_Monument}" MinWidth="400" FontFamily="/InteractiveTable;component/Fonts/#Basil Bold" FontSize="48" Foreground="White"
                 Click="Monument_Button_Click" Width="540" Height="540" Padding="35,0" Canvas.Left="380" Canvas.Top="110" FocusVisualStyle="{x:Null}"/>
 
-        <Button x:Name="musuem_button" Template="{DynamicResource HexagonButtonTemplate}" Content="/InteractiveTable;component/Images/Memory/Museum.png"
+        <Button x:Name="musuem_button" Template="{StaticResource HexagonButtonTemplate}" Content="/InteractiveTable;component/Images/Memory/Museum.png"
                 Tag="{DynamicResource mem_Museum}" MinWidth="400" FontFamily="/InteractiveTable;component/Fonts/#Basil Bold" FontSize="48" Foreground="White"
                 Click="Musuem_Button_Click" Width="540" Height="540" Padding="35,0" Canvas.Left="870" Canvas.Top="85" FocusVisualStyle="{x:Null}"/>
 
-        <Button x:Name="theatre_button" Template="{DynamicResource HexagonButtonTemplate}" Content="/InteractiveTable;component/Images/Memory/Theatre.png"
+        <Button x:Name="theatre_button" Template="{StaticResource HexagonButtonTemplate}" Content="/InteractiveTable;component/Images/Memory/Theatre.png"
                 Tag="{DynamicResource mem_Theatre}" MinWidth="300" FontFamily="/InteractiveTable;component/Fonts/#Basil Bold" FontSize="35" Foreground="White"
                 Click="Theatre_Button_Click" Width="444" Height="444" Padding="25,0" Canvas.Left="1085" Canvas.Top="550" FocusVisualStyle="{x:Null}"/>
 
-        <Button x:Name="tolstoyHistory_button" Template="{DynamicResource HexagonButtonTemplate}" Content="/InteractiveTable;component/Images/Memory/TolstoyHistory.png"
+        <Button x:Name="tolstoyHistory_button" Template="{StaticResource HexagonButtonTemplate}" Content="/InteractiveTable;component/Images/Memory/TolstoyHistory.png"
                 Tag="{DynamicResource mem_TolstoyHistory}" MinWidth="350" FontFamily="/InteractiveTable;component/Fonts/#Basil Bold" FontSize="35" Foreground="White"
                 Click="TolstoyHistory_Button_Click" Width="396" Height="396" Padding="25,0" Canvas.Left="720" Canvas.Top="520" FocusVisualStyle="{x:Null}"/>
     </Canvas>

@@ -205,5 +205,10 @@ namespace InteractiveTable
             }
             catch (IOException) { }
         }
+
+        private void ScrollViewer_ManipulationBoundaryFeedback(object sender, ManipulationBoundaryFeedbackEventArgs e)
+        {
+            e.Handled = true;
+        }
     }
 }

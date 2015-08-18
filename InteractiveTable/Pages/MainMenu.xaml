@@ -10,17 +10,17 @@
             <ImageBrush ImageSource="/InteractiveTable;component/Images/MainMenu/MainMenuBackground.png"/>
         </Canvas.Background>
 
-        <Button x:Name="back_button" Template="{DynamicResource BackButtonTemplate}" Click="Back_Button_Click" Canvas.Left="75" Canvas.Top="955" Foreground="White" FocusVisualStyle="{x:Null}"/>
+        <Button x:Name="back_button" Template="{StaticResource BackButtonTemplate}" Click="Back_Button_Click" Canvas.Left="75" Canvas.Top="955" Foreground="White" FocusVisualStyle="{x:Null}"/>
 
-        <Button x:Name="memory_button" Template="{DynamicResource HexagonButtonTemplate}" Content="/InteractiveTable;component/Images/MainMenu/Memory.png" Click="Memory_Button_Click"
+        <Button x:Name="memory_button" Template="{StaticResource HexagonButtonTemplate}" Content="/InteractiveTable;component/Images/MainMenu/Memory.png" Click="Memory_Button_Click"
                 Width="284" Height="284" Padding="15,0" Canvas.Left="108" Canvas.Top="190" FocusVisualStyle="{x:Null}"/>
 
-        <Button x:Name="student_task_button" Template="{DynamicResource HexagonButtonTemplate}" Content="/InteractiveTable;component/Images/MainMenu/StudentTask.png" Click="Student_Task_Button_Click" 
+        <Button x:Name="student_task_button" Template="{StaticResource HexagonButtonTemplate}" Content="/InteractiveTable;component/Images/MainMenu/StudentTask.png" Click="Student_Task_Button_Click" 
                 Width="284" Height="284" Padding="20,0" Canvas.Left="853" Canvas.Top="527" FocusVisualStyle="{x:Null}"/>
 
-        <Button x:Name="motiv_button" Template="{DynamicResource HexagonButtonTemplate}" Content="/InteractiveTable;component/Images/MainMenu/MotivForCreativ.png" Click="Motiv_Button_Click" 
+        <Button x:Name="motiv_button" Template="{StaticResource HexagonButtonTemplate}" Content="/InteractiveTable;component/Images/MainMenu/MotivForCreativ.png" Click="Motiv_Button_Click" 
                 Width="284" Height="284" Padding="20,0" Canvas.Left="1189" Canvas.Top="184" FocusVisualStyle="{x:Null}"/>
-        <Button x:Name="biography_button" Template="{DynamicResource HexagonButtonTemplate}" Content="/InteractiveTable;component/Images/MainMenu/Biography.png" Click="Biography_Button_Click" 
+        <Button x:Name="biography_button" Template="{StaticResource HexagonButtonTemplate}" Content="/InteractiveTable;component/Images/MainMenu/Biography.png" Click="Biography_Button_Click" 
                 Width="284" Height="284" Padding="20,0" Canvas.Left="1189" Canvas.Top="453" FocusVisualStyle="{x:Null}"/>
 
         <TextBlock x:Name="memory_textblock" Text="{DynamicResource m_Memory}" Foreground="White" FontFamily="/InteractiveTable;component/Fonts/#Basil Bold"

@@ -13,16 +13,16 @@
 
         <Image x:Name="mainPhoto" Width="1140" Height="1080" Stretch="UniformToFill"/>
 
-        <Button x:Name="back_button" Template="{DynamicResource BackButtonTemplate}" Click="Back_Button_Click" Foreground="White"
+        <Button x:Name="back_button" Template="{StaticResource BackButtonTemplate}" Click="Back_Button_Click" Foreground="White"
                 HorizontalAlignment="Left" VerticalAlignment="Top" Margin="75,955,0,0" FocusVisualStyle="{x:Null}"/>
-        
-        <Button x:Name="next_view_button" Click="Next_View_Button_Click" Template="{DynamicResource HexagonButtonTemplate}" Content="/InteractiveTable;component/Images/MemoryViewer/NextViewButton.png"
+
+        <Button x:Name="next_view_button" Click="Next_View_Button_Click" Template="{StaticResource HexagonButtonTemplate}" Content="/InteractiveTable;component/Images/MemoryViewer/NextViewButton.png"
                 Width="134" Height="134" Padding="5,0" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="1073,0,0,0" Grid.ColumnSpan="2" FocusVisualStyle="{x:Null}"/>
-        
-        <Button x:Name="back_view_button" Click="Back_View_Button_Click" Template="{DynamicResource HexagonButtonTemplate}" Content="/InteractiveTable;component/Images/MemoryViewer/BackViewButton.png"
+
+        <Button x:Name="back_view_button" Click="Back_View_Button_Click" Template="{StaticResource HexagonButtonTemplate}" Content="/InteractiveTable;component/Images/MemoryViewer/BackViewButton.png"
                 Width="134" Height="134" Padding="5,0" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="-67,0,0,0" FocusVisualStyle="{x:Null}"/>
 
-        <ScrollViewer Grid.Column="1" Background="White" Template="{DynamicResource ScrollViewerTemplate}"
+        <ScrollViewer Grid.Column="1" Background="White" Template="{StaticResource ScrollViewerTemplate}"
                       VerticalScrollBarVisibility="Auto" UseLayoutRounding="True" PanningMode="VerticalOnly">
             <Grid>
                 <Grid.RowDefinitions>

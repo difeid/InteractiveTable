@@ -20,15 +20,15 @@
             <ColumnDefinition Width="180"/>
         </Grid.ColumnDefinitions>
         
-        <Button x:Name="back_button" Template="{DynamicResource NavButtonTemplate}" Content="/InteractiveTable;component/Images/PopupWindow/BackArrowWhite.png"
+        <Button x:Name="back_button" Template="{StaticResource NavButtonTemplate}" Content="/InteractiveTable;component/Images/PopupWindow/BackArrowWhite.png"
                 Click="Back_Button_Click" Width="180" Height="600" FontFamily="/InteractiveTable;component/Fonts/#Roboto" FontSize="25" Tag="{DynamicResource p_Back}"
                 Foreground="White" FocusVisualStyle="{x:Null}" Padding="55,0,0,0" VerticalContentAlignment="Top" HorizontalContentAlignment="Center"/>
 
-        <Button x:Name="next_button" Template="{DynamicResource NavButtonTemplate}" Content="/InteractiveTable;component/Images/PopupWindow/NextArrowWhite.png"
+        <Button x:Name="next_button" Template="{StaticResource NavButtonTemplate}" Content="/InteractiveTable;component/Images/PopupWindow/NextArrowWhite.png"
                 Click="Next_Button_Click" Width="180" Height="600" FontFamily="/InteractiveTable;component/Fonts/#Roboto" FontSize="25" Tag="{DynamicResource p_Next}" 
                 Foreground="White" FocusVisualStyle="{x:Null}" Padding="25,0,0,0" VerticalContentAlignment="Top" HorizontalContentAlignment="Left" Grid.Column="3"/>
 
-        <Button x:Name="close_button" Template="{DynamicResource NavButtonTemplate}" Content="/InteractiveTable;component/Images/PopupWindow/CloseWhite.png"
+        <Button x:Name="close_button" Template="{StaticResource NavButtonTemplate}" Content="/InteractiveTable;component/Images/PopupWindow/CloseWhite.png"
                 Click="Close_Button_Click" Width="180" Height="180" FontFamily="/InteractiveTable;component/Fonts/#Roboto" FontSize="25" Tag="{DynamicResource p_Close}"
                 Foreground="White" FocusVisualStyle="{x:Null}" Padding="25,0,0,0" VerticalContentAlignment="Top" HorizontalContentAlignment="Left" Grid.Column="3"
                  VerticalAlignment="Top" Margin="0,20"/>
@@ -41,8 +41,9 @@
                 <DropShadowEffect Opacity="0.75" BlurRadius="35" Color="#FFCDBF97"/>
             </Border.Effect>
 
-            <ScrollViewer Width="1520" Height="920" Template="{DynamicResource ScrollViewerTemplate}" FocusVisualStyle="{x:Null}"
-                          Margin="40,50,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" PanningMode="VerticalOnly">
+            <ScrollViewer Width="1520" Height="920" Template="{StaticResource ScrollViewerTemplate}" FocusVisualStyle="{x:Null}"
+                          Margin="40,50,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" PanningMode="VerticalOnly"
+                          ManipulationBoundaryFeedback="ScrollViewer_ManipulationBoundaryFeedback">
                 <Grid>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="1*"/>
@@ -50,7 +51,7 @@
                     </Grid.ColumnDefinitions>
 
                     <FlowDocumentScrollViewer x:Name="documentPage" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Disabled"
-                                          IsHitTestVisible="False" TextOptions.TextFormattingMode="Display" Grid.ColumnSpan="2">
+                                          IsHitTestVisible="False" Grid.ColumnSpan="2">
                         <FlowDocument/>
                     </FlowDocumentScrollViewer>
 
@@ -85,46 +86,46 @@
                         <Image x:Name="image7" Grid.Row="4" Grid.Column="4" Stretch="UniformToFill" Visibility="Hidden"/>
                         <Image x:Name="image8" Grid.Row="4" Grid.Column="6" Stretch="UniformToFill" Visibility="Hidden"/>
 
-                        <Image Grid.ColumnSpan="7" Source="{DynamicResource ImageZoom}" HorizontalAlignment="Right" VerticalAlignment="Bottom"
+                        <Image Grid.ColumnSpan="7" Source="{StaticResource ImageZoom}" HorizontalAlignment="Right" VerticalAlignment="Bottom"
                                Width="30" Height="30" Margin="14"  Visibility="{Binding Visibility, ElementName=image0}"/>
 
-                        <Image Grid.Row="2" Grid.Column="0" Source="{DynamicResource ImageZoom}" HorizontalAlignment="Right" VerticalAlignment="Bottom"
+                        <Image Grid.Row="2" Grid.Column="0" Source="{StaticResource ImageZoom}" HorizontalAlignment="Right" VerticalAlignment="Bottom"
                                Width="30" Height="30" Margin="14"  Visibility="{Binding Visibility, ElementName=image1}"/>
-                        <Image Grid.Row="2" Grid.Column="2" Source="{DynamicResource ImageZoom}" HorizontalAlignment="Right" VerticalAlignment="Bottom"
+                        <Image Grid.Row="2" Grid.Column="2" Source="{StaticResource ImageZoom}" HorizontalAlignment="Right" VerticalAlignment="Bottom"
                                Width="30" Height="30" Margin="14"  Visibility="{Binding Visibility, ElementName=image2}"/>
-                        <Image Grid.Row="2" Grid.Column="4" Source="{DynamicResource ImageZoom}" HorizontalAlignment="Right" VerticalAlignment="Bottom"
+                        <Image Grid.Row="2" Grid.Column="4" Source="{StaticResource ImageZoom}" HorizontalAlignment="Right" VerticalAlignment="Bottom"
                                Width="30" Height="30" Margin="14"  Visibility="{Binding Visibility, ElementName=image3}"/>
-                        <Image Grid.Row="2" Grid.Column="6" Source="{DynamicResource ImageZoom}" HorizontalAlignment="Right" VerticalAlignment="Bottom"
+                        <Image Grid.Row="2" Grid.Column="6" Source="{StaticResource ImageZoom}" HorizontalAlignment="Right" VerticalAlignment="Bottom"
                                Width="30" Height="30" Margin="14"  Visibility="{Binding Visibility, ElementName=image4}"/>
-                        
-                        <Image Grid.Row="4" Grid.Column="0" Source="{DynamicResource ImageZoom}" HorizontalAlignment="Right" VerticalAlignment="Bottom"
+
+                        <Image Grid.Row="4" Grid.Column="0" Source="{StaticResource ImageZoom}" HorizontalAlignment="Right" VerticalAlignment="Bottom"
                                Width="30" Height="30" Margin="14"  Visibility="{Binding Visibility, ElementName=image5}"/>
-                        <Image Grid.Row="4" Grid.Column="2" Source="{DynamicResource ImageZoom}" HorizontalAlignment="Right" VerticalAlignment="Bottom"
+                        <Image Grid.Row="4" Grid.Column="2" Source="{StaticResource ImageZoom}" HorizontalAlignment="Right" VerticalAlignment="Bottom"
                                Width="30" Height="30" Margin="14"  Visibility="{Binding Visibility, ElementName=image6}"/>
-                        <Image Grid.Row="4" Grid.Column="4" Source="{DynamicResource ImageZoom}" HorizontalAlignment="Right" VerticalAlignment="Bottom"
+                        <Image Grid.Row="4" Grid.Column="4" Source="{StaticResource ImageZoom}" HorizontalAlignment="Right" VerticalAlignment="Bottom"
                                Width="30" Height="30" Margin="14"  Visibility="{Binding Visibility, ElementName=image7}"/>
-                        <Image Grid.Row="4" Grid.Column="6" Source="{DynamicResource ImageZoom}" HorizontalAlignment="Right" VerticalAlignment="Bottom"
+                        <Image Grid.Row="4" Grid.Column="6" Source="{StaticResource ImageZoom}" HorizontalAlignment="Right" VerticalAlignment="Bottom"
                                Width="30" Height="30" Margin="14"  Visibility="{Binding Visibility, ElementName=image8}"/>
 
-                        <Button x:Name="zoom0" Grid.ColumnSpan="7" Template="{DynamicResource HiddenButtonTemplate}"
+                        <Button x:Name="zoom0" Grid.ColumnSpan="7" Template="{StaticResource HiddenButtonTemplate}"
                                 Visibility="{Binding Visibility, ElementName=image0}" Click="Zoom_Click" FocusVisualStyle="{x:Null}"/>
 
-                        <Button x:Name="zoom1" Grid.Row="2" Grid.Column="0" Template="{DynamicResource HiddenButtonTemplate}"
+                        <Button x:Name="zoom1" Grid.Row="2" Grid.Column="0" Template="{StaticResource HiddenButtonTemplate}"
                                 Visibility="{Binding Visibility, ElementName=image1}" Click="Zoom_Click" FocusVisualStyle="{x:Null}"/>
-                        <Button x:Name="zoom2" Grid.Row="2" Grid.Column="2" Template="{DynamicResource HiddenButtonTemplate}"
+                        <Button x:Name="zoom2" Grid.Row="2" Grid.Column="2" Template="{StaticResource HiddenButtonTemplate}"
                                 Visibility="{Binding Visibility, ElementName=image2}" Click="Zoom_Click" FocusVisualStyle="{x:Null}"/>
-                        <Button x:Name="zoom3" Grid.Row="2" Grid.Column="4" Template="{DynamicResource HiddenButtonTemplate}"
+                        <Button x:Name="zoom3" Grid.Row="2" Grid.Column="4" Template="{StaticResource HiddenButtonTemplate}"
                                 Visibility="{Binding Visibility, ElementName=image3}" Click="Zoom_Click" FocusVisualStyle="{x:Null}"/>
-                        <Button x:Name="zoom4" Grid.Row="2" Grid.Column="6" Template="{DynamicResource HiddenButtonTemplate}"
+                        <Button x:Name="zoom4" Grid.Row="2" Grid.Column="6" Template="{StaticResource HiddenButtonTemplate}"
                                 Visibility="{Binding Visibility, ElementName=image4}" Click="Zoom_Click" FocusVisualStyle="{x:Null}"/>
 
-                        <Button x:Name="zoom5" Grid.Row="4" Grid.Column="0" Template="{DynamicResource HiddenButtonTemplate}"
+                        <Button x:Name="zoom5" Grid.Row="4" Grid.Column="0" Template="{StaticResource HiddenButtonTemplate}"
                                 Visibility="{Binding Visibility, ElementName=image5}" Click="Zoom_Click" FocusVisualStyle="{x:Null}"/>
-                        <Button x:Name="zoom6" Grid.Row="4" Grid.Column="2" Template="{DynamicResource HiddenButtonTemplate}"
+                        <Button x:Name="zoom6" Grid.Row="4" Grid.Column="2" Template="{StaticResource HiddenButtonTemplate}"
                                 Visibility="{Binding Visibility, ElementName=image6}" Click="Zoom_Click" FocusVisualStyle="{x:Null}"/>
-                        <Button x:Name="zoom7" Grid.Row="4" Grid.Column="4" Template="{DynamicResource HiddenButtonTemplate}"
+                        <Button x:Name="zoom7" Grid.Row="4" Grid.Column="4" Template="{StaticResource HiddenButtonTemplate}"
                                 Visibility="{Binding Visibility, ElementName=image7}" Click="Zoom_Click" FocusVisualStyle="{x:Null}"/>
-                        <Button x:Name="zoom8" Grid.Row="4" Grid.Column="6" Template="{DynamicResource HiddenButtonTemplate}"
+                        <Button x:Name="zoom8" Grid.Row="4" Grid.Column="6" Template="{StaticResource HiddenButtonTemplate}"
                                 Visibility="{Binding Visibility, ElementName=image8}" Click="Zoom_Click" FocusVisualStyle="{x:Null}"/>
                     </Grid>
                 </Grid>

@@ -6,21 +6,21 @@
       mc:Ignorable="d" 
       d:DesignHeight="1080" d:DesignWidth="1920" Width="1920" Height="1080">
     <Canvas>
-        <Button x:Name="back_button" Template="{DynamicResource BackButtonTemplate}" Click="Back_Button_Click" Canvas.Left="75" Canvas.Top="955" FocusVisualStyle="{x:Null}"/>
+        <Button x:Name="back_button" Template="{StaticResource BackButtonTemplate}" Click="Back_Button_Click" Canvas.Left="75" Canvas.Top="955" FocusVisualStyle="{x:Null}"/>
 
-        <Button x:Name="father_button" Template="{DynamicResource FatherButtonTemplate}" Content="/InteractiveTable;component/Images/Family/Father.png" Click="Father_Button_Click"
+        <Button x:Name="father_button" Template="{StaticResource FatherButtonTemplate}" Content="/InteractiveTable;component/Images/Family/Father.png" Click="Father_Button_Click"
                 Width="540" Height="540" Padding="34,0" Canvas.Left="445" Canvas.Top="150" FocusVisualStyle="{x:Null}"/>
 
-        <Button x:Name="mather_button" Template="{DynamicResource MatherButtonTemplate}" Content="/InteractiveTable;component/Images/Family/Mather.png" Click="Mather_Button_Click"
+        <Button x:Name="mather_button" Template="{StaticResource MatherButtonTemplate}" Content="/InteractiveTable;component/Images/Family/Mather.png" Click="Mather_Button_Click"
                 Width="540" Height="540" Padding="34,0" Canvas.Left="935" Canvas.Top="125" FocusVisualStyle="{x:Null}"/>
 
-        <Button x:Name="auntie_button" Template="{DynamicResource HexagonButtonTemplate}" Content="/InteractiveTable;component/Images/Family/Auntie.png" Tag="{DynamicResource f_Auntie}" FocusVisualStyle="{x:Null}" MinWidth="192"
+        <Button x:Name="auntie_button" Template="{StaticResource HexagonButtonTemplate}" Content="/InteractiveTable;component/Images/Family/Auntie.png" Tag="{DynamicResource f_Auntie}" FocusVisualStyle="{x:Null}" MinWidth="192"
                 FontFamily="/InteractiveTable;component/Fonts/#Basil Bold"  FontSize="30" Foreground="White" Click="Aunti_Button_Click"  Width="326" Height="326" Padding="20,0" Canvas.Left="155" Canvas.Top="310"/>
 
-        <Button x:Name="brother_sister_button" Template="{DynamicResource HexagonButtonTemplate}" Content="/InteractiveTable;component/Images/Family/BrothersSisters.png" Tag="{DynamicResource f_BrothersSisters}" FocusVisualStyle="{x:Null}" MinWidth="150"
+        <Button x:Name="brother_sister_button" Template="{StaticResource HexagonButtonTemplate}" Content="/InteractiveTable;component/Images/Family/BrothersSisters.png" Tag="{DynamicResource f_BrothersSisters}" FocusVisualStyle="{x:Null}" MinWidth="150"
                 FontFamily="/InteractiveTable;component/Fonts/#Basil Bold"  FontSize="30" Foreground="White" Click="Brother_Sister_Button_Click"  Width="326" Height="326" Padding="20,0" Canvas.Left="1440" Canvas.Top="285"/>
 
-        <Button x:Name="wife_children_button" Template="{DynamicResource HexagonButtonTemplate}" Content="/InteractiveTable;component/Images/Family/WifeChildren.png" Tag="{DynamicResource f_WifeChildren}" FocusVisualStyle="{x:Null}" MinWidth="135"
+        <Button x:Name="wife_children_button" Template="{StaticResource HexagonButtonTemplate}" Content="/InteractiveTable;component/Images/Family/WifeChildren.png" Tag="{DynamicResource f_WifeChildren}" FocusVisualStyle="{x:Null}" MinWidth="135"
                 FontFamily="/InteractiveTable;component/Fonts/#Basil Bold"  FontSize="35" Foreground="White" Click="Wife_Children_Button_Click"  Width="396" Height="396" Padding="20,0" Canvas.Left="780" Canvas.Top="565"/>
     </Canvas>
 </Page>
