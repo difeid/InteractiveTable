@@ -32,7 +32,7 @@ namespace InteractiveTable.Pages
 
         private void Rules_Of_Life_Button_Click(object sender, RoutedEventArgs e)
         {
-            BookViewer bv = new BookViewer(0);
+            BookViewer bv = new BookViewer("0");
             this.NavigationService.Navigate(bv);
         }
 

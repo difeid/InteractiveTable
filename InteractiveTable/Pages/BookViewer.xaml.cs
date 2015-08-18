@@ -22,12 +22,12 @@ namespace InteractiveTable.Pages
     public partial class BookViewer : Page
     {
 
-        public BookViewer(int bookNumber)
+        public BookViewer(string bookName)
         {
             InitializeComponent();
 
             string culture = App.Language.Name;
-            string pathBook = String.Format("Book/book.{0}.{1}.rtf", bookNumber, culture);
+            string pathBook = String.Format("Book/book.{0}.{1}.rtf", bookName, culture);
 
             TextRange tr = new TextRange(bookReader.Document.ContentStart, bookReader.Document.ContentEnd);
 
