@@ -125,6 +125,12 @@ namespace InteractiveTable
             ShowPopup(folder, number, numberImage);
         }
 
+
+        private void ScrollViewer_ManipulationBoundaryFeedback(object sender, ManipulationBoundaryFeedbackEventArgs e)
+        {
+            e.Handled = true;
+        }
+
         private void Init(int count)
         {
             numberImage = 0;
@@ -204,11 +210,6 @@ namespace InteractiveTable
                 zoomPopup.IsOpen = true;
             }
             catch (IOException) { }
-        }
-
-        private void ScrollViewer_ManipulationBoundaryFeedback(object sender, ManipulationBoundaryFeedbackEventArgs e)
-        {
-            e.Handled = true;
         }
     }
 }

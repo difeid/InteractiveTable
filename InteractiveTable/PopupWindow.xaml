@@ -26,11 +26,11 @@
 
         <Button x:Name="next_button" Template="{StaticResource NavButtonTemplate}" Content="/InteractiveTable;component/Images/PopupWindow/NextArrowWhite.png"
                 Click="Next_Button_Click" Width="180" Height="600" FontFamily="/InteractiveTable;component/Fonts/#Roboto" FontSize="25" Tag="{DynamicResource p_Next}" 
-                Foreground="White" FocusVisualStyle="{x:Null}" Padding="25,0,0,0" VerticalContentAlignment="Top" HorizontalContentAlignment="Left" Grid.Column="3"/>
+                Foreground="White" FocusVisualStyle="{x:Null}" Padding="-50,0,0,0" VerticalContentAlignment="Top" HorizontalContentAlignment="Center" Grid.Column="3"/>
 
         <Button x:Name="close_button" Template="{StaticResource NavButtonTemplate}" Content="/InteractiveTable;component/Images/PopupWindow/CloseWhite.png"
                 Click="Close_Button_Click" Width="180" Height="180" FontFamily="/InteractiveTable;component/Fonts/#Roboto" FontSize="25" Tag="{DynamicResource p_Close}"
-                Foreground="White" FocusVisualStyle="{x:Null}" Padding="25,0,0,0" VerticalContentAlignment="Top" HorizontalContentAlignment="Left" Grid.Column="3"
+                Foreground="White" FocusVisualStyle="{x:Null}" Padding="-50,0,0,0" VerticalContentAlignment="Top" HorizontalContentAlignment="Center" Grid.Column="3"
                  VerticalAlignment="Top" Margin="0,20"/>
 
         <Border Width="1600" Height="1000" Grid.ColumnSpan="3" HorizontalAlignment="Center" VerticalAlignment="Center">
