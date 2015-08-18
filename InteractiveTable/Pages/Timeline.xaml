@@ -12,8 +12,9 @@
             <RowDefinition/>
         </Grid.RowDefinitions>
 
-        <ScrollViewer x:Name="scrollViewer" HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Disabled">
-            <Canvas Height="720" Width="2620" VerticalAlignment="Bottom" FocusVisualStyle="{x:Null}">
+        <ScrollViewer x:Name="scrollViewer" HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Disabled" 
+                      FocusVisualStyle="{x:Null}" PanningMode="HorizontalOnly" ManipulationBoundaryFeedback="Timeline_ScrollViewer_ManipulationBoundaryFeedback">
+            <Canvas Height="720" Width="2620" VerticalAlignment="Bottom">
                 
                 <!--Кнопки-->
                 <Button x:Name="y00_button" Click="Year_Button_Click" Template="{StaticResource HexagonButtonTemplate}" FocusVisualStyle="{x:Null}" Width="320" Height="320"

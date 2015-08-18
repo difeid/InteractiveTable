@@ -36,6 +36,11 @@ namespace InteractiveTable.Pages
             int n = Convert.ToInt32((sender as Button).Name.Substring(1, 2));
             new PopupWindow("Timeline", 1, n).Show();
         }
+
+        private void Timeline_ScrollViewer_ManipulationBoundaryFeedback(object sender, ManipulationBoundaryFeedbackEventArgs e)
+        {
+            e.Handled = true;
+        }
     }
 
     /// <summary>

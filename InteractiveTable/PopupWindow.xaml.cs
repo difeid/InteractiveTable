@@ -126,7 +126,7 @@ namespace InteractiveTable
         }
 
 
-        private void ScrollViewer_ManipulationBoundaryFeedback(object sender, ManipulationBoundaryFeedbackEventArgs e)
+        private void Popup_ScrollViewer_ManipulationBoundaryFeedback(object sender, ManipulationBoundaryFeedbackEventArgs e)
         {
             e.Handled = true;
         }

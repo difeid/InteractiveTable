@@ -23,7 +23,8 @@
                 Width="134" Height="134" Padding="5,0" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="-67,0,0,0" FocusVisualStyle="{x:Null}"/>
 
         <ScrollViewer Grid.Column="1" Background="White" Template="{StaticResource ScrollViewerTemplate}"
-                      VerticalScrollBarVisibility="Auto" UseLayoutRounding="True" PanningMode="VerticalOnly">
+                      VerticalScrollBarVisibility="Auto" UseLayoutRounding="True" PanningMode="VerticalOnly"
+                      ManipulationBoundaryFeedback="Memory_ScrollViewer_ManipulationBoundaryFeedback">
             <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="571"/>

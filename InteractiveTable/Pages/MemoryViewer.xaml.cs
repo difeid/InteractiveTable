@@ -86,6 +86,11 @@ namespace InteractiveTable.Pages
             WritePage(folder, number, culture);
         }
 
+        private void Memory_ScrollViewer_ManipulationBoundaryFeedback(object sender, ManipulationBoundaryFeedbackEventArgs e)
+        {
+            e.Handled = true;
+        }
+
         private void Init(int count)
         {
             culture = App.Language.Name;
@@ -127,6 +132,11 @@ namespace InteractiveTable.Pages
             {
                 documentDiscription.Document = null;
             }
+        }
+
+        private void ScrollViewer_ManipulationBoundaryFeedback(object sender, ManipulationBoundaryFeedbackEventArgs e)
+        {
+
         }
     }
 }

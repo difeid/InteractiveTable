@@ -43,7 +43,7 @@
 
             <ScrollViewer Width="1520" Height="920" Template="{StaticResource ScrollViewerTemplate}" FocusVisualStyle="{x:Null}"
                           Margin="40,50,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" PanningMode="VerticalOnly"
-                          ManipulationBoundaryFeedback="ScrollViewer_ManipulationBoundaryFeedback">
+                          ManipulationBoundaryFeedback="Popup_ScrollViewer_ManipulationBoundaryFeedback">
                 <Grid>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="1*"/>
