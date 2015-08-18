@@ -4,12 +4,25 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       mc:Ignorable="d" 
-      d:DesignHeight="1920" d:DesignWidth="1080" Width="1920" Height="1080">
+      d:DesignHeight="1920" d:DesignWidth="1080" Width="1920" Height="1080" Loaded="Page_Loaded">
     <Canvas ClipToBounds="True">
         <Canvas.Background>
             <ImageBrush ImageSource="/InteractiveTable;component/Images/BookViewer/BookBackground.png"/>
         </Canvas.Background>
 
+        <Popup x:Name="pleaseWaitPopup" PopupAnimation="Fade" AllowsTransparency="True" Placement="Center">
+            <Grid Width="570" Height="280">
+                <Border Margin="10">
+                    <Border.Background>
+                        <ImageBrush ImageSource="/InteractiveTable;component/Images/PopupBackground.png"/>
+                    </Border.Background>
+                    <Border.Effect>
+                        <DropShadowEffect BlurRadius="35" Opacity="0.75" Color="#FFCDBF97"/>
+                    </Border.Effect>
+                    <TextBlock Text="{DynamicResource g_PleaseWait}" FontFamily="/InteractiveTable;component/Fonts/#Basil Bold" FontSize="30" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                </Border>
+            </Grid>
+        </Popup>
         <FlowDocumentReader x:Name="bookReader" Height="1080" Width="1920" Canvas.Left="0" Canvas.Top="0" 
                             Template="{DynamicResource FlowDocumentReaderTemplate}" ViewingMode="TwoPage">
             <FlowDocument/>

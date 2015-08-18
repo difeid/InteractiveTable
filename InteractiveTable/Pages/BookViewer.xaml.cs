@@ -21,22 +21,31 @@ namespace InteractiveTable.Pages
     /// </summary>
     public partial class BookViewer : Page
     {
+        string pathBook;
 
         public BookViewer(string bookName)
         {
             InitializeComponent();
 
             string culture = App.Language.Name;
-            string pathBook = String.Format("Book/book.{0}.{1}.rtf", bookName, culture);
+            pathBook = String.Format("Book/book.{0}.{1}.rtf", bookName, culture);
 
-            TextRange tr = new TextRange(bookReader.Document.ContentStart, bookReader.Document.ContentEnd);
+        }
 
-            using (FileStream fs = File.Open(pathBook, FileMode.Open))
+        private void Page_Loaded(object sender, RoutedEventArgs e)
+        {
+            if (File.Exists(pathBook))
             {
-                tr.Load(fs, DataFormats.Rtf);
+                FlowDocument book = new FlowDocument();
+                TextRange tr = new TextRange(book.ContentStart, book.ContentEnd);
+
+                using (FileStream fs = File.Open(pathBook, FileMode.Open))
+                {
+                    tr.Load(fs, DataFormats.Rtf);
+                }
+                book.ColumnWidth = 900;
+                book.PagePadding = new Thickness(50);
             }
-            bookReader.Document.ColumnWidth = 900;
-            bookReader.Document.PagePadding = new Thickness(50);
         }
 
         private void Back_Button_Click(object sender, RoutedEventArgs e)
