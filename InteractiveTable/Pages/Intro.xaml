@@ -49,6 +49,5 @@
                 Canvas.Left="1420" Canvas.Top="820" FocusVisualStyle="{x:Null}"/>
         <Button x:Name="eng_button" Click="Eng_Button_Click" Template="{DynamicResource HexagonButtonTemplate}" Width="126" Height="126" Padding="5,0" Content="/InteractiveTable;component/Images/Intro/EngButton.png" 
                 Canvas.Left="1575" Canvas.Top="820" FocusVisualStyle="{x:Null}"/>
-        <Button Content="12214132424543" Click="Rus_Button_Click"/>
     </Canvas>
 </Page>
