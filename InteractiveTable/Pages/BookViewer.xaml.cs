@@ -22,7 +22,9 @@ namespace InteractiveTable.Pages
     /// </summary>
     public partial class BookViewer : Page
     {
-        string pathBook;
+        private string pathBook;
+        protected Point TouchStart;
+        private bool AlreadySwiped;
 
         public BookViewer(string bookName)
         {
@@ -68,7 +70,55 @@ namespace InteractiveTable.Pages
 
         private void Content_Button_Click(object sender, RoutedEventArgs e)
         {
-            
+            NavigationCommands.NextPage.Execute(null, bookReader);
+        }
+
+        void Page_MouseDown(object sender, MouseEventArgs e)
+        {
+            TouchStart = e.GetPosition(this);
+        }
+
+        void Page_MouseUp(object sender, MouseEventArgs e)
+        {
+            AlreadySwiped = false;
+        }
+
+        void Page_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (e.LeftButton == MouseButtonState.Pressed)
+            {
+                if (!AlreadySwiped)
+                {
+                    var Touch = e.GetPosition(this);
+
+                    //right now a swipe is 200 pixels 
+
+                    //Swipe Left
+
+                    if (Touch.X < (TouchStart.X - 200) && TouchStart.X >1000)
+                    {
+                        //RunMyCustomCode();
+                        if (bookReader.CanGoToNextPage)
+                        {
+                            NavigationCommands.NextPage.Execute(null, bookReader);
+                        }
+                        AlreadySwiped = true;
+
+                    }
+
+                    //Swipe Right
+                    if (Touch.X > (TouchStart.X + 200) && TouchStart.X < 900)
+                    {
+                        //RunMyCustomCodeSwipeRight();
+                        if (bookReader.CanGoToPreviousPage)
+                        {
+                            NavigationCommands.PreviousPage.Execute(null, bookReader);
+                        }
+                        AlreadySwiped = true;
+                    }
+                }
+            }
+            e.Handled = true;
         }
     }
 }

@@ -45,6 +45,7 @@ namespace InteractiveTable.Pages
         private void mainUI_MouseDown(object sender, MouseButtonEventArgs e)
         {
             readMorePopup.IsOpen = false;
+            e.Handled = true;
         }
 
         private void Read_More_Button_Click(object sender, RoutedEventArgs e)
