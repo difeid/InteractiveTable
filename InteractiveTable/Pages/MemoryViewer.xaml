@@ -26,6 +26,10 @@
                       VerticalScrollBarVisibility="Auto" UseLayoutRounding="True" PanningMode="VerticalOnly"
                       ManipulationBoundaryFeedback="Memory_ScrollViewer_ManipulationBoundaryFeedback">
             <Grid>
+                <Grid.CacheMode>
+                    <BitmapCache/>
+                </Grid.CacheMode>
+                
                 <Grid.RowDefinitions>
                     <RowDefinition Height="571"/>
                     <RowDefinition Height="Auto" />

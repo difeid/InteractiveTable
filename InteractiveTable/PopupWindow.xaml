@@ -40,18 +40,25 @@
             <Border.Effect>
                 <DropShadowEffect Opacity="0.75" BlurRadius="35" Color="#FFCDBF97"/>
             </Border.Effect>
+            <Border.CacheMode>
+                <BitmapCache/>
+            </Border.CacheMode>
 
             <ScrollViewer Width="1520" Height="920" Template="{StaticResource ScrollViewerTemplate}" FocusVisualStyle="{x:Null}"
                           Margin="40,50,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" PanningMode="VerticalOnly"
                           ManipulationBoundaryFeedback="Popup_ScrollViewer_ManipulationBoundaryFeedback">
                 <Grid>
+                    <Grid.CacheMode>
+                        <BitmapCache/>
+                    </Grid.CacheMode>
+                    
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="1*"/>
                         <ColumnDefinition Width="1*"/>
                     </Grid.ColumnDefinitions>
 
                     <FlowDocumentScrollViewer x:Name="documentPage" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Disabled"
-                                          IsHitTestVisible="False" Grid.ColumnSpan="2">
+                                          IsSelectionEnabled="False" Grid.ColumnSpan="2" IsHitTestVisible="False" >
                         <FlowDocument/>
                     </FlowDocumentScrollViewer>
 
