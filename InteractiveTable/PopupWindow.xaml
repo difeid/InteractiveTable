@@ -19,33 +19,14 @@
             <ColumnDefinition/>
             <ColumnDefinition Width="180"/>
         </Grid.ColumnDefinitions>
-        
-        <Button x:Name="back_button" Template="{StaticResource NavButtonTemplate}" Content="/InteractiveTable;component/Images/PopupWindow/BackArrowWhite.png"
-                Click="Back_Button_Click" Width="180" Height="600" FontFamily="/InteractiveTable;component/Fonts/#Roboto" FontSize="25" Tag="{DynamicResource p_Back}"
-                Foreground="White" FocusVisualStyle="{x:Null}" Padding="55,0,0,0" VerticalContentAlignment="Top" HorizontalContentAlignment="Center"/>
 
-        <Button x:Name="next_button" Template="{StaticResource NavButtonTemplate}" Content="/InteractiveTable;component/Images/PopupWindow/NextArrowWhite.png"
-                Click="Next_Button_Click" Width="180" Height="600" FontFamily="/InteractiveTable;component/Fonts/#Roboto" FontSize="25" Tag="{DynamicResource p_Next}" 
-                Foreground="White" FocusVisualStyle="{x:Null}" Padding="-50,0,0,0" VerticalContentAlignment="Top" HorizontalContentAlignment="Center" Grid.Column="3"/>
-
-        <Button x:Name="close_button" Template="{StaticResource NavButtonTemplate}" Content="/InteractiveTable;component/Images/PopupWindow/CloseWhite.png"
-                Click="Close_Button_Click" Width="180" Height="180" FontFamily="/InteractiveTable;component/Fonts/#Roboto" FontSize="25" Tag="{DynamicResource p_Close}"
-                Foreground="White" FocusVisualStyle="{x:Null}" Padding="-50,0,0,0" VerticalContentAlignment="Top" HorizontalContentAlignment="Center" Grid.Column="3"
-                 VerticalAlignment="Top" Margin="0,20"/>
-
-        <Border Width="1600" Height="1000" Grid.ColumnSpan="3" HorizontalAlignment="Center" VerticalAlignment="Center">
+        <Border Width="1920" Height="1080" Grid.ColumnSpan="3">
             <Border.Background>
                 <ImageBrush ImageSource="Images/PopupWindow/PopupWindowBackground.png"/>
             </Border.Background>
-            <Border.Effect>
-                <DropShadowEffect Opacity="0.75" BlurRadius="35" Color="#FFCDBF97"/>
-            </Border.Effect>
-            <Border.CacheMode>
-                <BitmapCache/>
-            </Border.CacheMode>
 
             <ScrollViewer Width="1520" Height="920" Template="{StaticResource ScrollViewerTemplate}" FocusVisualStyle="{x:Null}"
-                          Margin="40,50,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" PanningMode="VerticalOnly"
+                          VerticalAlignment="Center" HorizontalAlignment="Center" PanningMode="VerticalOnly"
                           ManipulationBoundaryFeedback="Popup_ScrollViewer_ManipulationBoundaryFeedback">
                 <Grid>
                     <Grid.CacheMode>
@@ -139,13 +120,23 @@
             </ScrollViewer>
         </Border>
 
+        <Button x:Name="back_button" Template="{StaticResource NavButtonTemplate}" Content="/InteractiveTable;component/Images/PopupWindow/BackArrowWhite.png"
+                Click="Back_Button_Click" Width="180" Height="600" FontFamily="/InteractiveTable;component/Fonts/#Roboto" FontSize="25" Tag="{DynamicResource p_Back}"
+                Foreground="White" FocusVisualStyle="{x:Null}" Padding="55,0,0,0" VerticalContentAlignment="Top" HorizontalContentAlignment="Center"/>
+
+        <Button x:Name="next_button" Template="{StaticResource NavButtonTemplate}" Content="/InteractiveTable;component/Images/PopupWindow/NextArrowWhite.png"
+                Click="Next_Button_Click" Width="180" Height="600" FontFamily="/InteractiveTable;component/Fonts/#Roboto" FontSize="25" Tag="{DynamicResource p_Next}" 
+                Foreground="White" FocusVisualStyle="{x:Null}" Padding="-50,0,0,0" VerticalContentAlignment="Top" HorizontalContentAlignment="Center" Grid.Column="3"/>
+
+        <Button x:Name="close_button" Template="{StaticResource NavButtonTemplate}" Content="/InteractiveTable;component/Images/PopupWindow/CloseWhite.png"
+                Click="Close_Button_Click" Width="180" Height="180" FontFamily="/InteractiveTable;component/Fonts/#Roboto" FontSize="25" Tag="{DynamicResource p_Close}"
+                Foreground="White" FocusVisualStyle="{x:Null}" Padding="-50,0,0,0" VerticalContentAlignment="Top" HorizontalContentAlignment="Center" Grid.Column="3"
+                 VerticalAlignment="Top" Margin="0,20"/>
+
         <Popup x:Name="zoomPopup" PopupAnimation="Fade" AllowsTransparency="True" Placement="Center"
                StaysOpen="False" MouseDown="Popup_Down" MouseUp="Popup_Up">
             <Grid>
-                <Border BorderBrush="White" BorderThickness="20"  Margin="40">
-                    <Border.Effect>
-                        <DropShadowEffect BlurRadius="40" Opacity="0.7"/>
-                    </Border.Effect>
+                <Border BorderBrush="White" BorderThickness="20">
                     <Image x:Name="zoomImage"/>
                 </Border>
             </Grid>
