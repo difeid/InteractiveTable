@@ -22,7 +22,7 @@ namespace InteractiveTable.Pages
     public partial class Pedigree : Page
     {
         private string culture;
-        private int personNumber;
+        private int personNumber = -1;
 
         public Pedigree()
         {
@@ -38,7 +38,7 @@ namespace InteractiveTable.Pages
             this.NavigationService.GoBack();
         }
 
-        private void PopupShow_Button_MouseEnter(object sender, MouseEventArgs e)
+        private void PopupShow_Button_Enter(object sender, MouseEventArgs e)
         {
             int n = Convert.ToInt32((sender as Button).Name.Substring(1, 2));
             if (personNumber != n || !readMorePopup.IsOpen)
@@ -47,6 +47,11 @@ namespace InteractiveTable.Pages
                 ShowPopup(personNumber, culture);
             }
             e.Handled = true;
+        }
+
+        private void mainUI_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            readMorePopup.IsOpen = false;
         }
 
         private void Read_More_Button_Click(object sender, RoutedEventArgs e)
@@ -70,6 +75,7 @@ namespace InteractiveTable.Pages
 
         public void ShowPopup(int number, string culture)
         {
+            readMorePopup.IsOpen = false;
             Uri pathImage = new Uri(String.Format("pack://application:,,,/Pedigree/img.{0}.png", number), UriKind.Absolute);
             try
             {

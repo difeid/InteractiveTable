@@ -6,17 +6,20 @@
       mc:Ignorable="d" 
       d:DesignHeight="1080" d:DesignWidth="1920" Width="1920" Height="1080" PreviewMouseMove="OnMoveOverMainUI">
     <Canvas>
-        <Canvas x:Name="mainUI" Width="1920" Height="1080" Cursor="Cross">
+        <Canvas x:Name="mainUI" Width="1920" Height="1080" MouseDown="mainUI_MouseDown">
             <Canvas.Background>
                 <ImageBrush ImageSource="/InteractiveTable;component/Images/Pedigree/TreePedigree.png"/>
             </Canvas.Background>
         </Canvas>
 
         <Button x:Name="p00_button" Width="190" Height="165" Canvas.Left="690" Canvas.Top="545" Template="{DynamicResource HiddenButtonTemplate}" 
-                FocusVisualStyle="{x:Null}" MouseEnter="PopupShow_Button_MouseEnter"/>
+                FocusVisualStyle="{x:Null}" MouseEnter="PopupShow_Button_Enter"/>
+
+        <Button x:Name="p01_button" Width="190" Height="165" Canvas.Left="1056" Canvas.Top="545" Template="{DynamicResource HiddenButtonTemplate}" 
+                FocusVisualStyle="{x:Null}" MouseEnter="PopupShow_Button_Enter"/>
 
         <Popup x:Name="readMorePopup" PopupAnimation="Fade" AllowsTransparency="True" Placement="Absolute"
-               StaysOpen="False" HorizontalOffset="1270" VerticalOffset="20">
+               StaysOpen="True" HorizontalOffset="1270" VerticalOffset="20">
             <Grid Width="630" Height="340">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="210"/>
