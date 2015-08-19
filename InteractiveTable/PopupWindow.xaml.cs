@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using System.IO;
 using System.Windows.Markup;
+using System.Windows.Threading;
 
 namespace InteractiveTable
 {
@@ -107,7 +108,6 @@ namespace InteractiveTable
                 {
                     if (++numberImage < maxNumberImage)
                     {
-                        zoomPopup.IsOpen = false;
                         ShowPopup(folder, number, numberImage);
                     }
                     else
@@ -122,6 +122,7 @@ namespace InteractiveTable
         private void Zoom_Click(object sender, RoutedEventArgs e)
         {
             numberImage = Convert.ToInt32((sender as Button).Name.Substring(4));
+
             ShowPopup(folder, number, numberImage);
         }
 
@@ -199,6 +200,32 @@ namespace InteractiveTable
 
         public void ShowPopup(string folder, int number, int numberBigImage)
         {
+            if (zoomPopup.IsOpen)
+            {
+                zoomPopup.IsOpen = false;
+                DispatcherTimer timer = new DispatcherTimer();
+                timer.Interval = new TimeSpan(0, 0, 0, 0, 200);
+                timer.Tick += (s, ar) =>
+                {
+                    timer.Stop();
+                    if (ChangeSource(folder, number, numberImage))
+                    {
+                        zoomPopup.IsOpen = true;
+                    }
+                };
+                timer.Start();
+            }
+            else
+            {
+                if (ChangeSource(folder, number, numberImage))
+                {
+                    zoomPopup.IsOpen = true;
+                }
+            }
+        }
+
+        private bool ChangeSource (string folder, int number, int numberBigImage)
+        {
             Uri pathBigImage = new Uri(String.Format("pack://application:,,,/PopupWindow/{0}/{1}/big.{2}.jpg", folder, number, numberBigImage), UriKind.Absolute);
             try
             {
@@ -207,9 +234,12 @@ namespace InteractiveTable
                 {
                     zoomImage.Source = bi;
                 }
-                zoomPopup.IsOpen = true;
+                return true;
             }
-            catch (IOException) { }
+            catch (IOException) 
+            {
+                return false;
+            }
         }
     }
 }
