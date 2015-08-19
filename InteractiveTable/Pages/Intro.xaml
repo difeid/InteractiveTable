@@ -16,7 +16,7 @@
                 </PathGeometry>
             </Canvas.Resources>
 
-            <Image x:Name="kazan_img" Source="/InteractiveTable;component/Images/Intro/Kazan.jpg" Width="1267" Height="771" HorizontalAlignment="Left" VerticalAlignment="Top">
+            <Image x:Name="kazan_img" Source="/InteractiveTable;component/Images/Intro/Kazan.png" Width="1320" Height="778" HorizontalAlignment="Left" VerticalAlignment="Top">
                 <Image.Triggers>
                     <EventTrigger RoutedEvent="Page.Loaded">
                         <EventTrigger.Actions>
@@ -32,8 +32,6 @@
                     </EventTrigger>
                 </Image.Triggers>
             </Image>
-
-            <Image Source="/InteractiveTable;component/Images/Intro/PoligonKazan.png" Width="1920" Height="1080" Canvas.Left="0" Canvas.Top="0" Opacity="0.7"/>
 
             <!--Маска-->
             <Canvas.OpacityMask>
