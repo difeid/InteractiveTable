@@ -114,12 +114,12 @@ namespace InteractiveTable.Pages
             try
             {
                 mainPhoto.Source = new BitmapImage(pathMain);
-                subPhoto.Fill = new ImageBrush(new BitmapImage(pathSub));
+                subPhoto.Source = new BitmapImage(pathSub);
             }
             catch (IOException)
             {
                 mainPhoto.Source = null;
-                subPhoto.Fill = null;
+                subPhoto.Source = null;
             }
 
             Uri pathDisc = new Uri(String.Format("/MemoryViewer/{0}/disc.{1}.{2}.xaml", folder, number, culture), UriKind.Relative);
