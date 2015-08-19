@@ -19,28 +19,25 @@
                 FocusVisualStyle="{x:Null}" MouseEnter="PopupShow_Button_Enter"/>
 
         <Popup x:Name="readMorePopup" PopupAnimation="Fade" AllowsTransparency="True" Placement="Absolute"
-               StaysOpen="True" HorizontalOffset="1270" VerticalOffset="20">
-            <Grid Width="630" Height="340">
+               StaysOpen="True" HorizontalOffset="1280" VerticalOffset="40">
+            <Grid Width="600" Height="300">
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="210"/>
+                    <RowDefinition Height="190"/>
                     <RowDefinition/>
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="220"/>
+                    <ColumnDefinition Width="210"/>
                     <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
 
-                <Border Grid.ColumnSpan="2" Margin="40" Grid.RowSpan="2">
+                <Border Grid.ColumnSpan="2" Grid.RowSpan="2">
                     <Border.Background>
                         <ImageBrush ImageSource="/InteractiveTable;component/Images/PopupBackground.png"/>
                     </Border.Background>
-                    <Border.Effect>
-                        <DropShadowEffect BlurRadius="35" Opacity="0.75" Color="#FFCDBF97"/>
-                    </Border.Effect>
                 </Border>
                 <Image x:Name="photoImage" Height="150" Width="150" HorizontalAlignment="Right" Stretch="UniformToFill" Grid.RowSpan="2"/>
                 <FlowDocumentScrollViewer x:Name="plateDocument" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Disabled" IsHitTestVisible="False"
-                                          Height="110" Width="320" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="15,0" Grid.Column="1" Block.LineHeight="1">
+                                          Height="120" Width="350" HorizontalAlignment="Left" VerticalAlignment="Bottom" Grid.Column="1" Block.LineHeight="1">
                     <FlowDocument/>
                 </FlowDocumentScrollViewer>
                 <Button x:Name="readMoreButton" Click="Read_More_Button_Click" Grid.Row="1" Grid.ColumnSpan="2" FocusVisualStyle="{x:Null}"
