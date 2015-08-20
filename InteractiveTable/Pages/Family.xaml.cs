@@ -20,27 +20,27 @@ namespace InteractiveTable.Pages
 
         private void Father_Button_Click(object sender, RoutedEventArgs e)
         {
-            this.NavigationService.GoBack();
+            new PopupWindow("Family", 1, 0).Show();
         }
 
         private void Mather_Button_Click(object sender, RoutedEventArgs e)
         {
-            this.NavigationService.GoBack();
+            new PopupWindow("Family", 1, 1).Show();
         }
 
         private void Aunti_Button_Click(object sender, RoutedEventArgs e)
         {
-            this.NavigationService.GoBack();
+            new PopupWindow("Family", 1, 2).Show();
         }
 
         private void Brother_Sister_Button_Click(object sender, RoutedEventArgs e)
         {
-            this.NavigationService.GoBack();
+            new PopupWindow("Family", 1, 3).Show();
         }
 
         private void Wife_Children_Button_Click(object sender, RoutedEventArgs e)
         {
-            this.NavigationService.GoBack();
+            new PopupWindow("Family", 1, 4).Show();
         }
 
     }

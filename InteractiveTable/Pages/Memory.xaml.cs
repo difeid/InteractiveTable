@@ -20,23 +20,26 @@ namespace InteractiveTable.Pages
 
         private void Monument_Button_Click(object sender, RoutedEventArgs e)
         {
-            MemoryViewer mv = new MemoryViewer("Monuments", 2);
+            MemoryViewer mv = new MemoryViewer("Monuments", 5);
             this.NavigationService.Navigate(mv);
         }
 
         private void Musuem_Button_Click(object sender, RoutedEventArgs e)
         {
-            this.NavigationService.GoBack();
+            MemoryViewer mv = new MemoryViewer("Museum", 5);
+            this.NavigationService.Navigate(mv);
         }
 
         private void Theatre_Button_Click(object sender, RoutedEventArgs e)
         {
-            this.NavigationService.GoBack();
+            MemoryViewer mv = new MemoryViewer("Theatre", 5);
+            this.NavigationService.Navigate(mv);
         }
 
         private void TolstoyHistory_Button_Click(object sender, RoutedEventArgs e)
         {
-            this.NavigationService.GoBack();
+            MemoryViewer mv = new MemoryViewer("Tolstoy", 5);
+            this.NavigationService.Navigate(mv);
         }
     }
 }

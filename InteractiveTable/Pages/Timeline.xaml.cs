@@ -25,7 +25,7 @@ namespace InteractiveTable.Pages
         private void Year_Button_Click(object sender, RoutedEventArgs e)
         {
             int n = Convert.ToInt32((sender as Button).Name.Substring(1, 2));
-            new PopupWindow("Timeline", 1, n).Show();
+            new PopupWindow("Timeline", 26, n).Show();
         }
 
         private void Timeline_ScrollViewer_ManipulationBoundaryFeedback(object sender, ManipulationBoundaryFeedbackEventArgs e)

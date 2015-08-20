@@ -50,7 +50,7 @@ namespace InteractiveTable.Pages
 
         private void Read_More_Button_Click(object sender, RoutedEventArgs e)
         {
-            //new PopupWindow("", 0, personNumber).Show();
+            new PopupWindow("Pedigree", 1, personNumber).Show();
         }
 
         private void OnMoveOverMainUI(object sender, MouseEventArgs e)
