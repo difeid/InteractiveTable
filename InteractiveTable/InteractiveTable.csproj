@@ -85,14 +85,6 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="MemoryViewer\Monuments\disc.1.ru-RU.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="MemoryViewer\Monuments\disc.0.ru-RU.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="Pages\BookViewer.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -289,7 +281,7 @@
     <Resource Include="Images\Intro\TatButton.png" />
     <Resource Include="Images\Intro\EngButton.png" />
     <Resource Include="Images\Intro\Tolstoy.png" />
-	<Resource Include="Images\Intro\Kazan.png" />
+    <Resource Include="Images\Intro\Kazan.png" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\MainMenu\MainMenuBackground.png" />
@@ -352,14 +344,8 @@
   <ItemGroup>
     <Resource Include="Images\MemoryViewer\BackViewButton.png" />
     <Resource Include="Images\MemoryViewer\NextViewButton.png" />
-	<Resource Include="Images\MemoryViewer\MemoryViewerBackground.png" />
+    <Resource Include="Images\MemoryViewer\MemoryViewerBackground.png" />
     <Resource Include="Images\MemoryViewer\SubPhotoBorder.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="MemoryViewer\Monuments\main.0.jpg" />
-    <Resource Include="MemoryViewer\Monuments\main.1.jpg" />
-    <Resource Include="MemoryViewer\Monuments\sub.1.jpg" />
-    <Resource Include="MemoryViewer\Monuments\sub.0.jpg" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\PopupWindow\BackArrowWhite.png" />
@@ -386,6 +372,7 @@
   <ItemGroup>
     <Resource Include="Images\BookViewer\BookBackground.png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\Expression\Blend\.NETFramework\v4.5\Microsoft.Expression.Blend.WPF.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

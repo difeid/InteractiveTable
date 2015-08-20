@@ -5,6 +5,7 @@ using System.Windows.Controls;
 using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media.Imaging;
+using System.Windows.Markup;
 
 namespace InteractiveTable.Pages
 {
@@ -97,10 +98,23 @@ namespace InteractiveTable.Pages
             }
         }
 
-        private void WritePage(string folder, int number, string culture)
+        public void WritePage(string folder, int number, string culture)
         {
-            Uri pathMain = new Uri(String.Format("pack://application:,,,/MemoryViewer/{0}/main.{1}.jpg", folder, number), UriKind.Absolute);
-            Uri pathSub = new Uri(String.Format("pack://application:,,,/MemoryViewer/{0}/sub.{1}.jpg", folder, number), UriKind.Absolute);
+            WriteImage(folder, number);
+
+            if (!WriteDisc(folder, number, culture))
+            {
+                if (culture != "ru-RU")
+                {
+                    WriteDisc(folder, number, "ru-RU");
+                }
+            }
+        }
+
+        private void WriteImage(string folder, int number)
+        {
+            Uri pathMain = new Uri(String.Format("pack://siteoforigin:,,,/Contents/MemoryViewer/{0}/main.{1}.jpg", folder, number), UriKind.Absolute);
+            Uri pathSub = new Uri(String.Format("pack://siteoforigin:,,,/Contents/MemoryViewer/{0}/sub.{1}.jpg", folder, number), UriKind.Absolute);
             try
             {
                 mainPhoto.Source = new BitmapImage(pathMain);
@@ -111,22 +125,30 @@ namespace InteractiveTable.Pages
                 mainPhoto.Source = null;
                 subPhoto.Source = null;
             }
-
-            Uri pathDisc = new Uri(String.Format("/MemoryViewer/{0}/disc.{1}.{2}.xaml", folder, number, culture), UriKind.Relative);
-            try
-            {
-                FlowDocument doc = Application.LoadComponent(pathDisc) as FlowDocument;
-                documentDiscription.Document = doc;
-            }
-            catch (IOException)
-            {
-                documentDiscription.Document = null;
-            }
         }
 
-        private void ScrollViewer_ManipulationBoundaryFeedback(object sender, ManipulationBoundaryFeedbackEventArgs e)
+        private bool WriteDisc(string folder, int number, string culture)
         {
+            string pathDisc = String.Format("Contents/MemoryViewer/{0}/disc.{1}.{2}.xaml", folder, number, culture);
 
+            if (File.Exists(pathDisc))
+            {
+                try
+                {
+                    using (FileStream fs = File.Open(pathDisc, FileMode.Open))
+                    {
+                        FlowDocument content = XamlReader.Load(fs) as FlowDocument;
+
+                        documentDiscription.Document = content; 
+                    }
+                }
+                catch (IOException) {}
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
     }
 }
