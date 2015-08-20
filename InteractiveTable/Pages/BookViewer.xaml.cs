@@ -61,6 +61,7 @@ namespace InteractiveTable.Pages
 
         private void Back_Button_Click(object sender, RoutedEventArgs e)
         {
+            pleaseWaitPopup.IsOpen = false;
             this.NavigationService.GoBack();
         }
 

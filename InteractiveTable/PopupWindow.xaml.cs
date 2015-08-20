@@ -80,6 +80,8 @@ namespace InteractiveTable
 
         private void Back_Button_Click(object sender, RoutedEventArgs e)
         {
+            zoomPopup.IsOpen = false;
+
             if (--number < 0)
             {
                 number = maxNumber - 1;
@@ -89,6 +91,8 @@ namespace InteractiveTable
 
         private void Next_Button_Click(object sender, RoutedEventArgs e)
         {
+            zoomPopup.IsOpen = false;
+
             if (++number >= maxNumber)
             {
                 number = 0;
@@ -98,6 +102,8 @@ namespace InteractiveTable
 
         private void Close_Button_Click(object sender, RoutedEventArgs e)
         {
+            zoomPopup.IsOpen = false;
+
             this.Close();
         }
 
@@ -193,7 +199,7 @@ namespace InteractiveTable
 
             while (numImg < intTag)
             {
-                Uri pathSmallImage = new Uri(String.Format("pack://siteoforigin:,,,/Content/Article/{0}/{1}/small.{2}.jpg", folder, number, numImg), UriKind.Absolute);
+                Uri pathSmallImage = new Uri(String.Format("pack://siteoforigin:,,,/Contents/Article/{0}/{1}/small.{2}.jpg", folder, number, numImg), UriKind.Absolute);
                 try
                 {
                     arrayImage[numImg].Source = new BitmapImage(pathSmallImage);
@@ -245,7 +251,7 @@ namespace InteractiveTable
 
         private bool ChangeSource (string folder, int number, int numberBigImage)
         {
-            Uri pathBigImage = new Uri(String.Format("pack://siteoforigin:,,,/Content/Article/{0}/{1}/big.{2}.jpg", folder, number, numberBigImage), UriKind.Absolute);
+            Uri pathBigImage = new Uri(String.Format("pack://siteoforigin:,,,/Contents/Article/{0}/{1}/big.{2}.jpg", folder, number, numberBigImage), UriKind.Absolute);
             try
             {
                 BitmapImage bi = new BitmapImage(pathBigImage);

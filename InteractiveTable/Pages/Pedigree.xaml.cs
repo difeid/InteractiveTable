@@ -28,6 +28,7 @@ namespace InteractiveTable.Pages
 
         private void Back_Button_Click(object sender, RoutedEventArgs e)
         {
+            readMorePopup.IsOpen = false;
             this.NavigationService.GoBack();
         }
 
@@ -51,6 +52,7 @@ namespace InteractiveTable.Pages
         private void Read_More_Button_Click(object sender, RoutedEventArgs e)
         {
             new PopupWindow("Pedigree", 1, personNumber).Show();
+            readMorePopup.IsOpen = false;
         }
 
         private void OnMoveOverMainUI(object sender, MouseEventArgs e)
