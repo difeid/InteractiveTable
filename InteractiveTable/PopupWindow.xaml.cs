@@ -32,6 +32,18 @@ namespace InteractiveTable
 
         private DateTime downTime;
         private object downSender;
+
+        /// <summary>
+        /// Вывод статей
+        /// </summary>
+        /// <param name="folder">Папка с содержимым</param>
+        public PopupWindow(string folder)
+        {
+            InitializeComponent();
+            Init(1);
+            maxNumber = 1;
+            maxNumberImage = WritePage(this.folder = folder, this.number = 0, this.culture);
+        }
         
         /// <summary>
         /// Вывод статей
