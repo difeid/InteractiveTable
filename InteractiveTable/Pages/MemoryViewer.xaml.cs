@@ -58,12 +58,7 @@ namespace InteractiveTable.Pages
             Init(count);
 
             maxNumber = count;
-
-            if (number < maxNumber)
-                this.number = number;
-            else
-                this.number = 0;
-
+            this.number = number;
             WritePage(this.folder = folder, this.number, this.culture);
         }
 
