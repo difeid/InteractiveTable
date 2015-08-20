@@ -119,7 +119,7 @@ namespace InteractiveTable.Pages
 
         public FlowDocument OpenBook(string bookName, string culture)
         {
-            string path = String.Format("Book/book.{0}.{1}.rtf", bookName, culture);
+            string path = String.Format("Contents/Book/{0}/book.{1}.rtf", bookName, culture);
 
             FlowDocument book = null;
 

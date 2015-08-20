@@ -115,8 +115,8 @@ namespace InteractiveTable.Pages
 
         private void OpenImage(string folder, int number)
         {
-            Uri pathMain = new Uri(String.Format("pack://siteoforigin:,,,/Contents/MemoryViewer/{0}/main.{1}.jpg", folder, number), UriKind.Absolute);
-            Uri pathSub = new Uri(String.Format("pack://siteoforigin:,,,/Contents/MemoryViewer/{0}/sub.{1}.jpg", folder, number), UriKind.Absolute);
+            Uri pathMain = new Uri(String.Format("pack://siteoforigin:,,,/Contents/Photo/{0}/main.{1}.jpg", folder, number), UriKind.Absolute);
+            Uri pathSub = new Uri(String.Format("pack://siteoforigin:,,,/Contents/Photo/{0}/sub.{1}.jpg", folder, number), UriKind.Absolute);
             try
             {
                 mainPhoto.Source = new BitmapImage(pathMain);
@@ -131,7 +131,7 @@ namespace InteractiveTable.Pages
 
         private FlowDocument OpenDisc(string folder, int number, string culture)
         {
-            string pathDisc = String.Format("Contents/MemoryViewer/{0}/disc.{1}.{2}.xaml", folder, number, culture);
+            string pathDisc = String.Format("Contents/Photo/{0}/disc.{1}.{2}.xaml", folder, number, culture);
 
             FlowDocument content = null;
 

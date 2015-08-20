@@ -156,25 +156,32 @@ namespace InteractiveTable
             int intTag = 0;
 
             //Печатаем статью
-            Uri pathDisc = new Uri(String.Format("/PopupWindow/{0}/{1}/article.{2}.xaml", folder, number, culture), UriKind.Relative);
-            try
+            FlowDocument article = OpenArticle(folder, number, culture);
+            if (article == null)
             {
-                FlowDocument doc = Application.LoadComponent(pathDisc) as FlowDocument;
-                documentPage.Document = doc;
-                intTag = Convert.ToInt32(doc.Tag);
+                if (culture != "ru-RU")
+                {
+                    article = OpenArticle(folder, number, "ru-RU");
+                }
             }
-            catch (IOException)
+            if (article == null)
             {
-                documentPage.Document = null;
                 intTag = 0;
             }
+            else
+            {
+                intTag = Convert.ToInt32(article.Tag);
+            }
+
+            documentPage.Document = article;
+    
 
             //Вставляем изображения
             if (intTag > 9) intTag = 0;
 
             while (numImg < intTag)
             {
-                Uri pathSmallImage = new Uri(String.Format("pack://application:,,,/PopupWindow/{0}/{1}/small.{2}.jpg", folder, number, numImg), UriKind.Absolute);
+                Uri pathSmallImage = new Uri(String.Format("pack://siteoforigin:,,,/Content/Article/{0}/{1}/small.{2}.jpg", folder, number, numImg), UriKind.Absolute);
                 try
                 {
                     arrayImage[numImg].Source = new BitmapImage(pathSmallImage);
@@ -226,7 +233,7 @@ namespace InteractiveTable
 
         private bool ChangeSource (string folder, int number, int numberBigImage)
         {
-            Uri pathBigImage = new Uri(String.Format("pack://application:,,,/PopupWindow/{0}/{1}/big.{2}.jpg", folder, number, numberBigImage), UriKind.Absolute);
+            Uri pathBigImage = new Uri(String.Format("pack://siteoforigin:,,,/Content/Article/{0}/{1}/big.{2}.jpg", folder, number, numberBigImage), UriKind.Absolute);
             try
             {
                 BitmapImage bi = new BitmapImage(pathBigImage);
@@ -240,6 +247,27 @@ namespace InteractiveTable
             {
                 return false;
             }
+        }
+
+
+        private FlowDocument OpenArticle(string folder, int number, string culture)
+        {
+            string path = String.Format("Contents/Article/{0}/{1}/article.{2}.xaml", folder, number, culture);
+
+            FlowDocument content = null;
+
+            if (File.Exists(path))
+            {
+                try
+                {
+                    using (FileStream fs = File.Open(path, FileMode.Open))
+                    {
+                        content = XamlReader.Load(fs) as FlowDocument;
+                    }
+                }
+                catch (IOException) { }
+            }
+            return content;
         }
     }
 }
