@@ -77,10 +77,6 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Resource Include="PopupWindow\Timeline\0\article.ru-RU.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Resource>
     <Page Include="LanguageResources\lang.tt-RU.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -353,18 +349,6 @@
     <Resource Include="Images\PopupWindow\NextArrowWhite.png" />
     <Resource Include="Images\PopupWindow\PopupWindowBackground.png" />
     <Resource Include="Images\PopupWindow\Zoom.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="PopupWindow\Timeline\0\big.0.jpg" />
-    <Resource Include="PopupWindow\Timeline\0\big.1.jpg" />
-    <Resource Include="PopupWindow\Timeline\0\big.2.jpg" />
-    <Resource Include="PopupWindow\Timeline\0\big.3.jpg" />
-    <Resource Include="PopupWindow\Timeline\0\big.4.jpg" />
-    <Resource Include="PopupWindow\Timeline\0\small.0.jpg" />
-    <Resource Include="PopupWindow\Timeline\0\small.1.jpg" />
-    <Resource Include="PopupWindow\Timeline\0\small.2.jpg" />
-    <Resource Include="PopupWindow\Timeline\0\small.3.jpg" />
-    <Resource Include="PopupWindow\Timeline\0\small.4.jpg" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Pedigree\img.0.png" />

@@ -100,18 +100,20 @@ namespace InteractiveTable.Pages
 
         public void WritePage(string folder, int number, string culture)
         {
-            WriteImage(folder, number);
+            OpenImage(folder, number);
 
-            if (!WriteDisc(folder, number, culture))
+            FlowDocument disc = OpenDisc(folder, number, culture);
+            if (disc == null)
             {
                 if (culture != "ru-RU")
                 {
-                    WriteDisc(folder, number, "ru-RU");
+                    disc = OpenDisc(folder, number, "ru-RU");
                 }
             }
+            documentDiscription.Document = disc;
         }
 
-        private void WriteImage(string folder, int number)
+        private void OpenImage(string folder, int number)
         {
             Uri pathMain = new Uri(String.Format("pack://siteoforigin:,,,/Contents/MemoryViewer/{0}/main.{1}.jpg", folder, number), UriKind.Absolute);
             Uri pathSub = new Uri(String.Format("pack://siteoforigin:,,,/Contents/MemoryViewer/{0}/sub.{1}.jpg", folder, number), UriKind.Absolute);
@@ -127,9 +129,11 @@ namespace InteractiveTable.Pages
             }
         }
 
-        private bool WriteDisc(string folder, int number, string culture)
+        private FlowDocument OpenDisc(string folder, int number, string culture)
         {
             string pathDisc = String.Format("Contents/MemoryViewer/{0}/disc.{1}.{2}.xaml", folder, number, culture);
+
+            FlowDocument content = null;
 
             if (File.Exists(pathDisc))
             {
@@ -137,18 +141,12 @@ namespace InteractiveTable.Pages
                 {
                     using (FileStream fs = File.Open(pathDisc, FileMode.Open))
                     {
-                        FlowDocument content = XamlReader.Load(fs) as FlowDocument;
-
-                        documentDiscription.Document = content; 
+                        content = XamlReader.Load(fs) as FlowDocument;
                     }
                 }
                 catch (IOException) {}
-                return true;
             }
-            else
-            {
-                return false;
-            }
+            return content;
         }
     }
 }

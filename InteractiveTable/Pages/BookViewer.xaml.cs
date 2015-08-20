@@ -22,16 +22,17 @@ namespace InteractiveTable.Pages
     /// </summary>
     public partial class BookViewer : Page
     {
-        private string pathBook;
+        private string bookName;
         protected Point TouchStart;
         private bool AlreadySwiped;
+        private string culture;
 
         public BookViewer(string bookName)
         {
             InitializeComponent();
 
-            string culture = App.Language.Name;
-            pathBook = String.Format("Book/book.{0}.{1}.rtf", bookName, culture);
+            culture = App.Language.Name;
+            this.bookName = bookName;
         }
 
         private void Page_Loaded(object sender, RoutedEventArgs e)
@@ -42,20 +43,15 @@ namespace InteractiveTable.Pages
             {
                 timer.Stop();
 
-                if (File.Exists(pathBook))
+                FlowDocument book = OpenBook(bookName, culture);
+                if (book == null)
                 {
-                    FlowDocument book = new FlowDocument();
-                    TextRange tr = new TextRange(book.ContentStart, book.ContentEnd);
-
-                    using (FileStream fs = File.Open(pathBook, FileMode.Open))
+                    if (culture != "ru-RU")
                     {
-                        tr.Load(fs, DataFormats.Rtf);
+                        book = OpenBook(bookName, "ru-RU");
                     }
-                    book.ColumnWidth = 900;
-                    book.PagePadding = new Thickness(50);
-
-                    bookReader.Document = book;
                 }
+                bookReader.Document = book;
                 pleaseWaitPopup.IsOpen = false;
                 backButton.IsEnabled = true;
                 contentButton.IsEnabled = true;
@@ -73,17 +69,17 @@ namespace InteractiveTable.Pages
             NavigationCommands.NextPage.Execute(null, bookReader);
         }
 
-        void Page_MouseDown(object sender, MouseEventArgs e)
+        private void Page_MouseDown(object sender, MouseEventArgs e)
         {
             TouchStart = e.GetPosition(this);
         }
 
-        void Page_MouseUp(object sender, MouseEventArgs e)
+        private void Page_MouseUp(object sender, MouseEventArgs e)
         {
             AlreadySwiped = false;
         }
 
-        void Page_MouseMove(object sender, MouseEventArgs e)
+        private void Page_MouseMove(object sender, MouseEventArgs e)
         {
             if (e.LeftButton == MouseButtonState.Pressed)
             {
@@ -119,6 +115,31 @@ namespace InteractiveTable.Pages
                 }
             }
             e.Handled = true;
+        }
+
+        public FlowDocument OpenBook(string bookName, string culture)
+        {
+            string path = String.Format("Book/book.{0}.{1}.rtf", bookName, culture);
+
+            FlowDocument book = null;
+
+            if (File.Exists(path))
+            {
+                book = new FlowDocument();
+                TextRange tr = new TextRange(book.ContentStart, book.ContentEnd);
+                try
+                {
+                    using (FileStream fs = File.Open(path, FileMode.Open))
+                    {
+                        tr.Load(fs, DataFormats.Rtf);
+                    }
+                }
+                catch (IOException) { }
+
+                book.ColumnWidth = 800;
+                book.PagePadding = new Thickness(70);
+            }
+            return book;
         }
     }
 }
