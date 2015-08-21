@@ -111,7 +111,7 @@
         </ControlTemplate.Triggers>
     </ControlTemplate>
 
-    <!--Шаблон кнопок вперед назад-->
+    <!--Шаблон кнопок вперед назад закрыть-->
     <ControlTemplate x:Key="NavButtonTemplate" TargetType="{x:Type Button}">
         <Grid x:Name="nav_grid" RenderTransformOrigin="0.5,0.5">
             <Grid.RowDefinitions>
@@ -318,6 +318,31 @@
         <Grid>
             <Rectangle Fill="Transparent"/>
         </Grid>
+    </ControlTemplate>
+
+    <!--Шаблон кнопоки закрыть-->
+    <ControlTemplate x:Key="CloseButtonTemplate" TargetType="{x:Type Button}">
+        <Grid x:Name="nav_grid" RenderTransformOrigin="0.5,0.5">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Rectangle Fill="Transparent" Grid.RowSpan="2"/>
+            <Image Source="{Binding Content, RelativeSource={RelativeSource TemplatedParent}}" Width="50" Height="50" Margin="{TemplateBinding Padding}" Grid.Row="0"
+				HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"/>
+            <TextBlock Text="{Binding Tag, RelativeSource={RelativeSource TemplatedParent}}" FontFamily="{TemplateBinding FontFamily}"
+				FontSize="{TemplateBinding FontSize}" Margin="{TemplateBinding Padding}" Grid.Row="1"
+				VerticalAlignment="{TemplateBinding VerticalContentAlignment}" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"/>
+        </Grid>
+        <ControlTemplate.Triggers>
+            <Trigger Property="IsPressed" Value="True">
+                <Setter Property="RenderTransform" TargetName="nav_grid">
+                    <Setter.Value>
+                        <ScaleTransform ScaleY="0.96" ScaleX="0.96"/>
+                    </Setter.Value>
+                </Setter>
+            </Trigger>
+        </ControlTemplate.Triggers>
     </ControlTemplate>
 
     <!--Шаблон книги-->

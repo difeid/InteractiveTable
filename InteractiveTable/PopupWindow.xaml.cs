@@ -29,9 +29,6 @@ namespace InteractiveTable
         private int maxNumberImage;
         private string culture;
 
-        private DateTime downTime;
-        private object downSender;
-
         /// <summary>
         /// Вывод статей
         /// </summary>
@@ -75,8 +72,6 @@ namespace InteractiveTable
 
         private void Back_Button_Click(object sender, RoutedEventArgs e)
         {
-            zoomPopup.IsOpen = false;
-
             if (--number < 0)
             {
                 number = maxNumber - 1;
@@ -86,8 +81,6 @@ namespace InteractiveTable
 
         private void Next_Button_Click(object sender, RoutedEventArgs e)
         {
-            zoomPopup.IsOpen = false;
-
             if (++number >= maxNumber)
             {
                 number = 0;
@@ -97,39 +90,7 @@ namespace InteractiveTable
 
         private void Close_Button_Click(object sender, RoutedEventArgs e)
         {
-            zoomPopup.IsOpen = false;
-
             this.Close();
-        }
-
-        private void Popup_Down(object sender, MouseButtonEventArgs e)
-        {
-            if (e.LeftButton == MouseButtonState.Pressed)
-            {
-                this.downSender = sender;
-                this.downTime = DateTime.Now;
-            }
-        }
-
-        private void Popup_Up(object sender, MouseButtonEventArgs e)
-        {
-            if (e.LeftButton == MouseButtonState.Released &&
-                sender == this.downSender)
-            {
-                TimeSpan timeSinceDown = DateTime.Now - this.downTime;
-                if (timeSinceDown.TotalMilliseconds < 500)
-                {
-                    if (++numberImage < maxNumberImage)
-                    {
-                        ShowPopup(folder, number, numberImage);
-                    }
-                    else
-                    {
-                        numberImage = 0;
-                        zoomPopup.IsOpen = false;
-                    }
-                }
-            }
         }
 
         private void Zoom_Click(object sender, RoutedEventArgs e)
@@ -137,7 +98,7 @@ namespace InteractiveTable
             if (e.Source is Button)
             {
                 numberImage = Convert.ToInt32((e.Source as Button).Tag);
-                ShowPopup(folder, number, numberImage);
+                new ImageViewer(folder, number, numberImage, maxNumberImage).Show();
             }
         }
 
@@ -189,51 +150,6 @@ namespace InteractiveTable
 
             return intTag;
         }
-
-        public void ShowPopup(string folder, int number, int numberBigImage)
-        {
-            if (zoomPopup.IsOpen)
-            {
-                zoomPopup.IsOpen = false;
-                DispatcherTimer timer = new DispatcherTimer();
-                timer.Interval = new TimeSpan(0, 0, 0, 0, 200);
-                timer.Tick += (s, ar) =>
-                {
-                    timer.Stop();
-                    if (ChangeSource(folder, number, numberImage))
-                    {
-                        zoomPopup.IsOpen = true;
-                    }
-                };
-                timer.Start();
-            }
-            else
-            {
-                if (ChangeSource(folder, number, numberImage))
-                {
-                    zoomPopup.IsOpen = true;
-                }
-            }
-        }
-
-        private bool ChangeSource (string folder, int number, int numberBigImage)
-        {
-            Uri pathBigImage = new Uri(String.Format("pack://siteoforigin:,,,/Contents/Article/{0}/{1}/big.{2}.jpg", folder, number, numberBigImage), UriKind.Absolute);
-            try
-            {
-                BitmapImage bi = new BitmapImage(pathBigImage);
-                if (zoomImage.Source != bi)
-                {
-                    zoomImage.Source = bi;
-                }
-                return true;
-            }
-            catch (IOException) 
-            {
-                return false;
-            }
-        }
-
 
         private FlowDocument OpenArticle(string folder, int number, string culture)
         {
