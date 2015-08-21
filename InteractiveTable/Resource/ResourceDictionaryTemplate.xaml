@@ -309,6 +309,14 @@
             <Grid.Background>
                 <ImageBrush ImageSource="{Binding Content, RelativeSource={RelativeSource TemplatedParent}}" Stretch="UniformToFill"/>
             </Grid.Background>
+            <Image Source="pack://application:,,,/Images/PopupWindow/Zoom.png" Width="30" Height="30" Margin="14" HorizontalAlignment="Right" VerticalAlignment="Bottom"/>
+        </Grid>
+    </ControlTemplate>
+    
+    <!--Шаблон скрытых кнопок-->
+    <ControlTemplate x:Key="HiddenButtonTemplate" TargetType="{x:Type Button}">
+        <Grid>
+            <Rectangle Fill="Transparent"/>
         </Grid>
     </ControlTemplate>
 
