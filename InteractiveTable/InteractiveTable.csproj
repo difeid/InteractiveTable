@@ -405,7 +405,6 @@
     <Resource Include="Images\Timeline\1902-1910.png" />
     <Resource Include="Images\Timeline\1909.png" />
     <Resource Include="Images\Timeline\1910.png" />
-    <Resource Include="Images\Timeline\TimelineMaket.png" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Pedigree\img.0.png" />
