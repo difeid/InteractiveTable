@@ -45,4 +45,6 @@
     <v:String x:Key="p_ReadMoreButton">Подробнее</v:String>
     <!--BookViewer-->
     <v:String x:Key="b_Content">СОДЕРЖАНИЕ</v:String>
+    <!--Timeline-->
+    <v:String x:Key="t_Kazan">Казань</v:String>
 </ResourceDictionary>
