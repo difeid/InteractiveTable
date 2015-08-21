@@ -12,10 +12,28 @@
             </Canvas.Background>
         </Canvas>
 
-        <Button x:Name="p00_button" Width="190" Height="165" Canvas.Left="690" Canvas.Top="545" Template="{DynamicResource HiddenButtonTemplate}" 
+        <Button x:Name="p00_button" Width="250" Height="190" Canvas.Left="850" Canvas.Top="795" Template="{DynamicResource HiddenButtonTemplate}" 
                 FocusVisualStyle="{x:Null}" MouseEnter="PopupShow_Button_Enter"/>
 
-        <Button x:Name="p01_button" Width="190" Height="165" Canvas.Left="1056" Canvas.Top="545" Template="{DynamicResource HiddenButtonTemplate}" 
+        <Button x:Name="p01_button" Width="250" Height="150" Canvas.Left="465" Canvas.Top="730" Template="{DynamicResource HiddenButtonTemplate}" 
+                FocusVisualStyle="{x:Null}" MouseEnter="PopupShow_Button_Enter"/>
+
+        <Button x:Name="p02_button" Width="210" Height="160" Canvas.Left="1255" Canvas.Top="730" Template="{DynamicResource HiddenButtonTemplate}" 
+                FocusVisualStyle="{x:Null}" MouseEnter="PopupShow_Button_Enter"/>
+
+        <Button x:Name="p03_button" Width="190" Height="150" Canvas.Left="315" Canvas.Top="555" Template="{DynamicResource HiddenButtonTemplate}" 
+                FocusVisualStyle="{x:Null}" MouseEnter="PopupShow_Button_Enter"/>
+
+        <Button x:Name="p04_button" Width="190" Height="150" Canvas.Left="690" Canvas.Top="555" Template="{DynamicResource HiddenButtonTemplate}" 
+                FocusVisualStyle="{x:Null}" MouseEnter="PopupShow_Button_Enter"/>
+
+        <Button x:Name="p05_button" Width="190" Height="150" Canvas.Left="1055" Canvas.Top="555" Template="{DynamicResource HiddenButtonTemplate}" 
+                FocusVisualStyle="{x:Null}" MouseEnter="PopupShow_Button_Enter"/>
+
+        <Button x:Name="p06_button" Width="130" Height="130" Canvas.Left="250" Canvas.Top="375" Template="{DynamicResource HiddenButtonTemplate}" 
+                FocusVisualStyle="{x:Null}" MouseEnter="PopupShow_Button_Enter"/>
+
+        <Button x:Name="p07_button" Width="90" Height="110" Canvas.Left="215" Canvas.Top="90" Template="{DynamicResource HiddenButtonTemplate}" 
                 FocusVisualStyle="{x:Null}" MouseEnter="PopupShow_Button_Enter"/>
 
         <Popup x:Name="readMorePopup" PopupAnimation="Fade" AllowsTransparency="True" Placement="Absolute"
