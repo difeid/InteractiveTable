@@ -2,16 +2,11 @@
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="PopupWindow" Height="1080" Width="1920" WindowStyle="None"
-        AllowsTransparency="True" WindowState="Maximized" ResizeMode="NoResize" ShowInTaskbar="False"
-        Topmost="True">
+        AllowsTransparency="True" WindowState="Maximized" ResizeMode="NoResize" ShowInTaskbar="False">
     
     <Window.Background>
         <SolidColorBrush Color="Black" Opacity="0.5"/>
     </Window.Background>
-    
-    <Window.Resources>
-        <BitmapImage x:Key="ImageZoom" CacheOption="OnLoad" UriSource="Images/PopupWindow/Zoom.png"/>
-    </Window.Resources>
     
     <Grid Width="1920" Height="1080">
         <Grid.ColumnDefinitions>
@@ -28,95 +23,14 @@
             <ScrollViewer Width="1520" Height="920" Template="{StaticResource ScrollViewerTemplate}" FocusVisualStyle="{x:Null}"
                           VerticalAlignment="Center" HorizontalAlignment="Center" PanningMode="VerticalOnly"
                           ManipulationBoundaryFeedback="Popup_ScrollViewer_ManipulationBoundaryFeedback">
-                <Grid>
-                    <Grid.CacheMode>
-                        <BitmapCache/>
-                    </Grid.CacheMode>
-                    
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="1*"/>
-                        <ColumnDefinition Width="1*"/>
-                    </Grid.ColumnDefinitions>
+                <ScrollViewer.CacheMode>
+                    <BitmapCache/>
+                </ScrollViewer.CacheMode>
 
-                    <FlowDocumentScrollViewer x:Name="documentPage" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Disabled"
-                                          IsSelectionEnabled="False" Grid.ColumnSpan="2" IsHitTestVisible="False" >
-                        <FlowDocument/>
-                    </FlowDocumentScrollViewer>
-
-                    <Grid Grid.Column="1" Width="690" Height="660" VerticalAlignment="Top"  HorizontalAlignment="Center" Margin="0,50">
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="150"/>
-                            <ColumnDefinition/>
-                            <ColumnDefinition Width="150"/>
-                            <ColumnDefinition/>
-                            <ColumnDefinition Width="150"/>
-                            <ColumnDefinition/>
-                            <ColumnDefinition Width="150"/>
-                        </Grid.ColumnDefinitions>
-
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="300"/>
-                            <RowDefinition/>
-                            <RowDefinition Height="150"/>
-                            <RowDefinition/>
-                            <RowDefinition Height="150"/>
-                        </Grid.RowDefinitions>
-
-                        <Image x:Name="image0" Grid.ColumnSpan="7" Stretch="UniformToFill" Visibility="Hidden"/>
-
-                        <Image x:Name="image1" Grid.Row="2" Grid.Column="0" Stretch="UniformToFill" Visibility="Hidden"/>
-                        <Image x:Name="image2" Grid.Row="2" Grid.Column="2" Stretch="UniformToFill" Visibility="Hidden"/>
-                        <Image x:Name="image3" Grid.Row="2" Grid.Column="4" Stretch="UniformToFill" Visibility="Hidden"/>
-                        <Image x:Name="image4" Grid.Row="2" Grid.Column="6" Stretch="UniformToFill" Visibility="Hidden"/>
-
-                        <Image x:Name="image5" Grid.Row="4" Grid.Column="0" Stretch="UniformToFill" Visibility="Hidden"/>
-                        <Image x:Name="image6" Grid.Row="4" Grid.Column="2" Stretch="UniformToFill" Visibility="Hidden"/>
-                        <Image x:Name="image7" Grid.Row="4" Grid.Column="4" Stretch="UniformToFill" Visibility="Hidden"/>
-                        <Image x:Name="image8" Grid.Row="4" Grid.Column="6" Stretch="UniformToFill" Visibility="Hidden"/>
-
-                        <Image Grid.ColumnSpan="7" Source="{StaticResource ImageZoom}" HorizontalAlignment="Right" VerticalAlignment="Bottom"
-                               Width="30" Height="30" Margin="14"  Visibility="{Binding Visibility, ElementName=image0}"/>
-
-                        <Image Grid.Row="2" Grid.Column="0" Source="{StaticResource ImageZoom}" HorizontalAlignment="Right" VerticalAlignment="Bottom"
-                               Width="30" Height="30" Margin="14"  Visibility="{Binding Visibility, ElementName=image1}"/>
-                        <Image Grid.Row="2" Grid.Column="2" Source="{StaticResource ImageZoom}" HorizontalAlignment="Right" VerticalAlignment="Bottom"
-                               Width="30" Height="30" Margin="14"  Visibility="{Binding Visibility, ElementName=image2}"/>
-                        <Image Grid.Row="2" Grid.Column="4" Source="{StaticResource ImageZoom}" HorizontalAlignment="Right" VerticalAlignment="Bottom"
-                               Width="30" Height="30" Margin="14"  Visibility="{Binding Visibility, ElementName=image3}"/>
-                        <Image Grid.Row="2" Grid.Column="6" Source="{StaticResource ImageZoom}" HorizontalAlignment="Right" VerticalAlignment="Bottom"
-                               Width="30" Height="30" Margin="14"  Visibility="{Binding Visibility, ElementName=image4}"/>
-
-                        <Image Grid.Row="4" Grid.Column="0" Source="{StaticResource ImageZoom}" HorizontalAlignment="Right" VerticalAlignment="Bottom"
-                               Width="30" Height="30" Margin="14"  Visibility="{Binding Visibility, ElementName=image5}"/>
-                        <Image Grid.Row="4" Grid.Column="2" Source="{StaticResource ImageZoom}" HorizontalAlignment="Right" VerticalAlignment="Bottom"
-                               Width="30" Height="30" Margin="14"  Visibility="{Binding Visibility, ElementName=image6}"/>
-                        <Image Grid.Row="4" Grid.Column="4" Source="{StaticResource ImageZoom}" HorizontalAlignment="Right" VerticalAlignment="Bottom"
-                               Width="30" Height="30" Margin="14"  Visibility="{Binding Visibility, ElementName=image7}"/>
-                        <Image Grid.Row="4" Grid.Column="6" Source="{StaticResource ImageZoom}" HorizontalAlignment="Right" VerticalAlignment="Bottom"
-                               Width="30" Height="30" Margin="14"  Visibility="{Binding Visibility, ElementName=image8}"/>
-
-                        <Button x:Name="zoom0" Grid.ColumnSpan="7" Template="{StaticResource HiddenButtonTemplate}"
-                                Visibility="{Binding Visibility, ElementName=image0}" Click="Zoom_Click" FocusVisualStyle="{x:Null}"/>
-
-                        <Button x:Name="zoom1" Grid.Row="2" Grid.Column="0" Template="{StaticResource HiddenButtonTemplate}"
-                                Visibility="{Binding Visibility, ElementName=image1}" Click="Zoom_Click" FocusVisualStyle="{x:Null}"/>
-                        <Button x:Name="zoom2" Grid.Row="2" Grid.Column="2" Template="{StaticResource HiddenButtonTemplate}"
-                                Visibility="{Binding Visibility, ElementName=image2}" Click="Zoom_Click" FocusVisualStyle="{x:Null}"/>
-                        <Button x:Name="zoom3" Grid.Row="2" Grid.Column="4" Template="{StaticResource HiddenButtonTemplate}"
-                                Visibility="{Binding Visibility, ElementName=image3}" Click="Zoom_Click" FocusVisualStyle="{x:Null}"/>
-                        <Button x:Name="zoom4" Grid.Row="2" Grid.Column="6" Template="{StaticResource HiddenButtonTemplate}"
-                                Visibility="{Binding Visibility, ElementName=image4}" Click="Zoom_Click" FocusVisualStyle="{x:Null}"/>
-
-                        <Button x:Name="zoom5" Grid.Row="4" Grid.Column="0" Template="{StaticResource HiddenButtonTemplate}"
-                                Visibility="{Binding Visibility, ElementName=image5}" Click="Zoom_Click" FocusVisualStyle="{x:Null}"/>
-                        <Button x:Name="zoom6" Grid.Row="4" Grid.Column="2" Template="{StaticResource HiddenButtonTemplate}"
-                                Visibility="{Binding Visibility, ElementName=image6}" Click="Zoom_Click" FocusVisualStyle="{x:Null}"/>
-                        <Button x:Name="zoom7" Grid.Row="4" Grid.Column="4" Template="{StaticResource HiddenButtonTemplate}"
-                                Visibility="{Binding Visibility, ElementName=image7}" Click="Zoom_Click" FocusVisualStyle="{x:Null}"/>
-                        <Button x:Name="zoom8" Grid.Row="4" Grid.Column="6" Template="{StaticResource HiddenButtonTemplate}"
-                                Visibility="{Binding Visibility, ElementName=image8}" Click="Zoom_Click" FocusVisualStyle="{x:Null}"/>
-                    </Grid>
-                </Grid>
+                <FlowDocumentScrollViewer x:Name="documentPage"  HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Disabled"
+                                        IsSelectionEnabled="False" Grid.ColumnSpan="2" Focusable="False" IsTabStop="False" ButtonBase.Click="Zoom_Click">
+                    <FlowDocument/>
+                </FlowDocumentScrollViewer>
             </ScrollViewer>
         </Border>
 

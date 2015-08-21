@@ -27,7 +27,6 @@ namespace InteractiveTable
         private int maxNumber;
         private int numberImage;
         private int maxNumberImage;
-        private Image[] arrayImage;
         private string culture;
 
         private DateTime downTime;
@@ -68,13 +67,9 @@ namespace InteractiveTable
         {
             InitializeComponent();
             Init(count);
+
             maxNumber = count;
-
-            if (number < maxNumber)
-                this.number = number;
-            else
-                this.number = 0;
-
+            this.number = number;
             maxNumberImage = WritePage(this.folder = folder, this.number, this.culture);
         }
 
@@ -139,11 +134,12 @@ namespace InteractiveTable
 
         private void Zoom_Click(object sender, RoutedEventArgs e)
         {
-            numberImage = Convert.ToInt32((sender as Button).Name.Substring(4));
-
-            ShowPopup(folder, number, numberImage);
+            if (e.Source is Button)
+            {
+                numberImage = Convert.ToInt32((e.Source as Button).Tag);
+                ShowPopup(folder, number, numberImage);
+            }
         }
-
 
         private void Popup_ScrollViewer_ManipulationBoundaryFeedback(object sender, ManipulationBoundaryFeedbackEventArgs e)
         {
@@ -154,7 +150,6 @@ namespace InteractiveTable
         {
             numberImage = 0;
             culture = App.Language.Name;
-            arrayImage = new[] { image0, image1, image2, image3, image4, image5, image6, image7, image8 };
 
             if (count > 1)
             {
@@ -170,7 +165,6 @@ namespace InteractiveTable
 
         public int WritePage(string folder, int number, string culture)
         {
-            int numImg = 0;
             int intTag = 0;
 
             //Печатаем статью
@@ -192,33 +186,6 @@ namespace InteractiveTable
             }
 
             documentPage.Document = article;
-    
-
-            //Вставляем изображения
-            if (intTag > 9) intTag = 0;
-
-            while (numImg < intTag)
-            {
-                Uri pathSmallImage = new Uri(String.Format("pack://siteoforigin:,,,/Contents/Article/{0}/{1}/small.{2}.jpg", folder, number, numImg), UriKind.Absolute);
-                try
-                {
-                    arrayImage[numImg].Source = new BitmapImage(pathSmallImage);
-                    arrayImage[numImg].Visibility = Visibility.Visible;
-                }
-                catch (IOException)
-                {
-                    arrayImage[numImg].Source = null;
-                    arrayImage[numImg].Visibility = Visibility.Hidden;
-                    break;
-                }
-                numImg++;
-            }
-            while (numImg < 9)
-            {
-                arrayImage[numImg].Source = null;
-                arrayImage[numImg].Visibility = Visibility.Hidden;
-                numImg++;
-            }
 
             return intTag;
         }
