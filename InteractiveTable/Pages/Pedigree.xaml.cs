@@ -90,7 +90,7 @@ namespace InteractiveTable.Pages
             }
             catch (IOException)
             {
-                plateDocument.Document = null;
+                plateDocument.Document.Blocks.Clear();
             }
             readMorePopup.IsOpen = true;
         }

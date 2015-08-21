@@ -137,17 +137,15 @@ namespace InteractiveTable
                     article = OpenArticle(folder, number, "ru-RU");
                 }
             }
-            if (article == null)
+            if (article != null)
             {
-                intTag = 0;
+                intTag = Convert.ToInt32(article.Tag);
+                documentPage.Document = article; 
             }
             else
             {
-                intTag = Convert.ToInt32(article.Tag);
+                documentPage.Document.Blocks.Clear();
             }
-
-            documentPage.Document = article;
-
             return intTag;
         }
 

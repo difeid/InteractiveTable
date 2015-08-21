@@ -118,7 +118,14 @@ namespace InteractiveTable.Pages
                     disc = OpenDisc(folder, number, "ru-RU");
                 }
             }
-            documentDiscription.Document = disc;
+            if (disc != null)
+            {
+                documentDiscription.Document = disc;
+            }
+            else
+            {
+                documentDiscription.Document.Blocks.Clear();
+            }
         }
 
         private void OpenImage(string folder, int number)
