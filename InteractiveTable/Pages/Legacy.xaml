@@ -9,38 +9,50 @@
         <Canvas.Background>
             <ImageBrush ImageSource="/InteractiveTable;component/Images/Legacy/LegacyBackground.png"/>
         </Canvas.Background>
+<!--
+        <Popup x:Name="pleaseWaitPopup" PopupAnimation="Fade" AllowsTransparency="True" Placement="Center" StaysOpen="False">
+            <Grid Width="600" Height="300">
+                <Border>
+                    <Border.Background>
+                        <ImageBrush ImageSource="/InteractiveTable;component/Images/PopupBackground.png"/>
+                    </Border.Background>
+                    <TextBlock Text="{DynamicResource g_PleaseWait}" FontFamily="/InteractiveTable;component/Fonts/#Basil Bold" FontSize="30" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                </Border>
+            </Grid>
+        </Popup>
+-->
         <Button x:Name="back_button" Template="{StaticResource BackButtonTemplate}" Foreground="White" Click="Back_Button_Click" Canvas.Left="75" Canvas.Top="955" FocusVisualStyle="{x:Null}"/>
 
         <!--Left-->
-        <Button x:Name="rules_of_life_button" Template="{StaticResource HexagonButtonTemplate}" Content="/InteractiveTable;component/Images/Legacy/RulesOfLife.png" Tag="{DynamicResource l_RulesOfLife}" MinWidth="200" FocusVisualStyle="{x:Null}"
-                FontFamily="/InteractiveTable;component/Fonts/#Basil Bold"  FontSize="28" Foreground="White" Click="Rules_Of_Life_Button_Click"  Width="300" Height="300" Padding="20,0" Canvas.Left="10" Canvas.Top="50"/>
+        <Button x:Name="b0_button" Template="{StaticResource HexagonButtonTemplate}" Content="/InteractiveTable;component/Images/Legacy/RulesOfLife.png" Tag="{DynamicResource l_RulesOfLife}" MinWidth="200" FocusVisualStyle="{x:Null}"
+                FontFamily="/InteractiveTable;component/Fonts/#Basil Bold"  FontSize="28" Foreground="White" Click="Book_Button_Click"  Width="300" Height="300" Padding="20,0" Canvas.Left="10" Canvas.Top="50"/>
 
-        <Button x:Name="trilogy_button" Template="{StaticResource HexagonButtonTemplate}" Content="/InteractiveTable;component/Images/Legacy/Trilogy.png" Tag="{DynamicResource l_Trilogy}" MinWidth="200" FocusVisualStyle="{x:Null}"
-                FontFamily="/InteractiveTable;component/Fonts/#Basil Bold"  FontSize="28" Foreground="White" Click="Trilogy_Button_Click"  Width="300" Height="300" Padding="20,0" Canvas.Left="295" Canvas.Top="50"/>
+        <Button x:Name="b1_button" Template="{StaticResource HexagonButtonTemplate}" Content="/InteractiveTable;component/Images/Legacy/Trilogy.png" Tag="{DynamicResource l_Trilogy}" MinWidth="200" FocusVisualStyle="{x:Null}"
+                FontFamily="/InteractiveTable;component/Fonts/#Basil Bold"  FontSize="28" Foreground="White" Click="Book_Button_Click"  Width="300" Height="300" Padding="20,0" Canvas.Left="295" Canvas.Top="50"/>
 
-        <Button x:Name="diary_button" Template="{StaticResource HexagonButtonTemplate}" Content="/InteractiveTable;component/Images/Legacy/Diary.png" Tag="{DynamicResource l_Diary}" MinWidth="200" FocusVisualStyle="{x:Null}"
-                FontFamily="/InteractiveTable;component/Fonts/#Basil Bold"  FontSize="28" Foreground="White" Click="Diary_Button_Click"  Width="300" Height="300" Padding="20,0" Canvas.Left="155" Canvas.Top="295"/>
+        <Button x:Name="b2_button" Template="{StaticResource HexagonButtonTemplate}" Content="/InteractiveTable;component/Images/Legacy/Diary.png" Tag="{DynamicResource l_Diary}" MinWidth="200" FocusVisualStyle="{x:Null}"
+                FontFamily="/InteractiveTable;component/Fonts/#Basil Bold"  FontSize="28" Foreground="White" Click="Book_Button_Click"  Width="300" Height="300" Padding="20,0" Canvas.Left="155" Canvas.Top="295"/>
 
-        <Button x:Name="memories_button" Template="{StaticResource HexagonButtonTemplate}" Content="/InteractiveTable;component/Images/Legacy/Memories.png" Tag="{DynamicResource l_Memories}" MinWidth="250" FocusVisualStyle="{x:Null}"
-                FontFamily="/InteractiveTable;component/Fonts/#Basil Bold"  FontSize="28" Foreground="White" Click="Memories_Button_Click"  Width="300" Height="300" Padding="20,0" Canvas.Left="435" Canvas.Top="295"/>
+        <Button x:Name="b3_button" Template="{StaticResource HexagonButtonTemplate}" Content="/InteractiveTable;component/Images/Legacy/Memories.png" Tag="{DynamicResource l_Memories}" MinWidth="250" FocusVisualStyle="{x:Null}"
+                FontFamily="/InteractiveTable;component/Fonts/#Basil Bold"  FontSize="28" Foreground="White" Click="Book_Button_Click"  Width="300" Height="300" Padding="20,0" Canvas.Left="435" Canvas.Top="295"/>
 
-        <Button x:Name="morning_button" Template="{StaticResource HexagonButtonTemplate}" Content="/InteractiveTable;component/Images/Legacy/MorningLandowner.png" Tag="{DynamicResource l_MorningLandowner}" MinWidth="200" FocusVisualStyle="{x:Null}"
-                FontFamily="/InteractiveTable;component/Fonts/#Basil Bold"  FontSize="28" Foreground="White" Click="Morning_Button_Click"  Width="300" Height="300" Padding="20,0" Canvas.Left="295" Canvas.Top="540"/>
+        <Button x:Name="b4_button" Template="{StaticResource HexagonButtonTemplate}" Content="/InteractiveTable;component/Images/Legacy/MorningLandowner.png" Tag="{DynamicResource l_MorningLandowner}" MinWidth="200" FocusVisualStyle="{x:Null}"
+                FontFamily="/InteractiveTable;component/Fonts/#Basil Bold"  FontSize="28" Foreground="White" Click="Book_Button_Click"  Width="300" Height="300" Padding="20,0" Canvas.Left="295" Canvas.Top="540"/>
 
         <!--Rigth-->
-        <Button x:Name="cossacks_button" Template="{StaticResource HexagonButtonTemplate}" Content="/InteractiveTable;component/Images/Legacy/Cossacks.png" Tag="{DynamicResource l_Cossacks}" MinWidth="200" FocusVisualStyle="{x:Null}"
-                FontFamily="/InteractiveTable;component/Fonts/#Basil Bold"  FontSize="28" Foreground="White" Click="Cossacks_Button_Click"  Width="300" Height="300" Padding="20,0" Canvas.Left="1330" Canvas.Top="50"/>
+        <Button x:Name="b5_button" Template="{StaticResource HexagonButtonTemplate}" Content="/InteractiveTable;component/Images/Legacy/Cossacks.png" Tag="{DynamicResource l_Cossacks}" MinWidth="200" FocusVisualStyle="{x:Null}"
+                FontFamily="/InteractiveTable;component/Fonts/#Basil Bold"  FontSize="28" Foreground="White" Click="Book_Button_Click"  Width="300" Height="300" Padding="20,0" Canvas.Left="1330" Canvas.Top="50"/>
 
-        <Button x:Name="war_and_peace_button" Template="{StaticResource HexagonButtonTemplate}" Content="/InteractiveTable;component/Images/Legacy/WarAndPeace.png" Tag="{DynamicResource l_WarAndPeace}" MinWidth="100" FocusVisualStyle="{x:Null}"
-                FontFamily="/InteractiveTable;component/Fonts/#Basil Bold"  FontSize="28" Foreground="White" Click="War_And_Peace_Button_Click"  Width="300" Height="300" Padding="20,0" Canvas.Left="1615" Canvas.Top="50"/>
+        <Button x:Name="b6_button" Template="{StaticResource HexagonButtonTemplate}" Content="/InteractiveTable;component/Images/Legacy/WarAndPeace.png" Tag="{DynamicResource l_WarAndPeace}" MinWidth="100" FocusVisualStyle="{x:Null}"
+                FontFamily="/InteractiveTable;component/Fonts/#Basil Bold"  FontSize="28" Foreground="White" Click="Book_Button_Click"  Width="300" Height="300" Padding="20,0" Canvas.Left="1615" Canvas.Top="50"/>
 
-        <Button x:Name="after_ball_button" Template="{StaticResource HexagonButtonTemplate}" Content="/InteractiveTable;component/Images/Legacy/AfterBall.png" Tag="{DynamicResource l_AfterBall}" MinWidth="100" FocusVisualStyle="{x:Null}"
-                FontFamily="/InteractiveTable;component/Fonts/#Basil Bold"  FontSize="28" Foreground="White" Click="After_Ball_Button_Click"  Width="300" Height="300" Padding="20,0" Canvas.Left="1190" Canvas.Top="295"/>
+        <Button x:Name="b7_button" Template="{StaticResource HexagonButtonTemplate}" Content="/InteractiveTable;component/Images/Legacy/AfterBall.png" Tag="{DynamicResource l_AfterBall}" MinWidth="100" FocusVisualStyle="{x:Null}"
+                FontFamily="/InteractiveTable;component/Fonts/#Basil Bold"  FontSize="28" Foreground="White" Click="Book_Button_Click"  Width="300" Height="300" Padding="20,0" Canvas.Left="1190" Canvas.Top="295"/>
 
-        <Button x:Name="yule_night_button" Template="{StaticResource HexagonButtonTemplate}" Content="/InteractiveTable;component/Images/Legacy/YuleNight.png" Tag="{DynamicResource l_YuleNight}" MinWidth="200" FocusVisualStyle="{x:Null}"
-                FontFamily="/InteractiveTable;component/Fonts/#Basil Bold"  FontSize="28" Foreground="White" Click="Yule_Night_Button_Click"  Width="300" Height="300" Padding="20,0" Canvas.Left="1470" Canvas.Top="295"/>
+        <Button x:Name="b8_button" Template="{StaticResource HexagonButtonTemplate}" Content="/InteractiveTable;component/Images/Legacy/YuleNight.png" Tag="{DynamicResource l_YuleNight}" MinWidth="200" FocusVisualStyle="{x:Null}"
+                FontFamily="/InteractiveTable;component/Fonts/#Basil Bold"  FontSize="28" Foreground="White" Click="Book_Button_Click"  Width="300" Height="300" Padding="20,0" Canvas.Left="1470" Canvas.Top="295"/>
 
-        <Button x:Name="oasis_button" Template="{StaticResource HexagonButtonTemplate}" Content="/InteractiveTable;component/Images/Legacy/Oasis.png" Tag="{DynamicResource l_Oasis}" MinWidth="200" FocusVisualStyle="{x:Null}"
-                FontFamily="/InteractiveTable;component/Fonts/#Basil Bold"  FontSize="28" Foreground="White" Click="Oasis_Button_Click"  Width="300" Height="300" Padding="20,0" Canvas.Left="1330" Canvas.Top="540"/>
+        <Button x:Name="b9_button" Template="{StaticResource HexagonButtonTemplate}" Content="/InteractiveTable;component/Images/Legacy/Oasis.png" Tag="{DynamicResource l_Oasis}" MinWidth="200" FocusVisualStyle="{x:Null}"
+                FontFamily="/InteractiveTable;component/Fonts/#Basil Bold"  FontSize="28" Foreground="White" Click="Book_Button_Click"  Width="300" Height="300" Padding="20,0" Canvas.Left="1330" Canvas.Top="540"/>
     </Canvas>
 </Page>

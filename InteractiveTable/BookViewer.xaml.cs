@@ -15,12 +15,12 @@ using System.Windows.Shapes;
 using System.IO;
 using System.Windows.Threading;
 
-namespace InteractiveTable.Pages
+namespace InteractiveTable
 {
     /// <summary>
     /// Логика взаимодействия для BookViewer.xaml
     /// </summary>
-    public partial class BookViewer : Page
+    public partial class BookViewer : Window
     {
         private string bookName;
         protected Point TouchStart;
@@ -33,9 +33,10 @@ namespace InteractiveTable.Pages
 
             culture = App.Language.Name;
             this.bookName = bookName;
+
         }
 
-        private void Page_Loaded(object sender, RoutedEventArgs e)
+        private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             DispatcherTimer timer = new DispatcherTimer();
             timer.Interval = new TimeSpan(0, 0, 0, 1, 0);
@@ -53,16 +54,13 @@ namespace InteractiveTable.Pages
                 }
                 bookReader.Document = book;
                 pleaseWaitPopup.IsOpen = false;
-                backButton.IsEnabled = true;
-                contentButton.IsEnabled = true;
             };
             timer.Start();
         }
 
         private void Back_Button_Click(object sender, RoutedEventArgs e)
         {
-            pleaseWaitPopup.IsOpen = false;
-            this.NavigationService.GoBack();
+            this.Close();
         }
 
         private void Content_Button_Click(object sender, RoutedEventArgs e)
