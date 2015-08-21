@@ -150,7 +150,7 @@
                         <Grid.Background>
                             <ImageBrush ImageSource="/InteractiveTable;component/Images/Timeline/Track.png"/>
                         </Grid.Background>
-                        <Track x:Name="PART_Track" IsEnabled="{TemplateBinding IsMouseOver}" ViewportSize="120">
+                        <Track x:Name="PART_Track" IsEnabled="{TemplateBinding IsMouseOver}" ViewportSize="600">
                             <Track.Thumb>
                                 <Thumb Width="90" Height="120">
                                     <Thumb.Style>
@@ -337,6 +337,28 @@
         <ControlTemplate.Triggers>
             <Trigger Property="IsPressed" Value="True">
                 <Setter Property="RenderTransform" TargetName="nav_grid">
+                    <Setter.Value>
+                        <ScaleTransform ScaleY="0.96" ScaleX="0.96"/>
+                    </Setter.Value>
+                </Setter>
+            </Trigger>
+        </ControlTemplate.Triggers>
+    </ControlTemplate>
+
+    <!--Шаблон 6 угольных кнопок в таймлайне-->
+    <ControlTemplate x:Key="TimelineButtonTemplate" TargetType="{x:Type Button}">
+        <Grid x:Name="hexagon_timeline_grid" RenderTransformOrigin="0.5,0.5" Width="320" Height="320">
+            <ed:RegularPolygon  HorizontalAlignment="Stretch" InnerRadius="1" PointCount="6" Stretch="Fill" VerticalAlignment="Stretch" Margin="20,0">
+                <ed:RegularPolygon.Fill>
+                    <ImageBrush ImageSource="{Binding Content, RelativeSource={RelativeSource TemplatedParent}}" Stretch="UniformToFill"/>
+                </ed:RegularPolygon.Fill>
+            </ed:RegularPolygon>
+            <TextBlock Text="{Binding Tag, RelativeSource={RelativeSource TemplatedParent}}" FontFamily="{TemplateBinding FontFamily}" FontSize="{TemplateBinding FontSize}"
+				TextAlignment="Center" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,170,0,0"/>
+        </Grid>
+        <ControlTemplate.Triggers>
+            <Trigger Property="IsPressed" Value="True">
+                <Setter Property="RenderTransform" TargetName="hexagon_timeline_grid">
                     <Setter.Value>
                         <ScaleTransform ScaleY="0.96" ScaleX="0.96"/>
                     </Setter.Value>
