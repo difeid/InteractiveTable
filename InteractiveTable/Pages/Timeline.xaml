@@ -8,35 +8,84 @@
       d:DesignHeight="1080" d:DesignWidth="1920" Width="1920" Height="1080">
     <Grid UseLayoutRounding="True">
         <Grid.RowDefinitions>
-            <RowDefinition Height="865"/>
+            <RowDefinition Height="900"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-
-        <ScrollViewer x:Name="scrollViewer" HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Disabled" 
+        
+        <ScrollViewer x:Name="scrollViewer" HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Disabled"
                       FocusVisualStyle="{x:Null}" PanningMode="HorizontalOnly" ManipulationBoundaryFeedback="Timeline_ScrollViewer_ManipulationBoundaryFeedback">
-            <Canvas Height="720" Width="2620" VerticalAlignment="Bottom">
+            <Canvas Height="720" Width="5466" VerticalAlignment="Bottom">
                 <Canvas.CacheMode>
                     <BitmapCache/>
                 </Canvas.CacheMode>
                 
                 <!--Кнопки-->
-                <Button x:Name="y00_button" Click="Year_Button_Click" Template="{StaticResource HexagonButtonTemplate}" FocusVisualStyle="{x:Null}" Width="320" Height="320"
-                    Padding="22,0" Content="/InteractiveTable;component/Images/Timeline/1828.png" Canvas.Left="79" Canvas.Top="10"/>
-                <Button x:Name="y01_button" Click="Year_Button_Click" Template="{StaticResource HexagonButtonTemplate}" FocusVisualStyle="{x:Null}" Width="320" Height="320"
-                    Padding="22,0" Content="/InteractiveTable;component/Images/Timeline/1844.png" Canvas.Left="213" Canvas.Top="239"/>
-                <Button x:Name="y02_button" Click="Year_Button_Click" Template="{StaticResource HexagonButtonTemplate}" FocusVisualStyle="{x:Null}" Width="320" Height="320"
-                    Padding="22,0" Content="/InteractiveTable;component/Images/Timeline/1847.png" Canvas.Left="479" Canvas.Top="395"/>
-                <Button x:Name="y03_button" Click="Year_Button_Click" Template="{StaticResource HexagonButtonTemplate}" FocusVisualStyle="{x:Null}" Width="320" Height="320"
-                    Padding="22,0" Content="/InteractiveTable;component/Images/Timeline/1851.png" Canvas.Left="617" Canvas.Top="165"/>
+                <Button x:Name="y00_button" Click="Year_Button_Click" Template="{StaticResource TimelineButtonTemplate}"  FocusVisualStyle="{x:Null}"
+                        Content="/InteractiveTable;component/Images/Timeline/1828-1836.png" Canvas.Left="76" Canvas.Top="9"/>
+                <Button x:Name="y01_button" Click="Year_Button_Click" Template="{StaticResource TimelineButtonTemplate}" FocusVisualStyle="{x:Null}"
+                        Content="/InteractiveTable;component/Images/Timeline/1836-1841.png" Canvas.Left="213" Canvas.Top="241"/>
+                <Button x:Name="y02_button" Click="Year_Button_Click" Template="{StaticResource TimelineButtonTemplate}" FocusVisualStyle="{x:Null}"
+                        Content="/InteractiveTable;component/Images/Timeline/1841.png" Canvas.Left="482" Canvas.Top="397"
+                        Tag="{DynamicResource t_Kazan}" FontFamily="/InteractiveTable;component/Fonts/#Basil Bold" FontSize="25" Foreground="White"/>
+                <Button x:Name="y03_button" Click="Year_Button_Click" Template="{StaticResource TimelineButtonTemplate}" FocusVisualStyle="{x:Null}"
+                        Content="/InteractiveTable;component/Images/Timeline/1842.png" Canvas.Left="616" Canvas.Top="164"
+                        Tag="{DynamicResource t_Kazan}" FontFamily="/InteractiveTable;component/Fonts/#Basil Bold" FontSize="25"/>
 
-                <Button x:Name="y04_button" Click="Year_Button_Click" Template="{StaticResource HexagonButtonTemplate}" FocusVisualStyle="{x:Null}" Width="320" Height="320"
-                    Padding="22,0" Content="/InteractiveTable;component/Images/Timeline/1852.png" Canvas.Left="885" Canvas.Top="8"/>
-                <Button x:Name="y05_button" Click="Year_Button_Click" Template="{StaticResource HexagonButtonTemplate}" FocusVisualStyle="{x:Null}" Width="320" Height="320"
-                    Padding="22,0" Content="/InteractiveTable;component/Images/Timeline/1854.png" Canvas.Left="1022" Canvas.Top="239"/>
-                <Button x:Name="y06_button" Click="Year_Button_Click" Template="{StaticResource HexagonButtonTemplate}" FocusVisualStyle="{x:Null}" Width="320" Height="320"
-                    Padding="22,0" Content="/InteractiveTable;component/Images/Timeline/1855.png" Canvas.Left="1291" Canvas.Top="395"/>
-                <Button x:Name="y07_button" Click="Year_Button_Click" Template="{StaticResource HexagonButtonTemplate}" FocusVisualStyle="{x:Null}" Width="320" Height="320"
-                    Padding="22,0" Content="/InteractiveTable;component/Images/Timeline/1856.png" Canvas.Left="1426" Canvas.Top="165"/>
+                <Button x:Name="y04_button" Click="Year_Button_Click" Template="{StaticResource TimelineButtonTemplate}" FocusVisualStyle="{x:Null}"
+                        Content="/InteractiveTable;component/Images/Timeline/1843.png" Canvas.Left="886" Canvas.Top="9"
+                        Tag="{DynamicResource t_Kazan}" FontFamily="/InteractiveTable;component/Fonts/#Basil Bold" FontSize="25" Foreground="White"/>
+                <Button x:Name="y05_button" Click="Year_Button_Click" Template="{StaticResource TimelineButtonTemplate}" FocusVisualStyle="{x:Null}"
+                        Content="/InteractiveTable;component/Images/Timeline/1844.png" Canvas.Left="1021" Canvas.Top="241"
+                        Tag="{DynamicResource t_Kazan}" FontFamily="/InteractiveTable;component/Fonts/#Basil Bold" FontSize="25"/>
+                <Button x:Name="y06_button" Click="Year_Button_Click" Template="{StaticResource TimelineButtonTemplate}" FocusVisualStyle="{x:Null}"
+                        Content="/InteractiveTable;component/Images/Timeline/1845.png" Canvas.Left="1291" Canvas.Top="397"
+                        Tag="{DynamicResource t_Kazan}" FontFamily="/InteractiveTable;component/Fonts/#Basil Bold" FontSize="25" Foreground="White"/>
+                <Button x:Name="y07_button" Click="Year_Button_Click" Template="{StaticResource TimelineButtonTemplate}" FocusVisualStyle="{x:Null}"
+                        Content="/InteractiveTable;component/Images/Timeline/1846.png" Canvas.Left="1428" Canvas.Top="164"
+                        Tag="{DynamicResource t_Kazan}" FontFamily="/InteractiveTable;component/Fonts/#Basil Bold" FontSize="25"/>
+
+                <Button x:Name="y08_button" Click="Year_Button_Click" Template="{StaticResource TimelineButtonTemplate}" FocusVisualStyle="{x:Null}"
+                        Content="/InteractiveTable;component/Images/Timeline/1847.png" Canvas.Left="1696" Canvas.Top="9"
+                        Tag="{DynamicResource t_Kazan}" FontFamily="/InteractiveTable;component/Fonts/#Basil Bold" FontSize="25" Foreground="White"/>
+                <Button x:Name="y09_button" Click="Year_Button_Click" Template="{StaticResource TimelineButtonTemplate}" FocusVisualStyle="{x:Null}"
+                        Content="/InteractiveTable;component/Images/Timeline/1847W.png" Canvas.Left="1830" Canvas.Top="241"/>
+                <Button x:Name="y10_button" Click="Year_Button_Click" Template="{StaticResource TimelineButtonTemplate}" FocusVisualStyle="{x:Null}"
+                        Content="/InteractiveTable;component/Images/Timeline/1848-1851.png" Canvas.Left="2101" Canvas.Top="397"/>
+                <Button x:Name="y11_button" Click="Year_Button_Click" Template="{StaticResource TimelineButtonTemplate}" FocusVisualStyle="{x:Null}"
+                        Content="/InteractiveTable;component/Images/Timeline/1851.png" Canvas.Left="2237" Canvas.Top="164"/>
+
+                <Button x:Name="y12_button" Click="Year_Button_Click" Template="{StaticResource TimelineButtonTemplate}" FocusVisualStyle="{x:Null}"
+                        Content="/InteractiveTable;component/Images/Timeline/1851-1854.png" Canvas.Left="2508" Canvas.Top="9"/>
+                <Button x:Name="y13_button" Click="Year_Button_Click" Template="{StaticResource TimelineButtonTemplate}" FocusVisualStyle="{x:Null}"
+                        Content="/InteractiveTable;component/Images/Timeline/1854-1855.png" Canvas.Left="2642" Canvas.Top="241"/>
+                <Button x:Name="y14_button" Click="Year_Button_Click" Template="{StaticResource TimelineButtonTemplate}" FocusVisualStyle="{x:Null}"
+                        Content="/InteractiveTable;component/Images/Timeline/1855-1856.png" Canvas.Left="2911" Canvas.Top="397"/>
+                <Button x:Name="y15_button" Click="Year_Button_Click" Template="{StaticResource TimelineButtonTemplate}" FocusVisualStyle="{x:Null}"
+                        Content="/InteractiveTable;component/Images/Timeline/1857.png" Canvas.Left="3045" Canvas.Top="164"/>
+
+                <Button x:Name="y16_button" Click="Year_Button_Click" Template="{StaticResource TimelineButtonTemplate}" FocusVisualStyle="{x:Null}"
+                        Content="/InteractiveTable;component/Images/Timeline/1857-1862.png" Canvas.Left="3317" Canvas.Top="9"/>
+                <Button x:Name="y17_button" Click="Year_Button_Click" Template="{StaticResource TimelineButtonTemplate}" FocusVisualStyle="{x:Null}"
+                        Content="/InteractiveTable;component/Images/Timeline/1860-1861.png" Canvas.Left="3452" Canvas.Top="241"/>
+                <Button x:Name="y18_button" Click="Year_Button_Click" Template="{StaticResource TimelineButtonTemplate}" FocusVisualStyle="{x:Null}"
+                        Content="/InteractiveTable;component/Images/Timeline/1862.png" Canvas.Left="3720" Canvas.Top="397"/>
+                <Button x:Name="y19_button" Click="Year_Button_Click" Template="{StaticResource TimelineButtonTemplate}" FocusVisualStyle="{x:Null}"
+                        Content="/InteractiveTable;component/Images/Timeline/1862W.png" Canvas.Left="3857" Canvas.Top="164"
+                        Tag="{DynamicResource t_Kazan}" FontFamily="/InteractiveTable;component/Fonts/#Basil Bold" FontSize="25"/>
+                
+                <Button x:Name="y20_button" Click="Year_Button_Click" Template="{StaticResource TimelineButtonTemplate}" FocusVisualStyle="{x:Null}"
+                        Content="/InteractiveTable;component/Images/Timeline/1862-1881.png" Canvas.Left="4126" Canvas.Top="9"/>
+                <Button x:Name="y21_button" Click="Year_Button_Click" Template="{StaticResource TimelineButtonTemplate}" FocusVisualStyle="{x:Null}"
+                        Content="/InteractiveTable;component/Images/Timeline/1881-1901.png" Canvas.Left="4260" Canvas.Top="241"/>
+                <Button x:Name="y22_button" Click="Year_Button_Click" Template="{StaticResource TimelineButtonTemplate}" FocusVisualStyle="{x:Null}"
+                        Content="/InteractiveTable;component/Images/Timeline/1901-1902.png" Canvas.Left="4531" Canvas.Top="397"/>
+                <Button x:Name="y23_button" Click="Year_Button_Click" Template="{StaticResource TimelineButtonTemplate}" FocusVisualStyle="{x:Null}"
+                        Content="/InteractiveTable;component/Images/Timeline/1902-1910.png" Canvas.Left="4666" Canvas.Top="164"/>
+
+                <Button x:Name="y24_button" Click="Year_Button_Click" Template="{StaticResource TimelineButtonTemplate}" FocusVisualStyle="{x:Null}"
+                        Content="/InteractiveTable;component/Images/Timeline/1909.png" Canvas.Left="4938" Canvas.Top="9"/>
+                <Button x:Name="y25_button" Click="Year_Button_Click" Template="{StaticResource TimelineButtonTemplate}" FocusVisualStyle="{x:Null}"
+                        Content="/InteractiveTable;component/Images/Timeline/1910.png" Canvas.Left="5073" Canvas.Top="241"/>
 
                 <!--Кружочки и пути-->
                 <Path Stroke="#FFCF142B" StrokeThickness="7">
@@ -52,9 +101,9 @@
                                 <LineSegment Point="642,402"/>
                                 <LineSegment Point="642,246"/>
                                 <LineSegment Point="777,168"/>
-                                <LineSegment Point="911,246"/>
+                                <LineSegment Point="912,246"/>
 
-                                <LineSegment Point="911,91"/>
+                                <LineSegment Point="912,91"/>
                                 <LineSegment Point="1046,13"/>
                                 <LineSegment Point="1181,91"/>
                                 <LineSegment Point="1181,245"/>
@@ -70,7 +119,57 @@
                                 <LineSegment Point="1856,13"/>
                                 <LineSegment Point="1991,91"/>
                                 <LineSegment Point="1991,245"/>
-                                <LineSegment Point="2126,324"/>
+                                <LineSegment Point="2127,324"/>
+
+                                <LineSegment Point="2127,480"/>
+                                <LineSegment Point="2262,402"/>
+                                <LineSegment Point="2262,246"/>
+                                <LineSegment Point="2397,168"/>
+                                <LineSegment Point="2532,246"/>
+
+                                <LineSegment Point="2532,91"/>
+                                <LineSegment Point="2667,13"/>
+                                <LineSegment Point="2802,91"/>
+                                <LineSegment Point="2802,245"/>
+                                <LineSegment Point="2937,324"/>
+
+                                <LineSegment Point="2937,480"/>
+                                <LineSegment Point="3072,402"/>
+                                <LineSegment Point="3072,246"/>
+                                <LineSegment Point="3207,168"/>
+                                <LineSegment Point="3342,246"/>
+
+                                <LineSegment Point="3342,91"/>
+                                <LineSegment Point="3477,13"/>
+                                <LineSegment Point="3612,91"/>
+                                <LineSegment Point="3612,245"/>
+                                <LineSegment Point="3747,324"/>
+
+                                <LineSegment Point="3747,480"/>
+                                <LineSegment Point="3882,402"/>
+                                <LineSegment Point="3882,246"/>
+                                <LineSegment Point="4017,168"/>
+                                <LineSegment Point="4152,246"/>
+
+                                <LineSegment Point="4152,91"/>
+                                <LineSegment Point="4287,13"/>
+                                <LineSegment Point="4422,91"/>
+                                <LineSegment Point="4422,245"/>
+                                <LineSegment Point="4557,324"/>
+
+                                <LineSegment Point="4557,480"/>
+                                <LineSegment Point="4692,402"/>
+                                <LineSegment Point="4692,246"/>
+                                <LineSegment Point="4827,168"/>
+                                <LineSegment Point="4962,246"/>
+
+                                <LineSegment Point="4962,91"/>
+                                <LineSegment Point="5097,13"/>
+                                <LineSegment Point="5232,91"/>
+                                <LineSegment Point="5232,245"/>
+                                <LineSegment Point="5367,324"/>
+
+                                <LineSegment Point="5367,480"/>
                             </PathFigure>
                         </PathGeometry>
                     </Path.Data>
@@ -79,24 +178,46 @@
                 <Path Fill="#FFCF142B">
                     <Path.Data>
                         <GeometryGroup>
-                            <EllipseGeometry RadiusX="8" RadiusY="8" Center="101,91"/>
-                            <EllipseGeometry RadiusX="8" RadiusY="8" Center="371,245"/>
-                            <EllipseGeometry RadiusX="8" RadiusY="8" Center="642,402"/>
-                            <EllipseGeometry RadiusX="8" RadiusY="8" Center="777,168"/>
-                            <EllipseGeometry RadiusX="8" RadiusY="8" Center="1181,91"/>
+                            <EllipseGeometry RadiusX="10" RadiusY="10" Center="101,89"/>
+                            <EllipseGeometry RadiusX="10" RadiusY="10" Center="374,244"/>
+                            <EllipseGeometry RadiusX="10" RadiusY="10" Center="642,402"/>
+                            <EllipseGeometry RadiusX="10" RadiusY="10" Center="777,170"/>
+                            
+                            <EllipseGeometry RadiusX="10" RadiusY="10" Center="1182,89"/>
+                            <EllipseGeometry RadiusX="10" RadiusY="10" Center="1317,324"/>
+                            <EllipseGeometry RadiusX="10" RadiusY="10" Center="1453,402"/>
+                            <EllipseGeometry RadiusX="10" RadiusY="10" Center="1587,170"/>
+                            
+                            <EllipseGeometry RadiusX="10" RadiusY="10" Center="1721,89"/>
+                            <EllipseGeometry RadiusX="10" RadiusY="10" Center="1994,244"/>
+                            <EllipseGeometry RadiusX="10" RadiusY="10" Center="2262,402"/>
+                            <EllipseGeometry RadiusX="10" RadiusY="10" Center="2397,170"/>
+                            
+                            <EllipseGeometry RadiusX="10" RadiusY="10" Center="2802,89"/>
+                            <EllipseGeometry RadiusX="10" RadiusY="10" Center="2937,324"/>
+                            <EllipseGeometry RadiusX="10" RadiusY="10" Center="3073,402"/>
+                            <EllipseGeometry RadiusX="10" RadiusY="10" Center="3207,170"/>
 
-                            <EllipseGeometry RadiusX="8" RadiusY="8" Center="1317,324"/>
-                            <EllipseGeometry RadiusX="8" RadiusY="8" Center="1452,402"/>
-                            <EllipseGeometry RadiusX="8" RadiusY="8" Center="1587,168"/>
-                            <EllipseGeometry RadiusX="8" RadiusY="8" Center="1856,13"/>
+                            <EllipseGeometry RadiusX="10" RadiusY="10" Center="3341,89"/>
+                            <EllipseGeometry RadiusX="10" RadiusY="10" Center="3614,244"/>
+                            <EllipseGeometry RadiusX="10" RadiusY="10" Center="3882,402"/>
+                            <EllipseGeometry RadiusX="10" RadiusY="10" Center="4017,170"/>
+
+                            <EllipseGeometry RadiusX="10" RadiusY="10" Center="4422,89"/>
+                            <EllipseGeometry RadiusX="10" RadiusY="10" Center="4557,324"/>
+                            <EllipseGeometry RadiusX="10" RadiusY="10" Center="4693,402"/>
+                            <EllipseGeometry RadiusX="10" RadiusY="10" Center="4827,170"/>
+
+                            <EllipseGeometry RadiusX="10" RadiusY="10" Center="5098,12"/>
+                            <EllipseGeometry RadiusX="10" RadiusY="10" Center="5368,482"/>
                         </GeometryGroup>
                     </Path.Data>
                 </Path>
             </Canvas>
         </ScrollViewer>
 
-        <Button x:Name="back_button" Template="{StaticResource BackButtonTemplate}" Click="Back_Button_Click" Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="75,90,0,0" FocusVisualStyle="{x:Null}"/>
+        <Button x:Name="back_button" Template="{StaticResource BackButtonTemplate}" Click="Back_Button_Click" Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="75,55,0,0" FocusVisualStyle="{x:Null}"/>
 
-        <local:BindableScrollBar BoundScrollViewer ="{Binding ElementName=scrollViewer}" Orientation="Horizontal" Grid.Row="1" Style="{StaticResource TimelineScrollBarStyle}" Margin="0,70,0,0" VerticalAlignment="Top" FocusVisualStyle="{x:Null}"/>
+        <local:BindableScrollBar BoundScrollViewer ="{Binding ElementName=scrollViewer}" Orientation="Horizontal" Grid.Row="1" Style="{StaticResource TimelineScrollBarStyle}" Margin="0,40,0,0" VerticalAlignment="Top" FocusVisualStyle="{x:Null}"/>
     </Grid>
 </Page>
