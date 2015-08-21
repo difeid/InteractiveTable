@@ -6,9 +6,10 @@
 	xmlns:ed="http://schemas.microsoft.com/expression/2010/drawing"
 	xmlns:Pages="clr-namespace:InteractiveTable.Pages"
 	xmlns:Themes="clr-namespace:Microsoft.Windows.Themes;assembly=PresentationFramework.Aero"
+	xmlns:Documents="clr-namespace:System.Windows.Documents;assembly=PresentationUI"
 	mc:Ignorable="d">
 
-	<!--Шаблон 6 угольных кнопок-->
+    <!--Шаблон 6 угольных кнопок-->
     <ControlTemplate x:Key="HexagonButtonTemplate" TargetType="{x:Type Button}">
         <Grid x:Name="hexagon_grid" RenderTransformOrigin="0.5,0.5">
             <ed:RegularPolygon  HorizontalAlignment="Stretch" InnerRadius="1" PointCount="6" Stretch="Fill" VerticalAlignment="Stretch" Margin="{TemplateBinding Padding}">
@@ -32,15 +33,15 @@
     </ControlTemplate>
 
     <!--Шаблон кнопоки назад-->
-	<ControlTemplate x:Key="BackButtonTemplate" TargetType="{x:Type Button}">
-		<Grid x:Name="back_grid" Width="196" Height="50" RenderTransformOrigin="0.5,0.5">
+    <ControlTemplate x:Key="BackButtonTemplate" TargetType="{x:Type Button}">
+        <Grid x:Name="back_grid" Width="196" Height="50" RenderTransformOrigin="0.5,0.5">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="50"/>
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
             <Image Source="/InteractiveTable;component/Images/Arrow.png" Stretch="Fill" Width="40" Height="40"/>
-			<TextBlock Text="{DynamicResource g_BackButton}" FontFamily="/InteractiveTable;component/Fonts/#Basil Bold" FontSize="44" Grid.Column="1"/>
-		</Grid>
+            <TextBlock Text="{DynamicResource g_BackButton}" FontFamily="/InteractiveTable;component/Fonts/#Basil Bold" FontSize="44" Grid.Column="1"/>
+        </Grid>
         <ControlTemplate.Triggers>
             <Trigger Property="IsPressed" Value="True">
                 <Setter Property="RenderTransform" TargetName="back_grid">
@@ -50,26 +51,26 @@
                 </Setter>
             </Trigger>
         </ControlTemplate.Triggers>
-	</ControlTemplate>
+    </ControlTemplate>
 
     <!--Шаблон кнопоки father-->
-	<ControlTemplate x:Key="FatherButtonTemplate" TargetType="{x:Type Button}">
-		<Grid x:Name="father_grid" RenderTransformOrigin="0.5,0.5">
+    <ControlTemplate x:Key="FatherButtonTemplate" TargetType="{x:Type Button}">
+        <Grid x:Name="father_grid" RenderTransformOrigin="0.5,0.5">
             <Grid.RowDefinitions>
                 <RowDefinition/>
                 <RowDefinition/>
                 <RowDefinition/>
             </Grid.RowDefinitions>
             <ed:RegularPolygon  HorizontalAlignment="Stretch" InnerRadius="1" PointCount="6" Stretch="Fill" VerticalAlignment="Stretch" Margin="{TemplateBinding Padding}" Grid.RowSpan="3">
-				<ed:RegularPolygon.Fill>
-					<ImageBrush ImageSource="{Binding Content, RelativeSource={RelativeSource TemplatedParent}}" Stretch="UniformToFill"/>
-				</ed:RegularPolygon.Fill>
-			</ed:RegularPolygon>
-			<TextBlock Text="{DynamicResource f_Father}" FontFamily="/InteractiveTable;component/Fonts/#Basil Bold" FontSize="30" Foreground="White"
+                <ed:RegularPolygon.Fill>
+                    <ImageBrush ImageSource="{Binding Content, RelativeSource={RelativeSource TemplatedParent}}" Stretch="UniformToFill"/>
+                </ed:RegularPolygon.Fill>
+            </ed:RegularPolygon>
+            <TextBlock Text="{DynamicResource f_Father}" FontFamily="/InteractiveTable;component/Fonts/#Basil Bold" FontSize="30" Foreground="White"
 				TextAlignment="Center" VerticalAlignment="Bottom" HorizontalAlignment="Center" Grid.Row="0"/>
-			<TextBlock Text="{DynamicResource f_FatherName}" TextWrapping="Wrap" FontFamily="/InteractiveTable;component/Fonts/#Basil Bold" FontSize="48" Foreground="White" MaxWidth="350"
+            <TextBlock Text="{DynamicResource f_FatherName}" TextWrapping="Wrap" FontFamily="/InteractiveTable;component/Fonts/#Basil Bold" FontSize="48" Foreground="White" MaxWidth="350"
 				TextAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="1"/>
-		</Grid>
+        </Grid>
         <ControlTemplate.Triggers>
             <Trigger Property="IsPressed" Value="True">
                 <Setter Property="RenderTransform" TargetName="father_grid">
@@ -79,26 +80,26 @@
                 </Setter>
             </Trigger>
         </ControlTemplate.Triggers>
-	</ControlTemplate>
+    </ControlTemplate>
 
     <!--Шаблон кнопоки mather-->
-	<ControlTemplate x:Key="MatherButtonTemplate" TargetType="{x:Type Button}">
-		<Grid x:Name="mather_grid" RenderTransformOrigin="0.5,0.5">
+    <ControlTemplate x:Key="MatherButtonTemplate" TargetType="{x:Type Button}">
+        <Grid x:Name="mather_grid" RenderTransformOrigin="0.5,0.5">
             <Grid.RowDefinitions>
                 <RowDefinition/>
                 <RowDefinition/>
                 <RowDefinition/>
             </Grid.RowDefinitions>
             <ed:RegularPolygon  HorizontalAlignment="Stretch" InnerRadius="1" PointCount="6" Stretch="Fill" VerticalAlignment="Stretch" Margin="{TemplateBinding Padding}" Grid.RowSpan="3">
-				<ed:RegularPolygon.Fill>
-					<ImageBrush ImageSource="{Binding Content, RelativeSource={RelativeSource TemplatedParent}}" Stretch="UniformToFill"/>
-				</ed:RegularPolygon.Fill>
-			</ed:RegularPolygon>
-			<TextBlock Text="{DynamicResource f_Mather}" FontFamily="/InteractiveTable;component/Fonts/#Basil Bold" FontSize="30" Foreground="White"
+                <ed:RegularPolygon.Fill>
+                    <ImageBrush ImageSource="{Binding Content, RelativeSource={RelativeSource TemplatedParent}}" Stretch="UniformToFill"/>
+                </ed:RegularPolygon.Fill>
+            </ed:RegularPolygon>
+            <TextBlock Text="{DynamicResource f_Mather}" FontFamily="/InteractiveTable;component/Fonts/#Basil Bold" FontSize="30" Foreground="White"
 				TextAlignment="Center" VerticalAlignment="Bottom" HorizontalAlignment="Center" Grid.Row="0"/>
-			<TextBlock Text="{DynamicResource f_MatherName}" TextWrapping="Wrap" FontFamily="/InteractiveTable;component/Fonts/#Basil Bold" FontSize="48" Foreground="White" MaxWidth="350"
+            <TextBlock Text="{DynamicResource f_MatherName}" TextWrapping="Wrap" FontFamily="/InteractiveTable;component/Fonts/#Basil Bold" FontSize="48" Foreground="White" MaxWidth="350"
 				TextAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="1"/>
-		</Grid>
+        </Grid>
         <ControlTemplate.Triggers>
             <Trigger Property="IsPressed" Value="True">
                 <Setter Property="RenderTransform" TargetName="mather_grid">
@@ -108,11 +109,11 @@
                 </Setter>
             </Trigger>
         </ControlTemplate.Triggers>
-	</ControlTemplate>
+    </ControlTemplate>
 
     <!--Шаблон кнопок вперед назад-->
-	<ControlTemplate x:Key="NavButtonTemplate" TargetType="{x:Type Button}">
-		<Grid x:Name="nav_grid" RenderTransformOrigin="0.5,0.5">
+    <ControlTemplate x:Key="NavButtonTemplate" TargetType="{x:Type Button}">
+        <Grid x:Name="nav_grid" RenderTransformOrigin="0.5,0.5">
             <Grid.RowDefinitions>
                 <RowDefinition/>
                 <RowDefinition Height="70"/>
@@ -120,10 +121,10 @@
             </Grid.RowDefinitions>
             <Rectangle Fill="Transparent" Grid.RowSpan="3"/>
             <Image Source="{Binding Content, RelativeSource={RelativeSource TemplatedParent}}" Width="70" Height="70" Margin="{TemplateBinding Padding}" Grid.Row="1"
-                   HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"/>
+				HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"/>
             <TextBlock Text="{Binding Tag, RelativeSource={RelativeSource TemplatedParent}}" FontFamily="{TemplateBinding FontFamily}"
-                       FontSize="{TemplateBinding FontSize}" Margin="{TemplateBinding Padding}" Grid.Row="2"
-                       VerticalAlignment="{TemplateBinding VerticalContentAlignment}" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"/>
+				FontSize="{TemplateBinding FontSize}" Margin="{TemplateBinding Padding}" Grid.Row="2"
+				VerticalAlignment="{TemplateBinding VerticalContentAlignment}" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"/>
         </Grid>
         <ControlTemplate.Triggers>
             <Trigger Property="IsPressed" Value="True">
@@ -134,7 +135,7 @@
                 </Setter>
             </Trigger>
         </ControlTemplate.Triggers>
-	</ControlTemplate>
+    </ControlTemplate>
 
     <!--Стиль полосы прокрутки-->
     <Style x:Key="TimelineScrollBarStyle" TargetType="{x:Type Pages:BindableScrollBar}">
@@ -172,26 +173,26 @@
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
-	</Style>
+    </Style>
 
     <!--Шаблон ScrollViewer-->
     <ControlTemplate x:Key="ScrollViewerTemplate" TargetType="{x:Type ScrollViewer}">
-    	<Grid x:Name="Grid" Background="{TemplateBinding Background}">
-    		<Grid.ColumnDefinitions>
-    			<ColumnDefinition Width="*"/>
-    			<ColumnDefinition Width="Auto"/>
-    		</Grid.ColumnDefinitions>
-    		<Grid.RowDefinitions>
-    			<RowDefinition Height="*"/>
-    			<RowDefinition Height="Auto"/>
-    		</Grid.RowDefinitions>
-    		<Rectangle x:Name="Corner" Grid.Column="1" Fill="{DynamicResource {x:Static SystemColors.ControlBrushKey}}" Grid.Row="1"/>
-    		<ScrollContentPresenter x:Name="PART_ScrollContentPresenter" CanContentScroll="{TemplateBinding CanContentScroll}" CanHorizontallyScroll="False" CanVerticallyScroll="False" ContentTemplate="{TemplateBinding ContentTemplate}" Content="{TemplateBinding Content}" Grid.Column="0" Margin="{TemplateBinding Padding}" Grid.Row="0"/>
+        <Grid x:Name="Grid" Background="{TemplateBinding Background}">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Rectangle x:Name="Corner" Grid.Column="1" Fill="{DynamicResource {x:Static SystemColors.ControlBrushKey}}" Grid.Row="1"/>
+            <ScrollContentPresenter x:Name="PART_ScrollContentPresenter" CanContentScroll="{TemplateBinding CanContentScroll}" CanHorizontallyScroll="False" CanVerticallyScroll="False" ContentTemplate="{TemplateBinding ContentTemplate}" Content="{TemplateBinding Content}" Grid.Column="0" Margin="{TemplateBinding Padding}" Grid.Row="0"/>
             <ScrollBar x:Name="PART_VerticalScrollBar" AutomationProperties.AutomationId="VerticalScrollBar" Cursor="Arrow" Grid.Column="1" Maximum="{TemplateBinding ScrollableHeight}" Minimum="0" Grid.Row="0" Visibility="{TemplateBinding ComputedVerticalScrollBarVisibility}" Value="{Binding VerticalOffset, Mode=OneWay, RelativeSource={RelativeSource TemplatedParent}}" ViewportSize="{TemplateBinding ViewportHeight}" Style="{DynamicResource VerticalScrollBarStyle}"/>
-    		<ScrollBar x:Name="PART_HorizontalScrollBar" AutomationProperties.AutomationId="HorizontalScrollBar" Cursor="Arrow" Grid.Column="0" Maximum="{TemplateBinding ScrollableWidth}" Minimum="0" Orientation="Horizontal" Grid.Row="1" Visibility="{TemplateBinding ComputedHorizontalScrollBarVisibility}" Value="{Binding HorizontalOffset, Mode=OneWay, RelativeSource={RelativeSource TemplatedParent}}" ViewportSize="{TemplateBinding ViewportWidth}"/>
-    	</Grid>
+            <ScrollBar x:Name="PART_HorizontalScrollBar" AutomationProperties.AutomationId="HorizontalScrollBar" Cursor="Arrow" Grid.Column="0" Maximum="{TemplateBinding ScrollableWidth}" Minimum="0" Orientation="Horizontal" Grid.Row="1" Visibility="{TemplateBinding ComputedHorizontalScrollBarVisibility}" Value="{Binding HorizontalOffset, Mode=OneWay, RelativeSource={RelativeSource TemplatedParent}}" ViewportSize="{TemplateBinding ViewportWidth}"/>
+        </Grid>
     </ControlTemplate>
-    
+
     <!--Стиль вертикальной прокрутки-->
     <Style x:Key="VerticalScrollBarPageButton" TargetType="{x:Type RepeatButton}">
         <Setter Property="OverridesDefaultStyle" Value="true"/>
@@ -208,14 +209,14 @@
     </Style>
     <Style x:Key="VerticalScrollBarStyle" TargetType="{x:Type ScrollBar}">
         <Setter Property="Background" Value="Transparent"/>
-    	<Setter Property="Stylus.IsPressAndHoldEnabled" Value="false"/>
-    	<Setter Property="Stylus.IsFlicksEnabled" Value="false"/>
-    	<Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+        <Setter Property="Stylus.IsPressAndHoldEnabled" Value="false"/>
+        <Setter Property="Stylus.IsFlicksEnabled" Value="false"/>
+        <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
         <Setter Property="Width" Value="12"/>
         <Setter Property="MinWidth" Value="12"/>
-    	<Setter Property="Template">
-    		<Setter.Value>
-    			<ControlTemplate TargetType="{x:Type ScrollBar}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type ScrollBar}">
                     <Grid x:Name="Bg" Background="{TemplateBinding Background}" SnapsToDevicePixels="true">
                         <Track x:Name="PART_Track" IsDirectionReversed="true" IsEnabled="{TemplateBinding IsMouseOver}">
                             <Track.DecreaseRepeatButton>
@@ -244,16 +245,9 @@
                         </Track>
                     </Grid>
                 </ControlTemplate>
-    		</Setter.Value>
-    	</Setter>
+            </Setter.Value>
+        </Setter>
     </Style>
-
-    <!--Шаблон скрытых кнопок-->
-    <ControlTemplate x:Key="HiddenButtonTemplate" TargetType="{x:Type Button}">
-        <Grid>
-            <Rectangle Fill="Transparent"/>
-        </Grid>
-    </ControlTemplate>
 
     <!--Шаблон кнопоки подробнее-->
     <ControlTemplate x:Key="ReadMoreButtonTemplate" TargetType="{x:Type Button}">
@@ -261,12 +255,12 @@
             <Grid.ColumnDefinitions>
                 <ColumnDefinition/>
                 <ColumnDefinition Width="36"/>
-            </Grid.ColumnDefinitions> 
+            </Grid.ColumnDefinitions>
             <Border CornerRadius="5" Grid.ColumnSpan="2" Background="#FFCF142B"/>
             <Image Source="/InteractiveTable;component/Images/Pedigree/ReadMoreArrow.png" Stretch="Fill"
-                   Width="20" Height="20" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="5,10,0,0"/>
+				Width="20" Height="20" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="5,10,0,0"/>
             <TextBlock Text="{DynamicResource p_ReadMoreButton}" FontFamily="/InteractiveTable;component/Fonts/#Basil Bold" FontSize="18"
-                       HorizontalAlignment="Right" VerticalAlignment="Center" Foreground="White"/>
+				HorizontalAlignment="Right" VerticalAlignment="Center" Foreground="White"/>
         </Grid>
         <ControlTemplate.Triggers>
             <Trigger Property="IsPressed" Value="True">
@@ -278,15 +272,15 @@
             </Trigger>
         </ControlTemplate.Triggers>
     </ControlTemplate>
-    
+
     <!--Шаблон вертикальной кнопки-->
     <ControlTemplate x:Key="VerticalButtonTemplate" TargetType="{x:Type Button}">
         <Grid x:Name="vertical_grid" RenderTransformOrigin="0.5,0.5">
             <Border CornerRadius="5" Background="{TemplateBinding Background}"
-                    Width="{TemplateBinding Width}" Height="{TemplateBinding Height}">
+				Width="{TemplateBinding Width}" Height="{TemplateBinding Height}">
                 <TextBlock Text="{TemplateBinding Content}" FontFamily="{TemplateBinding FontFamily}" FontSize="{TemplateBinding FontSize}"
-                           Foreground="{TemplateBinding Foreground}" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
-                           VerticalAlignment="{TemplateBinding VerticalContentAlignment}" Margin="{TemplateBinding Padding}">
+					Foreground="{TemplateBinding Foreground}" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+					VerticalAlignment="{TemplateBinding VerticalContentAlignment}" Margin="{TemplateBinding Padding}">
                     <TextBlock.LayoutTransform>
                         <TransformGroup>
                             <ScaleTransform/>
@@ -308,7 +302,16 @@
             </Trigger>
         </ControlTemplate.Triggers>
     </ControlTemplate>
-    
+
+    <!--Шаблон картинки в статье-->
+    <ControlTemplate x:Key="ImageButtonTemplate" TargetType="{x:Type Button}">
+        <Grid>
+            <Grid.Background>
+                <ImageBrush ImageSource="{Binding Content, RelativeSource={RelativeSource TemplatedParent}}" Stretch="UniformToFill"/>
+            </Grid.Background>
+        </Grid>
+    </ControlTemplate>
+
     <!--Шаблон книги-->
     <ControlTemplate x:Key="FlowDocumentReaderTemplate" TargetType="{x:Type FlowDocumentReader}">
         <!--  <DockPanel LastChildFill="True" Uid="DockPanel_3">
