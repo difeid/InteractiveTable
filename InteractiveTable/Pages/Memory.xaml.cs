@@ -32,14 +32,18 @@ namespace InteractiveTable.Pages
 
         private void Theatre_Button_Click(object sender, RoutedEventArgs e)
         {
-            MemoryViewer mv = new MemoryViewer("Theatre", 5);
-            this.NavigationService.Navigate(mv);
+            if (!App.PopupOpen)
+            {
+                new PopupWindow("Theatre", 1).Show();
+            }
         }
 
         private void TolstoyHistory_Button_Click(object sender, RoutedEventArgs e)
         {
-            MemoryViewer mv = new MemoryViewer("Tolstoy", 5);
-            this.NavigationService.Navigate(mv);
+            if (!App.PopupOpen)
+            {
+                new PopupWindow("Tolstoy", 1).Show();
+            }
         }
     }
 }
