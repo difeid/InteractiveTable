@@ -22,11 +22,10 @@
         <Button x:Name="back_view_button" Click="Back_View_Button_Click" Template="{StaticResource HexagonButtonTemplate}" Content="/InteractiveTable;component/Images/MemoryViewer/BackViewButton.png"
                 Width="134" Height="134" Padding="5,0" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="-67,0,0,0" FocusVisualStyle="{x:Null}"/>
 
+        <Image Width="780" Height="1080" Grid.Column="1" Source="/InteractiveTable;component/Images/MemoryViewer/MemoryViewerBackground.png"/>
+        
         <ScrollViewer Grid.Column="1" Template="{StaticResource ScrollViewerTemplate}" VerticalScrollBarVisibility="Auto" 
                       PanningMode="VerticalOnly" ManipulationBoundaryFeedback="Memory_ScrollViewer_ManipulationBoundaryFeedback">
-            <ScrollViewer.Background>
-                <ImageBrush ImageSource="/InteractiveTable;component/Images/MemoryViewer/MemoryViewerBackground.png"/>
-            </ScrollViewer.Background>
             <Grid>
                 <Grid.CacheMode>
                     <BitmapCache/>
