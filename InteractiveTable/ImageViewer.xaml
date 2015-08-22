@@ -3,7 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="ImageViewer" Height="1080" Width="1920" WindowStyle="None"
         AllowsTransparency="True" WindowState="Maximized" ResizeMode="NoResize" 
-        ShowInTaskbar="False" Topmost="True">
+        ShowInTaskbar="False" Topmost="True" MouseDown="Viewer_MouseDown">
 
     <Window.Background>
         <SolidColorBrush Color="Black" Opacity="0.65"/>
@@ -33,15 +33,13 @@
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
 
-        <Border x:Name="border" Grid.Column="1" Grid.Row="1" BorderBrush="White" BorderThickness="20"  MouseDown="Popup_Down" MouseUp="Popup_Up" 
-                Background="White" MaxHeight="800" MaxWidth="1500">
-            <Image x:Name="zoomImage"/>
-        </Border>
+        <Rectangle Grid.Column="1" Grid.Row="1" Fill="White" MouseDown="Popup_Down" MouseUp="Popup_Up"/>
+        <Image x:Name="zoomImage" Grid.Column="1" Grid.Row="1" MaxHeight="750" MaxWidth="1450" Margin="25" MouseDown="Popup_Down" MouseUp="Popup_Up"/>
 
         <FlowDocumentScrollViewer x:Name="zoomImageText" Grid.Column="1" Grid.Row="2" Foreground="White" 
                                   HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Disabled"
                                   IsSelectionEnabled="False" Focusable="False" IsTabStop="False" IsHitTestVisible="False"
-                                  MaxWidth="{Binding ActualWidth, ElementName=border, Mode=OneWay}" Margin="0,-17,0,0">
+                                  MaxWidth="{Binding ActualWidth, ElementName=zoomImage, Mode=OneWay}" Margin="0,-17,0,0">
             <FlowDocument/>
         </FlowDocumentScrollViewer>
 

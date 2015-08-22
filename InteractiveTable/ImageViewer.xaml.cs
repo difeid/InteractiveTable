@@ -81,7 +81,7 @@ namespace InteractiveTable
                 if (zoomImage.Source != bi)
                 {
                     zoomImage.Source = bi;
-                    if (bi.Width > (border.MaxWidth - 40) || bi.Height > (border.MaxHeight - 40))
+                    if (bi.Width > zoomImage.MaxWidth || bi.Height > zoomImage.MaxHeight)
                     {
                         zoomImage.Stretch = Stretch.Uniform;
                     }
@@ -132,6 +132,15 @@ namespace InteractiveTable
             this.Close();
         }
 
+        private void Viewer_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            if (e.Source is Window)
+            {
+                this.Close();
+            }
+            e.Handled = true;
+        }
+
         private void Popup_Down(object sender, MouseButtonEventArgs e)
         {
             if (e.LeftButton == MouseButtonState.Pressed)
@@ -139,6 +148,7 @@ namespace InteractiveTable
                 this.downSender = sender;
                 this.downTime = DateTime.Now;
             }
+            e.Handled = true;
         }
 
         private void Popup_Up(object sender, MouseButtonEventArgs e)
@@ -159,6 +169,7 @@ namespace InteractiveTable
                     }
                 }
             }
+            e.Handled = true;
         }
     }
 }
