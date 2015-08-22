@@ -29,6 +29,8 @@ namespace InteractiveTable
         private int maxNumberImage;
         private string culture;
 
+        private bool openFlag = false;
+
         /// <summary>
         /// Вывод статей
         /// </summary>
@@ -98,7 +100,21 @@ namespace InteractiveTable
             if (e.Source is Button)
             {
                 numberImage = Convert.ToInt32((e.Source as Button).Tag);
-                new ImageViewer(folder, number, numberImage, maxNumberImage).Show();
+                if (!openFlag)
+                {
+                    this.Topmost = false;
+                    openFlag = true;
+                    new ImageViewer(folder, number, numberImage, maxNumberImage).Show();
+                }
+
+                DispatcherTimer timer = new DispatcherTimer();
+                timer.Interval = new TimeSpan(0, 0, 0, 1, 0);
+                timer.Tick += (s, ar) =>
+                {
+                    timer.Stop();
+                    openFlag = false;
+                };
+                timer.Start();
             }
         }
 
@@ -109,6 +125,7 @@ namespace InteractiveTable
 
         private void Init(int count)
         {
+            App.PopupOpen = true;
             numberImage = 0;
             culture = App.Language.Name;
 
@@ -122,6 +139,11 @@ namespace InteractiveTable
                 next_button.Visibility = Visibility.Hidden;
                 back_button.Visibility = Visibility.Hidden;
             }
+        }
+
+        private void PopupWindow_Closed(object sender, EventArgs e)
+        {
+            App.PopupOpen = false;
         }
 
         public int WritePage(string folder, int number, string culture)

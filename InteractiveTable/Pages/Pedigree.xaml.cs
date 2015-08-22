@@ -51,7 +51,10 @@ namespace InteractiveTable.Pages
 
         private void Read_More_Button_Click(object sender, RoutedEventArgs e)
         {
-            new PopupWindow("Pedigree", 8, personNumber).Show();
+            if (!App.PopupOpen)
+            {
+                new PopupWindow("Pedigree", 8, personNumber).Show();
+            }
             readMorePopup.IsOpen = false;
         }
 

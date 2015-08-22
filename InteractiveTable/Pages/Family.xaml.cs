@@ -14,6 +14,14 @@ namespace InteractiveTable.Pages
             InitializeComponent();
         }
 
+        private void OpenPopup(int number)
+        {
+            if (!App.PopupOpen)
+            {
+                new PopupWindow("Family", 4, number).Show();
+            }
+        }
+
         private void Back_Button_Click(object sender, RoutedEventArgs e)
         {
             this.NavigationService.GoBack();
@@ -21,17 +29,17 @@ namespace InteractiveTable.Pages
 
         private void Father_Button_Click(object sender, RoutedEventArgs e)
         {
-            new PopupWindow("Family", 4, 0).Show();
+            OpenPopup(0);
         }
 
         private void Mather_Button_Click(object sender, RoutedEventArgs e)
         {
-            new PopupWindow("Family", 4, 1).Show();
+            OpenPopup(1);
         }
 
         private void Aunti_Button_Click(object sender, RoutedEventArgs e)
         {
-            new PopupWindow("Family", 4, 2).Show();
+            OpenPopup(2);
         }
 
         private void Brother_Sister_Button_Click(object sender, RoutedEventArgs e)
@@ -41,7 +49,7 @@ namespace InteractiveTable.Pages
 
         private void Wife_Children_Button_Click(object sender, RoutedEventArgs e)
         {
-            new PopupWindow("Family", 4, 3).Show();
+            OpenPopup(3);
         }
 
     }

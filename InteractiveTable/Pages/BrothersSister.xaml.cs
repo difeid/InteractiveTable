@@ -13,6 +13,14 @@ namespace InteractiveTable.Pages
             InitializeComponent();
         }
 
+        private void OpenPopup(int number)
+        {
+            if (!App.PopupOpen)
+            {
+                new PopupWindow("BrothersSister", 4, number).Show();
+            }
+        }
+
         private void Back_Button_Click(object sender, RoutedEventArgs e)
         {
             this.NavigationService.GoBack();
@@ -20,22 +28,22 @@ namespace InteractiveTable.Pages
 
         private void Nikola_Button_Click(object sender, RoutedEventArgs e)
         {
-            new PopupWindow("BrothersSister", 4, 0).Show();
+            OpenPopup(0);
         }
 
         private void Sergey_Button_Click(object sender, RoutedEventArgs e)
         {
-            new PopupWindow("BrothersSister", 4, 1).Show();
+            OpenPopup(1);
         }
 
         private void Dmitry_Button_Click(object sender, RoutedEventArgs e)
         {
-            new PopupWindow("BrothersSister", 4, 2).Show();
+            OpenPopup(2);
         }
 
         private void Mary_Button_Click(object sender, RoutedEventArgs e)
         {
-            new PopupWindow("BrothersSister", 4, 3).Show();
+            OpenPopup(3);
         }
     }
 }

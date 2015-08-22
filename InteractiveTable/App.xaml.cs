@@ -21,6 +21,15 @@ namespace InteractiveTable
             }
         }
 
+        private static bool popupOpen = false;
+
+        public static bool PopupOpen
+        {
+            set { popupOpen = value; }
+            get { return popupOpen; }
+        }
+
+
         public App()
         {
             m_Languages.Clear();
