@@ -3,7 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="BookViewer" Height="1080" Width="1920" WindowStyle="None" Loaded="Window_Loaded"
         WindowState="Maximized" ResizeMode="NoResize" ShowInTaskbar="False">
-    <Canvas x:Name="mainLayer" ClipToBounds="True" MouseDown="Page_MouseDown" MouseMove="Page_MouseMove" MouseUp="Page_MouseUp">
+    <Canvas x:Name="mainLayer" Width="1920" Height="1080" ClipToBounds="True" MouseDown="Page_MouseDown" MouseMove="Page_MouseMove" MouseUp="Page_MouseUp">
         <Canvas.Background>
             <ImageBrush ImageSource="/InteractiveTable;component/Images/BookViewer/BookBackground.png"/>
         </Canvas.Background>
@@ -19,7 +19,7 @@
             </Grid>
         </Popup>
 
-        <FlowDocumentReader x:Name="bookReader" Height="1080" Width="1920" Canvas.Left="0" Canvas.Top="0" IsHitTestVisible="False"
+        <FlowDocumentReader x:Name="bookReader" Width="1920" Height="1080" Canvas.Left="0" Canvas.Top="0" IsHitTestVisible="False"
                             Template="{DynamicResource FlowDocumentReaderTemplate}" ViewingMode="TwoPage" FocusVisualStyle="{x:Null}"
                             IsScrollViewEnabled="False" IsPrintEnabled="False" IsPageViewEnabled="False" IsFindEnabled="False" SelectionBrush="{x:Null}">
             <FlowDocument/>
@@ -28,8 +28,35 @@
         <Button x:Name="backButton" Template="{StaticResource BackButtonTemplate}" Click="Back_Button_Click" Canvas.Left="75" Canvas.Top="955"
                 FocusVisualStyle="{x:Null}"/>
 
-        <Button x:Name="contentButton" Template="{StaticResource VerticalButtonTemplate}" Click="Content_Button_Click" Content="{DynamicResource b_Content}"
+        <Button x:Name="contentButton" Template="{StaticResource VerticalButtonTemplate}" Content="{DynamicResource b_UpperContent}"
                 Background="#FF923F1F" Foreground="White" FontFamily="/InteractiveTable;component/Fonts/#Open Sans" FontSize="16" Width="50" Height="170"
-                HorizontalContentAlignment="Right" Padding="9,0" Canvas.Top="120" Canvas.Left="-10" FocusVisualStyle="{x:Null}"/>
+                HorizontalContentAlignment="Right" Padding="9,0" Canvas.Top="120" Canvas.Left="-10" FocusVisualStyle="{x:Null}" Click="Content_Button_Click"/>
+
+        <Grid x:Name="slidePanel" Width="500" Height="1080">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="500"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <Image Width="500" Height="1080" Source="Images/BookViewer/ContentsBackground.png"/>
+            <!-- 
+            
+            <Image Width="1920" Height="1080" Source="Images/Maket.png"/>
+            -->
+
+            <ScrollViewer Width="425" Height="1080" Template="{StaticResource ScrollViewerTemplate}" VerticalScrollBarVisibility="Visible" 
+                      PanningMode="VerticalOnly" ManipulationBoundaryFeedback="Memory_ScrollViewer_ManipulationBoundaryFeedback" HorizontalAlignment="Left">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="170"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Image Width="30" Height="30" Source="Images/BookViewer/ContentsLine.png" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="33,0,0,0"/>
+                    <TextBlock Text="{DynamicResource b_Content}" FontFamily="/InteractiveTable;component/Fonts/#Basil Bold" FontSize="28" HorizontalAlignment="Left" VerticalAlignment="Center"
+                               Margin="70,0,0,0"/>
+
+                </Grid>
+            </ScrollViewer>
+        </Grid>
     </Canvas>
 </Window>

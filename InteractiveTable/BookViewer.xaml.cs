@@ -14,6 +14,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.IO;
 using System.Windows.Threading;
+using System.Windows.Media.Animation;
 
 namespace InteractiveTable
 {
@@ -27,10 +28,14 @@ namespace InteractiveTable
         private bool AlreadySwiped;
         private string culture;
 
+        private bool IsToggle;
+        DoubleAnimation da = new DoubleAnimation();
+
         public BookViewer(string bookName)
         {
             InitializeComponent();
 
+            slidePanel.Width = 0;
             culture = App.Language.Name;
             this.bookName = bookName;
 
@@ -65,12 +70,29 @@ namespace InteractiveTable
 
         private void Content_Button_Click(object sender, RoutedEventArgs e)
         {
-            NavigationCommands.NextPage.Execute(null, bookReader);
+            if (!IsToggle)
+            {
+                da.To = 500;
+                da.Duration = TimeSpan.FromMilliseconds(300);
+                slidePanel.BeginAnimation(Grid.WidthProperty, da);
+                IsToggle = true;
+            }
         }
 
         private void Page_MouseDown(object sender, MouseEventArgs e)
         {
-            TouchStart = e.GetPosition(this);
+            if (IsToggle)
+            {
+                da.To = 0;
+                da.Duration = TimeSpan.FromMilliseconds(300);
+                slidePanel.BeginAnimation(Grid.WidthProperty, da);
+                IsToggle = false;
+                AlreadySwiped = true;
+            }
+            else
+            {
+                TouchStart = e.GetPosition(this);
+            }
         }
 
         private void Page_MouseUp(object sender, MouseEventArgs e)
@@ -116,6 +138,11 @@ namespace InteractiveTable
             e.Handled = true;
         }
 
+        private void Memory_ScrollViewer_ManipulationBoundaryFeedback(object sender, ManipulationBoundaryFeedbackEventArgs e)
+        {
+            e.Handled = true;
+        }
+
         public FlowDocument OpenBook(string bookName, string culture)
         {
             string path = String.Format("Contents/Book/{0}/book.{1}.rtf", bookName, culture);
@@ -136,7 +163,7 @@ namespace InteractiveTable
                 catch (IOException) { }
 
                 book.ColumnWidth = 800;
-                book.PagePadding = new Thickness(70);
+                book.PagePadding = new Thickness(80,170,80,170);
             }
             return book;
         }
