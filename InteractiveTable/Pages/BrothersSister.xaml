@@ -1,0 +1,24 @@
+﻿<Page x:Class="InteractiveTable.Pages.BrothersSister"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      mc:Ignorable="d" 
+      d:DesignHeight="1080" d:DesignWidth="1920" Width="1920" Height="1080">
+    <Canvas>
+        <Button x:Name="back_button" Template="{StaticResource BackButtonTemplate}" Click="Back_Button_Click" Canvas.Left="75" Canvas.Top="955" FocusVisualStyle="{x:Null}"/>
+
+        <Button x:Name="dmitry_button" Template="{StaticResource HexagonButtonTemplate}" Content="/InteractiveTable;component/Images/BrothersSister/Dmitry.png" Tag="{DynamicResource bs_Dmitry}" FocusVisualStyle="{x:Null}" MinWidth="250"
+                FontFamily="/InteractiveTable;component/Fonts/#Basil Bold"  FontSize="36" Foreground="White" Click="Dmitry_Button_Click"  Width="400" Height="400" Padding="25,0" Canvas.Left="665" Canvas.Top="500"/>
+
+        <Button x:Name="mary_button" Template="{StaticResource HexagonButtonTemplate}" Content="/InteractiveTable;component/Images/BrothersSister/Mary.png" Tag="{DynamicResource bs_Mary}" FocusVisualStyle="{x:Null}" MinWidth="250"
+                FontFamily="/InteractiveTable;component/Fonts/#Basil Bold"  FontSize="36" Foreground="White" Click="Mary_Button_Click"  Width="400" Height="400" Padding="25,0" Canvas.Left="1035" Canvas.Top="500"/>
+
+        <Button x:Name="nikola_button" Template="{StaticResource HexagonButtonTemplate}" Content="/InteractiveTable;component/Images/BrothersSister/Nikola.png" Tag="{DynamicResource bs_Nikola}" FocusVisualStyle="{x:Null}" MinWidth="250"
+                FontFamily="/InteractiveTable;component/Fonts/#Basil Bold"  FontSize="36" Foreground="White" Click="Nikola_Button_Click"  Width="400" Height="400" Padding="25,0" Canvas.Left="485" Canvas.Top="180"/>
+
+        <Button x:Name="sergey_button" Template="{StaticResource HexagonButtonTemplate}" Content="/InteractiveTable;component/Images/BrothersSister/Sergey.png" Tag="{DynamicResource bs_Sergey}" FocusVisualStyle="{x:Null}" MinWidth="250"
+                FontFamily="/InteractiveTable;component/Fonts/#Basil Bold"  FontSize="36" Foreground="White" Click="Sergey_Button_Click"  Width="400" Height="400" Padding="25,0" Canvas.Left="855" Canvas.Top="180"/>
+    </Canvas>
+</Page>
+
