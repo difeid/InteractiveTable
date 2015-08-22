@@ -3,7 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="PopupWindow" Height="1080" Width="1920" WindowStyle="None"
         AllowsTransparency="True" WindowState="Maximized" ResizeMode="NoResize" 
-        ShowInTaskbar="False" Closed="PopupWindow_Closed" Topmost="True">
+        ShowInTaskbar="False" Closed="PopupWindow_Closed" Topmost="True" MouseDown="Window_MouseDown">
     
     <Window.Background>
         <SolidColorBrush Color="Black" Opacity="0.65"/>

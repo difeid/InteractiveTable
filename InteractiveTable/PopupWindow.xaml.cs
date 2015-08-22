@@ -95,6 +95,11 @@ namespace InteractiveTable
             this.Close();
         }
 
+        private void Window_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            this.Close(); 
+        }
+
         private void Zoom_Click(object sender, RoutedEventArgs e)
         {
             if (e.Source is Button)
