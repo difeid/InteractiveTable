@@ -35,8 +35,13 @@
     <v:String x:Key="f_Mather">Мать</v:String>
     <v:String x:Key="f_MatherName">Мария Николаевна Толстая</v:String>
     <v:String x:Key="f_Auntie">Тетушки со стороны отца</v:String>
-    <v:String x:Key="f_BrothersSisters">Братья и сестра</v:String>
+    <v:String x:Key="f_BrothersSister">Братья и сестра</v:String>
     <v:String x:Key="f_WifeChildren">Жена и дети</v:String>
+    <!--BrothersSister-->
+    <v:String x:Key="bs_Dmitry">Дмитрий Николаевич Толстой</v:String>
+    <v:String x:Key="bs_Mary">Мария Николаевна Толстая</v:String>
+    <v:String x:Key="bs_Sergey">Сергей Николаевич Толстой</v:String>
+    <v:String x:Key="bs_Nikola">Николай Николаевич Толстой</v:String>
     <!--PopupWindow-->
     <v:String x:Key="p_Next">next</v:String>
     <v:String x:Key="p_Back">back</v:String>
