@@ -1,4 +1,5 @@
-﻿using System.Windows;
+﻿using System;
+using System.Windows;
 using System.Windows.Controls;
 
 namespace InteractiveTable.Pages
@@ -35,12 +36,12 @@ namespace InteractiveTable.Pages
 
         private void Brother_Sister_Button_Click(object sender, RoutedEventArgs e)
         {
-            new PopupWindow("Family", 1, 3).Show();
+            this.NavigationService.Navigate(new Uri("Pages/BrothersSister.xaml", UriKind.Relative));
         }
 
         private void Wife_Children_Button_Click(object sender, RoutedEventArgs e)
         {
-            new PopupWindow("Family", 1, 4).Show();
+            new PopupWindow("Family", 1, 3).Show();
         }
 
     }
