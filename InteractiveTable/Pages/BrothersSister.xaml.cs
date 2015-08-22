@@ -20,22 +20,22 @@ namespace InteractiveTable.Pages
 
         private void Nikola_Button_Click(object sender, RoutedEventArgs e)
         {
-            new PopupWindow("BrothersSister", 1, 0).Show();
+            new PopupWindow("BrothersSister", 4, 0).Show();
         }
 
         private void Sergey_Button_Click(object sender, RoutedEventArgs e)
         {
-            new PopupWindow("BrothersSister", 1, 1).Show();
+            new PopupWindow("BrothersSister", 4, 1).Show();
         }
 
         private void Dmitry_Button_Click(object sender, RoutedEventArgs e)
         {
-            new PopupWindow("BrothersSister", 1, 2).Show();
+            new PopupWindow("BrothersSister", 4, 2).Show();
         }
 
         private void Mary_Button_Click(object sender, RoutedEventArgs e)
         {
-            new PopupWindow("BrothersSister", 1, 3).Show();
+            new PopupWindow("BrothersSister", 4, 3).Show();
         }
     }
 }

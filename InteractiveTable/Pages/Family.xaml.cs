@@ -21,17 +21,17 @@ namespace InteractiveTable.Pages
 
         private void Father_Button_Click(object sender, RoutedEventArgs e)
         {
-            new PopupWindow("Family", 1, 0).Show();
+            new PopupWindow("Family", 4, 0).Show();
         }
 
         private void Mather_Button_Click(object sender, RoutedEventArgs e)
         {
-            new PopupWindow("Family", 1, 1).Show();
+            new PopupWindow("Family", 4, 1).Show();
         }
 
         private void Aunti_Button_Click(object sender, RoutedEventArgs e)
         {
-            new PopupWindow("Family", 1, 2).Show();
+            new PopupWindow("Family", 4, 2).Show();
         }
 
         private void Brother_Sister_Button_Click(object sender, RoutedEventArgs e)
@@ -41,7 +41,7 @@ namespace InteractiveTable.Pages
 
         private void Wife_Children_Button_Click(object sender, RoutedEventArgs e)
         {
-            new PopupWindow("Family", 1, 3).Show();
+            new PopupWindow("Family", 4, 3).Show();
         }
 
     }
