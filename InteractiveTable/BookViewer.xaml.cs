@@ -177,19 +177,13 @@ namespace InteractiveTable
             {
                 string[] lines = File.ReadAllLines(path);
                 int count = lines.Length;
+                int num = 0;
+
+                Button[] but = new Button[count];
+                Line[] line = new Line[count];
 
                 ResourceDictionary dict = new ResourceDictionary();
                 dict.Source = new Uri("/InteractiveTable;component/Resource/ResourceDictionaryTemplate.xaml",UriKind.RelativeOrAbsolute);
-
-                //<Button Width="360" Height="50" Margin="5" Template="{StaticResource HiddenButtonTemplate}" Tag="Лев Николаевич Толстой" FontSize="16"/>
-                Button b = new Button();
-                b.Width = 360;
-                b.Height = 50;
-                b.Margin = new Thickness(5);
-                b.Template = dict["HiddenButtonTemplate"] as ControlTemplate;
-                b.Tag = lines[0];
-                b.FontSize = 16;
-                stack.Children.Add(b);
 
                 //<Line Stroke="Gray" StrokeThickness="0.5" Width="360" X1="0" Y1="0" X2="360" Y2="0"/>
                 Line l = new Line();
@@ -201,6 +195,30 @@ namespace InteractiveTable
                 l.StrokeThickness = 0.5;
                 l.Stroke = Brushes.Gray;
                 stack.Children.Add(l);
+
+                while (num < count)
+                {
+                    //<Button Width="360" Height="50" Margin="5" Template="{StaticResource HiddenButtonTemplate}" Tag="Лев Николаевич Толстой" FontSize="16"/>
+                    but[num] = new Button();
+                    but[num].Width = 360;
+                    but[num].Height = 50;
+                    but[num].Margin = new Thickness(5);
+                    but[num].Template = dict["HiddenButtonTemplate"] as ControlTemplate;
+                    but[num].Tag = lines[num];
+                    but[num].FontSize = 16;
+                    but[num].FocusVisualStyle = null;
+                    stack.Children.Add(but[num]);
+
+                    line[num] = new Line();
+                    line[num].X1 = 0; line[num].X2 = 360;
+                    line[num].Y1 = 0; line[num].Y2 = 0;
+                    line[num].Width = 360;
+                    line[num].StrokeThickness = 0.5;
+                    line[num].Stroke = Brushes.Gray;
+                    stack.Children.Add(line[num]);
+
+                    num++;
+                }
             }
         }
     }
