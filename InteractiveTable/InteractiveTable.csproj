@@ -427,7 +427,6 @@
     <Resource Include="Images\BookViewer\ContentsBackground.png" />
     <Resource Include="Images\BookViewer\ContentsLine.png" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
     <Resource Include="Images\BrothersSister\Dmitry.png" />
     <Resource Include="Images\BrothersSister\Mary.png" />

@@ -39,11 +39,7 @@
             </Grid.ColumnDefinitions>
 
             <Image Width="500" Height="1080" Source="Images/BookViewer/ContentsBackground.png"/>
-            <!-- 
             
-            <Image Width="1920" Height="1080" Source="Images/Maket.png"/>
-            -->
-
             <ScrollViewer Width="425" Height="1080" Template="{StaticResource ScrollViewerTemplate}" VerticalScrollBarVisibility="Visible" 
                       PanningMode="VerticalOnly" ManipulationBoundaryFeedback="Memory_ScrollViewer_ManipulationBoundaryFeedback" HorizontalAlignment="Left">
                 <Grid>
@@ -55,6 +51,7 @@
                     <TextBlock Text="{DynamicResource b_Content}" FontFamily="/InteractiveTable;component/Fonts/#Basil Bold" FontSize="28" HorizontalAlignment="Left" VerticalAlignment="Center"
                                Margin="70,0,0,0"/>
 
+                    <StackPanel x:Name="stack" Grid.Row="1" Orientation="Vertical" Margin="10,0,0,0"/>
                 </Grid>
             </ScrollViewer>
         </Grid>

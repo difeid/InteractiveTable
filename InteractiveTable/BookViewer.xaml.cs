@@ -50,6 +50,7 @@ namespace InteractiveTable
                 timer.Stop();
 
                 FlowDocument book = OpenBook(bookName, culture);
+                OpenContents(bookName, culture);
                 if (book == null)
                 {
                     if (culture != "ru-RU")
@@ -166,6 +167,41 @@ namespace InteractiveTable
                 book.PagePadding = new Thickness(80,170,80,170);
             }
             return book;
+        }
+
+        public void OpenContents(string bookName, string culture)
+        {
+            string path = String.Format("Contents/Book/{0}/contents.{1}.txt", bookName, culture);
+
+            if (File.Exists(path))
+            {
+                string[] lines = File.ReadAllLines(path);
+                int count = lines.Length;
+
+                ResourceDictionary dict = new ResourceDictionary();
+                dict.Source = new Uri("/InteractiveTable;component/Resource/ResourceDictionaryTemplate.xaml",UriKind.RelativeOrAbsolute);
+
+                //<Button Width="360" Height="50" Margin="5" Template="{StaticResource HiddenButtonTemplate}" Tag="Лев Николаевич Толстой" FontSize="16"/>
+                Button b = new Button();
+                b.Width = 360;
+                b.Height = 50;
+                b.Margin = new Thickness(5);
+                b.Template = dict["HiddenButtonTemplate"] as ControlTemplate;
+                b.Tag = lines[0];
+                b.FontSize = 16;
+                stack.Children.Add(b);
+
+                //<Line Stroke="Gray" StrokeThickness="0.5" Width="360" X1="0" Y1="0" X2="360" Y2="0"/>
+                Line l = new Line();
+                l.X1 = 0;
+                l.X2 = 360;
+                l.Y1 = 0;
+                l.Y2 = 0;
+                l.Width = 360;
+                l.StrokeThickness = 0.5;
+                l.Stroke = Brushes.Gray;
+                stack.Children.Add(l);
+            }
         }
     }
 }
