@@ -109,11 +109,15 @@ namespace InteractiveTable
                 {
                     this.Topmost = false;
                     openFlag = true;
-                    new ImageViewer(folder, number, numberImage, maxNumberImage).Show();
+                    try
+                    {
+                        new ImageViewer(folder, number, numberImage, maxNumberImage).Show();
+                    }
+                    catch(InvalidOperationException) { }
                 }
 
                 DispatcherTimer timer = new DispatcherTimer();
-                timer.Interval = new TimeSpan(0, 0, 0, 1, 0);
+                timer.Interval = new TimeSpan(0, 0, 0, 2, 0);
                 timer.Tick += (s, ar) =>
                 {
                     timer.Stop();
