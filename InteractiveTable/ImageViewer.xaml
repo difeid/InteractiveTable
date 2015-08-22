@@ -40,7 +40,7 @@
         <FlowDocumentScrollViewer x:Name="zoomImageText" Grid.Column="1" Grid.Row="2" Foreground="White" 
                                   HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Disabled"
                                   IsSelectionEnabled="False" Focusable="False" IsTabStop="False" IsHitTestVisible="False"
-                                  MaxWidth="{Binding ActualWidth, ElementName=border, Mode=OneWay}">
+                                  MaxWidth="{Binding ActualWidth, ElementName=border, Mode=OneWay}" Margin="0,-17,0,0">
             <FlowDocument/>
         </FlowDocumentScrollViewer>
 
