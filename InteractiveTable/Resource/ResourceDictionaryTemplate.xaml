@@ -317,6 +317,8 @@
     <ControlTemplate x:Key="HiddenButtonTemplate" TargetType="{x:Type Button}">
         <Grid>
             <Rectangle Fill="Transparent"/>
+            <TextBlock Text="{Binding Tag, RelativeSource={RelativeSource TemplatedParent}}" FontFamily="{TemplateBinding FontFamily}"
+				FontSize="{TemplateBinding FontSize}" TextWrapping="Wrap" TextTrimming="WordEllipsis" VerticalAlignment="Center"/>
         </Grid>
     </ControlTemplate>
 
