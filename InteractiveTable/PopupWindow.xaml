@@ -36,13 +36,15 @@
 
             <ScrollViewer Width="1520" Height="920" Template="{StaticResource ScrollViewerTemplate}" FocusVisualStyle="{x:Null}"
                           VerticalAlignment="Center" HorizontalAlignment="Center" PanningMode="VerticalOnly"
-                          ManipulationBoundaryFeedback="Popup_ScrollViewer_ManipulationBoundaryFeedback">
+                          ManipulationBoundaryFeedback="Popup_ScrollViewer_ManipulationBoundaryFeedback"
+                          PreviewMouseWheel="Popup_ScrollViewer_PreviewMouseWheel" CanContentScroll="False">
                 <ScrollViewer.CacheMode>
                     <BitmapCache/>
                 </ScrollViewer.CacheMode>
 
                 <FlowDocumentScrollViewer x:Name="documentPage"  HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Disabled"
-                                        IsSelectionEnabled="False" Grid.ColumnSpan="2" Focusable="False" IsTabStop="False" ButtonBase.Click="Zoom_Click">
+                                        IsSelectionEnabled="False" Grid.ColumnSpan="2" Focusable="False" IsTabStop="False" ButtonBase.Click="Zoom_Click"
+                                        RequestBringIntoView="Popup_ScrollViewer_RequestBringIntoView">
                     <FlowDocument/>
                 </FlowDocumentScrollViewer>
             </ScrollViewer>

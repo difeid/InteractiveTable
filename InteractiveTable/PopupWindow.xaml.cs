@@ -123,6 +123,18 @@ namespace InteractiveTable
             e.Handled = true;
         }
 
+        private void Popup_ScrollViewer_RequestBringIntoView(object sender, RequestBringIntoViewEventArgs e)
+        {
+            e.Handled = true;
+        }
+
+        private void Popup_ScrollViewer_PreviewMouseWheel(object sender, MouseWheelEventArgs e)
+        {
+            ScrollViewer scv = (ScrollViewer)sender;
+            scv.ScrollToVerticalOffset(scv.VerticalOffset - e.Delta);
+            e.Handled = true;
+        }
+
         private void Init(int count)
         {
             App.PopupOpen = true;
