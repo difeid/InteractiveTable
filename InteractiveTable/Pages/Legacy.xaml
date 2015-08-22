@@ -9,18 +9,7 @@
         <Canvas.Background>
             <ImageBrush ImageSource="/InteractiveTable;component/Images/Legacy/LegacyBackground.png"/>
         </Canvas.Background>
-<!--
-        <Popup x:Name="pleaseWaitPopup" PopupAnimation="Fade" AllowsTransparency="True" Placement="Center" StaysOpen="False">
-            <Grid Width="600" Height="300">
-                <Border>
-                    <Border.Background>
-                        <ImageBrush ImageSource="/InteractiveTable;component/Images/PopupBackground.png"/>
-                    </Border.Background>
-                    <TextBlock Text="{DynamicResource g_PleaseWait}" FontFamily="/InteractiveTable;component/Fonts/#Basil Bold" FontSize="30" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                </Border>
-            </Grid>
-        </Popup>
--->
+
         <Button x:Name="back_button" Template="{StaticResource BackButtonTemplate}" Foreground="White" Click="Back_Button_Click" Canvas.Left="75" Canvas.Top="955" FocusVisualStyle="{x:Null}"/>
 
         <!--Left-->
