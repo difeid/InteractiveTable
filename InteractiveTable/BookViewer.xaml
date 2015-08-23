@@ -8,7 +8,7 @@
             <ImageBrush ImageSource="/InteractiveTable;component/Images/BookViewer/BookBackground.png"/>
         </Canvas.Background>
 
-        <Popup x:Name="pleaseWaitPopup" PopupAnimation="Fade" AllowsTransparency="True" Placement="Center" StaysOpen="False">
+        <Popup x:Name="pleaseWaitPopup" PopupAnimation="Fade" AllowsTransparency="True" Placement="Center">
             <Grid Width="600" Height="300">
                 <Border>
                     <Border.Background>
@@ -19,7 +19,7 @@
             </Grid>
         </Popup>
 
-        <FlowDocumentReader x:Name="bookReader" Width="1920" Height="1080" Canvas.Left="0" Canvas.Top="0" IsHitTestVisible="False"
+        <FlowDocumentReader x:Name="bookReader" Width="1920" Height="1080" Canvas.Left="0" Canvas.Top="0" IsHitTestVisible="False" Zoom="140"
                             Template="{DynamicResource FlowDocumentReaderTemplate}" ViewingMode="TwoPage" FocusVisualStyle="{x:Null}"
                             IsScrollViewEnabled="False" IsPrintEnabled="False" IsPageViewEnabled="False" IsFindEnabled="False" SelectionBrush="{x:Null}">
             <FlowDocument/>

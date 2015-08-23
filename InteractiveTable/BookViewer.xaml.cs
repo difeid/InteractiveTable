@@ -19,6 +19,7 @@ namespace InteractiveTable
         private string bookName;
         private int partCount;
         private int currentPart = 0;
+        private int part;
 
         protected Point TouchStart;
         private bool AlreadySwiped;
@@ -31,6 +32,8 @@ namespace InteractiveTable
         private Button[] but;
         private Line[] line;
         private int countLines = 0;
+
+        private DispatcherTimer timer = new DispatcherTimer();
 
         public BookViewer(string bookName, int partCount)
         {
@@ -66,31 +69,34 @@ namespace InteractiveTable
 
         private void Back_Button_Click(object sender, RoutedEventArgs e)
         {
-            pleaseWaitPopup.IsOpen = false;
-            this.Close();
+            if (!IsLocked)
+            {
+                pleaseWaitPopup.IsOpen = false;
+                this.Close();
+            }
+            e.Handled = true;
         }
 
         private void Content_Button_Click(object sender, RoutedEventArgs e)
         {
-            if (!IsToggle)
+            if (!IsLocked)
             {
-                da.To = 500;
-                da.Duration = TimeSpan.FromMilliseconds(300);
-                slidePanel.BeginAnimation(Grid.WidthProperty, da);
-                IsToggle = true;
+                AnimationPanel(true);
             }
+            e.Handled = true;
         }
 
         private void Point_Button_Click(object sender, RoutedEventArgs e)
         {
             if (!IsLocked)
             {
-                int part = Convert.ToInt32((sender as Button).Name);
+                int part = Convert.ToInt32((sender as Button).Name.Substring(3));
                 if (part != currentPart)
                 {
                     OpenBook(part);
                 }
             }
+            e.Handled = true;
         }
 
         private void OpenBook(int part)
@@ -100,45 +106,57 @@ namespace InteractiveTable
                 IsLocked = true;
                 HighlightingButton(part, currentPart);
                 pleaseWaitPopup.IsOpen = true;
-                DispatcherTimer timer = new DispatcherTimer();
-                timer.Interval = new TimeSpan(0, 0, 0, 1, 0);
-                timer.Tick += (s, ar) =>
-                {
-                    timer.Stop();
+                bookReader.Document.Blocks.Clear();
+                this.part = part;
 
-                    FlowDocument book = OpenPartBook(bookName, part, culture);
-                    if (book == null)
-                    {
-                        if (culture != "ru-RU")
-                        {
-                            book = OpenPartBook(bookName, part, "ru-RU");
-                        }
-                    }
-                    if (book != null)
-                    {
-                        bookReader.Document = book;
-                    }
-                    else
-                    {
-                        bookReader.Document.Blocks.Clear();
-                    }
-                    currentPart = part;
-                    pleaseWaitPopup.IsOpen = false;
-                    IsLocked = false;
-                };
+                timer.Interval = new TimeSpan(0, 0, 0, 1, 0);
+                timer.Tick += Timer_Tick1;
                 timer.Start();
             }
+        }
+
+        private void Timer_Tick1(object sender, EventArgs e)
+        {
+            timer.Stop();
+
+            FlowDocument book = OpenPartBook(bookName, part, culture);
+            if (book == null)
+            {
+                if (culture != "ru-RU")
+                {
+                    book = OpenPartBook(bookName, part, "ru-RU");
+                }
+            }
+            if (book != null)
+            {
+                bookReader.Document = book;
+            }
+            else
+            {
+                bookReader.Document.Blocks.Clear();
+            }
+            currentPart = part;
+            AnimationPanel(false);
+            timer.Interval = new TimeSpan(0, 0, 0, 0, 300);
+            timer.Tick -= Timer_Tick1;
+            timer.Tick += Timer_Tick2;
+            timer.Start();
+        }
+
+        private void Timer_Tick2(object sender, EventArgs e)
+        {
+            timer.Stop();
+            pleaseWaitPopup.IsOpen = false;
+            IsLocked = false;
+            timer.Tick -= Timer_Tick2;
         }
 
         private void HighlightingButton( int selectPart, int canselSelectPart)
         {
             if (selectPart < countLines && canselSelectPart < countLines && but[canselSelectPart] != null && but[selectPart] != null)
             {
-                if (canselSelectPart != selectPart)
-                {
-                    but[canselSelectPart].FontWeight = FontWeights.Normal;
-                    but[canselSelectPart].IsEnabled = true;
-                }
+                but[canselSelectPart].FontWeight = FontWeights.Normal;
+                but[canselSelectPart].IsEnabled = true;
                 but[selectPart].FontWeight = FontWeights.Bold;
                 but[selectPart].IsEnabled = false;
             }
@@ -164,7 +182,7 @@ namespace InteractiveTable
                 catch (IOException) { }
 
                 book.ColumnWidth = 800;
-                book.PagePadding = new Thickness(80,170,80,170);
+                book.PagePadding = new Thickness(80,150,80,170);
             }
             return book;
         }
@@ -204,7 +222,7 @@ namespace InteractiveTable
                     but[num].Tag = lines[num];
                     but[num].FontSize = 16;
                     but[num].FocusVisualStyle = null;
-                    but[num].Name = num.ToString();
+                    but[num].Name = String.Concat("but", num.ToString());
                     but[num].Click += Point_Button_Click;
                     stack.Children.Add(but[num]);
 
@@ -228,16 +246,9 @@ namespace InteractiveTable
 
         private void Page_MouseDown(object sender, MouseEventArgs e)
         {
-            if (IsToggle)
+            if (!IsLocked)
             {
-                da.To = 0;
-                da.Duration = TimeSpan.FromMilliseconds(300);
-                slidePanel.BeginAnimation(Grid.WidthProperty, da);
-                IsToggle = false;
-                AlreadySwiped = true;
-            }
-            else
-            {
+                AnimationPanel(false);
                 TouchStart = e.GetPosition(this);
             }
         }
@@ -249,7 +260,7 @@ namespace InteractiveTable
 
         private void Page_MouseMove(object sender, MouseEventArgs e)
         {
-            if (e.LeftButton == MouseButtonState.Pressed)
+            if (e.LeftButton == MouseButtonState.Pressed && !IsLocked)
             {
                 if (!AlreadySwiped)
                 {
@@ -296,6 +307,25 @@ namespace InteractiveTable
         private void Memory_ScrollViewer_ManipulationBoundaryFeedback(object sender, ManipulationBoundaryFeedbackEventArgs e)
         {
             e.Handled = true;
+        }
+
+        public void AnimationPanel(bool enabled)
+        {
+            if (!IsToggle && enabled)
+            {
+                da.To = 500;
+                da.Duration = TimeSpan.FromMilliseconds(300);
+                slidePanel.BeginAnimation(Grid.WidthProperty, da);
+                IsToggle = true;
+            }
+            else if (IsToggle && !enabled)
+            {
+                da.To = 0;
+                da.Duration = TimeSpan.FromMilliseconds(300);
+                slidePanel.BeginAnimation(Grid.WidthProperty, da);
+                IsToggle = false;
+                AlreadySwiped = true;
+            }
         }
     }
 }

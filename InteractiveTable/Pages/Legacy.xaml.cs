@@ -39,7 +39,7 @@ namespace InteractiveTable.Pages
 
         private void Diary_Button_Click(object sender, RoutedEventArgs e)
         {
-            OpenBook("Diary", 4);
+            OpenBook("Diary", 5);
         }
 
         private void Memories_Button_Click(object sender, RoutedEventArgs e)
