@@ -49,7 +49,13 @@ namespace InteractiveTable
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            OpenContents(bookName, culture);
+            if (!OpenContents(bookName, culture))
+            {
+                if (culture != "ru-RU")
+                {
+                    OpenContents(bookName, culture);
+                }
+            }
             OpenBook(currentPart);
         }
 
@@ -101,7 +107,6 @@ namespace InteractiveTable
                     timer.Stop();
 
                     FlowDocument book = OpenPartBook(bookName, part, culture);
-                    OpenContents(bookName, culture);
                     if (book == null)
                     {
                         if (culture != "ru-RU")

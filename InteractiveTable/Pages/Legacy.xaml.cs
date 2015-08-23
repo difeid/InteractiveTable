@@ -19,60 +19,62 @@ namespace InteractiveTable.Pages
             this.NavigationService.GoBack();
         }
 
-        private void Book_Button_Click(object sender, RoutedEventArgs e)
+        public void OpenBook(string bookName, int partCount)
         {
-            int bookNumber = Convert.ToInt32((sender as Button).Name.Substring(1, 1));
-            //new BookViewer(bookNumber.ToString(),).Show();
+            if (!App.BookOpen)
+            {
+                new BookViewer(bookName, partCount).Show();
+            }
         }
 
         private void Rules_Of_Life_Button_Click(object sender, RoutedEventArgs e)
         {
-            
+            OpenBook("RulesOfLife", 4);
         }
 
         private void Trilogy_Button_Click(object sender, RoutedEventArgs e)
         {
-            this.NavigationService.GoBack();
+            OpenBook("Trilogy", 4);
         }
 
         private void Diary_Button_Click(object sender, RoutedEventArgs e)
         {
-            this.NavigationService.GoBack();
+            OpenBook("Diary", 4);
         }
 
         private void Memories_Button_Click(object sender, RoutedEventArgs e)
         {
-            this.NavigationService.GoBack();
+            OpenBook("Memories", 4);
         }
 
         private void Morning_Button_Click(object sender, RoutedEventArgs e)
         {
-            this.NavigationService.GoBack();
+            OpenBook("Morning", 4);
         }
 
         private void Cossacks_Button_Click(object sender, RoutedEventArgs e)
         {
-            this.NavigationService.GoBack();
+            OpenBook("Cossacks", 4);
         }
 
         private void War_And_Peace_Button_Click(object sender, RoutedEventArgs e)
         {
-            this.NavigationService.GoBack();
+            OpenBook("WarAndPeace", 4);
         }
 
         private void After_Ball_Button_Click(object sender, RoutedEventArgs e)
         {
-            this.NavigationService.GoBack();
+            OpenBook("AfterBall", 4);
         }
 
         private void Yule_Night_Button_Click(object sender, RoutedEventArgs e)
         {
-
+            OpenBook("YuleNight", 4);
         }
 
         private void Oasis_Button_Click(object sender, RoutedEventArgs e)
         {
-
+            OpenBook("Oasis", 4);
         }
     }
 }
