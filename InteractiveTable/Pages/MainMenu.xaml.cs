@@ -26,7 +26,8 @@ namespace InteractiveTable.Pages
 
         private void Student_Task_Button_Click(object sender, RoutedEventArgs e)
         {
-
+            Test test = new Test(4);
+            this.NavigationService.Navigate(test);
         }
 
         private void Motiv_Button_Click(object sender, RoutedEventArgs e)
