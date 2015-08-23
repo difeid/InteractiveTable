@@ -58,7 +58,7 @@
                                           Height="135" Width="350" HorizontalAlignment="Left" VerticalAlignment="Bottom" Grid.Column="1">
                     <FlowDocument/>
                 </FlowDocumentScrollViewer>
-                <Button x:Name="readMoreButton" Click="Read_More_Button_Click" Grid.Row="1" Grid.ColumnSpan="2" FocusVisualStyle="{x:Null}"
+                <Button x:Name="readMoreButton" Width="155" Click="Read_More_Button_Click" Grid.Row="1" Grid.ColumnSpan="2" FocusVisualStyle="{x:Null}"
                         Template="{StaticResource ReadButtonTemplate}" Background="#FFCF142B" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Top"
                         Content="{DynamicResource p_ReadMoreButton}" FontFamily="/InteractiveTable;component/Fonts/#Basil Bold" FontSize="18"/>
             </Grid>

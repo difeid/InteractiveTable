@@ -251,7 +251,7 @@
 
     <!--Шаблон кнопоки читать-->
     <ControlTemplate x:Key="ReadButtonTemplate" TargetType="{x:Type Button}">
-        <Grid x:Name="read_more_grid" Width="155" Height="36" RenderTransformOrigin="0.5,0.5">
+        <Grid x:Name="read_more_grid" Width="{TemplateBinding Width}" Height="36" RenderTransformOrigin="0.5,0.5">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition/>
                 <ColumnDefinition Width="36"/>
