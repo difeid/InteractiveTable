@@ -53,4 +53,8 @@
     <v:String x:Key="b_Content">Содержание</v:String>
     <!--Timeline-->
     <v:String x:Key="t_Kazan">Казань</v:String>
+    <!--TestResult-->
+    <v:String x:Key="t_You">У вас</v:String>
+    <v:String x:Key="t_Answer">правильных ответов</v:String>
+    <v:String x:Key="t_Repeat">Заново</v:String>
 </ResourceDictionary>
