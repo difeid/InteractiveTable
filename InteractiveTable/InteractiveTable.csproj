@@ -158,6 +158,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Pages\Test.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\Timeline.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -224,6 +228,9 @@
     </Compile>
     <Compile Include="Pages\Pedigree.xaml.cs">
       <DependentUpon>Pedigree.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Test.xaml.cs">
+      <DependentUpon>Test.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\Timeline.xaml.cs">
       <DependentUpon>Timeline.xaml</DependentUpon>
@@ -435,6 +442,15 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\BookViewer\Separator.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Test\BottomButton.png" />
+    <Resource Include="Images\Test\BottomButtonMask.png" />
+    <Resource Include="Images\Test\CenterButton.png" />
+    <Resource Include="Images\Test\CenterButtonMask.png" />
+    <Resource Include="Images\Test\Maket.png" />
+    <Resource Include="Images\Test\TopButton.png" />
+    <Resource Include="Images\Test\TopButtonMask.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\Expression\Blend\.NETFramework\v4.5\Microsoft.Expression.Blend.WPF.targets" />
