@@ -179,10 +179,10 @@ namespace InteractiveTable
                         tr.Load(fs, DataFormats.Rtf);
                     }
                 }
-                catch (IOException) { }
+                catch { }
 
                 book.ColumnWidth = 800;
-                book.PagePadding = new Thickness(80,150,80,170);
+                book.PagePadding = new Thickness(60,70,60,100);
             }
             return book;
         }
@@ -324,7 +324,6 @@ namespace InteractiveTable
                 da.Duration = TimeSpan.FromMilliseconds(300);
                 slidePanel.BeginAnimation(Grid.WidthProperty, da);
                 IsToggle = false;
-                AlreadySwiped = true;
             }
         }
     }

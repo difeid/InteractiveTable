@@ -24,6 +24,8 @@
                             IsScrollViewEnabled="False" IsPrintEnabled="False" IsPageViewEnabled="False" IsFindEnabled="False" SelectionBrush="{x:Null}">
             <FlowDocument/>
         </FlowDocumentReader>
+        
+        <Image Width="50" Height="1080" Source="Images/BookViewer/Separator.png" Canvas.Left="935" Canvas.Top="0"/>
 
         <Button x:Name="backButton" Template="{StaticResource BackButtonTemplate}" Click="Back_Button_Click" Canvas.Left="75" Canvas.Top="955"
                 FocusVisualStyle="{x:Null}"/>
