@@ -2,13 +2,13 @@
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="BookViewer" Height="1080" Width="1920" WindowStyle="None" Loaded="Window_Loaded"
-        WindowState="Maximized" ResizeMode="NoResize" ShowInTaskbar="False">
+        WindowState="Maximized" ResizeMode="NoResize" ShowInTaskbar="False" Closed="Window_Closed" Topmost="True">
     <Canvas x:Name="mainLayer" Width="1920" Height="1080" ClipToBounds="True" MouseDown="Page_MouseDown" MouseMove="Page_MouseMove" MouseUp="Page_MouseUp">
         <Canvas.Background>
             <ImageBrush ImageSource="/InteractiveTable;component/Images/BookViewer/BookBackground.png"/>
         </Canvas.Background>
 
-        <Popup x:Name="pleaseWaitPopup" PopupAnimation="Fade" AllowsTransparency="True" Placement="Center" StaysOpen="False" IsOpen="True">
+        <Popup x:Name="pleaseWaitPopup" PopupAnimation="Fade" AllowsTransparency="True" Placement="Center" StaysOpen="False">
             <Grid Width="600" Height="300">
                 <Border>
                     <Border.Background>
@@ -51,7 +51,7 @@
                     <TextBlock Text="{DynamicResource b_Content}" FontFamily="/InteractiveTable;component/Fonts/#Basil Bold" FontSize="28" HorizontalAlignment="Left" VerticalAlignment="Center"
                                Margin="70,0,0,0"/>
 
-                    <StackPanel x:Name="stack" Grid.Row="1" Orientation="Vertical" Margin="10,0,0,0"/>
+                    <StackPanel x:Name="stack" Grid.Row="1" Orientation="Vertical" Margin="10,0,0,0" UseLayoutRounding="True"/>
                 </Grid>
             </ScrollViewer>
         </Grid>
