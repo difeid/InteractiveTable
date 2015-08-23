@@ -249,18 +249,18 @@
         </Setter>
     </Style>
 
-    <!--Шаблон кнопоки подробнее-->
-    <ControlTemplate x:Key="ReadMoreButtonTemplate" TargetType="{x:Type Button}">
+    <!--Шаблон кнопоки читать-->
+    <ControlTemplate x:Key="ReadButtonTemplate" TargetType="{x:Type Button}">
         <Grid x:Name="read_more_grid" Width="155" Height="36" RenderTransformOrigin="0.5,0.5">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition/>
                 <ColumnDefinition Width="36"/>
             </Grid.ColumnDefinitions>
-            <Border CornerRadius="5" Grid.ColumnSpan="2" Background="#FFCF142B"/>
-            <Image Source="/InteractiveTable;component/Images/Pedigree/ReadMoreArrow.png" Stretch="Fill"
+            <Border CornerRadius="5" Grid.ColumnSpan="2" Background="{TemplateBinding Background}"/>
+            <Image Source="pack://application:,,,/Images/Pedigree/ReadMoreArrow.png" Stretch="Fill"
 				Width="20" Height="20" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="5,10,0,0"/>
-            <TextBlock Text="{DynamicResource p_ReadMoreButton}" FontFamily="/InteractiveTable;component/Fonts/#Basil Bold" FontSize="18"
-				HorizontalAlignment="Right" VerticalAlignment="Center" Foreground="White"/>
+            <TextBlock Text="{TemplateBinding Content}" FontFamily="{TemplateBinding FontFamily}" FontSize="{TemplateBinding FontSize}"
+				HorizontalAlignment="Right" VerticalAlignment="Center" Foreground="{TemplateBinding Foreground}"/>
         </Grid>
         <ControlTemplate.Triggers>
             <Trigger Property="IsPressed" Value="True">
