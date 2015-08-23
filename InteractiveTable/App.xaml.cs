@@ -21,14 +21,9 @@ namespace InteractiveTable
             }
         }
 
-        private static bool popupOpen = false;
+        public static bool PopupOpen { get; set; }
 
-        public static bool PopupOpen
-        {
-            set { popupOpen = value; }
-            get { return popupOpen; }
-        }
-
+        public static bool BookOpen { get; set; }
 
         public App()
         {
