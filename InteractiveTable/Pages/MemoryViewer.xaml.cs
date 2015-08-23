@@ -4,8 +4,8 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Documents;
 using System.Windows.Input;
-using System.Windows.Media.Imaging;
 using System.Windows.Markup;
+using System.Windows.Media.Imaging;
 
 namespace InteractiveTable.Pages
 {
@@ -137,7 +137,7 @@ namespace InteractiveTable.Pages
                 mainPhoto.Source = new BitmapImage(pathMain);
                 subPhoto.Source = new BitmapImage(pathSub);
             }
-            catch (IOException)
+            catch
             {
                 mainPhoto.Source = null;
                 subPhoto.Source = null;
@@ -159,7 +159,7 @@ namespace InteractiveTable.Pages
                         content = XamlReader.Load(fs) as FlowDocument;
                     }
                 }
-                catch (IOException) {}
+                catch {}
             }
             return content;
         }

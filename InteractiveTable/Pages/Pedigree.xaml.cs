@@ -80,7 +80,7 @@ namespace InteractiveTable.Pages
             {
                 photoImage.Source = new BitmapImage(pathImage);
             }
-            catch (IOException)
+            catch
             {
                 photoImage.Source = null;
             }
@@ -91,7 +91,7 @@ namespace InteractiveTable.Pages
                 FlowDocument doc = Application.LoadComponent(pathPlate) as FlowDocument;
                 plateDocument.Document = doc;
             }
-            catch (IOException)
+            catch
             {
                 plateDocument.Document.Blocks.Clear();
             }

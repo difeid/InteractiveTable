@@ -18,7 +18,11 @@ namespace InteractiveTable.Pages
         {
             if (!App.PopupOpen)
             {
-                new PopupWindow("Family", 4, number).Show();
+                try
+                {
+                    new PopupWindow("Family", 4, number).Show();
+                }
+                catch { }
             }
         }
 

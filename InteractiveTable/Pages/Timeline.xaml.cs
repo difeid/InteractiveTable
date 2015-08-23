@@ -27,7 +27,11 @@ namespace InteractiveTable.Pages
             int n = Convert.ToInt32((sender as Button).Name.Substring(1, 2));
             if (!App.PopupOpen)
             {
-                new PopupWindow("Timeline", 26, n).Show();
+                try
+                {
+                    new PopupWindow("Timeline", 26, n).Show();
+                }
+                catch { }
             }
         }
 

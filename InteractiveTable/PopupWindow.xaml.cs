@@ -105,7 +105,7 @@ namespace InteractiveTable
                     {
                         new ImageViewer(folder, number, numberImage, maxNumberImage).Show();
                     }
-                    catch(InvalidOperationException) { }
+                    catch{ }
                 }
 
                 DispatcherTimer timer = new DispatcherTimer();
@@ -174,7 +174,11 @@ namespace InteractiveTable
             }
             if (article != null)
             {
-                intTag = Convert.ToInt32(article.Tag);
+                try
+                {
+                    intTag = Convert.ToInt32(article.Tag);
+                }
+                catch {}
                 documentPage.Document = article; 
             }
             else
@@ -199,7 +203,7 @@ namespace InteractiveTable
                         content = XamlReader.Load(fs) as FlowDocument;
                     }
                 }
-                catch (IOException) { }
+                catch { }
             }
             return content;
         }

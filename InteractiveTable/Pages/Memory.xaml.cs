@@ -34,7 +34,11 @@ namespace InteractiveTable.Pages
         {
             if (!App.PopupOpen)
             {
-                new PopupWindow("Theatre", 1).Show();
+                try
+                {
+                    new PopupWindow("Theatre", 1).Show();
+                }
+                catch { }
             }
         }
 
@@ -42,7 +46,11 @@ namespace InteractiveTable.Pages
         {
             if (!App.PopupOpen)
             {
-                new PopupWindow("Tolstoy", 1).Show();
+                try
+                {
+                    new PopupWindow("Tolstoy", 1).Show();
+                }
+                catch { }
             }
         }
     }

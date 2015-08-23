@@ -85,7 +85,7 @@ namespace InteractiveTable
                 }
                 return true;
             }
-            catch (IOException)
+            catch
             {
                 return false;
             }
@@ -106,7 +106,7 @@ namespace InteractiveTable
                         content = XamlReader.Load(fs) as FlowDocument;
                     }
                 }
-                catch (IOException) { }
+                catch { }
             }
             return content;
         }
