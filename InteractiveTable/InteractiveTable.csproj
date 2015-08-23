@@ -162,6 +162,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Pages\TestResult.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\Timeline.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -231,6 +235,9 @@
     </Compile>
     <Compile Include="Pages\Test.xaml.cs">
       <DependentUpon>Test.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\TestResult.xaml.cs">
+      <DependentUpon>TestResult.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\Timeline.xaml.cs">
       <DependentUpon>Timeline.xaml</DependentUpon>
@@ -451,6 +458,10 @@
     <Resource Include="Images\Test\Maket.png" />
     <Resource Include="Images\Test\TopButton.png" />
     <Resource Include="Images\Test\TopButtonMask.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\TestResult\repeat.png" />
+    <Resource Include="Images\TestResult\ResultBackground.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\Expression\Blend\.NETFramework\v4.5\Microsoft.Expression.Blend.WPF.targets" />
