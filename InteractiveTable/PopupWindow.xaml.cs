@@ -96,26 +96,53 @@ namespace InteractiveTable
         {
             if (e.Source is Button)
             {
-                numberImage = Convert.ToInt32((e.Source as Button).Tag);
-                if (!openFlag)
+                string tag = (e.Source as Button).Tag.ToString();
+                if (Int32.TryParse(tag, out numberImage))
                 {
-                    this.Topmost = false;
-                    openFlag = true;
-                    try
-                    {
-                        new ImageViewer(folder, number, numberImage, maxNumberImage).Show();
-                    }
-                    catch{ }
+                    OpenZoomImage();
                 }
-
-                DispatcherTimer timer = new DispatcherTimer();
-                timer.Interval = new TimeSpan(0, 0, 0, 2, 0);
-                timer.Tick += (s, ar) =>
+                else
                 {
-                    timer.Stop();
-                    openFlag = false;
-                };
-                timer.Start();
+                    if (tag != null)
+                    {
+                        OpenBook(tag);
+                    }
+                }
+            }
+        }
+
+        private void OpenZoomImage()
+        {
+            if (!openFlag)
+            {
+                this.Topmost = false;
+                openFlag = true;
+                try
+                {
+                    new ImageViewer(folder, number, numberImage, maxNumberImage).Show();
+                }
+                catch { }
+            }
+
+            DispatcherTimer timer = new DispatcherTimer();
+            timer.Interval = new TimeSpan(0, 0, 0, 2, 0);
+            timer.Tick += (s, ar) =>
+            {
+                timer.Stop();
+                openFlag = false;
+            };
+            timer.Start();
+        }
+
+        public void OpenBook(string bookName)
+        {
+            if (!App.BookOpen && bookName != null)
+            {
+                try
+                {
+                    new BookViewer(bookName).Show();
+                }
+                catch { }
             }
         }
 
@@ -174,11 +201,7 @@ namespace InteractiveTable
             }
             if (article != null)
             {
-                try
-                {
-                    intTag = Convert.ToInt32(article.Tag);
-                }
-                catch {}
+                Int32.TryParse(article.Tag.ToString(), out intTag);
                 documentPage.Document = article; 
             }
             else

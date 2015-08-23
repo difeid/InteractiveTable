@@ -35,16 +35,53 @@ namespace InteractiveTable
 
         private DispatcherTimer timer = new DispatcherTimer();
 
-        public BookViewer(string bookName, int partCount)
+        public BookViewer(string bookName)
         {
             InitializeComponent();
-
             App.BookOpen = true;
-            slidePanel.Width = 0;
 
+            Init(bookName);
+        }
+
+        private void Init(string bookName)
+        {
+            slidePanel.Width = 0;
             culture = App.Language.Name;
+
+            switch (bookName)
+            {
+                case "RulesOfLife":
+                    partCount = 1;
+                    break;
+                case "Trilogy":
+                    partCount = 1;
+                    break;
+                case "Diary":
+                    partCount = 5;
+                    break;
+                case "Memories":
+                    partCount = 1;
+                    break;
+                case "Morning":
+                    partCount = 1;
+                    break;
+                case "Cossacks":
+                    partCount = 1;
+                    break;
+                case "WarAndPeace":
+                    partCount = 1;
+                    break;
+                case "AfterBall":
+                    partCount = 1;
+                    break;
+                case "YuleNight":
+                    partCount = 1;
+                    break;
+                case "Oasis":
+                    partCount = 1;
+                    break;
+            }
             this.bookName = bookName;
-            this.partCount = partCount;
 
             but = new Button[partCount];
             line = new Line[partCount];
@@ -90,7 +127,7 @@ namespace InteractiveTable
         {
             if (!IsLocked)
             {
-                int part = Convert.ToInt32((sender as Button).Name.Substring(3));
+                Int32.TryParse((sender as Button).Name.Substring(3), out part);
                 if (part != currentPart)
                 {
                     OpenBook(part);
