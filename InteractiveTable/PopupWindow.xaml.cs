@@ -169,7 +169,7 @@ namespace InteractiveTable
         {
             App.PopupOpen = true;
             timer = new DispatcherTimer();
-            timer.Interval = new TimeSpan(0, 0, 0, 3, 0);
+            timer.Interval = new TimeSpan(0, 0, 0, 2, 0);
             timer.Tick += Timer_Tick;
 
             numberImage = 0;

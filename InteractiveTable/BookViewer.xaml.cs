@@ -220,7 +220,7 @@ namespace InteractiveTable
                 l.Stroke = Brushes.Gray;
                 stack.Children.Add(l);
 
-                while (num < partCount)
+                while (num < partCount && lines.Length > num)
                 {
                     //<Button Width="360" Height="50" Margin="5" Template="{StaticResource HiddenButtonTemplate}" Tag="Лев Николаевич Толстой" FontSize="16"/>
                     but[num] = new Button();
