@@ -16,7 +16,7 @@ namespace InteractiveTable.Pages
 
         private void Back_Button_Click(object sender, RoutedEventArgs e)
         {
-            this.NavigationService.Navigate(new Uri("Pages/Intro.xaml", UriKind.Relative));
+            this.NavigationService.GoBack();
         }
 
         private void Memory_Button_Click(object sender, RoutedEventArgs e)
@@ -26,7 +26,8 @@ namespace InteractiveTable.Pages
 
         private void Student_Task_Button_Click(object sender, RoutedEventArgs e)
         {
-            this.NavigationService.Navigate(new Uri("Pages/Test.xaml", UriKind.Relative));
+            Test t = new Test(4);
+            this.NavigationService.Navigate(t);
         }
 
         private void Motiv_Button_Click(object sender, RoutedEventArgs e)
