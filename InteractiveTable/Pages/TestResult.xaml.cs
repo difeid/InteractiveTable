@@ -25,6 +25,27 @@ namespace InteractiveTable.Pages
             InitializeComponent();
 
             resultText.Text = result.ToString();
+
+            ResourceDictionary dict = (from d in Application.Current.Resources.MergedDictionaries
+                                       where d.Source != null && d.Source.OriginalString.StartsWith("LanguageResources/lang.")
+                                       select d).First();
+
+            if (result == 0)
+            {
+                 text.Text = dict["t_Answer2"] as String;
+            }
+            else if (result == 1)
+            {
+                text.Text = dict["t_Answer0"] as String;
+            }
+            else if (result <= 4)
+            {
+                text.Text = dict["t_Answer1"] as String;
+            }
+            else
+            {
+                text.Text = dict["t_Answer2"] as String;
+            }
         }
 
         private void Back_Button_Click(object sender, RoutedEventArgs e)

@@ -35,6 +35,11 @@ namespace InteractiveTable.Pages
             culture = App.Language.Name;
             countQuestion = 4;
             currentAnswer = OpenQuestion(currentQuestion, culture);
+            if (currentAnswer == 0 && culture != "ru-RU")
+            {
+                culture = "ru-RU";
+                currentAnswer = OpenQuestion(currentQuestion, culture);
+            }
         }
 
         public int OpenQuestion(int numberQuestion, string culture)
@@ -73,7 +78,7 @@ namespace InteractiveTable.Pages
         public void NextQuestion()
         {
             DispatcherTimer timer = new DispatcherTimer();
-            timer.Interval = new TimeSpan(0, 0, 0, 2, 0);
+            timer.Interval = new TimeSpan(0, 0, 0, 1, 0);
             timer.Tick += (s, ar) =>
             {
                 timer.Stop();

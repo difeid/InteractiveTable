@@ -393,7 +393,7 @@
         <Grid x:Name="repeat_grid" Width="200" Height="50" RenderTransformOrigin="0.5,0.5">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition/>
-                <ColumnDefinition Width="60"/>
+                <ColumnDefinition Width="70"/>
             </Grid.ColumnDefinitions>
             <Border CornerRadius="5" Grid.ColumnSpan="2" Background="#FFCF142B"/>
             <Image Source="/InteractiveTable;component/Images/TestResult/Repeat.png" Stretch="Fill"
