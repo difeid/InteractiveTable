@@ -28,7 +28,7 @@ namespace InteractiveTable
             InitializeComponent();
             this.imageNumber = 0;
             this.maxImageNumber = 1;
-            culture = App.Language.Name;
+            Init();
 
             ImageViewerShow(this.folder = folder, this.folderNumber = folderNumber, this.imageNumber, culture);
         }
@@ -37,7 +37,7 @@ namespace InteractiveTable
         {
             InitializeComponent();
             this.maxImageNumber = 1;
-            culture = App.Language.Name;
+            Init();
 
             ImageViewerShow(this.folder = folder, this.folderNumber = folderNumber, this.imageNumber = imageNumber, culture);
         }
@@ -46,10 +46,22 @@ namespace InteractiveTable
         {
             InitializeComponent();
             this.maxImageNumber = maxImageNumber;
-            culture = App.Language.Name;
+            Init();
 
             ImageViewerShow(this.folder = folder, this.folderNumber = folderNumber, this.imageNumber = imageNumber, culture);
             
+        }
+
+        private void Init()
+        {
+            culture = App.Language.Name;
+
+            App.IdleTimeOut += App_IdleTimeOut;
+        }
+
+        void App_IdleTimeOut(object sender, EventArgs e)
+        {
+            this.Close();
         }
 
         private void ChangeText(string folder, int folderNumber, int imageNumber, string culture)

@@ -93,6 +93,11 @@ namespace InteractiveTable
             this.Close(); 
         }
 
+        void App_IdleTimeOut(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
         private void Zoom_Click(object sender, RoutedEventArgs e)
         {
             if (e.Source is Button)
@@ -174,6 +179,8 @@ namespace InteractiveTable
 
             numberImage = 0;
             culture = App.Language.Name;
+
+            App.IdleTimeOut += App_IdleTimeOut;
 
             if (count > 1)
             {

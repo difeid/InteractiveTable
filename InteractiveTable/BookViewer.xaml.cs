@@ -58,6 +58,17 @@ namespace InteractiveTable
 
             but = new Button[partCount];
             line = new Line[partCount];
+
+            App.IdleTimeOut += App_IdleTimeOut;
+        }
+
+        void App_IdleTimeOut(object sender, EventArgs e)
+        {
+            if (!IsLocked)
+            {
+                pleaseWaitPopup.IsOpen = false;
+                this.Close();
+            }
         }
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
