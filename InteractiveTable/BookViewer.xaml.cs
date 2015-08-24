@@ -26,13 +26,13 @@ namespace InteractiveTable
         private string culture;
 
         private bool IsToggle;
-        private DoubleAnimation da = new DoubleAnimation();
+        private DoubleAnimation da;
         private bool IsLocked;
 
         private Button[] but;
         private Line[] line;
 
-        private DispatcherTimer timer = new DispatcherTimer();
+        private DispatcherTimer timer;
 
         public BookViewer(string bookName)
         {
@@ -44,6 +44,8 @@ namespace InteractiveTable
 
         private void Init(string bookName)
         {
+            da = new DoubleAnimation();
+            timer = new DispatcherTimer();
             slidePanel.Width = 0;
             culture = App.Language.Name;
 
