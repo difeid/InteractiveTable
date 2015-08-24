@@ -14,6 +14,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.IO;
 using System.Windows.Threading;
+using System.Windows.Media.Animation;
 
 namespace InteractiveTable.Pages
 {
@@ -22,7 +23,7 @@ namespace InteractiveTable.Pages
     /// </summary>
     public partial class Test : Page
     {
-        private int rate = 0;
+        private int rate;
 
         private string culture;
         private int currentQuestion;
@@ -34,31 +35,59 @@ namespace InteractiveTable.Pages
         private Brush green;
         private Brush red;
 
+        private DoubleAnimation da;
+        private double progressBarPartWidth;
+
         public Test(int countQuestion)
         {
             InitializeComponent();
+
             timer = new DispatcherTimer();
+
             converter = new BrushConverter();
             green = converter.ConvertFromString("#FF27AC5E") as Brush;
             red = converter.ConvertFromString("#FFC91329") as Brush;
 
+            da = new DoubleAnimation();
+
             culture = App.Language.Name;
-            Init();
             this.countQuestion = countQuestion;
+            progressBarPartWidth = 340 / countQuestion;
+            Init();
         }
 
         private void Init()
         {
-            testCanvas.Visibility = Visibility.Visible;
+            da.To = 0;
+            da.Duration = TimeSpan.FromMilliseconds(400);
+            testResultCanvas.BeginAnimation(Canvas.OpacityProperty, da);
             testResultCanvas.Visibility = Visibility.Collapsed;
-            
+
+            da.To = 0;
+            da.Duration = TimeSpan.FromMilliseconds(1);
+            progressBar.BeginAnimation(Rectangle.WidthProperty, da);
+
+            testCanvas.Visibility = Visibility.Visible;
+
             currentQuestion = 1;
+            rate = 0;
+
             currentAnswer = OpenQuestion(currentQuestion, culture);
             if (currentAnswer == 0 && culture != "ru-RU")
             {
                 culture = "ru-RU";
                 currentAnswer = OpenQuestion(currentQuestion, culture);
             }
+            da.To = 1;
+            da.Duration = TimeSpan.FromMilliseconds(400);
+            testCanvas.BeginAnimation(Canvas.OpacityProperty, da);
+        }
+
+        private void Progress(double to)
+        {
+            da.To = progressBar.Width + to;
+            da.Duration = TimeSpan.FromMilliseconds(100);
+            progressBar.BeginAnimation(Rectangle.WidthProperty, da);
         }
 
         public int OpenQuestion(int numberQuestion, string culture)
@@ -83,6 +112,8 @@ namespace InteractiveTable.Pages
                     b2_answer.Foreground = Brushes.Black;
                     b3_answer.Foreground = Brushes.Black;
                     b4_answer.Foreground = Brushes.Black;
+
+                    textCount.Text = String.Format("{0}/{1}", numberQuestion, countQuestion);
 
                     numberText.Text = numberQuestion.ToString();
                     questionText.Text = lines[0];
@@ -146,6 +177,7 @@ namespace InteractiveTable.Pages
             Button but = (sender as Button);
             int n = Convert.ToInt32(but.Name.Substring(1, 1));
             ButtonEnabled(false);
+            Progress(progressBarPartWidth);
 
             if (n == currentAnswer)
             {
@@ -182,8 +214,12 @@ namespace InteractiveTable.Pages
 
         public void TestResult(int result)
         {
+            da.To = 0;
+            da.Duration = TimeSpan.FromMilliseconds(600);
+            testCanvas.BeginAnimation(Canvas.OpacityProperty, da);
             testCanvas.Visibility = Visibility.Collapsed;
             testResultCanvas.Visibility = Visibility.Visible;
+
             resultText.Text = result.ToString();
 
             ResourceDictionary dict = (from d in Application.Current.Resources.MergedDictionaries
@@ -206,11 +242,13 @@ namespace InteractiveTable.Pages
             {
                 text.Text = dict["t_Answer2"] as String;
             }
+            da.To = 1;
+            da.Duration = TimeSpan.FromMilliseconds(600);
+            testResultCanvas.BeginAnimation(Canvas.OpacityProperty, da);
         }
 
         private void Repeat_Button_Click(object sender, RoutedEventArgs e)
         {
-            rate = 0;
             Init();
         }
     }

@@ -42,6 +42,11 @@
                     <ImageBrush ImageSource="/InteractiveTable;component/Images/Test/BottomButtonMask.png"/>
                 </Button.OpacityMask>
             </Button>
+
+            <Rectangle Width="340" Height="14" Canvas.Left="300" Canvas.Top="695" Fill="White"/>
+            <Rectangle x:Name="progressBar"  Width="340" Height="14" Canvas.Left="300" Canvas.Top="695" Fill="#FF27AC5E"/>
+
+            <TextBlock x:Name="textCount" FontFamily="Roboto" FontSize="18" Canvas.Left="650" Canvas.Top="689"/>
         </Canvas>
 
         <Canvas x:Name="testResultCanvas" Width="1920" Height="1080" Visibility="Collapsed">
@@ -55,7 +60,7 @@
             <Button Template="{StaticResource RepeatTemplate}" Content="{DynamicResource t_Repeat}" FontFamily="Basil Bold" FontSize="25" Foreground="White"
                 Canvas.Left="860" Canvas.Top="830" Click="Repeat_Button_Click"/>
         </Canvas>
-        
+
         <Button x:Name="back_button" Template="{StaticResource BackButtonTemplate}" Click="Back_Button_Click"
                 HorizontalAlignment="Left" VerticalAlignment="Top" Margin="75,955,0,0" FocusVisualStyle="{x:Null}"/>
     </Grid>
