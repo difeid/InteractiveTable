@@ -6,53 +6,57 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       mc:Ignorable="d" 
       d:DesignHeight="1080" d:DesignWidth="1920" Width="1920" Height="1080">
-    <Canvas>
+    <Grid>
+        <Canvas x:Name="testCanvas" Width="1920" Height="1080">
+            <ed:RegularPolygon Width="50" Height="60" HorizontalAlignment="Stretch" InnerRadius="1" PointCount="6" Stretch="Fill" Canvas.Left="300" Canvas.Top="297" Fill="#FF9A452A"/>
+            <TextBlock x:Name="numberText"  Width="50" Canvas.Left="300" Canvas.Top="312" Foreground="White" FontFamily="/InteractiveTable;component/Fonts/#Basil Bold" FontSize="26" TextAlignment="Center"/>
 
-        <ed:RegularPolygon Width="50" Height="60" HorizontalAlignment="Stretch" InnerRadius="1" PointCount="6" Stretch="Fill" Canvas.Left="300" Canvas.Top="297" Fill="#FF9A452A"/>
-        <TextBlock x:Name="numberText"  Width="50" Canvas.Left="300" Canvas.Top="312" Foreground="White" FontFamily="/InteractiveTable;component/Fonts/#Basil Bold" FontSize="26" TextAlignment="Center"/>
+            <TextBlock x:Name="questionText" Width="500" Height="350" Canvas.Left="370" Canvas.Top="305" FontFamily="/InteractiveTable;component/Fonts/#Basil Bold" FontSize="40" TextWrapping="Wrap" TextTrimming="WordEllipsis"/>
 
-        <TextBlock x:Name="questionText" Width="500" Height="350" Canvas.Left="370" Canvas.Top="305" FontFamily="/InteractiveTable;component/Fonts/#Basil Bold" FontSize="40" TextWrapping="Wrap" TextTrimming="WordEllipsis"/>
+            <Image Width="650" Height="550" Canvas.Left="950" Canvas.Top="240" Source="/InteractiveTable;component/Images/Test/ButtonBackground.png"/>
 
-        <Button x:Name="back_button" Template="{StaticResource BackButtonTemplate}" Click="Back_Button_Click" Canvas.Left="75" Canvas.Top="955" FocusVisualStyle="{x:Null}"/>
+            <Button x:Name="b1_answer" Template="{StaticResource TestButtonTemplate}" Width="554" Height="95" Canvas.Left="997" Canvas.Top="303" 
+                FontFamily="Roboto" FontSize="25" Padding="50,41,0,0" FocusVisualStyle="{x:Null}" Click="Answer_Click" Background="Transparent">
+                <Button.OpacityMask>
+                    <ImageBrush ImageSource="/InteractiveTable;component/Images/Test/TopButtonMask.png"/>
+                </Button.OpacityMask>
+            </Button>
 
-        <Button x:Name="b1_answer" Template="{StaticResource TestButtonTemplate}" BorderBrush="Transparent" Canvas.Left="985" Canvas.Top="293" 
-                FontFamily="Roboto" FontSize="25" Padding="50,42,0,0" FocusVisualStyle="{x:Null}" Click="Answer_Click">
-            <Button.OpacityMask>
-                <ImageBrush ImageSource="/InteractiveTable;component/Images/Test/TopButtonMask.png"/>
-            </Button.OpacityMask>
-            <Button.Background>
-                <ImageBrush ImageSource="/InteractiveTable;component/Images/Test/TopButton.png"/>
-            </Button.Background>
-        </Button>
+            <Button x:Name="b2_answer" Template="{StaticResource TestButtonTemplate}" Width="554" Height="76" Canvas.Left="997" Canvas.Top="426" 
+                FontFamily="Roboto" FontSize="25" Padding="50,21,0,0" FocusVisualStyle="{x:Null}" Click="Answer_Click" Background="Transparent">
+                <Button.OpacityMask>
+                    <ImageBrush ImageSource="/InteractiveTable;component/Images/Test/CenterButtonMask.png"/>
+                </Button.OpacityMask>
+            </Button>
 
-        <Button x:Name="b2_answer" Template="{StaticResource TestButtonTemplate}" BorderBrush="Transparent" Canvas.Left="985" Canvas.Top="408" 
-                FontFamily="Roboto" FontSize="25" Padding="50,37,0,0" FocusVisualStyle="{x:Null}" Click="Answer_Click">
-            <Button.OpacityMask>
-                <ImageBrush ImageSource="/InteractiveTable;component/Images/Test/CenterButtonMask.png"/>
-            </Button.OpacityMask>
-            <Button.Background>
-                <ImageBrush ImageSource="/InteractiveTable;component/Images/Test/CenterButton.png"/>
-            </Button.Background>
-        </Button>
+            <Button x:Name="b3_answer" Template="{StaticResource TestButtonTemplate}" Width="554" Height="76" Canvas.Left="997" Canvas.Top="530" 
+                FontFamily="Roboto" FontSize="25" Padding="50,21,0,0" FocusVisualStyle="{x:Null}" Click="Answer_Click" Background="Transparent">
+                <Button.OpacityMask>
+                    <ImageBrush ImageSource="/InteractiveTable;component/Images/Test/CenterButtonMask.png"/>
+                </Button.OpacityMask>
+            </Button>
 
-        <Button x:Name="b3_answer" Template="{StaticResource TestButtonTemplate}" BorderBrush="Transparent" Canvas.Left="985" Canvas.Top="518" 
-                FontFamily="Roboto" FontSize="25" Padding="50,37,0,0" FocusVisualStyle="{x:Null}" Click="Answer_Click">
-            <Button.OpacityMask>
-                <ImageBrush ImageSource="/InteractiveTable;component/Images/Test/CenterButtonMask.png"/>
-            </Button.OpacityMask>
-            <Button.Background>
-                <ImageBrush ImageSource="/InteractiveTable;component/Images/Test/CenterButton.png"/>
-            </Button.Background>
-        </Button>
+            <Button x:Name="b4_answer" Template="{StaticResource TestButtonTemplate}" Width="554" Height="89" Canvas.Left="997" Canvas.Top="634" 
+                FontFamily="Roboto" FontSize="25" Padding="50,20,0,0" FocusVisualStyle="{x:Null}" Click="Answer_Click" Background="Transparent">
+                <Button.OpacityMask>
+                    <ImageBrush ImageSource="/InteractiveTable;component/Images/Test/BottomButtonMask.png"/>
+                </Button.OpacityMask>
+            </Button>
+        </Canvas>
 
-        <Button x:Name="b4_answer" Template="{StaticResource TestButtonTemplate}" BorderBrush="Transparent" Canvas.Left="985" Canvas.Top="628" 
-                FontFamily="Roboto" FontSize="25" Padding="50,38,0,0" FocusVisualStyle="{x:Null}" Click="Answer_Click">
-            <Button.OpacityMask>
-                <ImageBrush ImageSource="/InteractiveTable;component/Images/Test/BottomButtonMask.png"/>
-            </Button.OpacityMask>
-            <Button.Background>
-                <ImageBrush ImageSource="/InteractiveTable;component/Images/Test/BottomButton.png"/>
-            </Button.Background>
-        </Button>
-    </Canvas>
+        <Canvas x:Name="testResultCanvas" Width="1920" Height="1080" Visibility="Collapsed">
+            <Image Width="620" Height="700" Source="/InteractiveTable;component/Images/Test/ResultBackground.png" Canvas.Left="650" Canvas.Top="120"/>
+            <TextBlock Width="400" Text="{DynamicResource t_You}" FontFamily="/InteractiveTable;component/Fonts/#Basil Bold" FontSize="45" Canvas.Left="760" Canvas.Top="235" TextAlignment="Center"/>
+            <TextBlock x:Name="text" Width="400" FontFamily="/InteractiveTable;component/Fonts/#Basil Bold" FontSize="45" Canvas.Left="760" Canvas.Top="615"
+                   TextAlignment="Center" TextWrapping="Wrap"/>
+
+            <TextBlock x:Name="resultText" Width="220" FontFamily="/InteractiveTable;component/Fonts/#Basil Bold" FontSize="90" Canvas.Left="850" Canvas.Top="400" 
+                   TextAlignment="Center" Foreground="White"/>
+            <Button Template="{StaticResource RepeatTemplate}" Content="{DynamicResource t_Repeat}" FontFamily="Basil Bold" FontSize="25" Foreground="White"
+                Canvas.Left="860" Canvas.Top="830" Click="Repeat_Button_Click"/>
+        </Canvas>
+        
+        <Button x:Name="back_button" Template="{StaticResource BackButtonTemplate}" Click="Back_Button_Click"
+                HorizontalAlignment="Left" VerticalAlignment="Top" Margin="75,955,0,0" FocusVisualStyle="{x:Null}"/>
+    </Grid>
 </Page>

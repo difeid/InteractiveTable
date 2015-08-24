@@ -25,15 +25,26 @@ namespace InteractiveTable.Pages
         private int rate = 0;
 
         private string culture;
-        private int currentQuestion = 1;
+        private int currentQuestion;
         private int currentAnswer;
         private int countQuestion;
+        private DispatcherTimer timer;
 
-        public Test()
+        public Test(int countQuestion)
         {
             InitializeComponent();
+            timer = new DispatcherTimer();
             culture = App.Language.Name;
-            countQuestion = 4;
+            Init();
+            this.countQuestion = countQuestion;
+        }
+
+        private void Init()
+        {
+            testCanvas.Visibility = Visibility.Visible;
+            testResultCanvas.Visibility = Visibility.Collapsed;
+            
+            currentQuestion = 1;
             currentAnswer = OpenQuestion(currentQuestion, culture);
             if (currentAnswer == 0 && culture != "ru-RU")
             {
@@ -55,10 +66,10 @@ namespace InteractiveTable.Pages
                 {
                     ButtonEnabled(true);
 
-                    b1_answer.BorderBrush = Brushes.Transparent;
-                    b2_answer.BorderBrush = Brushes.Transparent;
-                    b3_answer.BorderBrush = Brushes.Transparent;
-                    b4_answer.BorderBrush = Brushes.Transparent;
+                    b1_answer.Background = Brushes.Transparent;
+                    b2_answer.Background = Brushes.Transparent;
+                    b3_answer.Background = Brushes.Transparent;
+                    b4_answer.Background = Brushes.Transparent;
 
                     numberText.Text = numberQuestion.ToString();
                     questionText.Text = lines[0];
@@ -75,10 +86,9 @@ namespace InteractiveTable.Pages
             return answer;
         }
 
-        public void NextQuestion()
+        public void NextQuestion(Button but, bool right)
         {
-            DispatcherTimer timer = new DispatcherTimer();
-            timer.Interval = new TimeSpan(0, 0, 0, 1, 0);
+            timer.Interval = new TimeSpan(0, 0, 0, 0, 700);
             timer.Tick += (s, ar) =>
             {
                 timer.Stop();
@@ -88,8 +98,7 @@ namespace InteractiveTable.Pages
                 }
                 else
                 {
-                    TestResult tr = new TestResult(rate);
-                    this.NavigationService.Navigate(tr);
+                    TestResult(rate);
                 }
             };
             timer.Start();
@@ -98,8 +107,8 @@ namespace InteractiveTable.Pages
         private void Answer_Click(object sender, RoutedEventArgs e)
         {
             BrushConverter converter = new BrushConverter();
-            Brush green = converter.ConvertFromString("#FF27AC59") as Brush;
-            Brush red = converter.ConvertFromString("#FFCF142B") as Brush;
+            Brush green = converter.ConvertFromString("#FF27AC5E") as Brush;
+            Brush red = converter.ConvertFromString("#FFC91329") as Brush;
 
             Button but = (sender as Button);
             int n = Convert.ToInt32(but.Name.Substring(1, 1));
@@ -107,19 +116,21 @@ namespace InteractiveTable.Pages
 
             if (n == currentAnswer)
             {
-                but.BorderBrush = green;
+                but.Background = green;
+                but.Foreground = Brushes.White;
                 rate++;
             }
             else
             {
-                but.BorderBrush = red;
+                but.Background = red;
+                but.Foreground = Brushes.White;
             }
             NextQuestion();
         }
 
         private void Back_Button_Click(object sender, RoutedEventArgs e)
         {
-            this.NavigationService.Navigate(new Uri("Pages/MainMenu.xaml", UriKind.Relative));
+            this.NavigationService.GoBack();
         }
 
         public void ButtonEnabled(bool enabled)
@@ -128,6 +139,40 @@ namespace InteractiveTable.Pages
             b2_answer.IsEnabled = enabled;
             b3_answer.IsEnabled = enabled;
             b4_answer.IsEnabled = enabled;
+        }
+
+        public void TestResult(int result)
+        {
+            testCanvas.Visibility = Visibility.Collapsed;
+            testResultCanvas.Visibility = Visibility.Visible;
+            resultText.Text = result.ToString();
+
+            ResourceDictionary dict = (from d in Application.Current.Resources.MergedDictionaries
+                                       where d.Source != null && d.Source.OriginalString.StartsWith("LanguageResources/lang.")
+                                       select d).First();
+
+            if (result == 0)
+            {
+                 text.Text = dict["t_Answer2"] as String;
+            }
+            else if (result == 1)
+            {
+                text.Text = dict["t_Answer0"] as String;
+            }
+            else if (result <= 4)
+            {
+                text.Text = dict["t_Answer1"] as String;
+            }
+            else
+            {
+                text.Text = dict["t_Answer2"] as String;
+            }
+        }
+
+        private void Repeat_Button_Click(object sender, RoutedEventArgs e)
+        {
+            rate = 0;
+            Init();
         }
     }
 }
