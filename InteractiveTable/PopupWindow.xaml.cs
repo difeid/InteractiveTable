@@ -97,13 +97,16 @@ namespace InteractiveTable
             if (e.Source is Button)
             {
                 string tag = (e.Source as Button).Tag.ToString();
-                if (Int32.TryParse(tag, out numberImage))
+                if (tag != null)
                 {
-                    OpenZoomImage();
-                }
-                else
-                {
-                    if (tag != null)
+                    if (!tag.Contains(":"))
+                    {
+                        if (Int32.TryParse(tag, out numberImage))
+                        {
+                            OpenZoomImage();
+                        }
+                    }
+                    else
                     {
                         OpenBook(tag);
                     }

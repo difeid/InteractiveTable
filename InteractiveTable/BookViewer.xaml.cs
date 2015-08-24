@@ -31,7 +31,6 @@ namespace InteractiveTable
 
         private Button[] but;
         private Line[] line;
-        private int countLines = 0;
 
         private DispatcherTimer timer = new DispatcherTimer();
 
@@ -61,11 +60,11 @@ namespace InteractiveTable
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            if (!OpenContents(bookName, culture))
+            if (!OpenContents(bookName, partCount, culture))
             {
                 if (culture != "ru-RU")
                 {
-                    OpenContents(bookName, culture);
+                    OpenContents(bookName, partCount, culture);
                 }
             }
             OpenBook(currentPart);
@@ -162,7 +161,7 @@ namespace InteractiveTable
 
         private void HighlightingButton( int selectPart, int canselSelectPart)
         {
-            if (selectPart < countLines && canselSelectPart < countLines && but[canselSelectPart] != null && but[selectPart] != null)
+            if (selectPart < partCount && canselSelectPart < partCount && but[canselSelectPart] != null && but[selectPart] != null)
             {
                 but[canselSelectPart].FontWeight = FontWeights.Normal;
                 but[canselSelectPart].IsEnabled = true;
@@ -196,14 +195,13 @@ namespace InteractiveTable
             return book;
         }
 
-        private bool OpenContents(string bookName, string culture)
+        private bool OpenContents(string bookName, int partCount, string culture)
         {
             string path = String.Format("Contents/Book/{0}/contents.{1}.txt", bookName, culture);
 
             if (File.Exists(path))
             {
                 string[] lines = File.ReadAllLines(path);
-                countLines = lines.Length;
                 int num = 0;
 
                 ResourceDictionary dict = new ResourceDictionary();
@@ -220,7 +218,7 @@ namespace InteractiveTable
                 l.Stroke = Brushes.Gray;
                 stack.Children.Add(l);
 
-                while (num < countLines)
+                while (num < partCount)
                 {
                     //<Button Width="360" Height="50" Margin="5" Template="{StaticResource HiddenButtonTemplate}" Tag="Лев Николаевич Толстой" FontSize="16"/>
                     but[num] = new Button();
