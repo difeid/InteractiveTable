@@ -444,9 +444,6 @@
     <Resource Include="Images\BookViewer\Separator.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Images\Test\Maket.png" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="Images\Test\Repeat.png" />
     <Resource Include="Images\Test\ResultBackground.png" />
   </ItemGroup>
