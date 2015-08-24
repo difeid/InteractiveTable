@@ -136,8 +136,8 @@ namespace InteractiveTable.Pages
                     break;
             }
             timer.Tick -= Timer_Tick_RightAnswer;
-            timer.Interval = new TimeSpan(0, 0, 0, 0, 400);
-            timer.Tick -= Timer_Tick_NextQuestion;
+            timer.Interval = new TimeSpan(0, 0, 0, 0, 500);
+            timer.Tick += Timer_Tick_NextQuestion;
             timer.Start();
         }
 
