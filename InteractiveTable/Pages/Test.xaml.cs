@@ -29,11 +29,11 @@ namespace InteractiveTable.Pages
         private int currentAnswer;
         private int countQuestion;
 
-        public Test(int countQuestion)
+        public Test()
         {
             InitializeComponent();
             culture = App.Language.Name;
-            this.countQuestion = countQuestion;
+            countQuestion = 4;
             currentAnswer = OpenQuestion(currentQuestion, culture);
         }
 
@@ -83,7 +83,8 @@ namespace InteractiveTable.Pages
                 }
                 else
                 {
-                    MessageBox.Show(rate.ToString());
+                    TestResult tr = new TestResult(rate);
+                    this.NavigationService.Navigate(tr);
                 }
             };
             timer.Start();
@@ -113,8 +114,7 @@ namespace InteractiveTable.Pages
 
         private void Back_Button_Click(object sender, RoutedEventArgs e)
         {
-            rate = 0;
-            this.NavigationService.GoBack();
+            this.NavigationService.Navigate(new Uri("Pages/MainMenu.xaml", UriKind.Relative));
         }
 
         public void ButtonEnabled(bool enabled)

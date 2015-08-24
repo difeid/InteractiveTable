@@ -312,7 +312,7 @@
             <Image Source="pack://application:,,,/Images/PopupWindow/Zoom.png" Width="30" Height="30" Margin="14" HorizontalAlignment="Right" VerticalAlignment="Bottom"/>
         </Grid>
     </ControlTemplate>
-    
+
     <!--Шаблон скрытых кнопок-->
     <ControlTemplate x:Key="HiddenButtonTemplate" TargetType="{x:Type Button}">
         <Grid>
@@ -382,6 +382,30 @@
                 <Setter Property="RenderTransform" TargetName="test_grid">
                     <Setter.Value>
                         <ScaleTransform ScaleY="0.98" ScaleX="0.98"/>
+                    </Setter.Value>
+                </Setter>
+            </Trigger>
+        </ControlTemplate.Triggers>
+    </ControlTemplate>
+
+    <!--Шаблон кнопоки повторить-->
+    <ControlTemplate x:Key="RepeatTemplate" TargetType="{x:Type Button}">
+        <Grid x:Name="repeat_grid" Width="200" Height="50" RenderTransformOrigin="0.5,0.5">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="60"/>
+            </Grid.ColumnDefinitions>
+            <Border CornerRadius="5" Grid.ColumnSpan="2" Background="#FFCF142B"/>
+            <Image Source="/InteractiveTable;component/Images/TestResult/Repeat.png" Stretch="Fill"
+				Width="24" Height="24" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,15,0,0"/>
+            <TextBlock Text="{TemplateBinding Content}" FontFamily="Basil Bold" FontSize="{TemplateBinding FontSize}"
+				HorizontalAlignment="Right" VerticalAlignment="Center" Foreground="{TemplateBinding Foreground}"/>
+        </Grid>
+        <ControlTemplate.Triggers>
+            <Trigger Property="IsPressed" Value="True">
+                <Setter Property="RenderTransform" TargetName="repeat_grid">
+                    <Setter.Value>
+                        <ScaleTransform ScaleY="0.96" ScaleX="0.96"/>
                     </Setter.Value>
                 </Setter>
             </Trigger>

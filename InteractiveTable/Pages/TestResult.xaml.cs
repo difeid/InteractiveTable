@@ -20,14 +20,21 @@ namespace InteractiveTable.Pages
     /// </summary>
     public partial class TestResult : Page
     {
-        public TestResult()
+        public TestResult(int result)
         {
             InitializeComponent();
+
+            resultText.Text = result.ToString();
         }
 
         private void Back_Button_Click(object sender, RoutedEventArgs e)
         {
-            this.NavigationService.GoBack();
+            this.NavigationService.Navigate(new Uri("Pages/MainMenu.xaml", UriKind.Relative));
+        }
+
+        private void Repeat_Button_Click(object sender, RoutedEventArgs e)
+        {
+            this.NavigationService.Navigate(new Uri("Pages/Test.xaml", UriKind.Relative));
         }
     }
 }

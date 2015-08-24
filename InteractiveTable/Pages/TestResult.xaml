@@ -8,7 +8,15 @@
     <Canvas>
         <Button x:Name="back_button" Template="{StaticResource BackButtonTemplate}" Click="Back_Button_Click" Canvas.Left="75" Canvas.Top="955" FocusVisualStyle="{x:Null}"/>
 
-        <Image Source="/InteractiveTable;component/Images/TestResult/ResultBackground.png"/>
+        <Image Width="620" Height="700" Source="/InteractiveTable;component/Images/TestResult/ResultBackground.png" Canvas.Left="650" Canvas.Top="120"/>
+        <TextBlock Width="400" Text="{DynamicResource t_You}" FontFamily="/InteractiveTable;component/Fonts/#Basil Bold" FontSize="45" Canvas.Left="760" Canvas.Top="235" TextAlignment="Center"/>
+        <TextBlock Width="400" Text="{DynamicResource t_Answer}" FontFamily="/InteractiveTable;component/Fonts/#Basil Bold" FontSize="45" Canvas.Left="760" Canvas.Top="615"
+                   TextAlignment="Center" TextWrapping="Wrap"/>
+
+        <TextBlock x:Name="resultText" Width="220" FontFamily="/InteractiveTable;component/Fonts/#Basil Bold" FontSize="90" Canvas.Left="850" Canvas.Top="400" 
+                   TextAlignment="Center" Foreground="White"/>
+        <Button Template="{StaticResource RepeatTemplate}" Content="{DynamicResource t_Repeat}" FontFamily="Basil Bold" FontSize="25" Foreground="White"
+                Canvas.Left="860" Canvas.Top="830" Click="Repeat_Button_Click"/>
     </Canvas>
 </Page>
 
