@@ -125,7 +125,7 @@ namespace InteractiveTable.Pages
                 but.Background = red;
                 but.Foreground = Brushes.White;
             }
-            NextQuestion();
+            NextQuestion(but, true);
         }
 
         private void Back_Button_Click(object sender, RoutedEventArgs e)
