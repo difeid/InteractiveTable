@@ -28,12 +28,20 @@ namespace InteractiveTable.Pages
         private int currentQuestion;
         private int currentAnswer;
         private int countQuestion;
+
         private DispatcherTimer timer;
+        private BrushConverter converter;
+        private Brush green;
+        private Brush red;
 
         public Test(int countQuestion)
         {
             InitializeComponent();
             timer = new DispatcherTimer();
+            converter = new BrushConverter();
+            green = converter.ConvertFromString("#FF27AC5E") as Brush;
+            red = converter.ConvertFromString("#FFC91329") as Brush;
+
             culture = App.Language.Name;
             Init();
             this.countQuestion = countQuestion;
@@ -71,6 +79,11 @@ namespace InteractiveTable.Pages
                     b3_answer.Background = Brushes.Transparent;
                     b4_answer.Background = Brushes.Transparent;
 
+                    b1_answer.Foreground = Brushes.Black;
+                    b2_answer.Foreground = Brushes.Black;
+                    b3_answer.Foreground = Brushes.Black;
+                    b4_answer.Foreground = Brushes.Black;
+
                     numberText.Text = numberQuestion.ToString();
                     questionText.Text = lines[0];
 
@@ -85,31 +98,51 @@ namespace InteractiveTable.Pages
             }
             return answer;
         }
-
-        public void NextQuestion(Button but, bool right)
+  
+        private void Timer_Tick_NextQuestion(object sender, EventArgs e)
         {
-            timer.Interval = new TimeSpan(0, 0, 0, 0, 700);
-            timer.Tick += (s, ar) =>
+            timer.Stop();
+            if (++currentQuestion <= countQuestion)
             {
-                timer.Stop();
-                if (++currentQuestion <= countQuestion)
-                {
-                    currentAnswer = OpenQuestion(currentQuestion, culture);
-                }
-                else
-                {
-                    TestResult(rate);
-                }
-            };
+                currentAnswer = OpenQuestion(currentQuestion, culture);
+            }
+            else
+            {
+                TestResult(rate);
+            }
+            timer.Tick -= Timer_Tick_NextQuestion;
+        }
+        private void Timer_Tick_RightAnswer(object sender, EventArgs e)
+        {
+            timer.Stop();
+
+            switch (currentAnswer)
+            {
+                case 1:
+                    b1_answer.Background = green;
+                    b1_answer.Foreground = Brushes.White;
+                    break;
+                case 2:
+                    b2_answer.Background = green;
+                    b2_answer.Foreground = Brushes.White;
+                    break;
+                case 3:
+                    b3_answer.Background = green;
+                    b3_answer.Foreground = Brushes.White;
+                    break;
+                case 4:
+                    b4_answer.Background = green;
+                    b4_answer.Foreground = Brushes.White;
+                    break;
+            }
+            timer.Tick -= Timer_Tick_RightAnswer;
+            timer.Interval = new TimeSpan(0, 0, 0, 0, 400);
+            timer.Tick -= Timer_Tick_NextQuestion;
             timer.Start();
         }
 
         private void Answer_Click(object sender, RoutedEventArgs e)
         {
-            BrushConverter converter = new BrushConverter();
-            Brush green = converter.ConvertFromString("#FF27AC5E") as Brush;
-            Brush red = converter.ConvertFromString("#FFC91329") as Brush;
-
             Button but = (sender as Button);
             int n = Convert.ToInt32(but.Name.Substring(1, 1));
             ButtonEnabled(false);
@@ -119,13 +152,19 @@ namespace InteractiveTable.Pages
                 but.Background = green;
                 but.Foreground = Brushes.White;
                 rate++;
+                timer.Interval = new TimeSpan(0, 0, 0, 0, 700);
+                timer.Tick += Timer_Tick_NextQuestion;
+                timer.Start();
             }
             else
             {
                 but.Background = red;
                 but.Foreground = Brushes.White;
+
+                timer.Interval = new TimeSpan(0, 0, 0, 0, 200);
+                timer.Tick += Timer_Tick_RightAnswer;
+                timer.Start();
             }
-            NextQuestion(but, true);
         }
 
         private void Back_Button_Click(object sender, RoutedEventArgs e)

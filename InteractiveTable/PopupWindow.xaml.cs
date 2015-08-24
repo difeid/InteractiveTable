@@ -22,6 +22,7 @@ namespace InteractiveTable
         private string culture;
 
         private bool openFlag = false;
+        private DispatcherTimer timer;
 
         /// <summary>
         /// Вывод статей
@@ -126,15 +127,13 @@ namespace InteractiveTable
                 }
                 catch { }
             }
-
-            DispatcherTimer timer = new DispatcherTimer();
-            timer.Interval = new TimeSpan(0, 0, 0, 2, 0);
-            timer.Tick += (s, ar) =>
-            {
-                timer.Stop();
-                openFlag = false;
-            };
             timer.Start();
+        }
+
+        private void Timer_Tick(object sender, EventArgs e)
+        {
+            timer.Stop();
+            openFlag = false;
         }
 
         public void OpenBook(string bookName)
@@ -169,6 +168,10 @@ namespace InteractiveTable
         private void Init(int count)
         {
             App.PopupOpen = true;
+            timer = new DispatcherTimer();
+            timer.Interval = new TimeSpan(0, 0, 0, 3, 0);
+            timer.Tick += Timer_Tick;
+
             numberImage = 0;
             culture = App.Language.Name;
 
