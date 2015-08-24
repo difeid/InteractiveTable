@@ -48,40 +48,12 @@ namespace InteractiveTable
             slidePanel.Width = 0;
             culture = App.Language.Name;
 
-            switch (bookName)
-            {
-                case "RulesOfLife":
-                    partCount = 1;
-                    break;
-                case "Trilogy":
-                    partCount = 1;
-                    break;
-                case "Diary":
-                    partCount = 5;
-                    break;
-                case "Memories":
-                    partCount = 1;
-                    break;
-                case "Morning":
-                    partCount = 1;
-                    break;
-                case "Cossacks":
-                    partCount = 1;
-                    break;
-                case "WarAndPeace":
-                    partCount = 1;
-                    break;
-                case "AfterBall":
-                    partCount = 1;
-                    break;
-                case "YuleNight":
-                    partCount = 1;
-                    break;
-                case "Oasis":
-                    partCount = 1;
-                    break;
-            }
-            this.bookName = bookName;
+            int index = bookName.IndexOf(':');
+            string name = bookName.Substring(0, index);
+            string part = bookName.Substring(index + 1);
+            Int32.TryParse(part, out partCount);
+
+            this.bookName = name;
 
             but = new Button[partCount];
             line = new Line[partCount];
