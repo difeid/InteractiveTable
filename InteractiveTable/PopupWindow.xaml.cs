@@ -97,22 +97,20 @@ namespace InteractiveTable
 
         private void Zoom_Click(object sender, RoutedEventArgs e)
         {
-            if (e.Source is Button)
+            if (e.Source is Button && (e.Source as Button).Tag != null)
             {
                 string tag = (e.Source as Button).Tag.ToString();
-                if (tag != null)
+
+                if (!tag.Contains(":"))
                 {
-                    if (!tag.Contains(":"))
+                    if (Int32.TryParse(tag, out numberImage))
                     {
-                        if (Int32.TryParse(tag, out numberImage))
-                        {
-                            OpenZoomImage();
-                        }
+                        OpenZoomImage();
                     }
-                    else
-                    {
-                        OpenBook(tag);
-                    }
+                }
+                else
+                {
+                    OpenBook(tag);
                 }
             }
         }
@@ -200,7 +198,10 @@ namespace InteractiveTable
             }
             if (article != null)
             {
-                Int32.TryParse(article.Tag.ToString(), out intTag);
+                if (article.Tag != null)
+                {
+                    Int32.TryParse(article.Tag.ToString(), out intTag);
+                }
                 documentPage.Document = article; 
             }
             else

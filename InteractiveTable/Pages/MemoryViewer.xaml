@@ -33,11 +33,11 @@
                 </Grid.CacheMode>
                 
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="571"/>
+                    <RowDefinition Height="Auto"/>
                     <RowDefinition Height="Auto" />
                 </Grid.RowDefinitions>
 
-                <Border Width="650" Height="520">
+                <Border x:Name="subBorder" Width="650" Height="520" Margin="65,26">
                     <Border.Background>
                         <ImageBrush ImageSource="/InteractiveTable;component/Images/MemoryViewer/SubPhotoBorder.png"/>
                     </Border.Background>

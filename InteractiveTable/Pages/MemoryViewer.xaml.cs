@@ -113,7 +113,7 @@ namespace InteractiveTable.Pages
         {
             scrollContent.ScrollToVerticalOffset(0);
 
-            OpenImage(folder, number);
+            bool subTag = true;
 
             FlowDocument disc = OpenDisc(folder, number, culture);
             if (disc == null)
@@ -125,27 +125,49 @@ namespace InteractiveTable.Pages
             }
             if (disc != null)
             {
+                if (disc.Tag != null)
+                {
+                    Boolean.TryParse(disc.Tag.ToString(), out subTag);
+                }
                 documentDiscription.Document = disc;
             }
             else
             {
                 documentDiscription.Document.Blocks.Clear();
             }
+
+            OpenImage(folder, number, subTag);
+            
         }
 
-        private void OpenImage(string folder, int number)
+        private void OpenImage(string folder, int number, bool subImage)
         {
             Uri pathMain = new Uri(String.Format("pack://siteoforigin:,,,/Contents/Photo/{0}/{1}/main.jpg", folder, number), UriKind.Absolute);
-            Uri pathSub = new Uri(String.Format("pack://siteoforigin:,,,/Contents/Photo/{0}/{1}/sub.jpg", folder, number), UriKind.Absolute);
             try
             {
                 mainPhoto.Source = new BitmapImage(pathMain);
-                subPhoto.Source = new BitmapImage(pathSub);
             }
             catch
             {
                 mainPhoto.Source = null;
-                subPhoto.Source = null;
+            }
+            if (subImage)
+            {
+                Uri pathSub = new Uri(String.Format("pack://siteoforigin:,,,/Contents/Photo/{0}/{1}/sub.jpg", folder, number), UriKind.Absolute);
+                try
+                {
+                    subPhoto.Source = new BitmapImage(pathSub);
+                    subBorder.Visibility = Visibility.Visible;
+                }
+                catch
+                {
+                    subPhoto.Source = null;
+                    subBorder.Visibility = Visibility.Collapsed;
+                }
+            }
+            else
+            {
+                subBorder.Visibility = Visibility.Collapsed;
             }
         }
 
