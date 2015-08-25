@@ -20,7 +20,7 @@ namespace InteractiveTable.Pages
 
         private void Monument_Button_Click(object sender, RoutedEventArgs e)
         {
-            MemoryViewer mv = new MemoryViewer("Monuments", 5);
+            MemoryViewer mv = new MemoryViewer("Monuments", 9);
             this.NavigationService.Navigate(mv);
         }
 
