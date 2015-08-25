@@ -21,9 +21,6 @@ namespace InteractiveTable
         private int maxNumberImage;
         private string culture;
 
-        private bool openFlag = false;
-        private DispatcherTimer timer;
-
         /// <summary>
         /// Вывод статей
         /// </summary>
@@ -122,23 +119,15 @@ namespace InteractiveTable
 
         private void OpenZoomImage()
         {
-            if (!openFlag)
+            if (!App.ImageOpen)
             {
                 this.Topmost = false;
-                openFlag = true;
                 try
                 {
                     new ImageViewer(folder, number, numberImage, maxNumberImage).Show();
                 }
                 catch { }
             }
-            timer.Start();
-        }
-
-        private void Timer_Tick(object sender, EventArgs e)
-        {
-            timer.Stop();
-            openFlag = false;
         }
 
         public void OpenBook(string bookName)
@@ -173,9 +162,6 @@ namespace InteractiveTable
         private void Init(int count)
         {
             App.PopupOpen = true;
-            timer = new DispatcherTimer();
-            timer.Interval = new TimeSpan(0, 0, 0, 2, 0);
-            timer.Tick += Timer_Tick;
 
             numberImage = 0;
             culture = App.Language.Name;

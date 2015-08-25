@@ -3,7 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="ImageViewer" Height="1080" Width="1920" WindowStyle="None"
         AllowsTransparency="True" WindowState="Maximized" ResizeMode="NoResize" 
-        ShowInTaskbar="False" Topmost="True" MouseDown="Viewer_MouseDown">
+        ShowInTaskbar="False" Topmost="True" MouseDown="Viewer_MouseDown" Closed="imageViewer_Closed">
 
     <Window.Background>
         <SolidColorBrush Color="Black" Opacity="0.65"/>

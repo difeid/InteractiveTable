@@ -54,6 +54,7 @@ namespace InteractiveTable
 
         private void Init()
         {
+            App.ImageOpen = true;
             culture = App.Language.Name;
 
             App.IdleTimeOut += App_IdleTimeOut;
@@ -62,6 +63,11 @@ namespace InteractiveTable
         void App_IdleTimeOut(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void imageViewer_Closed(object sender, EventArgs e)
+        {
+            App.ImageOpen = false;
         }
 
         private void ChangeText(string folder, int folderNumber, int imageNumber, string culture)

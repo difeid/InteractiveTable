@@ -25,6 +25,8 @@ namespace InteractiveTable
 
         public static bool PopupOpen { get; set; }
 
+        public static bool ImageOpen { get; set; }
+
         public static bool BookOpen { get; set; }
 
         private DispatcherTimer timer;
