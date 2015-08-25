@@ -11,7 +11,8 @@
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
 
-        <Image x:Name="mainPhoto" Width="1140" Height="1080" Stretch="UniformToFill"/>
+        <Image x:Name="mainPhoto" Width="1140" Height="1080" Stretch="UniformToFill"
+               MouseDown="Image_MouseDown" MouseMove="Image_MouseMove"  MouseUp="Image_MouseUp"/>
 
         <Button x:Name="back_button" Template="{StaticResource BackButtonTemplate}" Click="Back_Button_Click" Foreground="White"
                 HorizontalAlignment="Left" VerticalAlignment="Top" Margin="75,955,0,0" FocusVisualStyle="{x:Null}"/>
@@ -24,7 +25,7 @@
 
         <Image Width="780" Height="1080" Grid.Column="1" Source="/InteractiveTable;component/Images/MemoryViewer/MemoryViewerBackground.png"/>
         
-        <ScrollViewer Grid.Column="1" Template="{StaticResource ScrollViewerTemplate}" VerticalScrollBarVisibility="Auto" 
+        <ScrollViewer x:Name="scrollContent" Grid.Column="1" Template="{StaticResource ScrollViewerTemplate}" VerticalScrollBarVisibility="Auto" 
                       PanningMode="VerticalOnly" ManipulationBoundaryFeedback="Memory_ScrollViewer_ManipulationBoundaryFeedback">
             <Grid>
                 <Grid.CacheMode>

@@ -19,6 +19,9 @@ namespace InteractiveTable.Pages
         private int maxNumber;
         private string culture;
 
+        protected Point TouchStart;
+        private bool AlreadySwiped;
+
         /// <summary>
         /// Фотоальбом с описанием
         /// </summary>
@@ -108,6 +111,8 @@ namespace InteractiveTable.Pages
 
         public void WritePage(string folder, int number, string culture)
         {
+            scrollContent.ScrollToVerticalOffset(0);
+
             OpenImage(folder, number);
 
             FlowDocument disc = OpenDisc(folder, number, culture);
@@ -162,6 +167,58 @@ namespace InteractiveTable.Pages
                 catch {}
             }
             return content;
+        }
+
+        private void Image_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            TouchStart = e.GetPosition(this);
+        }
+
+        private void Image_MouseUp(object sender, MouseButtonEventArgs e)
+        {
+            AlreadySwiped = false;
+        }
+
+        private void Image_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (e.LeftButton == MouseButtonState.Pressed)
+            {
+                if (!AlreadySwiped)
+                {
+                    var Touch = e.GetPosition(this);
+
+                    //right now a swipe is 200 pixels 
+
+                    //Swipe Left
+
+                    if (Touch.X < (TouchStart.X - 200))
+                    {
+                        //RunMyCustomCode();
+                        if (++number >= maxNumber)
+                        {
+                            number = 0;
+                        }
+                        WritePage(folder, number, culture);
+
+                        AlreadySwiped = true;
+
+                    }
+
+                    //Swipe Right
+                    if (Touch.X > (TouchStart.X + 200))
+                    {
+                        //RunMyCustomCodeSwipeRight();
+                        if (--number < 0)
+                        {
+                            number = maxNumber - 1;
+                        }
+                        WritePage(folder, number, culture);
+
+                        AlreadySwiped = true;
+                    }
+                }
+            }
+            e.Handled = true;
         }
     }
 }
