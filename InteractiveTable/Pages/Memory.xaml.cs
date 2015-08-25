@@ -44,14 +44,8 @@ namespace InteractiveTable.Pages
 
         private void TolstoyHistory_Button_Click(object sender, RoutedEventArgs e)
         {
-            if (!App.PopupOpen)
-            {
-                try
-                {
-                    new PopupWindow("Tolstoy", 1).Show();
-                }
-                catch { }
-            }
+            MemoryViewer mv = new MemoryViewer("Tolstoy", 6);
+            this.NavigationService.Navigate(mv);
         }
     }
 }
