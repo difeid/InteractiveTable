@@ -185,6 +185,8 @@ namespace InteractiveTable
 
         public int WritePage(string folder, int number, string culture)
         {
+            scrollArticle.ScrollToVerticalOffset(0);
+
             int intTag = 0;
 
             //Печатаем статью

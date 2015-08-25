@@ -34,7 +34,7 @@
                 <ImageBrush ImageSource="Images/PopupWindow/PopupWindowBackground.png"/>
             </Border.Background>
 
-            <ScrollViewer Width="1520" Height="920" Template="{StaticResource ScrollViewerTemplate}" FocusVisualStyle="{x:Null}"
+            <ScrollViewer x:Name="scrollArticle" Width="1520" Height="920" Template="{StaticResource ScrollViewerTemplate}" FocusVisualStyle="{x:Null}"
                           VerticalAlignment="Center" HorizontalAlignment="Center" PanningMode="VerticalOnly"
                           ManipulationBoundaryFeedback="Popup_ScrollViewer_ManipulationBoundaryFeedback"
                           PreviewMouseWheel="Popup_ScrollViewer_PreviewMouseWheel" CanContentScroll="False">
